@@ -1,0 +1,124 @@
+C++
+
+Array size has to be less than 10 million.
+Vector less than 1 million.
+Vector of vector less than 50000
+
+Coding style: Mark Gordon
+vector = A(N)...
+int N, T, M;
+Distance = D
+DP = D
+used = used
+NOPATH = 1000000
+result. res...
+
+Long Long:
+ll ans = ll(1000)*1000*1000*1000;
+ll ans = 1ll * 300000000;
+
+
+Input:
+scanf("%1d", &mapa[i][j]); reads in only 1 digit
+Assignment: long long& ref = memo[fi][bi];
+return ref;
+
+Array:
+rotate(A, A + 1, A + N);
+
+
+Vector:
+int sp = Lower_bound(A.begin(), A.end(), make_pair(B,0))-A.begin(); //lowest position of a sorted vector with value B (in pair)
+min(make_pair(A,B), make_pair(B, C)) returns min of pair...
+vector.erase(j); j-- (make sure to decrease counter of j) use erase sparingly.
+R.resize(R.size()-T.size()) -> decreases vector by size T.size();
+A.begin() is iterator...
+
+return vector function:
+vector<ll> D(ll st, const vector<vector<ll>>){
+	vector<ll> D(E.size(), -1);
+}
+
+changes the values of G permanently in main
+vector<ll> D(& vector< vector<int> > G){
+  
+}
+
+int D(int arr[][n]){
+  
+}
+or 
+int D(int *arr){
+  
+}
+
+General Mapping:
+arr[256][500]
+arr['M'][1] = ..
+
+//NESW etc.
+map<char, int> dx, dy;
+dx['E'] = 1; dx['W'] = -1;
+dy['N'] = 1; dy['S'] = -1;
+
+Sets:
+multiset<vector<int> > st;
+for (int i = 0; i < S.size(); i += 2) {
+    for (int ln = 1; i + ln <= S.size(); ln += 2) {
+      st.insert(vector<int>(S.begin() + i, S.begin() + i + ln));
+    }
+ }
+if (st.count(vector<int>(S.begin() + i, S.begin() + i + ln)) == 1) {
+        break;
+}
+multiset.erase(*S.begin()); //erases all values of S.begin()
+multiset.erase(S.begin()); only erases 1
+
+Maps:
+map<int, vector<int> XtoY;
+vector<int> temp;
+if(XtoY.find(x) == XtoY.end()){
+	XtoY.insert(make_pair(x, temp));
+}//make_pair = insert in map;
+XtoY[x].push_back(y);
+
+
+Stringstream:
+string(1, S[i]) = convert character to string
+
+Sorting: 
+vector<int> PI for(int i = 1; i <= n; i++) PI.push_back(i);
+sort(PI.begin(), PI.end(), [&](int x, int y) {
+    return Q[x] < Q[y];
+ }); :( ONLY FOR C++ 11
+
+bool cmp(int a, int b){
+    return Q[a] < Q[b];
+}
+
+sort(PI.begin(), PI.end(), cmp);
+
+bool operator<(Type other) const
+    {
+        return weight > other.weight;
+    }
+
+BFS and Dijstrka pseduocode:
+
+ queue<ll> Q;
+  D[st] = 0;
+  Q.push(st);
+  while(!Q.empty()) {
+    ll x = Q.front(); 
+    Q.pop();
+    for(ll y : E[x]) {
+      if(D[y] == -1) {
+        D[y] = D[x]+1;
+        Q.push(y);
+      }
+    }
+  }
+  return D;
+
+Prim and Dijstrka pseudocode:
+
