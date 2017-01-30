@@ -1,0 +1,12 @@
+Debugging Tips:
+
+#1 Don't Debug... Make sure you did the problem right on the 1st submission!!! Practice ACM
+It's okay to do a problem with longer time or not do as many problems. Quality > Quantity!!!
+
+#2 Reread the problem!!!! Most important step. Most of the time its cause you read the problem wrong
+
+#3 Check edge cases and initialization problems
+
+#4 Check algorithm problems
+
+#5 Solve. 

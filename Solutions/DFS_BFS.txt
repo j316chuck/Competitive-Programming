@@ -1,0 +1,18 @@
+BFS:
+USACO TRAINING GATE: Overfencing
+Problem Statement: http://train.usaco.org/usacoprob2?a=8arM8zoR9Ey&S=maze1
+Learned: Map to convert complicated maze. Use getline and for loop to create the maze of * and . Use BFS to iterate through all possibilities.
+Use pathable to make life easier. Make sure pathable before passing into queue
+
+USACO January 2015 Meeting:
+Problem Statement: http://usaco.org/index.php?page=viewproblem2&cpid=513
+Learned: Use BFS can solve a lot of basic simulation problems < 10^7 operations. You can also use dp by setting dp[i][j]
+i = barn and j = length of path with 100 x 100000 memory which works; 
+
+USACO DECEMBER 2015: PIGGYBACK:
+Problem Statement:http://usaco.org/index.php?page=viewproblem2&cpid=491
+Learned: READ THE PROBLEM!!!!!!! BIDIRECTIONAL. VECTOR 40000 OKAY 100000 OKAY. USE BFS TO PRE COMPUTE D[1] D[2] and D[n].
+Bad solution: priority_queue djistrka probably run overtime because 40000 * 40000 gg
+
+DFS:
+

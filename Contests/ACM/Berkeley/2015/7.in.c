@@ -1,0 +1,5 @@
+K7 2A 3T J8
+K Q J T
+A2 A2 A2 A2
+2A 2A 2A 2A
+

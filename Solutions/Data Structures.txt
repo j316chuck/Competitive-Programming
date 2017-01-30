@@ -1,0 +1,10 @@
+Data Structures
+
+Binary Indexed Trees: 
+
+USACO Gold January 2017:
+Problem Statement: http://usaco.org/index.php?page=viewproblem2&cpid=693
+Learned: Binary Indexed Trees. Solution 1. Make current tree right hand side already. 
+Then subtract -1 using update for every time you iterate through. Use a map function to record which part of the array you are in
+Solution 2 - (Nick Wu) Process the trees from largest to smallest. Then iterate through using a seen to count the number of trees that are larger than you you have seen. query = find lhs. seen-lhs = right.
+update tree...

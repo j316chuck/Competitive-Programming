@@ -1,0 +1,9 @@
+1. String
+2. Palindrome Hard (Edge cases). Recursive solution
+3. Binary search length (Problem in Problem)
+4. Recursive search too long (Hash map)
+5. Queue/Vector, Game Simulation
+6. Easy problem, sum, binary search
+7. Dynamic Programming
+8. DFS, complete graph, cycle
+

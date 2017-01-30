@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="false" context="org.eclipse.cdt.ui.text.codetemplates.filecomment_context" deleted="false" description="Comment for created C/C++ files" enabled="true" id="org.eclipse.cdt.ui.text.codetemplates.filecomment" name="filecomment">/*
+ID: 
+PROG: 
+LANG: C++
+ */
+#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+#include &lt;algorithm&gt;
+#include &lt;cstring&gt;
+#include &lt;string&gt;
+#include &lt;cctype&gt;
+#include &lt;stack&gt;
+#include &lt;queue&gt;
+#include &lt;list&gt;
+#include &lt;vector&gt;
+#include &lt;map&gt;
+#include &lt;sstream&gt;
+#include &lt;cmath&gt;
+#include &lt;bitset&gt;
+#include &lt;utility&gt;
+#include &lt;set&gt;
+#include &lt;numeric&gt;
+#include &lt;ctime&gt;
+#include &lt;climits&gt;
+#include &lt;cstdlib&gt;
+ 
+const double Pi=acos(-1.0);
+typedef long long LL;
+ 
+#define Set(a, s) memset(a, s, sizeof (a))
+#define Rd(r) freopen(r, "r", stdin)
+#define Wt(w) freopen(w, "w", stdout)
+ 
+using namespace std;
+ 
+int main (int argc, char ** argv)
+{
+
+	return 0;
+}
+</template></templates>

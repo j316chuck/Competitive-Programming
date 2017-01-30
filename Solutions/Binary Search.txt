@@ -1,0 +1,40 @@
+Binary Search Problems:
+
+Algorithms
+bool search(int x[], int n, int k) {
+    int p = 0;
+    for (int a = n; a >= 1; a /= 2) {
+        while (p+a < n && x[p+a] <= k) p += a;
+    }
+    return x[p] == k;
+}
+
+
+int count(int x[], int n, int k) {
+    int p = -1, q = -1;
+    for (int a = n; a >= 1; a /= 2) {
+        while (p+a < n && x[p+a] < k) p += a;
+        while (q+a < n && x[q+a] <= k) q += a;
+    }
+    return q-p;
+}
+
+//cheap binary search
+bool search(int x[], int n, int k) {
+    int l = 0, r = n-1;
+    while (r-5 > l) {
+        int m = (l+r)/2;
+        if (x[m] == k) return true;
+        if (x[m] < k) l = m+1; else r = m-1;
+    }
+    while(l!=r){
+        if(x[m])
+        l++;
+    }
+    return false;
+}
+
+Problem: USACO January 2016 Silver
+Statement: http://usaco.org/index.php?page=viewproblem2&cpid=690
+Learned: Multiset use to check in O(NlogN) time. Can use priority queue using data structures too
+Also. Use binarysearch hi lo +-5 = very good way to solve problems and fast to code too!!!

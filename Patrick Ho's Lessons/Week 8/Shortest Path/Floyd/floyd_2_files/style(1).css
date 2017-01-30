@@ -1,0 +1,145 @@
+h3.pq_hidden {
+    font-family: "arial";
+    font-weight: bold;
+    font-size: 12px;
+    text-align: left;
+    color: #333333;
+    line-height: 16px;
+    display: none;
+    padding-left: 18px;
+}
+
+p.question {
+    font-family: "arial";
+    font-size: 15px;
+    color: #C4071B;
+    line-height: 16px;
+}
+
+div.statusWindow {
+    overflow: hidden; 
+    max-height:1000px;
+}
+
+.fig {
+    text-align: center;
+}
+
+figcaption {
+    text-align: center;
+}
+
+#picTitle{
+    height: 80px;
+    margin-top: 10px;
+    margin-bottom: 10px;}
+
+#figTitle{
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#tumTitle{
+    position:absolute; right:0px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+#ta_div_statusTabs{
+    margin-bottom: 5px;
+    padding-bottom: 10px;
+}
+
+.node_label{
+    font-weight: bold;
+}
+
+td.updated-cell{
+    background-color: #0072bd;
+}
+
+td.summand-cell{
+    background-color: #98C6EA;
+}
+
+#matrix-display td{
+    min-width: 14px;
+    overflow: hidden;
+    text-align: center;
+}
+
+#matrix-display{
+    font-size: 12px;
+}
+
+#matrix td{
+    min-width: 21px;
+    overflow: hidden;
+    text-align: center;
+}
+
+#matrix{
+    font-size: 12px;
+}
+
+#tf2_matrix td{
+    min-width: 25px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.tableHeader{
+    width: 16px;   
+}
+
+#matrix-overlay{
+    background-color: rgb(148, 214, 249);
+    z-index: 900;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    padding: 5px 5px 5px 5px;
+    width: 600px;
+    height: 600px;
+    overflow: auto;
+}
+
+#tf2_matrix{
+    font-size: 14px;
+}
+
+.not-number-cell{
+    color: darkgrey;
+}
+
+.candidate-cell{
+    background-color: rgb(174, 174, 174);
+}
+
+.matrix-cell.node_label{
+    width: 16px;
+    overflow: hidden;
+}
+
+.variable-table{
+    border-spacing:0px;
+    width:200px;
+    border-collapse:collapse;
+    text-align:center
+}
+
+.variable-table td{
+    border:1px solid black;
+    padding:0px;
+}

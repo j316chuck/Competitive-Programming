@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)https://www-m9.ma.tum.de/graph-algorithms/spp-floyd-warshall/index_en.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    
+    <meta name="description" content="The Floyd-Warshall Algorithm.">
+    <meta name="keywords" content="Floyd-Warshall, Shortest Path, Algorithm, TUM, Technische Universität München, Applet">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="author" content="Aleksejs Voroncovs">
+    <link rel="alternate" href="https://www-m9.ma.tum.de/graph-algorithms/spp-floyd-warshall/index_de.html" hreflang="de">
+    <link rel="alternate" href="https://www-m9.ma.tum.de/graph-algorithms/spp-floyd-warshall/index_en.html" hreflang="en">
+    <link rel="stylesheet" type="text/css" href="./floyd_2_files/jquery-ui-1.10.1.custom.min.css">
+    <link rel="stylesheet" type="text/css" href="./floyd_2_files/style.css">
+    <link rel="stylesheet" type="text/css" href="./floyd_2_files/style(1).css">
+    <link type="text/css" href="./floyd_2_files/jquery.mmenu.all.css" rel="stylesheet">
+    <script src="./floyd_2_files/jquery-1.9.1.min.js.download" type="text/javascript"></script>
+    <script src="./floyd_2_files/jquery-ui-1.10.1.custom.min.js.download" type="text/javascript"></script>
+    <script type="text/javascript" src="./floyd_2_files/jquery.mmenu.min.all.js.download"></script>
+    <script src="./floyd_2_files/underscore-min.js.download" type="text/javascript"></script>
+    <script src="./floyd_2_files/lang.js.download" type="text/javascript"></script>
+    <script src="./floyd_2_files/utilities.js.download" type="text/javascript"></script>
+    <script src="./floyd_2_files/siteAnimation.js.download" type="text/javascript"></script>
+    <script src="./floyd_2_files/canvasDrawing.js.download" type="text/javascript"></script>
+    <script src="./floyd_2_files/graph.js.download" type="text/javascript"></script>
+    <script src="./floyd_2_files/priorityQueueArray.js.download" type="text/javascript"></script>
+    <script src="./floyd_2_files/textDB.js.download" type="text/javascript"></script>
+    <script src="./floyd_2_files/algorithm.js.download" type="text/javascript"></script>
+    <script src="./floyd_2_files/graphs.js.download" type="text/javascript"></script>
+    <script src="./floyd_2_files/questions.js.download" type="text/javascript"></script>
+    <script src="./floyd_2_files/aufgabe1.js.download" type="text/javascript"></script>
+    <script src="./floyd_2_files/aufgabe2.js.download" type="text/javascript"></script>
+    <script type="text/x-mathjax-config;executed=true">
+        MathJax.Hub.Config({
+            showMathMenu: false,
+            showMathMenuMSIE: false
+        });
+    </script>
+    <script type="text/javascript" src="./floyd_2_files/MathJax.js.download"></script>
+    <title>The Floyd-Warshall Algorithm</title>
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">.MathJax_Preview .MJXc-math {color: inherit!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXc-script {font-size: .8em}
+.MJXc-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXc-bold {font-weight: bold}
+.MJXc-italic {font-style: italic}
+.MJXc-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-largeop {font-size: 150%}
+.MJXc-largeop.MJXc-int {vertical-align: -.2em}
+.MJXc-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXc-display {display: block; text-align: center; margin: 1em 0}
+.MJXc-math span {display: inline-block}
+.MJXc-box {display: block!important; text-align: center}
+.MJXc-box:after {content: " "}
+.MJXc-rule {display: block!important; margin-top: .1em}
+.MJXc-char {display: block!important}
+.MJXc-mo {margin: 0 .15em}
+.MJXc-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXc-denom {display: inline-table!important; width: 100%}
+.MJXc-denom > * {display: table-row!important}
+.MJXc-surd {vertical-align: top}
+.MJXc-surd > * {display: block!important}
+.MJXc-script-box > *  {display: table!important; height: 50%}
+.MJXc-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXc-script-box > *:last-child > * {vertical-align: bottom}
+.MJXc-script-box > * > * > * {display: block!important}
+.MJXc-mphantom {visibility: hidden}
+.MJXc-munderover {display: inline-table!important}
+.MJXc-over {display: inline-block!important; text-align: center}
+.MJXc-over > * {display: block!important}
+.MJXc-munderover > * {display: table-row!important}
+.MJXc-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXc-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXc-mtr {display: table-row!important}
+.MJXc-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXc-mtr > .MJXc-mtd:first-child {padding-left: 0}
+.MJXc-mtr:first-child > .MJXc-mtd {padding-top: 0}
+.MJXc-mlabeledtr {display: table-row!important}
+.MJXc-mlabeledtr > .MJXc-mtd:first-child {padding-left: 0}
+.MJXc-mlabeledtr:first-child > .MJXc-mtd {padding-top: 0}
+.MJXc-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXc-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXc-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXc-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXc-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXc-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXc-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXc-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXc-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXc-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXc-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_CHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.MathJax_SVG_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax_SVG .MJX-monospace {font-family: monospace}
+.MathJax_SVG .MJX-sans-serif {font-family: sans-serif}
+#MathJax_SVG_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax_SVG {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax_SVG * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.mjx-svg-href {fill: blue; stroke: blue}
+.MathJax_SVG_Processing {visibility: hidden; position: absolute; top: 0; left: 0; width: 0; height: 0; overflow: hidden; display: block!important}
+.MathJax_SVG_Processed {display: none!important}
+.MathJax_SVG_ExBox {display: block!important; overflow: hidden; width: 1px; height: 60ex; min-height: 0; max-height: none; padding: 0; border: 0; margin: 0}
+.MathJax_SVG .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body class=""><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_SVG_Hidden"></div><svg><defs id="MathJax_SVG_glyphs"><path stroke-width="10" id="MJMATHI-4F" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path stroke-width="10" id="MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="10" id="MJMATHI-6E" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path><path stroke-width="10" id="MJMAIN-33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path><path stroke-width="10" id="MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs></svg></div><div id="MathJax_Message" style="display: none;"></div><nav id="menu" class="mm-menu mm-offcanvas mm-front"><div class="mm-panel mm-hasnavbar mm-opened mm-subopened mm-hidden" id="mm-1"><div class="mm-navbar"><a class="mm-title">Overview</a></div><ul class="mm-listview">
+            <li>
+                <a style="white-space:pre-line" href="http://www-m9.ma.tum.de/Allgemeines/GraphAlgorithmenEn">
+                <img class="" src="./floyd_2_files/logo_ohne.png" alt="Overview Graph Algorithms">
+                Overview Graph Algorithms</a>
+            </li>
+            <li><em class="mm-counter">4</em><a class="mm-next mm-fullsubopen" href="https://www-m9.ma.tum.de/graph-algorithms/spp-floyd-warshall/index_en.html#mm-2" data-target="#mm-2"></a><span>Shortest Path Algorithms</span>
+                
+            </li>
+            <li><em class="mm-counter">2</em><a class="mm-next mm-fullsubopen" href="https://www-m9.ma.tum.de/graph-algorithms/spp-floyd-warshall/index_en.html#mm-3" data-target="#mm-3"></a><span>Spanning Tree Algorithms</span>
+                
+            </li>
+            <li><em class="mm-counter">2</em><a class="mm-next mm-fullsubopen" href="https://www-m9.ma.tum.de/graph-algorithms/spp-floyd-warshall/index_en.html#mm-4" data-target="#mm-4"></a><span>Matching Algorithms</span>
+                
+            </li>
+            <li><em class="mm-counter">2</em><a class="mm-next mm-fullsubopen" href="https://www-m9.ma.tum.de/graph-algorithms/spp-floyd-warshall/index_en.html#mm-5" data-target="#mm-5"></a><span>Euler Tours and Chinese Postman Problem</span>
+                             
+            </li>
+        </ul></div><div class="mm-panel mm-hasnavbar mm-opened mm-current" id="mm-2"><div class="mm-navbar"><a class="mm-btn mm-prev" href="https://www-m9.ma.tum.de/graph-algorithms/spp-floyd-warshall/index_en.html#mm-1" data-target="#mm-1"></a><a class="mm-title" href="https://www-m9.ma.tum.de/graph-algorithms/spp-floyd-warshall/index_en.html#mm-1">Shortest Path Algorithms</a></div><ul class="mm-listview">
+                   <li class="germanLink"><a href="https://www-m9.ma.tum.de/graph-algorithms/spp-dijkstra/">Dijkstra's Algorithm</a></li>
+                   <li class="germanLink"><a href="https://www-m9.ma.tum.de/graph-algorithms/spp-a-star/">A* Algorithm</a></li>
+                   <li class="mm-selected"><a href="https://www-m9.ma.tum.de/graph-algorithms/spp-bellman-ford/index_en.html">Bellman-Ford Algorithm</a></li>
+                   <li><a href="https://www-m9.ma.tum.de/graph-algorithms/spp-floyd-warshall/index_en.html">Floyd-Warshall Algorithm</a></li>
+                </ul></div><div class="mm-panel mm-hasnavbar mm-hidden" id="mm-3"><div class="mm-navbar"><a class="mm-btn mm-prev" href="https://www-m9.ma.tum.de/graph-algorithms/spp-floyd-warshall/index_en.html#mm-1" data-target="#mm-1"></a><a class="mm-title" href="https://www-m9.ma.tum.de/graph-algorithms/spp-floyd-warshall/index_en.html#mm-1">Spanning Tree Algorithms</a></div><ul class="mm-listview">
+                   <li><a href="https://www-m9.ma.tum.de/graph-algorithms/mst-prim/index_en.html">Prim's Algorithm</a></li>
+                   <li><a href="https://www-m9.ma.tum.de/graph-algorithms/mst-kruskal/index_en.html">Kruskal's Algorithm</a></li>
+                </ul></div><div class="mm-panel mm-hasnavbar mm-hidden" id="mm-4"><div class="mm-navbar"><a class="mm-btn mm-prev" href="https://www-m9.ma.tum.de/graph-algorithms/spp-floyd-warshall/index_en.html#mm-1" data-target="#mm-1"></a><a class="mm-title" href="https://www-m9.ma.tum.de/graph-algorithms/spp-floyd-warshall/index_en.html#mm-1">Matching Algorithms</a></div><ul class="mm-listview">
+                   <li><a href="https://www-m9.ma.tum.de/graph-algorithms/matchings-hopcroft-karp/index_en.html">Hopcroft-Karp Algorithm</a></li>
+                   <li><a href="https://www-m9.ma.tum.de/graph-algorithms/matchings-hungarian-method/index_en.html">Hungarian Method</a></li>
+                </ul></div><div class="mm-panel mm-hasnavbar mm-hidden" id="mm-5"><div class="mm-navbar"><a class="mm-btn mm-prev" href="https://www-m9.ma.tum.de/graph-algorithms/spp-floyd-warshall/index_en.html#mm-1" data-target="#mm-1"></a><a class="mm-title" href="https://www-m9.ma.tum.de/graph-algorithms/spp-floyd-warshall/index_en.html#mm-1">Euler Tours and Chinese Postman Problem</a></div><ul class="mm-listview">
+                   <li class="germanLink"><a href="https://www-m9.ma.tum.de/graph-algorithms/hierholzer/">Hierholzer Algorithm</a></li>
+                   <li><a href="https://www-m9.ma.tum.de/graph-algorithms/directed-chinese-postman/index_en.html">Chinese Postman Problem</a></li>
+                </ul></div></nav>
+    <noscript>
+        &lt;div class="ui-widget"&gt;
+            &lt;div class="ui-state-error ui-corner-all" style="padding: .7em;"&gt;
+                &lt;div class="ui-icon ui-icon-alert errorIcon"&gt;&lt;/div&gt;
+                &lt;strong&gt;Please activate Javascript!&lt;/strong&gt;
+                &lt;ul style="margin: 0px;"&gt;
+                    &lt;li&gt;
+                        This website needs Javascript in order to be displayed properly.
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        Javascript is currently deactivated in your browser. A manual for the activation of Javascript can be found &lt;a href="http://www.enable-javascript.com/"&gt;here&lt;/a&gt;.
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    </noscript>
+    <script>
+        $(document).ready(initializeSiteLayout);
+        LNG.setLanguage('en');
+        $(document).ready(function() {
+            $("#menu").mmenu({
+               "navbar": {
+                  "title": "Overview"
+               },
+               "offCanvas": {
+                  "zposition": "front"
+               },
+               "counters": true,
+               "slidingSubmenus": true,
+               "classes": "mm-light",
+            });
+         });
+    </script>
+    <a id="menu_link" href="https://www-m9.ma.tum.de/graph-algorithms/spp-floyd-warshall/index_en.html#menu"></a>
+    
+    <div id="mm-0" class="mm-page mm-slideout">
+    <header>
+        <img src="./floyd_2_files/floyd-warshall-logo.png" id="picTitle" alt="Logo">
+        <img src="./floyd_2_files/title_floyd_warshall_en.png" id="figTitle" alt="The Floyd-Warshall Algorithm">
+        <img style="position:absolute; right:0px" src="./floyd_2_files/TUMLogo.png" alt="Technische Universität München">
+        <div></div>
+    </header>
+    <div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+        <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+            <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tab_te" aria-labelledby="ui-id-1" aria-selected="false">
+                <a href="https://www-m9.ma.tum.de/graph-algorithms/spp-floyd-warshall/index_en.html#tab_te" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-1"><span>Introduction</span></a>
+            </li>
+            <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tab_tg" aria-labelledby="ui-id-2" aria-selected="false">
+                <a href="https://www-m9.ma.tum.de/graph-algorithms/spp-floyd-warshall/index_en.html#tab_tg" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2"><span>Create a Graph</span></a>
+            </li>
+            <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tab_ta" aria-labelledby="ui-id-3" aria-selected="false">
+                <a href="https://www-m9.ma.tum.de/graph-algorithms/spp-floyd-warshall/index_en.html#tab_ta" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-3"><span>Run the Algorithm</span></a>
+            </li>
+            <li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="tab_ti" aria-labelledby="ui-id-4" aria-selected="true">
+                <a href="https://www-m9.ma.tum.de/graph-algorithms/spp-floyd-warshall/index_en.html#tab_ti" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-4"><span>Description of the Algorithm</span></a>
+            </li>
+            <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tab_tf1" aria-labelledby="ui-id-5" aria-selected="false">
+                <a href="https://www-m9.ma.tum.de/graph-algorithms/spp-floyd-warshall/index_en.html#tab_tf1" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-5"><span>Exercise 1</span></a>
+            </li>
+            <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tab_tf2" aria-labelledby="ui-id-6" aria-selected="false">
+                <a href="https://www-m9.ma.tum.de/graph-algorithms/spp-floyd-warshall/index_en.html#tab_tf2" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-6"><span>Exercise 2</span></a>
+            </li>
+            <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tab_tw" aria-labelledby="ui-id-7" aria-selected="false">
+                <a href="https://www-m9.ma.tum.de/graph-algorithms/spp-floyd-warshall/index_en.html#tab_tw" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-7"><span>More</span></a>
+            </li>
+        </ul>
+        <div id="tab_te" aria-labelledby="ui-id-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
+            <div id="te_div_Einfuehrungstext">
+                <div id="te_div_beispiel1Container"><img id="te_img_dijkstraLR" src="./floyd_2_files/floyd-warshall4.png" alt="Einfacher Graph mit 4 Knoten.">
+                    <p>
+                        What are the cheapest paths between pairs of nodes?
+                    </p>
+                </div>
+                <h1>Shortest Paths between all Pairs of Nodes</h1>
+                <p>
+                    When considering the distances between locations, e.g. in logistics, one often encounters the problem of finding shortest paths. In such situations, the locations and paths can be modeled as vertices and edges of a graph, respectively. 
+                </p>
+                <p>
+                    In many problem settings, it's necessary to find the shortest paths between all pairs of nodes of a graph and determine their respective length. The Floyd-Warshall algorithm solves this problem and can be run on any graph, as long as it doesn't contain any cycles of negative edge-weight. Otherwise, those cycles may be used to construct paths that are arbitrarily short (negative length) between certain pairs of nodes and the algorithm cannot find an optimal solution.
+                </p>
+                <h2>This applet presents the Floyd-Warshall algorithm which finds shortest paths between all pairs of nodes.</h2>
+                <div id="te_div_Entscheidung">
+                    <h2>What do you want to do first?</h2>
+                    <button id="te_button_gotoDrawGraph" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">
+                        Test the algorithm!
+                    </span></button>
+                    <button id="te_button_gotoIdee" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">
+                        Read a detailed description of the algorithm
+                    </span></button>
+                </div>
+            </div>
+        </div>
+        <div id="tab_tg" aria-labelledby="ui-id-2" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
+            <div>
+                <div class="canvasWrapper">
+                    <canvas class="graphCanvas" id="tg_canvas_graph" width="700" height="500">
+                        Your browser does not support HTML5 Canvas. Please use a modern browser, such as <a href="http://www.mozilla.org/de/firefox">Mozilla Firefox</a>
+                    </canvas>
+                    <div class="Legende" id="tg_div_Legende">
+                        <h2 class="LegendeHeader"><button class="LegendeMin ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text"></span></button> Legend</h2>
+                        <div class="LegendeText">
+                            <table>
+                                <tbody><tr>
+                                    <td class="LegendeTabelle"><img src="./floyd_2_files/knoten.png" alt="Knoten" class="LegendeIcon"></td>
+                                    <td><span>Node</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="LegendeTabelle"><img src="./floyd_2_files/kante.png" alt="Knoten" class="LegendeIcon"></td>
+                                    <td><span>Edge with weight 50</span></td>
+                                </tr>
+                            </tbody></table>
+                        </div>
+                    </div>
+                    <div class="LegendeMinimized">
+                        <h2 class="LegendeHeader"><button class="LegendeMin ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text"></span></button> Legend</h2>
+                    </div>
+                </div>
+                <div id="tg_div_statusWindow" class="statusWindow">
+                    <h2>Which graph do you want to run the algorithm on?</h2>
+                    <div id="tg_div_statusErklaerung">
+                        <p>To create a node, double-click in the drawing area.</p>
+                        <p>To create an edge, first click on the node of origin and then click on the destination node.</p>
+                        <p>The edge weight can be changed by double clicking on the edge.</p>
+                        <p>Right-clicking deletes edges and nodes.</p>
+                    </div>
+                    <h3>You don't want to create a graph yourself?<br></h3>
+                    <h3>Choose an example graph!<br></h3>
+                    <select id="tg_select_GraphSelector" name="Wähle einen Graphen">
+                        <option selected="" id="tg_selectoption_empty">Your own Graph</option>
+                        <option>Random graph</option>
+                        <option>Standard Example</option>
+                        <option>Lattice</option>
+                        <option>Major European Cities</option>
+                    </select>
+                    <p>
+                        <button id="tg_button_gotoAlgorithmTab" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">
+                            Ready? – Run the algorithm!
+                        </span></button>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="tab_ta" aria-labelledby="ui-id-3" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
+            <div>
+                <div class="canvasWrapper">
+                    <canvas class="graphCanvas" id="ta_canvas_graph" width="700" height="500">
+                        Your browser does not support HTML5 Canvas. Please use a modern browser, such as<a href="http://www.mozilla.org/de/firefox">Mozilla Firefox</a>
+                    </canvas>
+                    <div class="Legende" id="ta_div_Legende">
+                        <h2 class="LegendeHeader"><button class="LegendeMin ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text"></span></button> Legend</h2>
+                        <div class="LegendeText">
+                            <table>
+                                <tbody><tr>
+                                    <td class="LegendeTabelle"><img src="./floyd_2_files/knoten.png" alt="Knoten" class="LegendeIcon"></td>
+                                    <td><span>Node</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="LegendeTabelle"><img src="./floyd_2_files/kante.png" alt="Knoten" class="LegendeIcon"></td>
+                                    <td><span>Edge with weight 50</span></td>
+                                </tr>
+                            </tbody></table>
+                        </div>
+                    </div>
+                    <div class="LegendeMinimized">
+                        <h2 class="LegendeHeader"><button class="LegendeMin ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text"></span></button> Legend</h2>
+                    </div>
+                </div>
+                <div id="ta_div_statusWindow" class="statusWindow">
+                    <h2 class="">Current state of the algorithm</h2>
+                    <div id="matrix-overlay" style="display: none">
+                        <div id="matrix-container"></div>
+                        <button id="tg_button_trol" onclick="hideMatrixPopup();" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">
+                            <span class="ui-button-text">Hide mattrix</span>
+                        </span></button>
+                    </div>
+                    <div id="ta_div_abspielbuttons"></div>
+                    <div id="ta_div_statusTabs">
+                        <ul>
+                            <li>
+                                <a href="https://www-m9.ma.tum.de/graph-algorithms/spp-floyd-warshall/index_en.html#ta_div_statusErklaerung">Description</a>
+                            </li>
+                            <li>
+                                <a href="https://www-m9.ma.tum.de/graph-algorithms/spp-floyd-warshall/index_en.html#ta_div_statusPseudocode">Pseudocode</a>
+                            </li>
+                        </ul>
+                        <div id="ta_div_statusErklaerung">
+                            <div id="ta_div_statusText"></div>
+                        </div>
+                        <div class="PseudocodeWrapper" id="ta_div_statusPseudocode">
+                            <p class="pseudocode" id="ta_p_l1">BEGIN</p>
+                            <p class="pseudocode" id="ta_p_l2"> FOR ALL v ∈ V</p>
+                            <p class="pseudocode" id="ta_p_l3">  d[v][v] ← 0</p>
+                            <p class="pseudocode" id="ta_p_l4"> FOR ALL (u,v) ∈ E</p>
+                            <p class="pseudocode" id="ta_p_l5">  d[u][v] ← w(u,v)</p>
+                            <p class="pseudocode" id="ta_p_l6"> for k from 1 to |V|</p>
+                            <p class="pseudocode" id="ta_p_l7">  for i from 1 to |V|</p>
+                            <p class="pseudocode" id="ta_p_l8">   for j from 1 to |V|</p>
+                            <p class="pseudocode" id="ta_p_l9">    if d[i][j] &gt; d[i][k] + d[k][j]</p>
+                            <p class="pseudocode" id="ta_p_l10">     d[i][j] ← d[i][k] + d[k][j]</p>
+                            <p class="pseudocode" id="ta_p_l12">    end if</p>
+                            <p class="pseudocode" id="ta_p_l13">END</p>
+                            <h3>Current state of variables:</h3>
+                            <table class="variable-table">
+                                <tbody><tr>
+                                    <td><strong>i</strong></td>
+                                    <td><strong>j</strong></td>
+                                    <td><strong>k</strong></td>
+                                </tr>
+                                <tr>
+                                    <td id="ta_td_i">n.d.</td>
+                                    <td id="ta_td_j">n.d.</td>
+                                    <td id="ta_td_k">n.d.</td>
+                                </tr>
+                            </tbody></table>
+                        </div>
+                        <div id="ta_div_PQ">
+                            <button id="tg_button_showMatrix" onclick="showMatrixPopup();" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">
+                                <span class="ui-button-text">Show full matrix</span>
+                            </span></button>
+                            <h3 id="ta_title_pq" class="pq_hidden">Queue:</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="ta_div_confirmTabChange" title="Terminate algorithm?" class="tabChangeWarningDialog">
+                <h2>If you switch tabs, the execution will be terminated.</h2>
+                <p>You can open <a href="https://www-m9.ma.tum.de/graph-algorithms/spp-floyd-warshall/index_en.html#" target="_blank" tabindex="-1">another browser window</a> to read the description in parallel.</p>
+            </div>
+            <div id="ta_div_completeMatrix" title="Komplette Matrix"></div>
+        </div>
+        <div id="tab_ti" aria-labelledby="ui-id-4" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="true" aria-hidden="false" style="display: block;">
+            <div id="ti_div_Einfuehrungstext">
+                <div class="BeispielbildContainer">
+                    <figure>
+                        <img id="ti_img_beispiel2" src="./floyd_2_files/long-path1.png" alt="Distanzmatrix" width="250"><figcaption>The path <strong>(a, e)</strong> is optimal, as the paths <strong>(a, c)</strong> and <strong>(c, e)</strong> are optimal as well.</figcaption>
+                    </figure>
+                </div>
+
+                <h1>Shortest Paths</h1>
+                <p>
+                    Here's an example problem: Consider 10 cities that are connected using various highways. The goal is to find the shortest distances between all cities in order to minimize transportation costs.
+                </p>
+                <p>
+                    Consider a graph. If it doesn't contain any negative cycles, all shortest or cheapest paths between any pair of nodes can be calculated using the algorith of Floyd-Warshall.
+                    In graph theory a cycle is a path that starts and ends in the same vertex. A cycle is called negative if the sum of its edge weights is less than 0.
+                </p>
+                <p>
+                    This problem can be solved using the Floyd-Warshall algorithm. The entire network in the problem statement can be modeled as a graph, where the nodes represent the cities and the edges represent the highways.
+                    Each edge will have an associated cost or weight that is equal to the distance of neighboring cities in kilometers. The goal then is to find the shortest paths between all cities.
+                </p>
+
+                <h1>Idea of the Algorith</h1>
+                <div class="BeispielbildContainer">
+                    <figure>
+                        <img id="ti_img_beispiel1" src="./floyd_2_files/long-path.png" alt="Einfacher Graph mit 4 Knoten." width="250">
+                    </figure>
+                    <p>
+                        The path <strong>(a, d)</strong> has been improved.
+                    </p>
+                </div>
+                <p>
+                    The Floyd-Warshall algorithm relies on the principle of <strong>dynamic pogramming</strong>. This means that all possible paths between pairs of nodes are being compared step by step, while only saving the best values found so far.
+                </p><p>
+                    The algorithm begins with the following observation: If the shortest path from <strong>u</strong> to <strong>v</strong> passes through <strong>w</strong>, then the partial paths from u to w and w to v must be minimal as well. Correctness of this statement can be shown by induction. The algorithm of Floy-Warshall works in an interative way.
+                </p>
+                <p>
+                    Let G be a graph with numbered vertices <strong>1</strong> to <strong>N</strong>. In the <strong>k</strong>th step, let <strong>shortestPath(i,j,k)</strong>
+                    be a function that yields the shortest path from <strong>i</strong> to <strong>j</strong> that only uses nodes from the set <strong>{1, 2, ..., k}</strong>. In the next step, the algorithm will then have to find the shortest paths between all pairs <strong>i, j</strong> using only the vertices from <strong>{1, 2, ..., k, k + 1}</strong>.
+                </p>
+                <p>
+                    For all pairs of vertices it holds that the shortest path must either only contain vertices in the set <strong>{1, ..., k}</strong>, or otherwise must be a path that goes from <strong>i</strong> to <strong>j</strong> via <strong>k + 1</strong>. This implies that in the <strong>(k+1)</strong>th step, the shortest path from <strong>i</strong> to <strong>j</strong> either remains <strong>shortestPath(i,j,k)</strong> or is being improved to <strong>shortestPath(i,k+1,k) + shortestPath(k+1, j, k)</strong>, depending on which of these paths is shorter. Therefore, each shortest path remains the same, or contains the node <strong>k + 1</strong> whenever it is improved.
+                </p>
+                <p>
+                    This is the idea of <strong>dynamic programming</strong>. In each iteration, all pairs of nodes are assigned the cost for the shortest path found so far:<br><br>
+                    <strong>shortestPath(i, j, k) = min(shortestPath(i, j, k), shortestPath(i, k + 1, k) + shortestPath(k + 1, j, k))</strong>
+                </p>
+                <p>
+                    When the Floyd-Warshall algorithm terminates, each path may contain any possible transit node. However, only the shortest path found for each pair of nodes is saved by the algorithm. All these values are optimal since in each step, the algorithm updates the values whenever the new cost is smaller than the previous.
+                </p>
+
+                <h1>Finding Shortest Paths</h1>
+                <div class="BeispielbildContainer"><figure><img id="ti_img_beispiel3" src="./floyd_2_files/fw-table.png" alt="Distanzmatrix" width="250"><figcaption>The path between vertices <strong>a</strong> and <strong>d</strong> has been improved.</figcaption></figure>
+                </div>
+                <p>
+                    In order to find all shortest paths simultaneously, the algorithm needs to save a matrix that contains the current cost for all pairs of nodes. Row and column indices of this matrix represent the nodes and each entry contains the corresponding current cost.
+                </p>
+                <p>
+                    Assume the graph is specified by its weight matrix <strong>W</strong>. Then the matrix entry <strong>W[i,j]</strong> is the weight of the edge <strong>(i,j)</strong>, if this edge exists. If not edge from <strong>i</strong> to <strong>j</strong> exists then <strong>W[i,j]</strong> will be infinity.
+                </p>
+                <p>
+                    The Floyd-Warshall algorithm uses the concept of <strong>dynamic programming</strong> (see above). First of all, the algorithm is being initialized:
+                </p>
+                <ul>
+                    <li>
+                        Initialize the matrix <strong>D</strong> of shortest distances with the same entries as the weight matrix <strong>W</strong>.
+                    </li>
+                    <li>
+                        The algorithm executes the main loop with <strong>k</strong> ranging from <strong>1</strong> to <strong>n</strong>. In each iteration of this loop the algorithm tries to improve all <strong>(i,j)</strong> paths by the paths <strong>(i, k)</strong> and <strong>(k, j)</strong>.
+                    </li>
+                    <li>
+                        To do so consider the distances between all pairs of nodes <strong>(i,j)</strong> in each iteration. The algorithm checks whether <strong>(i,k)</strong> concatenated with <strong>(k,j)</strong> is shorter than the current distance of <strong>(i,j)</strong>
+                    </li>
+                    <li>
+                        If the combined distances between <strong>i, k</strong> and <strong>k, j</strong> are in fact shorter than the current distance, then the distance between <strong>i</strong> and <strong>j</strong> will be updated.
+                    </li>
+                </ul>
+                <h1>Graphs with negative cycles</h1>
+                <div class="BeispielbildContainer">
+                    <figure>
+                        <img id="ti_img_beispiel4" src="./floyd_2_files/negative-cycle.png" alt="Negativer Kreis" width="250">
+                        <figcaption>The path between <strong>a</strong> and <strong>e</strong> can be arbritarily small (negative).</figcaption>
+                    </figure>
+                </div>
+                <p>
+                    A negative cycle is a cycle such that the sum of its edge weights is negative. If the graph contains one ore more negative cycles, then no shortest path exists for vertices that form a part of the negative cycle. The path between these nodes can then be arbitrarily small (negative). Therefore, in order for the Floyd-Warshall algorithm to produce correct results, the graph must be free of negative cycles.
+                </p>
+                <p>
+                    The graph can also be used to discover negative cycles in graphs: Let the algorithm consider all pairs of nodes <strong>(i,j)</strong> (including those, where <strong>i = j</strong>). If, after termination of the algorithm, any cost <strong>(i, j)</strong> in the distance matrix is negative, then the graph contains at least one negative cycle.
+                </p>
+                <p>
+                    The example in the figure contains the negative cycle <strong>(b, c, d)</strong>. This means the cycle can be traversed an infinite amount of times and the distance between any nodes in the cycle will become shorter and shorter each and every time. Furthermore, the path between the vertices <strong>a</strong> and <strong>e</strong> in the example can be arbitrarily short as well, as a path between them may contain the negative cycle.
+                </p>
+                <h1>What's next?</h1>
+                <br style="clear: both;">
+                <div class="Entscheidungsweg" id="ti_div_EntscheidungLeft">
+                    <h3>Create a graph and testing the algorithm</h3>
+                    <button id="ti_button_gotoDrawGraph" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">
+                        Create your own graph to test the algorihtm
+                    </span></button>
+                    <button id="ti_button_gotoAlgorithm" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">
+                        Test the algorithm using a prepared example
+                    </span></button>
+                </div>
+                <div class="Entscheidungsweg" id="ti_div_EntscheidungRight">
+                    <h3>Test your knowledge using the exercises</h3>
+                    <button id="ti_button_gotoFA1" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">
+                        Exercise: Assign distances to paths
+                    </span></button>
+                    <br>
+                    <button id="ti_button_gotoFA2" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">
+                        Exercise: Assign weights to edges
+                    </span></button>
+                </div>
+                <br style="clear: both;">
+            </div>
+        </div>
+
+        <div id="tab_tf1" aria-labelledby="ui-id-5" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
+            <div>
+                <div class="canvasWrapper">
+                    <canvas class="graphCanvas" id="tf1_canvas_graph" width="700" height="500">
+                        Your browser does not support HTML5 Canvas. Please use a modern browser, such as <a href="http://www.mozilla.org/de/firefox">Mozilla Firefox</a>
+                    </canvas>
+                    <div class="Legende" id="tf1_div_Legende">
+                        <h2 class="LegendeHeader"><button class="LegendeMin ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text"></span></button> Legende</h2>
+                        <div class="LegendeText">
+                            <table>
+                                <tbody><tr>
+                                    <td class="LegendeTabelle"><img src="./floyd_2_files/knoten.png" alt="Knoten" class="LegendeIcon"></td>
+                                    <td><span>Node</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="LegendeTabelle"><img src="./floyd_2_files/kante.png" alt="Knoten" class="LegendeIcon"></td>
+                                    <td><span>Edge with weight 50</span></td>
+                                </tr>
+                            </tbody></table>
+                        </div>
+                    </div>
+                    <div class="LegendeMinimized">
+                        <h2 class="LegendeHeader"><button class="LegendeMin ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text"></span></button> Legend</h2>
+                    </div>
+                </div>
+                <div id="tf1_div_statusWindow" class="statusWindow">
+                    <h2 class="">Test your knowledge: How would the algorithm decide?</h2>
+                    <div id="tf1_div_abspielbuttons"></div>
+                    <div id="tf1_div_statusTabs">
+                        <ul>
+                            <li>
+                                <a href="https://www-m9.ma.tum.de/graph-algorithms/spp-floyd-warshall/index_en.html#tf1_div_statusErklaerung">Description</a>
+                            </li>
+                            <li>
+                                <a href="https://www-m9.ma.tum.de/graph-algorithms/spp-floyd-warshall/index_en.html#tf1_div_statusPseudocode">Pseudocode</a>
+                            </li>
+                        </ul>
+                        <div id="tf1_div_statusErklaerung">
+                            <div id="tf1_div_statusText">
+                                <p>
+                                    Here you can execute the algorithm and answer quiz questions.
+                                </p>
+                                <button id="tf1_button_start" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">
+                                    Let's go!
+                                </span></button>
+                            </div>
+                        </div>
+                        <div class="PseudocodeWrapper" id="tf1_div_statusPseudocode">
+                            <p class="pseudocode" id="tf1_p_l1">BEGIN</p>
+                            <p class="pseudocode" id="tf1_p_l2"> for each vertex v</p>
+                            <p class="pseudocode" id="tf1_p_l3">  d[v][v] ← 0</p>
+                            <p class="pseudocode" id="tf1_p_l4"> for each edge (u,v)</p>
+                            <p class="pseudocode" id="tf1_p_l5">  d[u][v] ← w(u,v)</p>
+                            <p class="pseudocode" id="tf1_p_l6"> for k from 1 to |V|</p>
+                            <p class="pseudocode" id="tf1_p_l7">  for i from 1 to |V|</p>
+                            <p class="pseudocode" id="tf1_p_l8">   for j from 1 to |V|</p>
+                            <p class="pseudocode" id="tf1_p_l9">    if d[i][j] &gt; d[i][k] + d[k][j]</p>
+                            <p class="pseudocode" id="tf1_p_l10">     d[i][j] ← d[i][k] + d[k][j]</p>
+                            <p class="pseudocode" id="tf1_p_l12">    end if</p>
+                            <p class="pseudocode" id="tf1_p_l13">END</p>
+                            <h3>Current state of the variables:</h3>
+                            <table class="variable-table">
+                                <tbody><tr>
+                                    <td><strong>i</strong></td>
+                                    <td><strong>j</strong></td>
+                                    <td><strong>k</strong></td>
+                                </tr>
+                                <tr>
+                                    <td id="tf1_td_i"></td>
+                                    <td id="tf1_td_j"></td>
+                                    <td id="tf1_td_k"></td>
+                                </tr>
+                            </tbody></table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="tf1_div_confirmTabChange" title="Abort Execution?" class="tabChangeWarningDialog">
+                <h2>If you switch tabs, the execution will be terminated.</h2>
+                <p>You can open <a href="https://www-m9.ma.tum.de/graph-algorithms/spp-floyd-warshall/index_en.html#" target="_blank" tabindex="-1">another browser window</a> to read the description in parallel.</p>
+            </div>
+        </div>
+        <div id="tab_tf2" aria-labelledby="ui-id-6" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
+            <div>
+                <div class="canvasWrapper">
+                    <canvas class="graphCanvas" id="tf2_canvas_graph" width="700" height="500">
+                        Your browser does not support HTML5 Canvas. Please use a modern browser, such as <a href="http://www.mozilla.org/de/firefox">Mozilla Firefox</a>
+                    </canvas>
+                    <div class="Legende" id="tf2_div_Legende">
+                        <h2 class="LegendeHeader"><button class="LegendeMin ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text"></span></button> Legend</h2>
+                        <div class="LegendeText">
+                            <table>
+                                <tbody><tr>
+                                    <td class="LegendeTabelle"><img src="./floyd_2_files/knoten.png" alt="Knoten" class="LegendeIcon"></td>
+                                    <td><span>Node</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="LegendeTabelle"><img src="./floyd_2_files/kante.png" alt="Knoten" class="LegendeIcon"></td>
+                                    <td><span>Edge with weight 50</span></td>
+                                </tr>
+                            </tbody></table>
+                        </div>
+                    </div>
+                    <div class="LegendeMinimized">
+                        <h2 class="LegendeHeader"><button class="LegendeMin ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text"></span></button> Legend</h2>
+                    </div>
+                </div>
+                <div id="tf2_div_statusWindow" class="statusWindow">
+                    <h2 class="">What's the cost of the edges?</h2>
+                    <div id="tf2_div_statusErklaerung">
+                        <p>
+                            You will see a final matrix of shortest path lengths between all pairs of nodes in the given graph. In this exercise, your goal is to assign the missing weights to the edges. To enter a weight, double click the edge and enter the value, then click "Save".
+                        </p>
+                        <h3>Distances of the Nodes:</h3>
+                        <table id="matrix">
+                        <tbody>
+                          <tr>
+                             <td></td>
+                             <td class="node_label">a</td>
+                             <td class="node_label">b</td>
+                             <td class="node_label">c</td>
+                             <td class="node_label">d</td>
+                             <td class="node_label">e</td>
+                             <td class="node_label">f</td>
+                             <td class="node_label">g</td>
+                             <td class="node_label">h</td>
+                          </tr>
+                          <tr class="table-row">
+                             <td class="node_label">a</td>
+                             <td>0</td>
+                             <td>∞</td>
+                             <td>∞</td>
+                             <td>∞</td>
+                             <td>∞</td>
+                             <td>∞</td>
+                             <td>∞</td>
+                             <td>∞</td>
+                          </tr>
+                          <tr class="table-row">
+                             <td class="node_label">b</td>
+                             <td>12</td>
+                             <td>0</td>
+                             <td>3</td>
+                             <td>12</td>
+                             <td>8</td>
+                             <td>2</td>
+                             <td>5</td>
+                             <td>10</td>
+                          </tr>
+                          <tr class="table-row">
+                             <td class="node_label">c</td>
+                             <td>9</td>
+                             <td>14</td>
+                             <td>0</td>
+                             <td>9</td>
+                             <td>5</td>
+                             <td>16</td>
+                             <td>11</td>
+                             <td>16</td>
+                          </tr>
+                          <tr class="table-row">
+                             <td class="node_label">d</td>
+                             <td>17</td>
+                             <td>22</td>
+                             <td>8</td>
+                             <td>0</td>
+                             <td>13</td>
+                             <td>24</td>
+                             <td>2</td>
+                             <td>7</td>
+                          </tr>
+                          <tr class="table-row">
+                             <td class="node_label">e</td>
+                             <td>4</td>
+                             <td>9</td>
+                             <td>12</td>
+                             <td>4</td>
+                             <td>0</td>
+                             <td>11</td>
+                             <td>6</td>
+                             <td>11</td>
+                          </tr>
+                          <tr class="table-row">
+                             <td class="node_label">f</td>
+                             <td>11</td>
+                             <td>4</td>
+                             <td>7</td>
+                             <td>16</td>
+                             <td>12</td>
+                             <td>0</td>
+                             <td>3</td>
+                             <td>8</td>
+                          </tr>
+                          <tr class="table-row">
+                             <td class="node_label">g</td>
+                             <td>∞</td>
+                             <td>∞</td>
+                             <td>∞</td>
+                             <td>∞</td>
+                             <td>∞</td>
+                             <td>∞</td>
+                             <td>0</td>
+                             <td>5</td>
+                          </tr>
+                          <tr class="table-row">
+                             <td class="node_label">h</td>
+                             <td>∞</td>
+                             <td>∞</td>
+                             <td>∞</td>
+                             <td>∞</td>
+                             <td>∞</td>
+                             <td>∞</td>
+                             <td>1</td>
+                             <td>0</td>
+                          </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div title="Exercise 2" class="tabIntroDialog">
+                <h2> What's the cost of the edges? </h2>
+                <p>
+                    In this table you can see the distances between nodes.
+                </p>
+                <p>
+                    Can you determine the missing costs of the edges? Simply double click on an edge in the drawing area and enter the correct cost.
+                </p>
+            </div>
+            <div id="tf2_div_confirmTabChange" title="Abort Exercise?" class="tabChangeWarningDialog">
+                <h2>If you switch tabs, you will lose all progress on the exercise.</h2>
+                <p>You can open <a href="https://www-m9.ma.tum.de/graph-algorithms/spp-floyd-warshall/index_en.html#" target="_blank" tabindex="-1">another browser window</a> to read the description in parallel.</p>
+            </div>
+        </div>
+        <div id="tab_tw" aria-labelledby="ui-id-7" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
+            <div id="tw_Accordion" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
+                <h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-accordion-header-active ui-state-active ui-corner-top ui-accordion-icons" role="tab" id="ui-accordion-tw_Accordion-header-0" aria-controls="ui-accordion-tw_Accordion-panel-0" aria-selected="true" tabindex="0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>What's the (pseudo)code of the algorithm?</h3>
+                <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active" id="ui-accordion-tw_Accordion-panel-0" aria-labelledby="ui-accordion-tw_Accordion-header-0" role="tabpanel" aria-expanded="true" aria-hidden="false" style="display: block;">
+                    <pre><code>Input: Weighted, undirected or directed graph G=(V,E) with weight function w, such that G contains no negative cycles.
+                    Output: Matrix D of shortest path lengths.</code></pre>
+                    <hr>
+                    <pre><code>
+BEGIN
+  FOR ALL v ∈ V
+    D[v][v] ← 0
+  FOR ALL (u,v) ∈ E
+    D[u][v] ← w(u,v)
+  FOR k from 1 to |V|
+    FOR i from 1 to |V|
+      FOR j from 1 to |V|
+        if D[i][j] &gt; D[i][k] + D[k][j]
+          D[i][j] ← D[i][k] + D[k][j]
+        end if
+END</code></pre>
+                </div>
+                <h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all ui-accordion-icons" role="tab" id="ui-accordion-tw_Accordion-header-1" aria-controls="ui-accordion-tw_Accordion-panel-1" aria-selected="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>How fast is this algorithm?</h3>
+                <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" id="ui-accordion-tw_Accordion-panel-1" aria-labelledby="ui-accordion-tw_Accordion-header-1" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
+                    <h2>Speed of algorithms</h2>
+                    <p>
+                        The "speed" of algorithms is usually being measured using the <strong>number of individual execution steps</strong> that are needed when running it.
+                    </p>
+                    <p>
+                        Individual execution steps could be (amongst others):
+                    </p>
+                    <ul>
+                        <li>
+                            Assignments – Assign value 20 to the node 1.
+                        </li>
+                        <li>
+                            Comparisons  – Is 20 greater than 23?
+                        </li>
+                        <li>
+                            Comparison and Assignment  – If 20 is greater than 15, let variable <var>n</var> be equal to 20.
+                        </li>
+                        <li>
+                            Simple arithmetic operations – Calculate 5 + 5
+                        </li>
+                    </ul>
+                    <p>
+                        Since it can be impractical to count these execution steps exactly, it is desirable to only find the <strong>order of magnitude</strong> of the number of steps. This approximation is also called the <strong>running time</strong> of the algrithm.
+                        Usually, it's particularly interesting to know how the running time relates to size of the input (here: Number of vertices and edges in the graph).
+                    </p>
+                    <h2>Running time of the Floyd-Warshall Algorithm</h2>
+                    <p>
+                        Assume the graph consist of <strong>n</strong> nodes. The Floyd-Warshall algorithm compares all possible paths in the graph between each pair of nodes. Three nested loops contain one operation that is executed in constant time.
+                    </p>
+                    <p>
+                        Each loop has n Iterations. Thus the <strong>total running time of the algorithm</strong> is <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax_SVG" id="MathJax-Element-1-Frame" role="math" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="6.14ex" height="2.651ex" viewBox="0 -856.8 2618.1 1133.5" style="vertical-align: -0.698ex; margin: 1px 0ex;"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use href="#MJMATHI-4F" x="0" y="0"></use><use href="#MJMAIN-28" x="768" y="0"></use><g transform="translate(1162,0)"><use href="#MJMATHI-6E" x="0" y="0"></use><use transform="scale(0.707)" href="#MJMAIN-33" x="855" y="513"></use></g><use href="#MJMAIN-29" x="2224" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-1">O(n^3)</script>, i.e. the algorithm runs in cubic time.
+                    </p>
+                    <p>
+                        A rigorous proof can be found in the relevant literature.
+                    </p>
+                </div>
+                <h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all ui-accordion-icons" role="tab" id="ui-accordion-tw_Accordion-header-2" aria-controls="ui-accordion-tw_Accordion-panel-2" aria-selected="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>Does the algorithm really find all shortest paths?</h3>
+                <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" id="ui-accordion-tw_Accordion-panel-2" aria-labelledby="ui-accordion-tw_Accordion-header-2" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
+                    <h2>A Proof by Induction</h2>
+                    <p>Induction hypothesis: After iteration <strong>p</strong> of the outer loop,all shortest paths that only contain <strong>{1, ..., p}</strong> will have been found.</p>
+                    <p>At initialization, wenn no iterations of the outer loop have been executed yet, each entry contains d[i][j], the shortest distance from i to j using no intermediate nodes: this is exactly the weight of edge (i,j).</p>
+                    <p>Before iteration <strong>p</strong> it holds that the shortest path Q from <strong>i</strong> to <strong>j</strong> only contains vertices from the set <strong>{1, ..., p-1}</strong></p>
+                    <p>
+                    In iteration <strong>p</strong> the length of Q is compared to the length of the new path R. R consists of R1 (path from <strong>i</strong> to <strong>p</strong> with intermediate nodes in <strong>{1, ..., p-1}</strong>) and R2 (path from <strong>p</strong> to <strong>j</strong> with intermediate nodes in <strong>{1, ..., p-1}</strong>). Either Q or R is then selected as the new shortest path.
+                    </p>
+                    <p>Therefore, the shortest path from <strong>i</strong> to <strong>j</strong> only containing nodes from <strong>{1, ..., p}</strong>:
+                    </p><ul>
+                        <li>
+                            either doesn't contain the node <strong>p</strong> and is thus equal to the path from the previous iteration
+                        </li>
+                        <li>
+                            or contains the node <strong>p</strong> and can thus be decomposed into paths from <strong>i</strong> to <strong>p</strong> and from <strong>p</strong> to <strong>j</strong>. These paths are equal to those in the previous iteration since they only contain nodes in
+                            <strong>{1, ..., p-1}</strong>.
+                        </li>
+                    </ul>
+                    <p>
+                        Therefore the following holds: After iteration <strong>p</strong>, all shortest paths that only contain nodes from <strong>{1, ..., p}</strong> will be found between all pairs of nodes..
+                    </p>
+                </div>
+                <h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all ui-accordion-icons" role="tab" id="ui-accordion-tw_Accordion-header-3" aria-controls="ui-accordion-tw_Accordion-panel-3" aria-selected="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>Where can I find more information about graph algorithms?</h3>
+                <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" id="ui-accordion-tw_Accordion-panel-3" aria-labelledby="ui-accordion-tw_Accordion-header-3" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;"><p>Other graph algorithms are explained on the <a href="http://www-m9.ma.tum.de/Allgemeines/GraphAlgorithmenEn">Website of Chair M9</a> of the TU München.</p>
+                <p>Furthermore there is an interesting book about shortest paths: <a href="http://www-m9.ma.tum.de/Ruth/WebHome">Das Geheimnis des kürzesten Weges</a></p>
+                <p><a href="http://www.ma.tum.de/Studium/StudieninteressierteEn">Studying mathematics at the TU München</a> answers all questions about graph theory (if an answer is known).</p>
+                </div>
+				<h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all ui-accordion-icons" role="tab" id="ui-accordion-tw_Accordion-header-4" aria-controls="ui-accordion-tw_Accordion-panel-4" aria-selected="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>A last remark about this page's goal and citations</h3>
+				<div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" id="ui-accordion-tw_Accordion-panel-4" aria-labelledby="ui-accordion-tw_Accordion-header-4" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;"><p>Chair M9 of Technische Universität München does research in the fields of discrete mathematics, applied geometry and the optimization of mathematical problems. The algorithms presented on the pages at hand are very basic examples for methods of discrete mathematics (the research conducted daily at the chair reaches far beyond that point). This page shall provide the possibility pupils and students to understand and fully comprehend the algorithms (which are of importance also in daily life).</p>
+				<p>To cite this page, please use the following information:</p>
+				<ul>
+				<li>Title: The Floyd-Warshall Algorithm
+				</li><li>Authors: Wolfgang F. Riedl, Aleksejs Voroncovs; Technische Universität München
+				</li><li>Link: <a href="https://www-m9.ma.tum.de/graph-algorithms/spp-floyd-warshall">https://www-m9.ma.tum.de/graph-algorithms/spp-floyd-warshall</a>
+				</li></ul>
+				</div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p class="Disclaimer">
+            IDP Project of Aleksejs Voroncovs at Chair M9 of Technische Universität München. 2015 | <a href="https://www-m9.ma.tum.de/graph-algorithms/spp-floyd-warshall/index_de.html">DE</a> |<a href="http://www-m9.ma.tum.de/Allgemeines/Rechtliches">Terms of Use</a> | <a href="http://www-m9.ma.tum.de/Allgemeines/Impressum">About us</a> | <a href="mailto:m.ritter@ma.tum.de?subject=M9-Web-Feedback">Suggestions</a>
+        </p>
+    </footer>
+    </div>
+
+<div id="mm-blocker" class="mm-slideout"></div></body></html>

@@ -1,0 +1,22 @@
+Good Problems Solutions:
+
+AD HOC:
+USACO GOLD APRIL SPLIT:
+Problem: http://usaco.org/index.php?page=viewproblem2&cpid=645
+Solution: Use left right split, NOTE!!!! You must use long long, everything declare as long long... -_- also vertical and horizontal too.
+
+USACO Training Gate:
+Problem: http://train.usaco.org/usacoprob2?a=8arM8zoR9Ey&S=fracdec
+Solution: Fractions -> Decimal. * 10 and keep track of remainder... remainder = memoize into array if repeated remainder = break. stringstream ss; ss << number. return ss.str()
+
+USACO SILVER 2015 JANUARY STAMPEDE:
+Problem: http://usaco.org/index.php?page=viewproblem2&cpid=511
+Solution: Wrong solution: Binarysearch order by two vectors. Correct Solution: Use sets... iterators!!! Lower bound, runs in logarithmic time! establish bounds and erase using iterators.
+
+USACO SILVER 2014 DECEMBER COWJOG:
+Problem: http://usaco.org/index.php?page=viewproblem2&cpid=493
+Solution: Start from back and delete keep track of the minimum distance :D, O(n) solution :D
+
+USACO TRAINING GATE CONTACT:
+Problem: http://train.usaco.org/usacoprob2?a=sZgZvkShki7&S=contact
+Solution: DP approach and bitwise operators... use bit manipulation to store the data. trick 1 use bool operator correctly with || in the case of equality ... case 2 read in continuously using while loop... case 3 No memory overflow, mem of size 10000

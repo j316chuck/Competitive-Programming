@@ -1,0 +1,26 @@
+10
+16
+17
+18
+19
+28
+29
+30
+31
+33
+36
+
+denisehmatsuoka@gmail.com
+ezawesomeeric@gmail.com
+pete.h.chong@gmail.com
+jasperelsley@gmail.com
+1598463699hd@gmail.com
+sarah.shih@yahoo.com
+williamchong256@gmail.com
+estherchang2002@yahoo.com
+djinnrox1132@gmail.com
+lin.vincentt@gmail.com
+
+
+My problem is the weighted set cover problem except you know that your sets have to be
+like have powers of 2 elements (1), (2), (3), (4), (5), (6)...(N), (1,2), (3,4), (5,6), (7,8), (9,10)....(1,2,3,4), (5,6,7,8)....etc.

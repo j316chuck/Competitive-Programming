@@ -1,0 +1,85 @@
+Good DP PROBLEMS: 
+
+Interval
+USACO FEBRUARY 2015 CBARN2:
+Problem statement: http://usaco.org/index.php?page=viewproblem2&cpid=622
+(Circular Barn, interval problem)
+Learned: Circular -> Simplify by rotating. Fix a constant left door/right door
+Interval DP, your DP[i][k] k can stand for last door.
+remember interval is 
+for(int len = 1; len <= L; len++){
+	for(int i = 0; i < N; i++){
+		/*
+		//This part can get fun it can go both ways!!!
+		for(int j = 0; j < i; j++){
+			dp[length][last position]; 0 -> i calculate;
+		}
+		//OR
+		for(int j = i+1; j <= N; j++){
+			dp[i][j] = length of dp[length][last pos] 0-> N calculate;
+		} 
+		*/
+	}
+}
+
+POJ 1160 POST OFFICE:
+Problem Statement: http://poj.org/problem?id=1160
+Learned: cost function must be established (2 post offices at cost[i][j] at positions i, j) cost[i][j] += min(dist(i, k), dist(k, j))
+dp-interval: best[i][j] i = last village, j = number of offices. Base case: best[i][j] = double for loop iteration of distances.
+Recurrence relation: best[i][j] = min(best(i,j), best(k,j-1)+cost(k,i)). Always think of problem in terms of end position and what you need to get there
+
+Classic/Bottom Up:
+USACO DECEMBER 2016 GUR VS HOL:
+Problem statement: http://usaco.org/index.php?page=viewproblem2&cpid=670
+classical DP, 2 DP though
+Learned: DP twice through the object.
+
+USACO JANUARY 2016 ANGRY COWS:
+Problem Statement: http://usaco.org/index.php?page=viewproblem2&cpid=597
+Learned: Left, right sweep. Use reverse vector to simplify computation
+
+USACO TRAINING 2.3 COW PEDIGREES:
+Problem Statement: http://train.usaco.org/usacoprob2?a=tVqvF7gJRy3&S=nocows
+Learned: Trees = constructed of node and left and right tree. dp structure [i][j] i = height j = nodes. 
+table[i][j] = table [i-1][k] * table[i-1][j-k-1] + table [i-1][k] * small[i-1][j-k-1] + table[i-1][k] * small[i-1][j-k-1]
+
+USACO FEBRUARY 2015 COW HOPSCOTCH:
+Problem Statement: http://usaco.org/index.php?page=viewproblem2&cpid=530 (Time 25 minutes!!!)
+Learned: Not all graph problems = graph use dp, DP[i][j] = sum of all previous dp[r][c] where r < i and c <j , 10^8 definitely okay if only 1-2 operations. 
+
+Codeforces 372B: Rectangle Problem
+Problem Statement: http://codeforces.com/contest/118/problem/D
+Learned: use %1d to read in input, dp[a][b][c][d] = dp[a][b][c-1][d]+dp[a][b][c][d-1]
+-dp[a][b][c-1][d-1]; aka process all 4 parts. increase a b, c, d;add in last part by using int r = d-b+1 and looping from c-> a; r = d-b+1; (if d == b) we need 1 loop
+(r < row[i][d]? r: row[i][d]. IMPORTANT IS INITIALIZATION!!! Initialize all 0 = good :D
+Rectangle = rotate, use prefix sums/rectangle addition, O(n^3) dynamic/greedy poj approach
+or use codeforces solution...
+
+Codeforces 118D: Caesor's Legions
+Problem: http://codeforces.com/problemset/problem/118/D
+Learned: Debugging = Read problem, check base cases and initial conditions/edge cases... gg, 
+DP[i][j][0]... transition states simple use general recursive formula. Make sure you do all three
+parts of DP!!!
+
+Codeforces 245H: Hashing + DP
+Problem: http://codeforces.com/contest/245/status/H/page/3?order=BY_PROGRAM_LENGTH_ASC
+Learned: Hashing can be used to find palindromes... also you can find palindromes through simple
+DP = pal[i][j] = (str[i] == str[j] && pal[i+1][j-1]) similarly use same dp pattern
+to find the cost of # of palindromes.... idk why but my solution's too slow lol gg
+
+
+Memoization
+
+USACO JANUARY 2016 RADIO CONTACT:
+Problem Statement: http://usaco.org/index.php?page=viewproblem2&cpid=598
+Learned: Use map to simplify the string to int coordinates, long long memo 1000 1000 okay, use vector coordinates/positions to memoize and solve.
+
+USACO DECEMBER 2015 MARATHON: 
+Problem Statement: http://usaco.org/index.php?page=viewproblem2&cpid=492
+Learned: USE MEMOIZATION FOR BASIC PROBLEMS IF YOU CAN. IF N = 1000 YOU CAN USE MEMOIZATION mem[1000][1000] NO PROBLEM!!!! mem[i][j] i = start j = number of points left; 
+
+USACO FEBRUARY 2013 SCODE:
+Problem Statement: http://usaco.org/index.php?page=viewproblem2&cpid=399
+Learned: You must simplify your recursive calls. You can simplify by using map.
+Memoization can be correct sometimes!!!! You can simplify also too by using just one for loop!!!
+recursion come on man. 

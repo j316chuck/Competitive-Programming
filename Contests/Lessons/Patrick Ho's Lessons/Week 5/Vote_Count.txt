@@ -1,0 +1,10 @@
+3
+Coffee
+Chocolate
+Tea
+5
+Coffee 10
+Tea 35
+Soup 7
+Chocolate 10
+Coffee 25
