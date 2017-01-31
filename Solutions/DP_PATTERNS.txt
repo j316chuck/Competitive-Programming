@@ -1,6 +1,7 @@
 Good DP PROBLEMS: 
 
 Interval
+
 USACO FEBRUARY 2015 CBARN2:
 Problem statement: http://usaco.org/index.php?page=viewproblem2&cpid=622
 (Circular Barn, interval problem)
@@ -27,6 +28,12 @@ Problem Statement: http://poj.org/problem?id=1160
 Learned: cost function must be established (2 post offices at cost[i][j] at positions i, j) cost[i][j] += min(dist(i, k), dist(k, j))
 dp-interval: best[i][j] i = last village, j = number of offices. Base case: best[i][j] = double for loop iteration of distances.
 Recurrence relation: best[i][j] = min(best(i,j), best(k,j-1)+cost(k,i)). Always think of problem in terms of end position and what you need to get there
+
+USACO 2013 November Silver:
+Problem Statement: http://usaco.org/index.php?page=viewproblem2&cpid=345
+Learned: O(N^3) algorithm can be made faster... by using/storing your position in k. use pair to be faster... in coding... don't repeat yourself. use a while loop to break faster. Key observation is dp[i][j]/max min. absolute value, and reverse
+AC: 2 Tries -1 test case
+Mistakes: Question misunderstand, algorithm correct :D, implementation could be improved
 
 Classic/Bottom Up:
 USACO DECEMBER 2016 GUR VS HOL:

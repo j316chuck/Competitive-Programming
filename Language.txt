@@ -31,6 +31,10 @@ Vector:
 int sp = Lower_bound(A.begin(), A.end(), make_pair(B,0))-A.begin(); //lowest position of a sorted vector with value B (in pair)
 min(make_pair(A,B), make_pair(B, C)) returns min of pair...
 vector.erase(j); j-- (make sure to decrease counter of j) use erase sparingly.
+vector.erase(v.begin() + j) j is position
+lower_bound(v.begin(), v.end(), val)
+lower_bound is value greater than or equal to....
+You can use vector as set.
 R.resize(R.size()-T.size()) -> decreases vector by size T.size();
 A.begin() is iterator...
 
@@ -97,6 +101,14 @@ bool cmp(int a, int b){
 }
 
 sort(PI.begin(), PI.end(), cmp);
+
+int arr[5] = {4, 1, 3, 6, 2};
+string arr1[5]={"a1","b1","c1","d1","e1"};
+
+int indices[5]={0,1,2,3,4};
+sort(indice, indices+5, cmp);
+
+then string arr1[indice[i]] = 1 b1;
 
 bool operator<(Type other) const
     {
