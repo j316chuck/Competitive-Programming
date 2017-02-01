@@ -7,6 +7,4 @@ POJ DP last 3
 
 Circular Barn February 2016:
 
-
-
-
+Perimeter: February 2013: http://usaco.org/index.php?page=viewproblem2&cpid=244 Use maps and other cool stuff.

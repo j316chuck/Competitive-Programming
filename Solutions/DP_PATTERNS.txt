@@ -1,5 +1,10 @@
 Good DP PROBLEMS: 
 
+General Tips:
+Subproblems -> Recurrence -> Base Case
+Don't be afraid to use more than 1 data structure/pairs
+Always make simple observation of data 1st which will determine subproblems -> recurrence.
+
 Interval
 
 USACO FEBRUARY 2015 CBARN2:
@@ -74,6 +79,10 @@ Learned: Hashing can be used to find palindromes... also you can find palindrome
 DP = pal[i][j] = (str[i] == str[j] && pal[i+1][j-1]) similarly use same dp pattern
 to find the cost of # of palindromes.... idk why but my solution's too slow lol gg
 
+USACO March 2013: Cow Run
+Problem: http://usaco.org/current/data/sol_cowrun_mar13.html
+Learned: The set of cows = consecutive sorted list... Thus, you can DP left+1, right to left, right or left, right-1 to left, right... use pairs to simplify transformations.
+Upsolve: Yes 45 min approximately
 
 Memoization
 
