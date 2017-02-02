@@ -1,0 +1,9 @@
+Copying: 
+
+Always Pass by Reference:
+When you write y = x, you are telling the Java interpreter to copy the bits from x into y. This Golden Rule of Equals (GRoE) is the root of all truth when it comes to understanding our Walrus Mystery.
+
+8 Primitive Types: 
+byte, short, int, long, float, double, boolean, char.
+
+everything else is pass by reference
