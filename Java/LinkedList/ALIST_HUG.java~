@@ -27,6 +27,7 @@ public class AList<Item> {
     	if (size == items.length) {
     		resize(size * RFACTOR);
     	}
+        
 
     	items[size] = x;
     	size = size + 1;

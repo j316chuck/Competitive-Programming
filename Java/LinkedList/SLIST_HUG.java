@@ -35,7 +35,7 @@ public class SList {
 	/** Gets the front item of the list. */
 	public int getFront() {
 		return sentinel.next.item;
-	}
+	
 
 	/** Puts an item at the back of the list. */
 	public void insertBack(int x) {

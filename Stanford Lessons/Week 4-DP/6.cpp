@@ -32,7 +32,7 @@ int matrix[101][101];
 
 int main(){
 
-    //freopen("poj_1050.in", "r", stdin);
+    freopen("poj_1050.in", "r", stdin);
     int n;
     cin>>n;
     for(int i = 0; i < n; i++){

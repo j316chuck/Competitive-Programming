@@ -1,0 +1,25 @@
+12:29:51 **** Incremental Build of configuration Debug for project Code ****
+make all 
+Building file: ../debug.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"debug.d" -MT"debug.o" -o "debug.o" "../debug.cpp"
+../debug.cpp: In function ‘int main()’:
+../debug.cpp:59:31: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for(int i = 0; i < G.size(); i++){
+                               ^
+../debug.cpp:76:14: warning: value computed is not used [-Wunused-value]
+        start == it->first;
+              ^
+../debug.cpp:99:38: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < tree[u].size(); i++){
+                                      ^
+Finished building: ../debug.cpp
+ 
+Building target: Code
+Invoking: Cross G++ Linker
+g++  -o "Code"  ./debug.o   
+Finished building target: Code
+ 
+
+12:29:52 Build Finished (took 1s.429ms)
+

@@ -99,3 +99,8 @@ Problem Statement: http://usaco.org/index.php?page=viewproblem2&cpid=399
 Learned: You must simplify your recursive calls. You can simplify by using map.
 Memoization can be correct sometimes!!!! You can simplify also too by using just one for loop!!!
 recursion come on man. 
+
+USACO NOVEMBER 2012 BBREEDS:
+http://usaco.org/current/data/sol_bbreeds.html
+Learned: Use memoization. You can simplify O(N^3) to O(N^2) usually. You must learn how to simplify data structures...
+f(n, a, b) n is where you are at, a = how many guer b = how many holstein.

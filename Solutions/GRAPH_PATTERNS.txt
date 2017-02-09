@@ -64,3 +64,7 @@ USACO APRIL 2015 BUFFET:
 Problem: http://usaco.org/current/data/sol_buffet_silver.html
 Learned: This problem is really hard... You have to use DP and DIJSTRKA TO SOLVE. Cool programming trick of sorting learned...
 Sort by increasing Q/cost. DP[1] DP[2] ... etc. Then use dijstrka to find shortest path and iterate. O(N^2) algorithm...
+
+USACO APRIL 2013 
+http://usaco.org/index.php?page=viewproblem2&cpid=433
+Learned: Shortest path can be directional, mst cannot, shortest path cannot be negative. shortest path calculates shortest distance from one point to all the others. You can reverse the direction to calculate shortest path from N to all the vertices. Write functions to simplify coding... do not if you do not have time. 

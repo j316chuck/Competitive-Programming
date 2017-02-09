@@ -6,9 +6,9 @@ public class DLList<BleepBlorp> {
         public IntNode prev;
         public BleepBlorp item;
         public IntNode next;
-        ...
+        
     }
-    ...
+    
 }
 
 Integer, Double, Character, Boolean, Long, Short, Byte, or Float, String

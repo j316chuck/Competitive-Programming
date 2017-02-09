@@ -1,3 +1,6 @@
+import org.junit.Test;
+import static org.junit.Assert.*;
+
 public static testing{
 	public static int indexofsmallest(String[] inputs, int k){
 		int mindex = k;
@@ -21,5 +24,11 @@ public static testing{
 		//org.junit.Assert.assertEquals(expected, actual)
 		//import org.junit.Test;
 		//import static org.junit.Assert.*;
+	}
+
+	//syntax
+	@Test
+	public void testSort() {
+	  ...
 	}
 }

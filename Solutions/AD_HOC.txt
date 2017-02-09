@@ -20,3 +20,17 @@ Solution: Start from back and delete keep track of the minimum distance :D, O(n)
 USACO TRAINING GATE CONTACT:
 Problem: http://train.usaco.org/usacoprob2?a=sZgZvkShki7&S=contact
 Solution: DP approach and bitwise operators... use bit manipulation to store the data. trick 1 use bool operator correctly with || in the case of equality ... case 2 read in continuously using while loop... case 3 No memory overflow, mem of size 10000
+
+USACO RATIOS: 
+Problem: http://train.usaco.org/usacoprob2?a=NapT5gvnKqA&S=ratios
+Learned: Use DP. 100 100 100 x 300 early termination. you cannot do 6 % 0 or 0/0 chuck... you also need to check for extra cases. Never forget 0. Chuck you need to also learn pp and coding better. #vectors #bool operators #scanf. 
+
+USACO RIVER:
+http://usaco.org/index.php?page=viewproblem2&cpid=284
+Learned: whenever cycle pops up you should think of tortoise vs hare implementation and modulo to simplify the problem. Or to simplify the equation you can always do tortoise simplification.
+
+USACO 
+http://usaco.org/current/data/sol_fairphoto_silver.html
+Learned: Make observations. Observation 1. prefix sum. Observation 2. greedy we can take the largest value smaller than w. Observation 3. even odd to win. O(NlogN)
+Dijstrka = O(M+N)log N bfs = O(nlogN) with visit = #of states (no negatives)
+prim = O(v^2) floyd = O(N^3) kruskal = O(MlogN) (bidirectional only)

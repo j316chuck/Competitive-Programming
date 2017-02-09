@@ -1,0 +1,131 @@
+11:33:54 **** Build of configuration Debug for project First_Project ****
+make all 
+Building file: ../Hello.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Hello.d" -MT"Hello.o" -o "Hello.o" "../Hello.cpp"
+Finished building: ../Hello.cpp
+ 
+Building target: First_Project
+Invoking: Cross G++ Linker
+g++  -o "First_Project"  ./Hello.o   
+Finished building target: First_Project
+ 
+11:34:05 **** Incremental Build of configuration Debug for project First_Project ****
+make all 
+make: Nothing to be done for `all'.
+11:37:55 **** Incremental Build of configuration Debug for project First_Project ****
+make all 
+make: Nothing to be done for `all'.
+11:37:58 **** Incremental Build of configuration Debug for project First_Project ****
+make all 
+make: Nothing to be done for `all'.
+11:57:55 **** Build of configuration Debug for project Code ****
+make all 
+Building file: ../Hello.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Hello.d" -MT"Hello.o" -o "Hello.o" "../Hello.cpp"
+Finished building: ../Hello.cpp
+ 
+Building target: Code
+Invoking: Cross G++ Linker
+g++  -o "Code"  ./Hello.o   
+Finished building target: Code
+ 
+12:12:44 **** Incremental Build of configuration Debug for project Code ****
+make all 
+Building file: ../debug.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"debug.d" -MT"debug.o" -o "debug.o" "../debug.cpp"
+Finished building: ../debug.cpp
+ 
+Building file: ../dijstrka.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"dijstrka.d" -MT"dijstrka.o" -o "dijstrka.o" "../dijstrka.cpp"
+../dijstrka.cpp:1:1: error: ‘queue’ does not name a type
+ queue<int> q;
+ ^
+../dijstrka.cpp:2:7: error: expected constructor, destructor, or type conversion before ‘(’ token
+ memset(D, -1, sizeof(D));
+       ^
+../dijstrka.cpp:3:1: error: ‘q’ does not name a type
+ q.push(u);
+ ^
+../dijstrka.cpp:4:1: error: ‘D’ does not name a type
+ D[u] = 0;
+ ^
+../dijstrka.cpp:5:1: error: expected unqualified-id before ‘while’
+ while (!q.empty()) {
+ ^
+make: *** [dijstrka.o] Error 1
+12:12:55 **** Incremental Build of configuration Debug for project Code ****
+make all 
+Building file: ../dijstrka.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"dijstrka.d" -MT"dijstrka.o" -o "dijstrka.o" "../dijstrka.cpp"
+../dijstrka.cpp:1:1: error: ‘queue’ does not name a type
+ queue<int> q;
+ ^
+../dijstrka.cpp:2:7: error: expected constructor, destructor, or type conversion before ‘(’ token
+ memset(D, -1, sizeof(D));
+       ^
+../dijstrka.cpp:3:1: error: ‘q’ does not name a type
+ q.push(u);
+ ^
+../dijstrka.cpp:4:1: error: ‘D’ does not name a type
+ D[u] = 0;
+ ^
+../dijstrka.cpp:5:1: error: expected unqualified-id before ‘while’
+ while (!q.empty()) {
+ ^
+make: *** [dijstrka.o] Error 1
+12:14:15 **** Incremental Build of configuration Debug for project Code ****
+make all 
+Building target: Code
+Invoking: Cross G++ Linker
+g++  -o "Code"  ./debug.o   
+Finished building target: Code
+ 
+12:28:20 **** Incremental Build of configuration Debug for project Code ****
+make all 
+Building file: ../debug.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"debug.d" -MT"debug.o" -o "debug.o" "../debug.cpp"
+../debug.cpp: In function ‘int main()’:
+../debug.cpp:59:31: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for(int i = 0; i < G.size(); i++){
+                               ^
+../debug.cpp:76:14: warning: value computed is not used [-Wunused-value]
+        start == it->first;
+              ^
+../debug.cpp:99:38: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < tree[u].size(); i++){
+                                      ^
+Finished building: ../debug.cpp
+ 
+Building target: Code
+Invoking: Cross G++ Linker
+g++  -o "Code"  ./debug.o   
+Finished building target: Code
+ 
+12:29:51 **** Incremental Build of configuration Debug for project Code ****
+make all 
+Building file: ../debug.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"debug.d" -MT"debug.o" -o "debug.o" "../debug.cpp"
+../debug.cpp: In function ‘int main()’:
+../debug.cpp:59:31: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for(int i = 0; i < G.size(); i++){
+                               ^
+../debug.cpp:76:14: warning: value computed is not used [-Wunused-value]
+        start == it->first;
+              ^
+../debug.cpp:99:38: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < tree[u].size(); i++){
+                                      ^
+Finished building: ../debug.cpp
+ 
+Building target: Code
+Invoking: Cross G++ Linker
+g++  -o "Code"  ./debug.o   
+Finished building target: Code
+ 
