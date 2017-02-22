@@ -1,5 +1,11 @@
 Good Graph Problems
 
+Tree:
+
+POJ 1308
+http://poj.org/problem?id=1308
+Learned: Map<int, int> can use find because initalize to be 0... else cannot use find because vector is not 0 have to do map.find() == map.end(); Learned that tree = V = E+1... all you need to calculate... Kruskal and prim are minimum spanning TREE. also dijstrka calculates shortest path from one point to all points!!!
+
 MST:
 
 KRUSKAL:

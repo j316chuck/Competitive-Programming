@@ -1,0 +1,70 @@
+Good Graph Problems
+
+Tree:
+
+KRUSKAL:
+
+USACO FEBRUARY GOLD 2016: Fenced In
+Problem Statement: http://usaco.org/index.php?page=viewproblem2&cpid=623
+Learned: Do not need all data structures to use kruskal or prim. Solve by turning interior squares into vertices, distance between squares as edges... This problem is a cool Kruskal application.
+Can have 4 million as integer vector weird... can also have 4 million as pp vector weird...
+Can also have 2 second time limit yay 10^8 operations yay.
+Learned that Kruskal works for most can get up to 8/10 :D
+However, you can use an optimization that goes by rows and checks if can kruskal... sort by Vertical and Horizontal heights.
+
+PRIM:
+
+USACO FEBRUARY GOLD 2015: SUPERBULL
+Problem Statement: http://usaco.org/index.php?page=viewproblem2&cpid=531
+Learned: DENSE GRAPHS = PRIM!!!! Do not use Kruskal when there are greater than 500,000 edges!!!! sorting/inserting into vector = too computationally heavy.
+Also, prim = easy implementation. O(V^2) one.
+WAIT JK I LIED KRUSKAL WORKS FOR 4,000,000/2 edges or 2000 x 2000 graph.... weird. vector< pair<int, pair<int, int> > okay for 2 million edges... 
+Don't implement retarded code with set and early termination in KRUSKAL
+
+DSU:
+UVA 10158-War
+Problem: https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&category=133&problem=1099&mosmsg=Submission+received+with+ID+18589054
+Solution-Union Find algorithm, DSU with twist, keep track of two sets
+enemies and friends = implement an array twice the size. Array A friends, Array B enemies;
+
+USACO GOLD APRIL CLOSNG:
+Problem: http://usaco.org/index.php?page=viewproblem2&cpid=646
+Solution: USE DSU, BACKWARDS!!!!!!!!! Note: adjacency matrix must be added correctly, also 200,000 demands O(NlogM solution)...
+Shortest Path
+
+FLOYD:
+
+USACO TRAINING COW TOURS:
+Problem Statement:http://train.usaco.org/usacoprob2?a=8arM8zoR9Ey&S=cowtour
+Learned: Trick-Unconnected graphs may have higher max-cost than new connected graph. Use Floyd to calculate the two graphs individual weights/paths first.
+Store each nodes longest path in an array. Combine the two graphs by iterating through all the possible conditions
+
+DIJSTRKA:
+
+CF 59E:
+Problem Statement: http://codeforces.com/problemset/problem/59/E
+Learned: Trick ios_base(syncwithstdio(false)), use map long long to check for bad visited, type cast Long long of integers if the input is too big, 
+use 3000 x 3000 okay, use graph[u][v] visited to check for all the nodes/edges
+
+USACO DECEMBER 2016 LASERS:
+Problem Statement: http://usaco.org/index.php?page=viewproblem2&cpid=671
+Learned: Typical BFS too slow N = 100000. We must use a map to map<int, vector<int> > to simulate the graph where we are transitioning between ints
+and the points where the graph can next go. XtoY or YtoX. set visited<pii> to make sure not to visit same point twice.  
+
+USACO DECEMBER 2015 DREAMS: 
+Problem Statement: http://usaco.org/index.php?page=viewproblem2&cpid=575
+Learned: Shortest path problem when asking you to go from certain part of matrix to other part. Use int dr[] = {-1, 0, 1, 0};
+int dc[] = {0, -1, 0, 1}; do dijstrka with additional conditions!
+ 
+USACO January 2015 COWROUTE: 
+Problem Statement: http://usaco.org/index.php?page=viewproblem2&cpid=512
+Learned: You can use min on pairs, pair<long long, int> use matrix djistrka which is faster in dense graphs
+
+USACO APRIL 2015 BUFFET:
+Problem: http://usaco.org/current/data/sol_buffet_silver.html
+Learned: This problem is really hard... You have to use DP and DIJSTRKA TO SOLVE. Cool programming trick of sorting learned...
+Sort by increasing Q/cost. DP[1] DP[2] ... etc. Then use dijstrka to find shortest path and iterate. O(N^2) algorithm...
+
+USACO APRIL 2013 
+http://usaco.org/index.php?page=viewproblem2&cpid=433
+Learned: Shortest path can be directional, mst cannot, shortest path cannot be negative. shortest path calculates shortest distance from one point to all the others. You can reverse the direction to calculate shortest path from N to all the vertices. Write functions to simplify coding... do not if you do not have time. 

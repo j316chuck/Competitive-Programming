@@ -1,0 +1,24 @@
+BFS
+-find the fewest number of steps (or the shortest path)
+-all transitions have the same cost of 1 (sometimes it may be equal to another number)
+-Often there is given a N x M table (formed of N lines and M columns) where certain cells are passable and others are impassable, and the target of the problem is to find the shortest time/path needed to reach the end point from the start one. 
+Constraint-Because BFS complexity is in most cases linear (sometimes quadratic, or N logN), constraints of N (or M) could be high – even up to 1 million. (1000 x 1000)
+
+Implementation:
+-In most cases, these problems will ask you to perform some step by step, straight-forward tasks. 
+Constraint-Their constraints are not high, and not too low
+
+DFS/Brute force/backtracking
+-Find all possible situations
+-limits are very low (50x50)
+
+Dynamic Programming
+-Usually O(n^2) and O(n^3) okay.
+-Usually a transition to go from state to state.
+
+Maximum Flow:
+-Constraint = O(n^3) or O(n^4)
+-should be able to create graph with edges
+-have to find maximum value of something
+
+
