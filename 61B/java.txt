@@ -43,6 +43,7 @@ Casting and Classes
 2. Compiler allows calls based on static type.
 3.  Overridden non-static methods are selected at run time based on dynamic type. @Override (= changes the dynamic type regardless of new)
 Everything else is based on static type (including assignment and new instance methods), including overloaded methods. Note: No overloaded methods for problem at left.
+(IF STATIC USES STATIC METHOD THEN)
 4. To use subclass method otherwise you must typecast
 5. You can type cast any superclass static type into its subclass (not necessarily if the superclass static type has a dynamic type of different class)
 6. Method type is the declared type in their function
@@ -51,11 +52,18 @@ Everything else is based on static type (including assignment and new instance m
 9. Arrays hold reference to value of variable
 (can do temp reassignment)
 10. You always initialize abstract and interface objects by their subclasses.
+11. Signatures can take subclasses. public int method(Object obj) (can pass in anything)
 
 Examples: 
 a = c;
-12 ((Cat) a).greet(); // (D) Cat Garfield says: Meow!
-13 a.greet(); // (E) Cat Garfield says: Meow!
+((Cat) a).greet(); // (D) Cat Garfield says: Meow!
+a.greet(); // (E) Cat Garfield says: Meow!
+
+Cannot Do
+Animal a = new Dog();
+Dog d = a; a is animal
+Can Do
+d = (Dog) a; totally fine!!!
 
 a = new Dog("Spot", 10);
 d = a; // Error
@@ -169,5 +177,10 @@ public int compareTo(Dog uddaDog) {
 }
 Dog largest = Arrays.sort(dogs);d
 
+Compile vs Runtime Error:
+1. discountVariable = (DiscountSale) saleVariable; (run-time error)
+2. discount Variable = saleVariable (compile error)
+3. Compile Error = 1. syntax errors, type checking error. 
+4. Run Time Error: Division by zero, referencing a null pointer, running out of memory, trying to open a file not there, casting wrong. array list out of bounds. (Indexout of bounds) (Casting) (overflow) (out of memory)
 
 

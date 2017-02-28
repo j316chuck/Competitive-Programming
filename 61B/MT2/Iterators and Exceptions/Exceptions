@@ -1,0 +1,57 @@
+Exceptions:
+1. Implicit exceptions... when Java throws an exception when your code runtime erros.
+2. We can throw explicit exceptions by using syntax throw
+Example: throw new IllegalArgumentExcpetion("Key" + key + "does not exist in map) (new RuntimeException()); is an object
+3. Throw exception if memory overflow, cast wrong, reference wrong array index, null pointer access. 
+Exceptions:
+
+Unchecked Exceptions (Runtime Exceptions)
+ArrayIndexOutOfBoundsException
+ClassCastException
+IllegalArgumentException (method does not have/arguments don't match)
+IndexOutOfBoundsException
+NullPointerException
+
+Checked Exceptions
+ClassNotFoundException
+NoSuchMethodException
+InstantiationException //try to create abstract class
+IOException
+
+Catch:
+syntax: try {
+d.recesivePat();
+d.receivePat();
+} catch (Exception e){
+	System.out.println("Tried to pat: " + e);
+}
+1. Code continues to run
+2. When an exception fails it descends the call stack. 
+If nothing catches it then it errors. 
+Call stack is list of functions called... 
+
+
+Checked vs Unchecked:
+1. any subclass of runtime exception or Error is unchecked (assertion or arrayindex etc). 
+2. These programs compile but don't run...
+3. Everything else like IOException, etc. are checked and program won't even compile (they must be handled by exceptions)
+4. You can satisfy compiler by 
+catch: use a catch block or
+specify: use ... throws IOException keyword
+Syntax: public static void guglate() throws IOExcpetion{
+	... throws new IOexception("hi");
+}
+5. If method uses a dangerous method it becomes dangerous
+Example:
+public static void main(String[] args) {
+  try {
+    gulgate();
+  } catch(IOException e) {
+    System.out.println("Averted!");
+  }
+}
+public static void main(String[] args)
+   	throws IOException {
+	  gulgate();
+} 
+

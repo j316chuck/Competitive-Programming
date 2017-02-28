@@ -1,0 +1,42 @@
+Packages:
+1. put package name at top of file
+2. naming = ug.joshh.animal .... . represents /
+3. Used from class in same file use simple name else use canonical name
+
+To use packages:
+1. import ug.joshh.animal.*; or import ug.joshh.animal.Dog;
+2. Use the later. We can now use simple name
+3. Avoid using default packages...
+4. Create package = file project structure -> artifacts -> jar -> from modules with dependencies -> ok -> build artifacts...
+
+Access Control
+1. public = everywhere
+2. package private or default or nothing = only in package and class
+3. private = only in class
+4. protected = packages and subclasses and current class
+5. reminder interfaces are always public
+6. (All classes without packages are under same (unnamed) default package)
+7. to import static methods you must import static CreationUtils.hirsute.
+8. Confusing Trick: Cannot create objects of static type package private
+outside of package but can still make dynamic type with acceptable object.
+9. No subpackages
+
+Equals vs == 
+1. == is reference to memory location
+2. To compare arrays use Arrays.deepEquals()
+3. To compare objects/equality use Arrays.equals();
+4. Primitives can use ==
+
+
+Equals functions must take an object argument
+Object[]
+== tricks
+
+1. if(this == x) return true;
+2. if(x == null) return false;
+if(this.getClass() != X.getClass()) return false
+3. Date that = (Date) x
+if (this.day != that.day) return false;
+if(this.month != that.month) return false;
+if (this.year != that.year) return false;
+return true;
