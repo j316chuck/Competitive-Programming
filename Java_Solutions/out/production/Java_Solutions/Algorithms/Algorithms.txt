@@ -1,0 +1,63 @@
+DFS:
+Conditions: Graph problem, traversals
+Run Time: 100 x 100 = max usually, (can be O(n) if floodfill)
+Indications: Small graph, traverse all possibilities, find all possible sequences
+Other Notes: Construct graph/determine what to dfs (hard), dfs (easy), often memoize (medium), floodfill!
+(You can return a value), (You can also choose to relax or not relax the recursion)
+
+BFS:
+Conditions: Graph problem, traversals
+Run Time: O(N) or O(NlogN) Up to 1000 x 1000
+Indications:  SHORTEST PATH!!!!! indications include same transition state costs
+Other Notes: Construct graph (hardest part), put into queue (easy), traverse (medium)
+
+Topological Sort:
+Conditions: (Directed Acyclic Graph), Graph Problem, Find a linear ordering... Can make it best ordering with dfs approach...
+Run Time: O(E+V)
+Indications: Given a specific ordering!!! Find a linear ordering of vertices...
+Other Notes: Use queue based approach ... or you can use recursive based approach.
+(February 2013 msched)
+
+Prim:
+Conditions: Can have negative weights, Cannot be directed graph!
+Run Time: O(m log n) (Slower than prim)
+Indications: Minimum Cost, All components (Vertices covered)! Find the minimum spanning tree, find total cost of going from point a back to point a
+Other Notes: (It is a tree) V-1 edges. Union find algorithm! can do size[f(y)]+=size[f(x)]
+
+Kruskal:
+Conditions: Can have negative weights, Cannot be directed graph!
+Run Time: O(n^2) or O(mlogn) on implementation
+Indications: Minimum Cost, All components (Vertices covered)! Find the minimum spanning tree, find total cost of going from point a back to point a
+Other Notes: Use when you can use 2d matrix!!!
+
+Euler's Tour:
+
+SCC (Kosanraju): (If you have time learn Tarjan's)
+Conditions: Directed graph. should be cyclic, (not bidirectional)
+Run Time: O(n+m) running time x 2
+Indications: Find strongly connected components, connected subgraphs, how many graphs can go from one to the other
+Other Notes: comes out in topological sorting
+
+Dijstrka:
+Conditions: Can be bidirectional or directed graph, cannot have negative weights!
+Run Time:
+Indications:
+Other Notes: O(N) O(N^2) or O(NlogN)
+
+Standard DP:
+Conditions:
+Run Time:
+Indications:
+Other Notes:
+
+Combinatorial DP:
+Conditions:
+Run Time:
+Indications:
+Other Notes:
+
+Interval DP:
+Conditions:
+Run Time:
+Indications:
+Other Notes:
