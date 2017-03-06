@@ -1,0 +1,25 @@
+Packages.
+Good: Additional levels of hiding, Gives structure to directories on your computer, canonical names for things.
+Bad: confusing for compilation and executoin
+
+Static Type checking
+Good: Avoid type errors. Faster!
+Bad: Code is more verbose we have to use generics
+
+Inheritance: 
+Good: Interface inheritance allows subtype polymorphism. code reuse
+Bad: easy to write complicated code, and hard to debug.
+
+API (practice writing it for future) (do a good job in design at least 2 hours) = good code 5 hours
+1. syntactic = syntax met
+2. semantics = english description of what each constructor and method does
+3. Good API's:
+Structure: what goes where
+Simplicity: what does what
+Helper functions: how
+Types: hiding details is important!!!!! 
+use delegation approach if you can where you create objects (private)
+
+extension: extends 
+delegation: creates another variable
+adaptation: uses constructor to create another variable

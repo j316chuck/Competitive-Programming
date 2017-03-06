@@ -1,0 +1,47 @@
+Iterators!!!
+Use in main method
+1. List<Integer> friends = new ArrayList<Integer>();
+Iterator<Integer> seer = friends.iterator();
+while(seer.hasNext()){ System.out.println(seer.next());}
+2. Compiler first checks if List interface has an interator method (line 1)
+Compiler then checks if the iterator iterface has a next/hasNext() methods). (line 2)
+3. List extends Iterable interface, has method iterator();
+4. Creating an iterator class inside arraymap
+
+THREE STEPS TO MAKING ITERATOR CLASS
+1. Write the iterator class inside the superclass (create initialization function, hasnext(), and next())
+2. make the superclass extend Iterable which returns an iterator.
+Override the Iterable class to return the new KeyIterator Object
+3. make sure the iterator class extends Iterator which has next and
+hasNext functions
+4. Watch out for syntax in creating a new class etc.
+
+
+public class KeyIterator {
+	private int ptr; 
+	public KeyIterator(){
+		int ptr = 0;	
+	}
+	public boolean hasNext(){
+		return ptr!=size;
+	}
+	public K next(){
+		K returnItem = keys[ptr];			
+		ptr++;	
+		return returnItem;	
+	}
+}
+
+to call this iterator inside it has to be 
+ArrayMap<String, Integer> am = new ArrayMap<String, Integer> ();
+AND THEN OBJECT CALL
+ArrayMap.KeyIterator ami = am.new KeyIterator();
+
+public class ArrayMap<K, V> implements Iterable<K>
+	@Override	
+	public Iterator<T> iterator(){
+		return new KeyIterator();	
+	}
+	public class KeyIterator implements Iterator<K>{
+	}
+}
