@@ -1,131 +1,602 @@
-11:33:54 **** Build of configuration Debug for project First_Project ****
+17:22:05 **** Build of configuration Debug for project 1 ****
 make all 
-Building file: ../Hello.cpp
+Building file: ../1.cpp
 Invoking: Cross G++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Hello.d" -MT"Hello.o" -o "Hello.o" "../Hello.cpp"
-Finished building: ../Hello.cpp
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"1.d" -MT"1.o" -o "1.o" "../1.cpp"
+Finished building: ../1.cpp
  
-Building target: First_Project
+Building target: 1
 Invoking: Cross G++ Linker
-g++  -o "First_Project"  ./Hello.o   
-Finished building target: First_Project
+g++  -o "1"  ./1.o   
+Finished building target: 1
  
-11:34:05 **** Incremental Build of configuration Debug for project First_Project ****
+17:22:12 **** Incremental Build of configuration Debug for project test ****
 make all 
 make: Nothing to be done for `all'.
-11:37:55 **** Incremental Build of configuration Debug for project First_Project ****
+17:22:31 **** Incremental Build of configuration Debug for project 1 ****
 make all 
 make: Nothing to be done for `all'.
-11:37:58 **** Incremental Build of configuration Debug for project First_Project ****
+17:26:00 **** Incremental Build of configuration Debug for project 1 ****
+make all 
+Building file: ../1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"1.d" -MT"1.o" -o "1.o" "../1.cpp"
+Finished building: ../1.cpp
+ 
+Building target: 1
+Invoking: Cross G++ Linker
+g++  -o "1"  ./1.o   
+Finished building target: 1
+ 
+10:13:55 **** Incremental Build of configuration Debug for project 1 ****
+make all 
+Building file: ../1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"1.d" -MT"1.o" -o "1.o" "../1.cpp"
+Finished building: ../1.cpp
+ 
+Building target: 1
+Invoking: Cross G++ Linker
+g++  -o "1"  ./1.o   
+Finished building target: 1
+ 
+10:13:56 **** Build of configuration Debug for project 2 ****
+make all 
+Building file: ../2.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"2.d" -MT"2.o" -o "2.o" "../2.cpp"
+Finished building: ../2.cpp
+ 
+Building target: 2
+Invoking: Cross G++ Linker
+g++  -o "2"  ./2.o   
+Finished building target: 2
+ 
+10:13:57 **** Build of configuration Debug for project 3 ****
+make all 
+Building file: ../3.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"3.d" -MT"3.o" -o "3.o" "../3.cpp"
+Finished building: ../3.cpp
+ 
+Building target: 3
+Invoking: Cross G++ Linker
+g++  -o "3"  ./3.o   
+Finished building target: 3
+ 
+10:13:58 **** Build of configuration Debug for project 4 ****
+make all 
+Building file: ../4.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"4.d" -MT"4.o" -o "4.o" "../4.cpp"
+Finished building: ../4.cpp
+ 
+Building target: 4
+Invoking: Cross G++ Linker
+g++  -o "4"  ./4.o   
+Finished building target: 4
+ 
+10:13:59 **** Incremental Build of configuration Debug for project Code ****
 make all 
 make: Nothing to be done for `all'.
-11:57:55 **** Build of configuration Debug for project Code ****
+10:14:03 **** Incremental Build of configuration Debug for project 1 ****
 make all 
-Building file: ../Hello.cpp
+make: Nothing to be done for `all'.
+10:32:52 **** Incremental Build of configuration Debug for project 1 ****
+make all 
+Building file: ../1.cpp
 Invoking: Cross G++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Hello.d" -MT"Hello.o" -o "Hello.o" "../Hello.cpp"
-Finished building: ../Hello.cpp
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"1.d" -MT"1.o" -o "1.o" "../1.cpp"
+../1.cpp: In function ‘void Kruskal()’:
+../1.cpp:59:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for(int i = 0; i < G.size(); i++){
+                            ^
+../1.cpp: In function ‘int main()’:
+../1.cpp:80:21: warning: format ‘%d’ expects argument of type ‘int*’, but argument 2 has type ‘int’ [-Wformat=]
+        scanf("%d", w);
+                     ^
+../1.cpp:75:12: warning: unused variable ‘u’ [-Wunused-variable]
+     int n, u, v, w;
+            ^
+../1.cpp:75:15: warning: unused variable ‘v’ [-Wunused-variable]
+     int n, u, v, w;
+               ^
+../1.cpp:80:22: warning: ‘w’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+        scanf("%d", w);
+                      ^
+Finished building: ../1.cpp
  
-Building target: Code
+Building target: 1
 Invoking: Cross G++ Linker
-g++  -o "Code"  ./Hello.o   
-Finished building target: Code
+g++  -o "1"  ./1.o   
+Finished building target: 1
  
-12:12:44 **** Incremental Build of configuration Debug for project Code ****
+10:32:56 **** Incremental Build of configuration Debug for project 1 ****
 make all 
-Building file: ../debug.cpp
+make: Nothing to be done for `all'.
+10:33:01 **** Incremental Build of configuration Debug for project 1 ****
+make all 
+make: Nothing to be done for `all'.
+10:33:01 **** Incremental Build of configuration Debug for project 2 ****
+make all 
+make: Nothing to be done for `all'.
+10:33:02 **** Incremental Build of configuration Debug for project 3 ****
+make all 
+make: Nothing to be done for `all'.
+10:33:03 **** Incremental Build of configuration Debug for project 4 ****
+make all 
+make: Nothing to be done for `all'.
+10:33:03 **** Incremental Build of configuration Debug for project Code ****
+make all 
+make: Nothing to be done for `all'.
+10:33:09 **** Incremental Build of configuration Debug for project 1 ****
+make all 
+Building file: ../1.cpp
 Invoking: Cross G++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"debug.d" -MT"debug.o" -o "debug.o" "../debug.cpp"
-Finished building: ../debug.cpp
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"1.d" -MT"1.o" -o "1.o" "../1.cpp"
+../1.cpp: In function ‘void Kruskal()’:
+../1.cpp:59:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for(int i = 0; i < G.size(); i++){
+                            ^
+../1.cpp: In function ‘int main()’:
+../1.cpp:80:21: warning: format ‘%d’ expects argument of type ‘int*’, but argument 2 has type ‘int’ [-Wformat=]
+        scanf("%d", w);
+                     ^
+../1.cpp:75:12: warning: unused variable ‘u’ [-Wunused-variable]
+     int n, u, v, w;
+            ^
+../1.cpp:75:15: warning: unused variable ‘v’ [-Wunused-variable]
+     int n, u, v, w;
+               ^
+../1.cpp:80:22: warning: ‘w’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+        scanf("%d", w);
+                      ^
+Finished building: ../1.cpp
  
-Building file: ../dijstrka.cpp
-Invoking: Cross G++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"dijstrka.d" -MT"dijstrka.o" -o "dijstrka.o" "../dijstrka.cpp"
-../dijstrka.cpp:1:1: error: ‘queue’ does not name a type
- queue<int> q;
- ^
-../dijstrka.cpp:2:7: error: expected constructor, destructor, or type conversion before ‘(’ token
- memset(D, -1, sizeof(D));
-       ^
-../dijstrka.cpp:3:1: error: ‘q’ does not name a type
- q.push(u);
- ^
-../dijstrka.cpp:4:1: error: ‘D’ does not name a type
- D[u] = 0;
- ^
-../dijstrka.cpp:5:1: error: expected unqualified-id before ‘while’
- while (!q.empty()) {
- ^
-make: *** [dijstrka.o] Error 1
-12:12:55 **** Incremental Build of configuration Debug for project Code ****
-make all 
-Building file: ../dijstrka.cpp
-Invoking: Cross G++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"dijstrka.d" -MT"dijstrka.o" -o "dijstrka.o" "../dijstrka.cpp"
-../dijstrka.cpp:1:1: error: ‘queue’ does not name a type
- queue<int> q;
- ^
-../dijstrka.cpp:2:7: error: expected constructor, destructor, or type conversion before ‘(’ token
- memset(D, -1, sizeof(D));
-       ^
-../dijstrka.cpp:3:1: error: ‘q’ does not name a type
- q.push(u);
- ^
-../dijstrka.cpp:4:1: error: ‘D’ does not name a type
- D[u] = 0;
- ^
-../dijstrka.cpp:5:1: error: expected unqualified-id before ‘while’
- while (!q.empty()) {
- ^
-make: *** [dijstrka.o] Error 1
-12:14:15 **** Incremental Build of configuration Debug for project Code ****
-make all 
-Building target: Code
+Building target: 1
 Invoking: Cross G++ Linker
-g++  -o "Code"  ./debug.o   
-Finished building target: Code
+g++  -o "1"  ./1.o   
+Finished building target: 1
  
-12:28:20 **** Incremental Build of configuration Debug for project Code ****
+10:33:34 **** Incremental Build of configuration Debug for project 1 ****
 make all 
-Building file: ../debug.cpp
-Invoking: Cross G++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"debug.d" -MT"debug.o" -o "debug.o" "../debug.cpp"
-../debug.cpp: In function ‘int main()’:
-../debug.cpp:59:31: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
-     for(int i = 0; i < G.size(); i++){
-                               ^
-../debug.cpp:76:14: warning: value computed is not used [-Wunused-value]
-        start == it->first;
-              ^
-../debug.cpp:99:38: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
-      for(int i = 0; i < tree[u].size(); i++){
-                                      ^
-Finished building: ../debug.cpp
- 
-Building target: Code
-Invoking: Cross G++ Linker
-g++  -o "Code"  ./debug.o   
-Finished building target: Code
- 
-12:29:51 **** Incremental Build of configuration Debug for project Code ****
+make: Nothing to be done for `all'.
+10:33:34 **** Incremental Build of configuration Debug for project 2 ****
 make all 
-Building file: ../debug.cpp
+make: Nothing to be done for `all'.
+10:33:34 **** Incremental Build of configuration Debug for project 3 ****
+make all 
+make: Nothing to be done for `all'.
+10:33:35 **** Incremental Build of configuration Debug for project 4 ****
+make all 
+make: Nothing to be done for `all'.
+10:33:35 **** Incremental Build of configuration Debug for project Code ****
+make all 
+make: Nothing to be done for `all'.
+10:33:38 **** Incremental Build of configuration Debug for project 1 ****
+make all 
+make: Nothing to be done for `all'.
+10:33:43 **** Incremental Build of configuration Debug for project 1 ****
+make all 
+make: Nothing to be done for `all'.
+10:33:46 **** Incremental Build of configuration Debug for project 1 ****
+make all 
+make: Nothing to be done for `all'.
+10:33:56 **** Incremental Build of configuration Debug for project 1 ****
+make all 
+Building file: ../1.cpp
 Invoking: Cross G++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"debug.d" -MT"debug.o" -o "debug.o" "../debug.cpp"
-../debug.cpp: In function ‘int main()’:
-../debug.cpp:59:31: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
-     for(int i = 0; i < G.size(); i++){
-                               ^
-../debug.cpp:76:14: warning: value computed is not used [-Wunused-value]
-        start == it->first;
-              ^
-../debug.cpp:99:38: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
-      for(int i = 0; i < tree[u].size(); i++){
-                                      ^
-Finished building: ../debug.cpp
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"1.d" -MT"1.o" -o "1.o" "../1.cpp"
+../1.cpp: In function ‘void Kruskal()’:
+../1.cpp:59:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for(int i = 0; i < G.size(); i++){
+                            ^
+../1.cpp: In function ‘int main()’:
+../1.cpp:80:21: warning: format ‘%d’ expects argument of type ‘int*’, but argument 2 has type ‘int’ [-Wformat=]
+        scanf("%d", w);
+                     ^
+../1.cpp:75:12: warning: unused variable ‘u’ [-Wunused-variable]
+     int n, u, v, w;
+            ^
+../1.cpp:75:15: warning: unused variable ‘v’ [-Wunused-variable]
+     int n, u, v, w;
+               ^
+../1.cpp:80:22: warning: ‘w’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+        scanf("%d", w);
+                      ^
+Finished building: ../1.cpp
  
-Building target: Code
+Building target: 1
 Invoking: Cross G++ Linker
-g++  -o "Code"  ./debug.o   
-Finished building target: Code
+g++  -o "1"  ./1.o   
+Finished building target: 1
+ 
+10:34:05 **** Incremental Build of configuration Debug for project 1 ****
+make all 
+Building file: ../1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"1.d" -MT"1.o" -o "1.o" "../1.cpp"
+../1.cpp: In function ‘void Kruskal()’:
+../1.cpp:59:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for(int i = 0; i < G.size(); i++){
+                            ^
+../1.cpp: In function ‘int main()’:
+../1.cpp:80:21: warning: format ‘%d’ expects argument of type ‘int*’, but argument 2 has type ‘int’ [-Wformat=]
+        scanf("%d", w);
+                     ^
+../1.cpp:75:12: warning: unused variable ‘u’ [-Wunused-variable]
+     int n, u, v, w;
+            ^
+../1.cpp:75:15: warning: unused variable ‘v’ [-Wunused-variable]
+     int n, u, v, w;
+               ^
+../1.cpp:80:22: warning: ‘w’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+        scanf("%d", w);
+                      ^
+Finished building: ../1.cpp
+ 
+Building target: 1
+Invoking: Cross G++ Linker
+g++  -o "1"  ./1.o   
+Finished building target: 1
+ 
+10:35:20 **** Incremental Build of configuration Debug for project 1 ****
+make all 
+Building file: ../1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"1.d" -MT"1.o" -o "1.o" "../1.cpp"
+../1.cpp: In function ‘void Kruskal()’:
+../1.cpp:59:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for(int i = 0; i < G.size(); i++){
+                            ^
+../1.cpp: In function ‘int main()’:
+../1.cpp:79:21: warning: format ‘%d’ expects argument of type ‘int*’, but argument 2 has type ‘int’ [-Wformat=]
+        scanf("%d", w);
+                     ^
+../1.cpp:75:12: warning: unused variable ‘u’ [-Wunused-variable]
+     int n, u, v, w;
+            ^
+../1.cpp:75:15: warning: unused variable ‘v’ [-Wunused-variable]
+     int n, u, v, w;
+               ^
+../1.cpp:79:22: warning: ‘w’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+        scanf("%d", w);
+                      ^
+Finished building: ../1.cpp
+ 
+Building target: 1
+Invoking: Cross G++ Linker
+g++  -o "1"  ./1.o   
+Finished building target: 1
+ 
+10:35:34 **** Incremental Build of configuration Debug for project 1 ****
+make all 
+Building file: ../1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"1.d" -MT"1.o" -o "1.o" "../1.cpp"
+../1.cpp: In function ‘void Kruskal()’:
+../1.cpp:59:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for(int i = 0; i < G.size(); i++){
+                            ^
+../1.cpp: In function ‘int main()’:
+../1.cpp:79:21: warning: format ‘%d’ expects argument of type ‘int*’, but argument 2 has type ‘int’ [-Wformat=]
+        scanf("%d", w);
+                     ^
+../1.cpp:75:12: warning: unused variable ‘u’ [-Wunused-variable]
+     int n, u, v, w;
+            ^
+../1.cpp:75:15: warning: unused variable ‘v’ [-Wunused-variable]
+     int n, u, v, w;
+               ^
+../1.cpp:79:22: warning: ‘w’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+        scanf("%d", w);
+                      ^
+Finished building: ../1.cpp
+ 
+Building target: 1
+Invoking: Cross G++ Linker
+g++  -o "1"  ./1.o   
+Finished building target: 1
+ 
+10:35:43 **** Incremental Build of configuration Debug for project 1 ****
+make all 
+Building file: ../1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"1.d" -MT"1.o" -o "1.o" "../1.cpp"
+../1.cpp: In function ‘void Kruskal()’:
+../1.cpp:59:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for(int i = 0; i < G.size(); i++){
+                            ^
+../1.cpp: In function ‘int main()’:
+../1.cpp:80:21: warning: format ‘%d’ expects argument of type ‘int*’, but argument 2 has type ‘int’ [-Wformat=]
+        scanf("%d", w);
+                     ^
+../1.cpp:75:12: warning: unused variable ‘u’ [-Wunused-variable]
+     int n, u, v, w;
+            ^
+../1.cpp:75:15: warning: unused variable ‘v’ [-Wunused-variable]
+     int n, u, v, w;
+               ^
+../1.cpp:80:22: warning: ‘w’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+        scanf("%d", w);
+                      ^
+Finished building: ../1.cpp
+ 
+Building target: 1
+Invoking: Cross G++ Linker
+g++  -o "1"  ./1.o   
+Finished building target: 1
+ 
+10:35:47 **** Incremental Build of configuration Debug for project 1 ****
+make all 
+Building file: ../1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"1.d" -MT"1.o" -o "1.o" "../1.cpp"
+../1.cpp: In function ‘void Kruskal()’:
+../1.cpp:59:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for(int i = 0; i < G.size(); i++){
+                            ^
+../1.cpp: In function ‘int main()’:
+../1.cpp:82:21: warning: format ‘%d’ expects argument of type ‘int*’, but argument 2 has type ‘int’ [-Wformat=]
+        scanf("%d", w);
+                     ^
+../1.cpp:75:12: warning: unused variable ‘u’ [-Wunused-variable]
+     int n, u, v, w;
+            ^
+../1.cpp:75:15: warning: unused variable ‘v’ [-Wunused-variable]
+     int n, u, v, w;
+               ^
+../1.cpp:82:22: warning: ‘w’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+        scanf("%d", w);
+                      ^
+Finished building: ../1.cpp
+ 
+Building target: 1
+Invoking: Cross G++ Linker
+g++  -o "1"  ./1.o   
+Finished building target: 1
+ 
+10:35:58 **** Incremental Build of configuration Debug for project 1 ****
+make all 
+Building file: ../1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"1.d" -MT"1.o" -o "1.o" "../1.cpp"
+../1.cpp: In function ‘void Kruskal()’:
+../1.cpp:59:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for(int i = 0; i < G.size(); i++){
+                            ^
+../1.cpp: In function ‘int main()’:
+../1.cpp:82:21: warning: format ‘%d’ expects argument of type ‘int*’, but argument 2 has type ‘int’ [-Wformat=]
+        scanf("%d", w);
+                     ^
+../1.cpp:75:12: warning: unused variable ‘u’ [-Wunused-variable]
+     int n, u, v, w;
+            ^
+../1.cpp:75:15: warning: unused variable ‘v’ [-Wunused-variable]
+     int n, u, v, w;
+               ^
+../1.cpp:82:22: warning: ‘w’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+        scanf("%d", w);
+                      ^
+Finished building: ../1.cpp
+ 
+Building target: 1
+Invoking: Cross G++ Linker
+g++  -o "1"  ./1.o   
+Finished building target: 1
+ 
+10:36:07 **** Incremental Build of configuration Debug for project 1 ****
+make all 
+Building file: ../1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"1.d" -MT"1.o" -o "1.o" "../1.cpp"
+../1.cpp: In function ‘void Kruskal()’:
+../1.cpp:59:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for(int i = 0; i < G.size(); i++){
+                            ^
+../1.cpp: In function ‘int main()’:
+../1.cpp:82:21: warning: format ‘%d’ expects argument of type ‘int*’, but argument 2 has type ‘int’ [-Wformat=]
+        scanf("%d", w);
+                     ^
+../1.cpp:75:12: warning: unused variable ‘u’ [-Wunused-variable]
+     int n, u, v, w;
+            ^
+../1.cpp:75:15: warning: unused variable ‘v’ [-Wunused-variable]
+     int n, u, v, w;
+               ^
+../1.cpp:82:22: warning: ‘w’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+        scanf("%d", w);
+                      ^
+Finished building: ../1.cpp
+ 
+Building target: 1
+Invoking: Cross G++ Linker
+g++  -o "1"  ./1.o   
+Finished building target: 1
+ 
+10:36:24 **** Incremental Build of configuration Debug for project 1 ****
+make all 
+Building file: ../1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"1.d" -MT"1.o" -o "1.o" "../1.cpp"
+../1.cpp: In function ‘void Kruskal()’:
+../1.cpp:59:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for(int i = 0; i < G.size(); i++){
+                            ^
+../1.cpp: In function ‘int main()’:
+../1.cpp:75:12: warning: unused variable ‘u’ [-Wunused-variable]
+     int n, u, v, w;
+            ^
+../1.cpp:75:15: warning: unused variable ‘v’ [-Wunused-variable]
+     int n, u, v, w;
+               ^
+Finished building: ../1.cpp
+ 
+Building target: 1
+Invoking: Cross G++ Linker
+g++  -o "1"  ./1.o   
+Finished building target: 1
+ 
+10:36:43 **** Incremental Build of configuration Debug for project 1 ****
+make all 
+Building file: ../1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"1.d" -MT"1.o" -o "1.o" "../1.cpp"
+../1.cpp: In function ‘void Kruskal()’:
+../1.cpp:59:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for(int i = 0; i < G.size(); i++){
+                            ^
+../1.cpp: In function ‘int main()’:
+../1.cpp:76:12: warning: unused variable ‘u’ [-Wunused-variable]
+     int n, u, v, w;
+            ^
+../1.cpp:76:15: warning: unused variable ‘v’ [-Wunused-variable]
+     int n, u, v, w;
+               ^
+Finished building: ../1.cpp
+ 
+Building target: 1
+Invoking: Cross G++ Linker
+g++  -o "1"  ./1.o   
+Finished building target: 1
+ 
+10:36:54 **** Incremental Build of configuration Debug for project 1 ****
+make all 
+Building file: ../1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"1.d" -MT"1.o" -o "1.o" "../1.cpp"
+../1.cpp: In function ‘void Kruskal()’:
+../1.cpp:59:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for(int i = 0; i < G.size(); i++){
+                            ^
+../1.cpp: In function ‘int main()’:
+../1.cpp:76:12: warning: unused variable ‘u’ [-Wunused-variable]
+     int n, u, v, w;
+            ^
+../1.cpp:76:15: warning: unused variable ‘v’ [-Wunused-variable]
+     int n, u, v, w;
+               ^
+Finished building: ../1.cpp
+ 
+Building target: 1
+Invoking: Cross G++ Linker
+g++  -o "1"  ./1.o   
+Finished building target: 1
+ 
+10:37:06 **** Incremental Build of configuration Debug for project 1 ****
+make all 
+Building file: ../1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"1.d" -MT"1.o" -o "1.o" "../1.cpp"
+../1.cpp: In function ‘void Kruskal()’:
+../1.cpp:59:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for(int i = 0; i < G.size(); i++){
+                            ^
+../1.cpp: In function ‘int main()’:
+../1.cpp:75:12: warning: unused variable ‘u’ [-Wunused-variable]
+     int n, u, v, w;
+            ^
+../1.cpp:75:15: warning: unused variable ‘v’ [-Wunused-variable]
+     int n, u, v, w;
+               ^
+Finished building: ../1.cpp
+ 
+Building target: 1
+Invoking: Cross G++ Linker
+g++  -o "1"  ./1.o   
+Finished building target: 1
+ 
+10:37:14 **** Incremental Build of configuration Debug for project 1 ****
+make all 
+Building file: ../1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"1.d" -MT"1.o" -o "1.o" "../1.cpp"
+../1.cpp: In function ‘void Kruskal()’:
+../1.cpp:59:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for(int i = 0; i < G.size(); i++){
+                            ^
+../1.cpp: In function ‘int main()’:
+../1.cpp:75:12: warning: unused variable ‘u’ [-Wunused-variable]
+     int n, u, v, w;
+            ^
+../1.cpp:75:15: warning: unused variable ‘v’ [-Wunused-variable]
+     int n, u, v, w;
+               ^
+Finished building: ../1.cpp
+ 
+Building target: 1
+Invoking: Cross G++ Linker
+g++  -o "1"  ./1.o   
+Finished building target: 1
+ 
+10:37:51 **** Incremental Build of configuration Debug for project 1 ****
+make all 
+Building file: ../1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"1.d" -MT"1.o" -o "1.o" "../1.cpp"
+../1.cpp: In function ‘void Kruskal()’:
+../1.cpp:59:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for(int i = 0; i < G.size(); i++){
+                            ^
+../1.cpp: In function ‘int main()’:
+../1.cpp:75:12: warning: unused variable ‘u’ [-Wunused-variable]
+     int n, u, v, w;
+            ^
+../1.cpp:75:15: warning: unused variable ‘v’ [-Wunused-variable]
+     int n, u, v, w;
+               ^
+Finished building: ../1.cpp
+ 
+Building target: 1
+Invoking: Cross G++ Linker
+g++  -o "1"  ./1.o   
+Finished building target: 1
+ 
+11:12:04 **** Incremental Build of configuration Debug for project 1 ****
+make all 
+Building file: ../1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"1.d" -MT"1.o" -o "1.o" "../1.cpp"
+Finished building: ../1.cpp
+ 
+Building target: 1
+Invoking: Cross G++ Linker
+g++  -o "1"  ./1.o   
+Finished building target: 1
+ 
+11:12:28 **** Incremental Build of configuration Debug for project 1 ****
+make all 
+Building file: ../1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"1.d" -MT"1.o" -o "1.o" "../1.cpp"
+Finished building: ../1.cpp
+ 
+Building target: 1
+Invoking: Cross G++ Linker
+g++  -o "1"  ./1.o   
+Finished building target: 1
+ 
+11:12:51 **** Incremental Build of configuration Debug for project 1 ****
+make all 
+Building file: ../1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"1.d" -MT"1.o" -o "1.o" "../1.cpp"
+Finished building: ../1.cpp
+ 
+Building target: 1
+Invoking: Cross G++ Linker
+g++  -o "1"  ./1.o   
+Finished building target: 1
+ 
+11:13:28 **** Incremental Build of configuration Debug for project 1 ****
+make all 
+Building file: ../1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"1.d" -MT"1.o" -o "1.o" "../1.cpp"
+Finished building: ../1.cpp
+ 
+Building target: 1
+Invoking: Cross G++ Linker
+g++  -o "1"  ./1.o   
+Finished building target: 1
  

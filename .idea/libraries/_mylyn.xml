@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name=".mylyn">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Languages/Java Eclipse Folder/.metadata/.mylyn/repositories.xml.zip!/" />
+      <root url="jar://$PROJECT_DIR$/Languages/Java Eclipse Folder/.metadata/.mylyn/tasks.xml.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

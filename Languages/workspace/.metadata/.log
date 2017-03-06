@@ -308,3 +308,70 @@ org.eclipse.core.runtime.CoreException: Cannot determine URI for '/First_Project
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1488)
 !SUBENTRY 1 org.eclipse.core.filebuffers 4 0 2017-02-09 12:30:02.244
 !MESSAGE Cannot determine URI for '/First_Project/Hello.cpp'.
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2017-02-09 15:40:10.019
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIRunControl$9@52e91a36): Status ERROR: org.eclipse.cdt.dsf.gdb code=10001 Context cannot be suspended. null' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10001 2017-02-09 15:40:10.019
+!MESSAGE Context cannot be suspended.
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2017-02-09 15:40:10.053
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIRunControl$9@61f38cbd): Status ERROR: org.eclipse.cdt.dsf.gdb code=10001 Context cannot be suspended. null' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10001 2017-02-09 15:40:10.053
+!MESSAGE Context cannot be suspended.
+!SESSION 2017-02-09 15:59:42.505 -----------------------------------------------
+eclipse.buildId=4.5.1.M20150904-0015
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.ui 4 4 2017-02-09 16:00:46.775
+!MESSAGE Plug-in 'org.eclipse.cdt.ui' contributed an invalid Menu Extension (Path: 'project/org.eclipse.cdt.ui.prjmenu' is invalid): org.eclipse.cdt.ui.manageConfigsAction2
+
+!ENTRY org.eclipse.ui 4 4 2017-02-09 16:00:46.909
+!MESSAGE Plug-in 'org.eclipse.cdt.ui' contributed an invalid Menu Extension (Path: 'project/org.eclipse.cdt.ui.prjmenu' is invalid): org.eclipse.cdt.ui.buildConfigMenuAction
+
+!ENTRY org.eclipse.ui 4 4 2017-02-09 16:00:46.922
+!MESSAGE Plug-in 'org.eclipse.cdt.ui' contributed an invalid Menu Extension (Path: 'project/org.eclipse.cdt.ui.prjmenu' is invalid): org.eclipse.cdt.ui.wsselection
+
+!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2017-02-09 16:09:50.482
+!MESSAGE CDT Build Error
+!STACK 1
+org.eclipse.core.runtime.CoreException: CDT Build Error
+	at org.eclipse.cdt.managedbuilder.internal.core.GeneratedMakefileBuilder.invokeInternalBuilderForOneProject(GeneratedMakefileBuilder.java:1504)
+	at org.eclipse.cdt.managedbuilder.internal.core.GeneratedMakefileBuilder.invokeInternalBuilder(GeneratedMakefileBuilder.java:1412)
+	at org.eclipse.cdt.managedbuilder.internal.ui.commands.BuildFilesHandler$BuildFilesJob.run(BuildFilesHandler.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.lang.NullPointerException
+	at org.eclipse.cdt.managedbuilder.internal.core.GeneratedMakefileBuilder.invokeInternalBuilderForOneProject(GeneratedMakefileBuilder.java:1465)
+	... 3 more
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2017-02-09 16:09:50.484
+!MESSAGE CDT Build Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.managedbuilder.internal.core.GeneratedMakefileBuilder.invokeInternalBuilderForOneProject(GeneratedMakefileBuilder.java:1465)
+	at org.eclipse.cdt.managedbuilder.internal.core.GeneratedMakefileBuilder.invokeInternalBuilder(GeneratedMakefileBuilder.java:1412)
+	at org.eclipse.cdt.managedbuilder.internal.ui.commands.BuildFilesHandler$BuildFilesJob.run(BuildFilesHandler.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.cdt.core 1 0 2017-02-09 16:14:29.468
+!MESSAGE Indexed 'Program' (0 sources, 0 headers) in 0.069 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2017-02-09 17:13:33.339
+!MESSAGE Indexed '1' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2017-02-09 17:13:47.184
+!MESSAGE Indexed '2' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2017-02-09 17:14:02.023
+!MESSAGE Indexed '3' (0 sources, 0 headers) in 0.001 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2017-02-09 17:14:13.435
+!MESSAGE Indexed '4' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2017-02-09 17:14:46.294
+!MESSAGE Indexed '1' (0 sources, 0 headers) in 0.001 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2017-02-09 17:20:46.762
+!MESSAGE Indexed 'test' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)

@@ -1,0 +1,59 @@
+* means redo
+
+DATA STRUCTURE REPRESENTATIONS:
+Graph: may have 4 coordinates surrounding, map<int, map<int, int> >, graph...
+Fractions: Represent as val, mod in class
+Circle: Turn into line... May need to rotate the graph...
+Graph: each vertex can be DP on. reverse the graph? for shortest path of bidirectional directions
+
+Problem: Castle
+Origin: Week 6 Basic Graphs (Stanford) (Also from USACO Training Gate)
+Learned: DFS, Floodfill, Java, Debugging use IntelliJ (look at where you think your code went wrong)
+static variables declared outside, static class static method, Use dc, dr, array initialization etc.
+copy all files onto USB, use buffered reader and writer always, no in.close, POJ = Main, USACO = class name
+public class castle, adjust to the specific classes InputStream or FileWriter, copy classes to other parts!
+http://poj.org/problem?id=1164
+
+Problem: Knights
+Origin: (From POJ 2488) (Stanford Lessons  Week 6 Basic Graphs #4
+Learned: DFS, Floodfill, Java, Java Debugging Tool A+, (1 hour DFS :D), Compile Error Logs can see on POJ
+Make sure to put all ArrayList<String> for good practice, don't forget base and initialization cases (work more carefully)
+Also, can simplify code by creating a path of x and y instead of using arraylist, also can simplify toString function by doing
+int a - 1 + 'A'; Use 2 arrays to keep track of path.
+http://poj.org/problem?id=2488
+
+Problem: Lasers (From Nick Wu)
+Origin: USACO Gold 2016
+Learned: @Override hashcode @Override equals HashMap, ArrayList, etc.
+BFS: identify problem by same transition states, create the graph, bfs.
+DFS: identify problme by small input size, create graph and iteration method, dfs/floodfill
+HashMap uses .equals and .hashcode to find equal elements (must implement)
+must rewrite .equals and .hashcode
+If you are sure your algorithm is correct then it is often a small bug that is preventing your program from working
+http://www.usaco.org/index.php?page=viewproblem2&cpid=671
+
+Problem: Palindrome * (From Lewin Gan)
+Origin: Berkeley Programming Contest 2014 Problem 2
+Learned: DP 4 variables. Find all palindromes from one range to the other. Do so by using dfs and dp
+https://github.com/lewin/Berkeley-Programming-Contest/blob/master/src/y2014/f2014-contest.pdf
+
+Problem: Maxcross
+Origin: USACO Silver
+Learned: I can do these problems in less than 25 minutes now!!! Prefix Sums
+http://usaco.org/index.php?page=viewproblem2&cpid=715
+
+Problem: Perimeter
+Origin: USACO February 2013 Gold
+Learned: Use Map<int, map<int, int> > stl to solve, can use unordered map to reduce logN factor.
+IMPORTANT: DFS problem = please!!!! 1. construct right graph 2. figure out whether or not you are using x, y
+or r, c! 3. write the right recursive simulation 4. use do while loop if you need...
+Another solution is to floodfill right outside...
+Perimeter questions = dfs, bfs on inside, outside, on the edges
+http://usaco.org/index.php?page=feb13problems
+
+Problem: Tractor
+Origin: USACO Feburary 2013 Gold
+Learned: Union Find, can also introduce add size, size[find(x)]+=size[find(y)] [3], use comparator, use int[]
+Can also do binarysearch and dfs floodfill together.. note in floodfill you can choose not to undo the floodfill
+http://usaco.org/index.php?page=viewproblem2&cpid=245
+

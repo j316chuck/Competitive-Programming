@@ -1,0 +1,23 @@
+http://infotechgems.blogspot.com/2011/11/java-collections-performance-time.html
+
+ArrayList:
+remove-O(N)
+find-O(N)
+
+HashSet/TreeSet (really fast):
+Add: O(1)
+Contains: O(1)
+Next: O(h/n)
+
+
+Priority_queue
+Offer: O(logn)
+Peak: O(1)
+Poll: O(Log n)
+size: O(1)
+
+
+HashMap:
+Get: O(1)
+ContainsKey: O(1)
+Next O(H/N)
