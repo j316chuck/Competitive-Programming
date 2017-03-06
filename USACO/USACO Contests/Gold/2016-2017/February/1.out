@@ -1,0 +1,685 @@
+iteration: 3 3 0 
+for loop: 2 3 2
+iteration: 2 3 2 
+for loop: 1 3 1
+iteration: 1 3 1 
+for loop: 0 3 0
+iteration: 0 3 0 
+for loop: 1 3 2
+iteration: 1 3 2 
+for loop: 0 3 1
+iteration: 0 3 1 
+for loop: 1 3 0
+iteration: 1 3 0 
+for loop: 0 3 2
+iteration: 0 3 2 
+for loop: 0 2 1
+iteration: 0 2 1 
+for loop: 1 2 0
+iteration: 1 2 0 
+for loop: 0 2 2
+iteration: 0 2 2 
+for loop: 1 2 1
+iteration: 1 2 1 
+for loop: 0 2 0
+iteration: 0 2 0 
+for loop: 1 2 2
+iteration: 1 2 2 
+for loop: 2 2 1
+iteration: 2 2 1 
+for loop: 2 3 0
+iteration: 2 3 0 
+for loop: 3 3 2
+iteration: 3 3 2 
+for loop: 2 3 1
+iteration: 2 3 1 
+for loop: 2 2 0
+iteration: 2 2 0 
+for loop: 3 2 2
+iteration: 3 2 2 
+for loop: 3 3 1
+iteration: 3 3 1 
+for loop: 3 2 0
+iteration: 3 2 0 
+for loop: 2 2 2
+iteration: 2 2 2 
+for loop: 3 2 1
+iteration: 3 2 1 
+for loop: 3 1 0
+iteration: 3 1 0 
+for loop: 2 1 2
+iteration: 2 1 2 
+for loop: 1 1 1
+iteration: 1 1 1 
+for loop: 0 1 0
+iteration: 0 1 0 
+for loop: 1 1 2
+iteration: 1 1 2 
+for loop: 0 1 1
+iteration: 0 1 1 
+for loop: 1 1 0
+iteration: 1 1 0 
+for loop: 0 1 2
+iteration: 0 1 2 
+for loop: 0 0 1
+mem: 0 0 1 0
+total: 0 1 2 2
+for loop: 1 0 2
+iteration: 1 0 2 
+for loop: 0 0 1
+mem: 0 0 1 0
+for loop: 2 0 1
+iteration: 2 0 1 
+for loop: 1 0 0
+iteration: 1 0 0 
+for loop: 0 0 2
+mem: 0 0 2 0
+for loop: 2 0 2
+iteration: 2 0 2 
+for loop: 1 0 1
+iteration: 1 0 1 
+for loop: 0 0 0
+mem: 0 0 0 0
+for loop: 2 0 0
+iteration: 2 0 0 
+for loop: 3 0 2
+iteration: 3 0 2 
+for loop: 3 1 1
+iteration: 3 1 1 
+for loop: 2 1 0
+iteration: 2 1 0 
+for loop: 3 1 2
+iteration: 3 1 2 
+for loop: 2 1 1
+iteration: 2 1 1 
+total: 2 1 1 -1
+for loop: 3 0 1
+iteration: 3 0 1 
+total: 3 0 1 -1
+total: 3 1 2 1
+total: 2 1 0 16
+for loop: 3 0 0
+iteration: 3 0 0 
+for loop: 3 1 2
+mem: 3 1 2 1
+total: 3 0 0 23
+total: 3 1 1 18
+total: 3 0 2 20
+total: 2 0 0 63
+total: 1 0 1 2
+for loop: 2 1 1
+iteration: 2 1 1 
+for loop: 2 0 0
+mem: 2 0 0 63
+total: 2 1 1 65
+for loop: 3 0 1
+iteration: 3 0 1 
+for loop: 2 0 0
+mem: 2 0 0 63
+total: 3 0 1 65
+total: 2 0 2 4
+total: 1 0 0 40
+for loop: 2 1 0
+mem: 2 1 0 16
+for loop: 3 0 0
+mem: 3 0 0 23
+total: 2 0 1 18
+total: 1 0 2 2
+total: 1 1 0 89
+for loop: 0 0 0
+mem: 0 0 0 0
+total: 0 1 1 2
+for loop: 2 1 1
+mem: 2 1 1 65
+for loop: 1 0 1
+mem: 1 0 1 2
+total: 1 1 2 4
+for loop: 0 0 2
+mem: 0 0 2 0
+total: 0 1 0 94
+for loop: 2 1 0
+mem: 2 1 0 16
+for loop: 1 0 0
+mem: 1 0 0 40
+total: 1 1 1 18
+for loop: 3 1 1
+mem: 3 1 1 18
+for loop: 2 0 1
+mem: 2 0 1 18
+total: 2 1 2 20
+for loop: 3 0 2
+mem: 3 0 2 20
+total: 3 1 0 119
+total: 3 2 1 121
+for loop: 2 1 1
+mem: 2 1 1 65
+total: 2 2 2 67
+for loop: 3 1 2
+mem: 3 1 2 1
+total: 3 2 0 16
+total: 3 3 1 18
+for loop: 3 1 1
+mem: 3 1 1 18
+total: 3 2 2 20
+for loop: 2 1 2
+mem: 2 1 2 20
+total: 2 2 0 27
+total: 2 3 1 29
+for loop: 3 2 1
+mem: 3 2 1 121
+total: 3 3 2 31
+for loop: 2 2 2
+mem: 2 2 2 67
+total: 2 3 0 101
+for loop: 3 2 0
+mem: 3 2 0 16
+for loop: 2 1 0
+mem: 2 1 0 16
+total: 2 2 1 18
+for loop: 1 1 1
+mem: 1 1 1 18
+total: 1 2 2 20
+for loop: 0 1 2
+mem: 0 1 2 2
+total: 0 2 0 40
+for loop: 2 2 0
+mem: 2 2 0 27
+for loop: 1 1 0
+mem: 1 1 0 89
+total: 1 2 1 29
+for loop: 0 1 1
+mem: 0 1 1 2
+total: 0 2 2 4
+for loop: 2 2 2
+mem: 2 2 2 67
+for loop: 1 1 2
+mem: 1 1 2 4
+total: 1 2 0 66
+for loop: 0 1 0
+mem: 0 1 0 94
+total: 0 2 1 68
+total: 0 3 2 70
+for loop: 1 2 2
+mem: 1 2 2 20
+total: 1 3 0 38
+for loop: 0 2 0
+mem: 0 2 0 40
+total: 0 3 1 40
+for loop: 2 3 1
+mem: 2 3 1 29
+for loop: 1 2 1
+mem: 1 2 1 29
+total: 1 3 2 31
+for loop: 0 2 2
+mem: 0 2 2 4
+total: 0 3 0 16
+for loop: 2 3 0
+mem: 2 3 0 101
+for loop: 1 2 0
+mem: 1 2 0 66
+total: 1 3 1 18
+for loop: 3 3 1
+mem: 3 3 1 18
+for loop: 2 2 1
+mem: 2 2 1 18
+total: 2 3 2 20
+for loop: 3 2 2
+mem: 3 2 2 20
+total: 3 3 0 102
+iteration: 3 3 1 
+for loop: 2 3 0
+iteration: 2 3 0 
+for loop: 1 3 2
+iteration: 1 3 2 
+for loop: 0 3 1
+iteration: 0 3 1 
+for loop: 1 3 0
+iteration: 1 3 0 
+for loop: 0 3 2
+iteration: 0 3 2 
+for loop: 1 3 1
+iteration: 1 3 1 
+for loop: 0 3 0
+iteration: 0 3 0 
+for loop: 0 2 2
+iteration: 0 2 2 
+for loop: 1 2 1
+iteration: 1 2 1 
+for loop: 0 2 0
+iteration: 0 2 0 
+for loop: 1 2 2
+iteration: 1 2 2 
+for loop: 0 2 1
+iteration: 0 2 1 
+for loop: 1 2 0
+iteration: 1 2 0 
+for loop: 2 2 2
+iteration: 2 2 2 
+for loop: 2 3 1
+iteration: 2 3 1 
+for loop: 3 3 0
+iteration: 3 3 0 
+for loop: 2 3 2
+iteration: 2 3 2 
+for loop: 2 2 1
+iteration: 2 2 1 
+for loop: 3 2 0
+iteration: 3 2 0 
+for loop: 3 3 2
+iteration: 3 3 2 
+for loop: 3 2 1
+iteration: 3 2 1 
+for loop: 2 2 0
+iteration: 2 2 0 
+for loop: 3 2 2
+iteration: 3 2 2 
+for loop: 3 1 1
+iteration: 3 1 1 
+for loop: 2 1 0
+iteration: 2 1 0 
+for loop: 1 1 2
+iteration: 1 1 2 
+for loop: 0 1 1
+iteration: 0 1 1 
+for loop: 1 1 0
+iteration: 1 1 0 
+for loop: 0 1 2
+iteration: 0 1 2 
+for loop: 1 1 1
+iteration: 1 1 1 
+for loop: 0 1 0
+iteration: 0 1 0 
+for loop: 0 0 2
+mem: 0 0 2 0
+total: 0 1 0 94
+for loop: 1 0 0
+iteration: 1 0 0 
+for loop: 0 0 2
+mem: 0 0 2 0
+for loop: 2 0 2
+iteration: 2 0 2 
+for loop: 1 0 1
+iteration: 1 0 1 
+for loop: 0 0 0
+mem: 0 0 0 0
+for loop: 2 0 0
+iteration: 2 0 0 
+for loop: 1 0 2
+iteration: 1 0 2 
+for loop: 0 0 1
+mem: 0 0 1 0
+for loop: 2 0 1
+iteration: 2 0 1 
+for loop: 3 0 0
+iteration: 3 0 0 
+for loop: 3 1 2
+iteration: 3 1 2 
+for loop: 2 1 1
+iteration: 2 1 1 
+for loop: 3 1 0
+iteration: 3 1 0 
+for loop: 2 1 2
+iteration: 2 1 2 
+total: 2 1 2 -1
+for loop: 3 0 2
+iteration: 3 0 2 
+total: 3 0 2 -1
+total: 3 1 0 98
+total: 2 1 1 100
+for loop: 3 0 1
+iteration: 3 0 1 
+for loop: 3 1 0
+mem: 3 1 0 98
+total: 3 0 1 100
+total: 3 1 2 102
+total: 3 0 0 124
+total: 2 0 1 126
+total: 1 0 2 2
+for loop: 2 1 2
+iteration: 2 1 2 
+for loop: 2 0 1
+mem: 2 0 1 126
+total: 2 1 2 128
+for loop: 3 0 2
+iteration: 3 0 2 
+for loop: 2 0 1
+mem: 2 0 1 126
+total: 3 0 2 128
+total: 2 0 0 45
+total: 1 0 1 2
+for loop: 2 1 1
+mem: 2 1 1 100
+for loop: 3 0 1
+mem: 3 0 1 100
+total: 2 0 2 4
+total: 1 0 0 40
+total: 1 1 1 42
+for loop: 0 0 1
+mem: 0 0 1 0
+total: 0 1 2 2
+for loop: 2 1 2
+mem: 2 1 2 128
+for loop: 1 0 2
+mem: 1 0 2 2
+total: 1 1 0 89
+for loop: 0 0 0
+mem: 0 0 0 0
+total: 0 1 1 2
+for loop: 2 1 1
+mem: 2 1 1 100
+for loop: 1 0 1
+mem: 1 0 1 2
+total: 1 1 2 4
+for loop: 3 1 2
+mem: 3 1 2 102
+for loop: 2 0 2
+mem: 2 0 2 4
+total: 2 1 0 19
+for loop: 3 0 0
+mem: 3 0 0 124
+total: 3 1 1 21
+total: 3 2 2 23
+for loop: 2 1 2
+mem: 2 1 2 128
+total: 2 2 0 30
+for loop: 3 1 0
+mem: 3 1 0 98
+total: 3 2 1 32
+total: 3 3 2 34
+for loop: 3 1 2
+mem: 3 1 2 102
+total: 3 2 0 49
+for loop: 2 1 0
+mem: 2 1 0 19
+total: 2 2 1 21
+total: 2 3 2 23
+for loop: 3 2 2
+mem: 3 2 2 23
+total: 3 3 0 105
+for loop: 2 2 0
+mem: 2 2 0 30
+total: 2 3 1 32
+for loop: 3 2 1
+mem: 3 2 1 32
+for loop: 2 1 1
+mem: 2 1 1 100
+total: 2 2 2 34
+for loop: 1 1 2
+mem: 1 1 2 4
+total: 1 2 0 66
+for loop: 0 1 0
+mem: 0 1 0 94
+total: 0 2 1 68
+for loop: 2 2 1
+mem: 2 2 1 21
+for loop: 1 1 1
+mem: 1 1 1 42
+total: 1 2 2 23
+for loop: 0 1 2
+mem: 0 1 2 2
+total: 0 2 0 40
+for loop: 2 2 0
+mem: 2 2 0 30
+for loop: 1 1 0
+mem: 1 1 0 89
+total: 1 2 1 32
+for loop: 0 1 1
+mem: 0 1 1 2
+total: 0 2 2 4
+total: 0 3 0 16
+for loop: 1 2 0
+mem: 1 2 0 66
+total: 1 3 1 18
+for loop: 0 2 1
+mem: 0 2 1 68
+total: 0 3 2 20
+for loop: 2 3 2
+mem: 2 3 2 23
+for loop: 1 2 2
+mem: 1 2 2 23
+total: 1 3 0 38
+for loop: 0 2 0
+mem: 0 2 0 40
+total: 0 3 1 40
+for loop: 2 3 1
+mem: 2 3 1 32
+for loop: 1 2 1
+mem: 1 2 1 32
+total: 1 3 2 34
+for loop: 3 3 2
+mem: 3 3 2 34
+for loop: 2 2 2
+mem: 2 2 2 34
+total: 2 3 0 104
+for loop: 3 2 0
+mem: 3 2 0 49
+total: 3 3 1 51
+iteration: 3 3 2 
+for loop: 2 3 1
+iteration: 2 3 1 
+for loop: 1 3 0
+iteration: 1 3 0 
+for loop: 0 3 2
+iteration: 0 3 2 
+for loop: 1 3 1
+iteration: 1 3 1 
+for loop: 0 3 0
+iteration: 0 3 0 
+for loop: 1 3 2
+iteration: 1 3 2 
+for loop: 0 3 1
+iteration: 0 3 1 
+for loop: 0 2 0
+iteration: 0 2 0 
+for loop: 1 2 2
+iteration: 1 2 2 
+for loop: 0 2 1
+iteration: 0 2 1 
+for loop: 1 2 0
+iteration: 1 2 0 
+for loop: 0 2 2
+iteration: 0 2 2 
+for loop: 1 2 1
+iteration: 1 2 1 
+for loop: 2 2 0
+iteration: 2 2 0 
+for loop: 2 3 2
+iteration: 2 3 2 
+for loop: 3 3 1
+iteration: 3 3 1 
+for loop: 2 3 0
+iteration: 2 3 0 
+for loop: 2 2 2
+iteration: 2 2 2 
+for loop: 3 2 1
+iteration: 3 2 1 
+for loop: 3 3 0
+iteration: 3 3 0 
+for loop: 3 2 2
+iteration: 3 2 2 
+for loop: 2 2 1
+iteration: 2 2 1 
+for loop: 3 2 0
+iteration: 3 2 0 
+for loop: 3 1 2
+iteration: 3 1 2 
+for loop: 2 1 1
+iteration: 2 1 1 
+for loop: 1 1 0
+iteration: 1 1 0 
+for loop: 0 1 2
+iteration: 0 1 2 
+for loop: 1 1 1
+iteration: 1 1 1 
+for loop: 0 1 0
+iteration: 0 1 0 
+for loop: 1 1 2
+iteration: 1 1 2 
+for loop: 0 1 1
+iteration: 0 1 1 
+for loop: 0 0 0
+mem: 0 0 0 0
+total: 0 1 1 2
+for loop: 1 0 1
+iteration: 1 0 1 
+for loop: 0 0 0
+mem: 0 0 0 0
+for loop: 2 0 0
+iteration: 2 0 0 
+for loop: 1 0 2
+iteration: 1 0 2 
+for loop: 0 0 1
+mem: 0 0 1 0
+for loop: 2 0 1
+iteration: 2 0 1 
+for loop: 1 0 0
+iteration: 1 0 0 
+for loop: 0 0 2
+mem: 0 0 2 0
+for loop: 2 0 2
+iteration: 2 0 2 
+for loop: 3 0 1
+iteration: 3 0 1 
+for loop: 3 1 0
+iteration: 3 1 0 
+for loop: 2 1 2
+iteration: 2 1 2 
+for loop: 3 1 1
+iteration: 3 1 1 
+for loop: 2 1 0
+iteration: 2 1 0 
+total: 2 1 0 -1
+for loop: 3 0 0
+iteration: 3 0 0 
+total: 3 0 0 -1
+total: 3 1 1 1
+total: 2 1 2 3
+for loop: 3 0 2
+iteration: 3 0 2 
+for loop: 3 1 1
+mem: 3 1 1 1
+total: 3 0 2 3
+total: 3 1 0 102
+total: 3 0 1 104
+total: 2 0 2 106
+total: 1 0 0 40
+for loop: 2 1 0
+iteration: 2 1 0 
+for loop: 2 0 2
+mem: 2 0 2 106
+total: 2 1 0 121
+for loop: 3 0 0
+iteration: 3 0 0 
+for loop: 2 0 2
+mem: 2 0 2 106
+total: 3 0 0 128
+total: 2 0 1 42
+total: 1 0 2 2
+for loop: 2 1 2
+mem: 2 1 2 3
+for loop: 3 0 2
+mem: 3 0 2 3
+total: 2 0 0 45
+total: 1 0 1 2
+total: 1 1 2 4
+for loop: 0 0 2
+mem: 0 0 2 0
+total: 0 1 0 94
+for loop: 2 1 0
+mem: 2 1 0 121
+for loop: 1 0 0
+mem: 1 0 0 40
+total: 1 1 1 42
+for loop: 0 0 1
+mem: 0 0 1 0
+total: 0 1 2 2
+for loop: 2 1 2
+mem: 2 1 2 3
+for loop: 1 0 2
+mem: 1 0 2 2
+total: 1 1 0 89
+for loop: 3 1 0
+mem: 3 1 0 102
+for loop: 2 0 0
+mem: 2 0 0 45
+total: 2 1 1 47
+for loop: 3 0 1
+mem: 3 0 1 104
+total: 3 1 2 49
+total: 3 2 0 64
+for loop: 2 1 0
+mem: 2 1 0 121
+total: 2 2 1 66
+for loop: 3 1 1
+mem: 3 1 1 1
+total: 3 2 2 3
+total: 3 3 0 85
+for loop: 3 1 0
+mem: 3 1 0 102
+total: 3 2 1 87
+for loop: 2 1 1
+mem: 2 1 1 47
+total: 2 2 2 49
+total: 2 3 0 119
+for loop: 3 2 0
+mem: 3 2 0 64
+total: 3 3 1 66
+for loop: 2 2 1
+mem: 2 2 1 66
+total: 2 3 2 68
+for loop: 3 2 2
+mem: 3 2 2 3
+for loop: 2 1 2
+mem: 2 1 2 3
+total: 2 2 0 10
+for loop: 1 1 0
+mem: 1 1 0 89
+total: 1 2 1 12
+for loop: 0 1 1
+mem: 0 1 1 2
+total: 0 2 2 4
+for loop: 2 2 2
+mem: 2 2 2 49
+for loop: 1 1 2
+mem: 1 1 2 4
+total: 1 2 0 66
+for loop: 0 1 0
+mem: 0 1 0 94
+total: 0 2 1 68
+for loop: 2 2 1
+mem: 2 2 1 66
+for loop: 1 1 1
+mem: 1 1 1 42
+total: 1 2 2 44
+for loop: 0 1 2
+mem: 0 1 2 2
+total: 0 2 0 40
+total: 0 3 1 42
+for loop: 1 2 1
+mem: 1 2 1 12
+total: 1 3 2 14
+for loop: 0 2 2
+mem: 0 2 2 4
+total: 0 3 0 16
+for loop: 2 3 0
+mem: 2 3 0 119
+for loop: 1 2 0
+mem: 1 2 0 66
+total: 1 3 1 18
+for loop: 0 2 1
+mem: 0 2 1 68
+total: 0 3 2 20
+for loop: 2 3 2
+mem: 2 3 2 68
+for loop: 1 2 2
+mem: 1 2 2 44
+total: 1 3 0 38
+for loop: 3 3 0
+mem: 3 3 0 85
+for loop: 2 2 0
+mem: 2 2 0 10
+total: 2 3 1 12
+for loop: 3 2 1
+mem: 3 2 1 87
+total: 3 3 2 14
+14

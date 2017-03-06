@@ -8,8 +8,13 @@ POJ DP last 3
 Circular Barn February 2016:
 November 2013 BBREEDS
 
+DFS
 Redo February 2013 when you are practicing DFS
 Perimeter: February 2013: http://usaco.org/index.php?page=viewproblem2&cpid=244 Use maps and other cool stuff.
+Unlock: http://usaco.org/current/data/sol_unlock_bronze.html
+
+BFS
+http://usaco.org/current/data/sol_unlock_silver.html
 
 Redo April 2013 
 http://usaco.org/index.php?page=viewproblem2&cpid=283

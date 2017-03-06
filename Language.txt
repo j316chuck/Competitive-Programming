@@ -20,12 +20,13 @@ ll ans = 1ll * 300000000;
 
 Input:
 scanf("%1d", &mapa[i][j]); reads in only 1 digit
+cin>>s[i]; reads in only one string;
+may need to do S+=s;
 Assignment: long long& ref = memo[fi][bi];
 return ref;
 
 Array:
 rotate(A, A + 1, A + N);
-
 
 Vector:
 int sp = Lower_bound(A.begin(), A.end(), make_pair(B,0))-A.begin(); //lowest position of a sorted vector with value B (in pair)
@@ -37,6 +38,7 @@ lower_bound is value greater than or equal to....
 You can use vector as set.
 R.resize(R.size()-T.size()) -> decreases vector by size T.size();
 A.begin() is iterator...
+R.erase(unique(R.begin(), R.end()), R.end())
 
 return vector function:
 vector<ll> D(ll st, const vector<vector<ll>>){
@@ -64,6 +66,13 @@ arr['M'][1] = ..
 map<char, int> dx, dy;
 dx['E'] = 1; dx['W'] = -1;
 dy['N'] = 1; dy['S'] = -1;
+
+dx.insert(make_pair(i, j));
+if(dx.find(x) == dx.end()){
+	dx.insert(vector<int> ());
+}dx.push_back();
+
+map<int, int> good;
 
 Sets:
 multiset<vector<int> > st;
@@ -118,7 +127,7 @@ class pp{
 public:
     int a, b, c;
     bool operator < (const pp &p) const{
-        return (p.a + p.b + p.c) < (a + b + c);
+        return (p.a + p.b + p.c) > (a + b + c);
     }
 };
 
