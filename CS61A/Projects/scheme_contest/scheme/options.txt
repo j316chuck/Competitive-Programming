@@ -1,4 +1,0 @@
-http://teamapproach.ca/math/RecursiveSequence.htm
-fibonacci
-https://en.wikibooks.org/wiki/Trigonometry/Power_Series_for_Cosine_and_Sine
-sine vs cosine
