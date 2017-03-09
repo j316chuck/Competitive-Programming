@@ -3,7 +3,7 @@ import java.util.*;
 import java.io.*;
 /*
 
- BufferedReader in = new BufferedReader(new FileReader("msched.in"));
+ BufferedReader in = new BufferedReader(new FileReader("input.in"));
         PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
         StringTokenizer st = new StringTokenizer(in.readLine());
 
@@ -34,13 +34,13 @@ public class JavaIO { //IOException if an input/output error occurs
         //or use try catch
         /*try {
             //opening file
-            File file = new File("msched.in");
+            File file = new File("input.in");
             boolean succeed = file.createNewFile();
             if (succeed) System.out.println("YAY");
 
 
             //appending to file
-            File file = new File("msched.in");
+            File file = new File("input.in");
             if(!file.exists()){
                 file.createNewFile();
             }
@@ -61,12 +61,12 @@ public class JavaIO { //IOException if an input/output error occurs
         //new StringTokenizer(in.readLine());
         //always in.readLine()
         //and then st.nextToken();
-        //for msched.in and output.out
+        //for input.in and output.out
 
 
         //File has to be on the way outside of class created by the PROJECT
 
-        /*BufferedReader in = new BufferedReader(new FileReader("msched.in"));
+        /*BufferedReader in = new BufferedReader(new FileReader("input.in"));
         PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("ouput.out")));
         StringTokenizer st = new StringTokenizer(in.readLine());
         (this works normally maybe package fault)
@@ -81,7 +81,7 @@ public class JavaIO { //IOException if an input/output error occurs
         out.close();
         System.exit(0); */
 
-        BufferedReader in = new BufferedReader(new FileReader("Solutions/msched.in"));
+        BufferedReader in = new BufferedReader(new FileReader("Solutions/input.in"));
         PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("output.out")));
         StringTokenizer st = new StringTokenizer(in.readLine());
 

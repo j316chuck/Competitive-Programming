@@ -97,5 +97,8 @@ public class JavaArrayList {
                 System.out.print(obj.get(i).get(j) + (j == (obj.get(i).size()-1) ? "\n" : " "));
             }
         }
+        //List<List<Integer>> g = new ArrayList<List<Integer>>();
+        List<Integer>[] g = new List[7 + 1];
+        List<Integer>[] gr = new List[7 + 1];
     }
 }

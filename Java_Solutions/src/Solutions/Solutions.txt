@@ -57,3 +57,21 @@ Learned: Union Find, can also introduce add size, size[find(x)]+=size[find(y)] [
 Can also do binarysearch and dfs floodfill together.. note in floodfill you can choose not to undo the floodfill
 http://usaco.org/index.php?page=viewproblem2&cpid=245
 
+Problem: SCC (on hackerearth)
+Origin: https://www.hackerearth.com/practice/algorithms/graphs/strongly-connected-components/tutorial/
+Learned: 1. Focus Chuck when you are solving the problem only focus on solving the problem... (everything else is secondary) #freedom
+2. Add Watches to debug nice! use f7 f8 f9 ... step into step over step to next break point
+3. ArrayList must declare all as List<List<Integer>> in compiler... in the runtime you can must set it equal
+to ArrayList<Integer> ... also need to add new ArrayList<>
+4. do not use arraylist.clear(); if you do you must make sure it's not pointing to the same object that other ones use...
+5. learned kosaraju...
+6. In submitting make sure to comment out the packages and the bufferedreader use the right one...
+
+Problem: Euler's Path
+Origin: None
+Learned: 1. Euler's path conditions for directed and undirected graphs are different... //use for loop to find the starting points for paths vs cycles
+2. Review for the next week everyday fifteen minutes...
+3. Undirected = dfs, with dfs(g, res, u, curEdge). res.add(u) dfs(g, res, g[u].get(curEdge[u]++), curEdge);
+4. Directed = dfs with hashset to ensure you can't use same point
+5. List<Integer>[] g = new List[n+1]; syntax... syntax for ((Long) Math.min(u, v) << 32) + Math.max(u,v); << if you want u, v to be covered.
+6. u, v = coding conventions, names like stack, queue, curEdges is good.

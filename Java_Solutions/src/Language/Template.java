@@ -9,7 +9,7 @@ import java.util.*;
 
 public class Template {
     public static void main(String[] args) throws IOException {
-        BufferedReader in = new BufferedReader(new FileReader("msched.in"));
+        BufferedReader in = new BufferedReader(new FileReader("input.in"));
         PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("output.out")));
         StringTokenizer st = new StringTokenizer(in.readLine());
 

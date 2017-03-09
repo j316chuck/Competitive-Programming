@@ -3,6 +3,10 @@ package Algorithms;
 import java.util.*;
 
 public class PrimHeap {
+    //will start implementing prim in prim heap ... okay
+    //it is okay because I need to know graphs basically more better than I do right now...
+    //I will do this Saturday...
+    //http://www.geeksforgeeks.org/prims-algorithm-using-priority_queue-stl/
 
     public static long mst(List<Edge>[] edges, int[] pred) {
         int n = edges.length;
