@@ -7,26 +7,26 @@ import java.io.*;
 public class BiconnectedComponentsPractice {
 
     static List<Integer>[] graph;
-    static boolean[] visited;
-    static Stack<Integer> stack;
-    static int[] parents;
-    static int time;
-    static int[] low;
-    static int[] tin;
     static List<Integer> cutpoints;
     static List<String> bridges;
-    static List<List<Integer>> components;
+    static List<List<String>> components;
+    static int[] parents;
+    static int[] low;
+    static int[] tin;
+    static int time;
+    static boolean[] visited;
+    static Stack<String> stack; // should create an edge class that is just u, v may extend comparable may write by yourself
 
     static void init(int n) {
         parents = new int[n];
         low = new int[n];
         tin = new int[n];
         visited = new boolean[n];
-        stack = new Stack<Integer>();
+        stack = new Stack<String>();
         time = 0;
         cutpoints = new ArrayList<Integer>();
         bridges = new ArrayList<String>();
-        components = new ArrayList<List<Integer>>();
+        components = new ArrayList<List<String>>();
     }
 
     private static void findCutPoints(List<Integer>[] g) {
@@ -35,43 +35,71 @@ public class BiconnectedComponentsPractice {
         Arrays.fill(parents, -1);
         for (int i = 0; i < g.length; i++) {
             if (!visited[i]) {
-                dfs(i, -1);
+                dfs(i);
             }
+            addBiconnected("");
         }
     }
 
-    private static void dfs(int u, int p) {
+    private static void dfs(int u) {
         visited[u] = true;
         low[u] = tin[u] = time++;
         int child = 0;
         boolean cutpoint = false;
         for (int v : graph[u]) {
-            if (v == p) {
+            if (v == parents[u]) {
                 continue;
             } if (visited[v]) {
+                stack.add(u + " " + v);
                 low[u] = Math.min(low[u], tin[v]);
             } else {
-                //parents[v] = u;
-                dfs(v, u);
+                stack.add(u + " " + v);
+                parents[v] = u;
+                dfs(v);
                 child++;
                 low[u] = Math.min(low[u], low[v]);
-                cutpoint = cutpoint | (low[v] >= tin[u] && p != -1);
+                if ((parents[u] == -1 && child >= 2) ||
+                        ((low[v] >= tin[u]) && (parents[u] != -1))) {
+                    cutpoint = true;
+                    addBiconnected(u + " " + v);
+                }
+
                 if (low[v] > tin[u]) {
-                    if (v > u) bridges.add(u + " " + v);
-                    else bridges.add(v + " " + u);
+                    if (u < v) bridges.add(u + " " + v);
+                    else bridges.add(v + "  " + u);
                 }
             }
         }
-        if (child >= 2 && p == -1) {
-            cutpoint = true;
-        } if (cutpoint) {
+
+        if(cutpoint) {
             cutpoints.add(u);
         }
     }
-
+    private static void addBiconnected(String s) {
+        List<String> component = new ArrayList<String>();
+        while (!stack.isEmpty()) {
+            String x = stack.pop();
+            component.add(x);
+            if (x.equals(s)) {
+                break;
+            }
+        }
+        if (!component.isEmpty()) components.add(component);
+    }
+    /*private static void stackComponents(int u) {
+        List<Integer> component = new ArrayList<Integer>();
+        while (!stack.isEmpty()) {
+            int x = stack.pop();
+            component.add(x);
+            if (x == u) {
+                break;
+            }
+        }
+        if (!component.isEmpty()) components.add(component);
+    } */
     public static void main(String[] args) throws IOException{
-        BufferedReader in = new BufferedReader(new FileReader("input.in"));
-        //BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        //BufferedReader in = new BufferedReader(new FileReader("input.in"));
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(in.readLine());
         int n = Integer.parseInt(st.nextToken());
         int m = Integer.parseInt(st.nextToken());
@@ -85,15 +113,15 @@ public class BiconnectedComponentsPractice {
             int b = Integer.parseInt(st.nextToken());
             graph[a].add(b);
             graph[b].add(a);
-        }
-        init(n);
-        findCutPoints(graph);
+    }
+    init(n);
+    findCutPoints(graph);
 
-        Collections.sort(cutpoints);
-        System.out.println(cutpoints.size());
-        for (int cutpoint : cutpoints) {
-            System.out.print(cutpoint + " ");
-        }
+    /*Collections.sort(cutpoints);
+    System.out.println(cutpoints.size());
+    for (int cutpoint : cutpoints) {
+    System.out.print(cutpoint + " ");
+    }
         System.out.println();
 
         Collections.sort(bridges, new Comparator<String>() {
@@ -107,13 +135,23 @@ public class BiconnectedComponentsPractice {
                     return u2 - v2;
                 else
                     return u1 - v2;*/
-            }
+        /*    }
         });
         System.out.println(bridges.size());
         for (String bridge : bridges) {
             System.out.println(bridge);
+        }*/
+        int odd = 0, even = 0;
+        for (List<String> component: components) {
+            //System.out.println(component);
+            if (component.size() % 2 == 0) {
+                odd++;
+            } else {
+                even++;
+            }
         }
+        System.out.println(odd + " " + even);
         in.close();
-        System.exit(0)  ;
+        System.exit(0);
     }
 }

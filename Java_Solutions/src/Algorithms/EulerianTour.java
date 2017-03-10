@@ -44,7 +44,6 @@ public class EulerianTour {
             u = stack.pop();
             while (curEdge[u] < g[u].size()) {
                 int v = g[u].get(curEdge[u]++);
-
                 //long hashsum = ((long) (Math.min(u, v) << 32) + Math.max(u, v)); // if you go v, u you will never go u, v
                 if (usededges.add((((long) Math.min(u, v) << 32) + Math.max(u, v)))) {
                     stack.push(u);

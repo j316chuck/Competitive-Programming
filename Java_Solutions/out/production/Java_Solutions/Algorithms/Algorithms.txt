@@ -47,7 +47,7 @@ http://www.graph-magics.com/articles/euler.php
 Use the same algorithm for directed graph as undirected because you can...
 Run Time: O(V + E)
 Indications: Visits all edges!!! once
-Other notes: directed graph is trickier..., note when visits all edges...
+Other notes: undirected graph is trickier... because you can't go back same edge twice use hashset to account for, note when visits all edges...
 
 SCC (Kosanraju):
 Conditions: Directed graph. should be cyclic, (not bidirectional)
@@ -55,7 +55,7 @@ Run Time: O(n+m) running time x 2
 Indications: Find strongly connected components, connected subgraphs, how many graphs can go from one to the other
 Other Notes: comes out in topological sorting
 
-Articulation Points: (Cut vertices) (Bridge components) (Useful if you need to find ways to add to path to split it or form more complete graph)
+Articulation Points: (undirected and directed) (Cut vertices) (Bridge components) (Useful if you need to find ways to add to path to split it or form more complete graph)
 Conditions: Works in undirected graphs (mainly) (should work in directed graph)... has applications to biconnected components (aka every two points has at least 2 paths connecting them = no articulation points)
 Run time: O(n+m)
 Indications: Used to find bridges, cut points, and if you need to have a tour from one point to another. aka cycle between any two points...
@@ -66,7 +66,7 @@ cut points: 1. root condition 2. low[v] >= disc[u]
 Components: biconnected graph = cur points 1. root condition 2. low[v] >= disc[u]
 https://www.hackerearth.com/practice/algorithms/graphs/articulation-points-and-bridges/tutorial/
 
-SCC (Tarjan)
+SCC (Tarjan) (directed)
 Conditions: Directed graph. should be cyclic, (not bidirectional)
 Run Time: O(n+m) running time
 Indications: Find strongly connected components, connected subgraphs, how many graphs can go from one to the other

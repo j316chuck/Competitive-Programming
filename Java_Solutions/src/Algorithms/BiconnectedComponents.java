@@ -65,18 +65,19 @@ public class BiconnectedComponents {
                     break;
                 }
             }
+            //component.add(stack.pop());
             components.add(component);
         }
    }
 
     // Usage example
     public static void main(String[] args) {
-        int n = 3;
+        int n = 6;
         List<Integer>[] graph = new List[n];
         for (int i = 0; i < n; i++) {
             graph[i] = new ArrayList<>();
         }
-        int[][] edges = {{0, 1}, {1, 2}};
+        int[][] edges = {{0, 3}, {2, 3}, {2, 5}, {2, 4}, {1, 4}, {4, 5}};
         for (int[] edge : edges) {
             graph[edge[0]].add(edge[1]);
             graph[edge[1]].add(edge[0]);

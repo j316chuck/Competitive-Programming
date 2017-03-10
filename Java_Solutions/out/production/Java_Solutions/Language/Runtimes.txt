@@ -3,6 +3,8 @@ http://infotechgems.blogspot.com/2011/11/java-collections-performance-time.html
 ArrayList:
 remove-O(N)
 find-O(N)
+get-O(1)
+binarysearch-(Ologn)
 
 HashSet/TreeSet (really fast):
 Add: O(1)
