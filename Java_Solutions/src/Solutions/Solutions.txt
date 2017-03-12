@@ -75,3 +75,13 @@ Learned: 1. Euler's path conditions for directed and undirected graphs are diffe
 4. Directed = dfs with hashset to ensure you can't use same point
 5. List<Integer>[] g = new List[n+1]; syntax... syntax for ((Long) Math.min(u, v) << 32) + Math.max(u,v); << if you want u, v to be covered.
 6. u, v = coding conventions, names like stack, queue, curEdges is good.
+
+Problem: Reduction Paths (POJ 3177 Problem 6 Stanford Week 4 Graph Lessons)
+Origin: http://poj.org/problem?id=3177
+Learned: Biconnected components solution... or you can do tarjan solution...
+1. you can do 5000 x 5000
+2. biconnected and tarjan are very similar... difference?
+3. use the p, j solution from google site
+4. you can look at people's solutions and understand them... missed edge case... not bi connected problem but finding bridges problem
+5. you can use adjacency list to solve the question...
+6. split into connected components and see how many connected components connect to more than 1 connected component...

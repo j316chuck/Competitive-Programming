@@ -75,6 +75,7 @@ public class BiconnectedComponentsPractice {
             cutpoints.add(u);
         }
     }
+
     private static void addBiconnected(String s) {
         List<String> component = new ArrayList<String>();
         while (!stack.isEmpty()) {
@@ -98,8 +99,8 @@ public class BiconnectedComponentsPractice {
         if (!component.isEmpty()) components.add(component);
     } */
     public static void main(String[] args) throws IOException{
-        //BufferedReader in = new BufferedReader(new FileReader("input.in"));
-        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader in = new BufferedReader(new FileReader("input.in"));
+        //BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(in.readLine());
         int n = Integer.parseInt(st.nextToken());
         int m = Integer.parseInt(st.nextToken());
@@ -109,8 +110,8 @@ public class BiconnectedComponentsPractice {
         }
         for (int i = 0; i < m; i++) {
             st = new StringTokenizer(in.readLine());
-            int a = Integer.parseInt(st.nextToken());
-            int b = Integer.parseInt(st.nextToken());
+            int a = Integer.parseInt(st.nextToken()) - 1;
+            int b = Integer.parseInt(st.nextToken()) - 1; //for graphs that start from one not 0
             graph[a].add(b);
             graph[b].add(a);
     }
@@ -143,7 +144,7 @@ public class BiconnectedComponentsPractice {
         }*/
         int odd = 0, even = 0;
         for (List<String> component: components) {
-            //System.out.println(component);
+            System.out.println(component);
             if (component.size() % 2 == 0) {
                 odd++;
             } else {
