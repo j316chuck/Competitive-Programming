@@ -1,0 +1,14 @@
+Binary Min-Heap Tree complete and obeys min-heap property
+//complete: missing items only at bottom level that are to the far left ...
+//min-heap: every node is less than or equal to both of its children...
+//implement min heap
+//heap adding = add to end of heap and swim up rightful place
+//heap delete = remove the top guy and replace with last guy and sink to rightful place
+
+tree representations =
+1. Node to Children
+    // fixed width nodes = 1, 2, 3 nodes
+    //2. sibling tree node favored child, node sibling //fixed number of links
+    //3. variable width node = child[] // kes -> parents ->
+    //3B. leftChild(k) = k * 2; rightChild(k) = k * 2 + 1 //leave 0 spot empty... // array of keys //must be complete
+    //approach 3b for representing heaps because we know they are complete ... 2 * i + 2 * i + 1

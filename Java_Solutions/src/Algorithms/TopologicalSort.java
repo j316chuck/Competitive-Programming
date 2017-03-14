@@ -24,7 +24,7 @@ public class TopologicalSort {
         }
         //basically the USACO problem of topological sorting...
 
-        while(!q.isEmpty()){
+        while(!q.isEmpty()) {
             int top = q.poll();
             order.add(top);
             for(int i = 0; i < n; i++) {

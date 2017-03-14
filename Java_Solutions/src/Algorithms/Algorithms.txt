@@ -100,3 +100,5 @@ Conditions:
 Run Time:
 Indications:
 Other Notes:
+
+To implement: Iterable for BST... BTree, Red Black Tree, Linear Probing Hashing, Min Heap, Graph traversals... DFS cycle
