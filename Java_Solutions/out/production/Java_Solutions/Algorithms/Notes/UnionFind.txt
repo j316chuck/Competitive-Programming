@@ -1,0 +1,6 @@
+1. Quick Find - (usual time) O(N) connnect time, O(1) find time
+2. Quick Union -(all worst case times) O(N) find time, O(N) connect time because requires root finding
+3. Weighted Quick Union - O(log N) find time, O(log N) connect time
+a. log N Tree size b. no cycles c. must have root parent d. Each parent tree has size >= 2 * child tree size
+4. Weighted Quick Union with Path Compression:
+O(M log * N) where N is at most 5

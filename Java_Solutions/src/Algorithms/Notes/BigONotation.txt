@@ -1,0 +1,13 @@
+1. discard constants and smaller values
+2. O(N) means <=
+3. Theta(N) means =
+4. Omega(N) means >=
+5. ~ Tilde notation means f(n)/g(n) = 1 AKA biggest value of constants
+f(n) ~ g(n) iff limn→∞ F(n)/g(n) = 1.
+8n2 = 8n2 + 4n + 2 8n2 + 2 log(3n) + sqrt(n) 8n2
+Nope - 7n2 + 3 log(n), 8n2.4 + 4n
+
+6. Best case verses worst case... just consider best and worst case
+7. Watch out for tricks...
+
+8. Trees = use intuition, then use summation of cost per node, # of nodes per level

@@ -90,4 +90,20 @@ Problem: Power Hungry Cows (POJ 1945 Problem 7 Week 4)
 Origin: http://poj.org/problem?id=1945
 Learned: Implement Q with arrays... The order in which you choose to add is important...
 You can simplify add not count all the possibilities that don't help you arrive at your result...
-memory limit...
+memory limit... you don't have to add all of them because you only need to get to one x, y
+
+Problem: POJ 3275 Ranking the Cows (Problem 8 Week 4)
+Origin: http://poj.org/problem?id=3275
+Learned: https://github.com/lemonwu/icpc/tree/master/poj/problem%20from%20stanford/Basic%20Graph%20Algorithms
+1. Simple dfs to solve the problem lol 2. In games with choosing least ordering think what is the maximum number of total combinations possible
+3. key observation that all unvisited points must be considered so dfs or bfs to visit all points already compared and subtract from maximum
+4. Lemma that this is correct answer?
+
+Problem: POJ 2337 (Problem 10 Week 4)
+Origin: http://poj.org/problem?id=2337
+Learned: I actually got the right implementation in theory lol
+1. Ask yourself in graph questions, what are the edges and nodes... dp = what are the states
+2. Ask yourself what algorithm can I use to solve
+3. Ask yourself what are the edge cases...
+4. Edge cases = no disjoint sets
+5. Disjoint sets = covers the entire graph... no forests. Use Union find algorithm to cover edge cases like aa bc cd de which have two forests. then use Euler's algorithm

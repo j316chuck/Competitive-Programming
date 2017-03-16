@@ -1,4 +1,6 @@
 DFS:
 https://courses.csail.mit.edu/6.006/spring11/rec/rec13.pdf
 undirecte graphs cannot have cross edges or forward edges
-Only tree edges and back edges
+Only tree edges and back edges.
+
+Graphs:

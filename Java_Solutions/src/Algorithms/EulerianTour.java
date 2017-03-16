@@ -63,6 +63,7 @@ public class EulerianTour {
             dfs(res, v, curEdge, g);
             //can shorten to dfs(res, g[u].get(curEdge[u]++), curEdge, g);
         }
+
         res.add(u);
     }
     public static void main(String[] args) {

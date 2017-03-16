@@ -1,0 +1,12 @@
+hashCode & 0x7FFFFFFF
+Math.floorMod(hashCode())
+hashCode -> converts a key to a number between 0 and M-1
+hashCode -> can return a negative number... must return same value for the same object that is equals
+(which is why equals is so important)
+collision resolution -> when keys collide = linear probing or separate chaining has table.
+resizing separate hash chains = good sometimes.
+performance for search, insert, get, delete = N/M = load factor
+int result = 1;
+final int prime = 31;
+result = result * prime + (s - 'a');
+hashCode automatically returns memory address

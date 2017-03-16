@@ -43,5 +43,9 @@ public class Graph {
         System.out.println(g.edges);
         g.removeNode(1);
         System.out.println(g.edges);
+        int i = 3;
+        int j = i++;
+        //System.out.println(j);
+        //System.out.println(i);
     }
 }
