@@ -37,5 +37,10 @@ public class JavaHashMap {
         for (Map.Entry a: sortedMap.entrySet()) {
             System.out.println(a.getKey() + " " + a.getValue());
         } //done use getKey() and getValue() for keys and value;
+        //keySet() = keys
+        //values() = values
+        //entrySet() = Map.Entry a : entrySet()
+        // or Iterator itr = map.entrySet().iterator();
+        //while(itr.hasNext()) Map.entry a = itr.next();
     }
 }

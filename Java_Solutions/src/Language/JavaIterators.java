@@ -1,6 +1,7 @@
 package Language;
 import java.util.*;
 
+//http://stackoverflow.com/questions/6863182/what-is-the-difference-between-iterator-and-iterable-and-how-to-use-them
 public class JavaIterators {
     public static void main(String[] args){
         //also learned Pairs!!! (or that java doesn't have pairs)

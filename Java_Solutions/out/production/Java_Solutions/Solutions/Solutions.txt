@@ -107,3 +107,10 @@ Learned: I actually got the right implementation in theory lol
 3. Ask yourself what are the edge cases...
 4. Edge cases = no disjoint sets
 5. Disjoint sets = covers the entire graph... no forests. Use Union find algorithm to cover edge cases like aa bc cd de which have two forests. then use Euler's algorithm
+
+Problem: POJ 1985 (Problem 9 Week 4)
+Origin: http://poj.org/problem?id=1984
+Learned: I actually solved it!!! (With dfs instead of supposed BFS)
+1. DFS with memoization...
+2. can also do with BFS
+3. Ask yourself what are the nodes, edges -> algorithm -> what are the edge cases ... -> how can I memoize??? -> implement.

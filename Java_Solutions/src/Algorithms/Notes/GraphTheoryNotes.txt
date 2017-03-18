@@ -4,3 +4,12 @@ undirecte graphs cannot have cross edges or forward edges
 Only tree edges and back edges.
 
 Graphs:
+1. Ask what nodes and edges are?
+2. What are the algorithms you need to solve given the nodes and edges?
+3. What simple observation can I make to make the problem simpler?
+4. Keep your eye on the task!
+5. BFS and DFS are go to!!!!
+6. Union find to make sure one forest or parent ... or one DFS loop ... or one task
+7. Use euler's path, tarjan, articulation points sparingly
+8. Max flow sparingly
+9. What are the edge cases/conditions I am missing???

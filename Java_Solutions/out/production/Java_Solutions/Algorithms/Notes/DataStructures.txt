@@ -1,0 +1,5 @@
+Sorted arrays and binary search trees: Allow fast queries of the form “is there
+something larger (smaller) than X in here?” (OlogN)
+Heaps allow the query “what is the largest item in here?” O(1)
+HashMaps: only interested if there is a certain item in here O(1) (cannot retrieve)
+OrderedArrayList, UnorderedArrayList: get(i) = O(1), remove = O(N), contains = O(n), insert = O(N)
