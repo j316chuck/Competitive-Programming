@@ -114,3 +114,8 @@ Learned: I actually solved it!!! (With dfs instead of supposed BFS)
 1. DFS with memoization...
 2. can also do with BFS
 3. Ask yourself what are the nodes, edges -> algorithm -> what are the edge cases ... -> how can I memoize??? -> implement.
+
+Problem: POJ (Problem 11 Week 4)
+Origin: https://github.com/nanwan03/poj/blob/master/2186%20Popular%20Cows.java
+Learned: 1. union find does not solve everything 2. SCC -> turn into its own Acyclic Directed Graph 3. The tree with dfn[u] = 0;
+
