@@ -32,6 +32,31 @@ public class EulerianTour {
         Collections.reverse(res);
         return res;
     }
+    public static void dfs(List<Integer> res, int u, int[] curEdge, List<Integer>[] g) {
+        while (curEdge[u] < g[u].size()) {
+            int v = g[u].get(curEdge[u]);
+            curEdge[u]++;
+            dfs(res, v, curEdge, g);
+        }
+        res.add(u);
+    }
+
+    public static List<Integer> eulerCycleDirected3(List<Integer>[] g, int u) {
+        Stack<Integer> s = new Stack<Integer>();
+        s.add(u);
+        int[] curEdge = new int[g.length];
+        ArrayList<Integer> circuit = new ArrayList<Integer>();
+        while (!s.isEmpty()) {
+            int v = s.pop();
+            while(curEdge[v] < g[v].size()) {
+                s.push(v);
+                v = g[v].get(curEdge[v]++);
+            }
+            circuit.add(v);
+        }
+        Collections.reverse(circuit);
+        return circuit;
+    }
 
     public static List<Integer> eulerCycleUndirected(List<Integer>[] g, int u) {
         int n = g.length;
@@ -56,16 +81,27 @@ public class EulerianTour {
         return res;
     }
 
-    public static void dfs(List<Integer> res, int u, int[] curEdge, List<Integer>[] g) {
-        while (curEdge[u] < g[u].size()) {
-            int v = g[u].get(curEdge[u]);
-            curEdge[u]++;
-            dfs(res, v, curEdge, g);
-            //can shorten to dfs(res, g[u].get(curEdge[u]++), curEdge, g);
-        }
-
-        res.add(u);
+    public static List<Integer> eulerCycleUndirected2(List<Integer>[] g, int u) {
+        int n = g.length;
+        int[] curEdge = new int[n];
+        Set<Long> usededges = new HashSet<Long>();
+        List<Integer> result = new ArrayList<Integer>();
+        dfs(g, result, usededges, curEdge, u);
+        Collections.reverse(result);
+        return result;
     }
+
+    public static void dfs(List<Integer>[] g, List<Integer> result, Set<Long> usededges, int[] curEdge, int u) {
+        while (curEdge[u] < g[u].size()) {
+            int v = g[u].get(curEdge[u]++);
+            long hashsum = ((long) Math.min(u, v) << 31) + Math.max(u, v);
+            if (usededges.add(hashsum)) {
+                dfs(g, result, usededges, curEdge, v);
+            }
+        }
+        result.add(u);
+    }
+
     public static void main(String[] args) {
         int n = 5;
         List<Integer>[] g = new List[n];
@@ -82,7 +118,7 @@ public class EulerianTour {
 
         System.out.println(eulerCycleDirected(g, 0));
         System.out.println(eulerCycleDirected2(g, 0));
-
+        System.out.println(eulerCycleDirected3(g, 0));
         n = 5;
         g = new List[n];
         for (int i = 0; i < n; i++) {
@@ -108,7 +144,7 @@ public class EulerianTour {
         g[3].add(1);
 
         System.out.println(eulerCycleUndirected(g, 2));
-        //System.out.println(eulerCycleUndirected2(g, 2));
+        System.out.println(eulerCycleUndirected2(g, 2));
     }
 
 }

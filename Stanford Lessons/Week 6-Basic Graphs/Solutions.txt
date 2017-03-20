@@ -1,0 +1,55 @@
+Problem: Reduction Paths (POJ 3177 Problem 6 Stanford Week 4 Graph Lessons)
+Origin: http://poj.org/problem?id=3177
+Learned: Biconnected components solution... or you can do tarjan solution...
+1. you can do 5000 x 5000
+2. biconnected and tarjan are very similar... difference?
+3. use the p, j solution from google site
+4. you can look at people's solutions and understand them... missed edge case... not bi connected problem but finding bridges problem
+5. you can use adjacency list to solve the question...
+6. split into connected components and see how many connected components connect to more than 1 connected component...
+
+Problem: Power Hungry Cows (POJ 1945 Problem 7 Week 4)
+Origin: http://poj.org/problem?id=1945
+Learned: Implement Q with arrays... The order in which you choose to add is important...
+You can simplify add not count all the possibilities that don't help you arrive at your result...
+memory limit... you don't have to add all of them because you only need to get to one x, y
+
+Problem: POJ 3275 Ranking the Cows (Problem 8 Week 4)
+Origin: http://poj.org/problem?id=3275
+Learned: https://github.com/lemonwu/icpc/tree/master/poj/problem%20from%20stanford/Basic%20Graph%20Algorithms
+1. Simple dfs to solve the problem lol 2. In games with choosing least ordering think what is the maximum number of total combinations possible
+3. key observation that all unvisited points must be considered so dfs or bfs to visit all points already compared and subtract from maximum
+4. Lemma that this is correct answer?
+
+Problem: POJ 2337 (Problem 10 Week 4)
+Origin: http://poj.org/problem?id=2337
+Learned: I actually got the right implementation in theory lol
+1. Ask yourself in graph questions, what are the edges and nodes... dp = what are the states
+2. Ask yourself what algorithm can I use to solve
+3. Ask yourself what are the edge cases...
+4. Edge cases = no disjoint sets
+5. Disjoint sets = covers the entire graph... no forests. Use Union find algorithm to cover edge cases like aa bc cd de which have two forests. then use Euler's algorithm
+
+Problem: POJ 1985 (Problem 9 Week 4)
+Origin: http://poj.org/problem?id=1984
+Learned: I actually solved it!!! (With dfs instead of supposed BFS)
+1. DFS with memoization...
+2. can also do with BFS
+3. Ask yourself what are the nodes, edges -> algorithm -> what are the edge cases ... -> how can I memoize??? -> implement.
+
+Problem: POJ (Problem 11 Week 4)
+Origin: https://github.com/nanwan03/poj/blob/master/2186%20Popular%20Cows.java
+Learned: 1. union find does not solve everything 2. SCC -> turn into its own Acyclic Directed Graph 3. The tree with dfn[u] = 0;
+0. Observation: we need to find the connected component of the graph that can reach every other point if the graph was reverse traversed.
+1. Tarjan to find SCC... SCC condensation forms a directed acyclic graph... graph where no cycles can exist (or else then that cycle would be a scc)
+  Thus, there must be at least one vertice with in-degree = 0;
+2. Use Tarjan somehow... condensation very important sometimes...
+3. Goal is to find the SCC size of the vertice with in-degree 0 if there is more than one vertice with in-degree 0 then the graph is disconnected and there is no solution.
+
+Problem: POJ 1944 (Problem 12 Week 4)
+Origin:https://github.com/nanwan03/poj/blob/master/1944%20Fiber%20Communications.java
+Learned: 1. Work Consistently, Chuck back, Work hard Chuck back 2. Work smart 3. Read problem 4. Think about invariants and observations
+5. Don't write ... just think about the problem, check observations and find invaraints 6. Then, find bugs in implementation 7. Then, implement
+Good questions: what do I need to find... what does the winning solution look like... what can I assume about the winning solution. creative! what does the problem tell me...
+This problem: 1. circle = often times turn into 1d problem by iterating and treating each node as last. 2. Then use the technique of nodes[u]-- nodes[v]++ should remebember!
+From USACO, this problem is unique!!!! Solve again!
