@@ -117,4 +117,9 @@ Learned: I actually solved it!!! (With dfs instead of supposed BFS)
 
 Problem: POJ (Problem 11 Week 4)
 Origin: https://github.com/nanwan03/poj/blob/master/2186%20Popular%20Cows.java
+<<<<<<< HEAD
 Learned: 1. union find does not solve everything 2. SCC -> turn into its own Acyclic Directed Graph 3. The tree with dfn[u] = 0;
+
+=======
+Learned: 1. union find does not solve everything 2. SCC -> turn into its own Acyclic Directed Graph 3. The tree with dfn[u] = 0;
+>>>>>>> f66b14c73b598115849bc6ab454d144830e1cb68

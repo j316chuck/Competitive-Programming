@@ -118,3 +118,11 @@ Learned: I actually solved it!!! (With dfs instead of supposed BFS)
 Problem: POJ (Problem 11 Week 4)
 Origin: https://github.com/nanwan03/poj/blob/master/2186%20Popular%20Cows.java
 Learned: 1. union find does not solve everything 2. SCC -> turn into its own Acyclic Directed Graph 3. The tree with dfn[u] = 0;
+
+Problem: ModernArt *
+Origin: http://usaco.org/current/data/sol_art2_gold_open17.html
+Learned: 1. Ad Hoc 2. Use stack 3. Confusing ad hoc with weird optimizations (Redo)
+
+Problem: Bovine Genomics *
+Origin: http://usaco.org/index.php?page=viewproblem2&cpid=741
+Learned: Hashing with sets. Simplify to O(NM) solution. Use hashing roll over technique! i++, j++ simplification!
