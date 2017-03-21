@@ -22,7 +22,7 @@ Indications:  SHORTEST PATH!!!!! indications include same transition state costs
 Other Notes: Construct graph (hardest part), put into queue (easy), traverse with conditions(medium)
 
 Union Find:
-Conditions: graph, check if in the same tree...
+Conditions: graph, check if in the same tree... NOT FOR DIRECTED GRAPHS!!! (link cut tree if directed)
 Run Time: O(NlogN)
 Indications: can determine number of components in a graph, you only want one component usually
 Other Notes: Usually use if you can categorize problems by sets or graphs... do you want to know if a kid is in a certain set...
