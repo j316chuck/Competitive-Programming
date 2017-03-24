@@ -126,3 +126,16 @@ Learned: 1. Ad Hoc 2. Use stack 3. Confusing ad hoc with weird optimizations (Re
 Problem: Bovine Genomics *
 Origin: http://usaco.org/index.php?page=viewproblem2&cpid=741
 Learned: Hashing with sets. Simplify to O(NM) solution. Use hashing roll over technique! i++, j++ simplification!
+
+Problem: Codeforces 723E * (redo with legit version...)
+Origin: http://codeforces.com/contest/723/status/E (Read the java solutions they are good)
+1) Improve Java by reading codeforces... 2) Switch to codeforces mainly... 3) Have fun and get in flow
+4) Nice observation that there must be an even # of the vertices with odd degree. 5. We can just connect all odd degrees
+and then print out the euler's tour of that graph (make it directed by starting at any vertice) (make sure not to print out fake graph)
+6. Good observation/trick or you can point all vertices to 0 degree :D and dfs euler's tour. 8. Or do it legitly with an edge class...
+
+Problem: Codeforces 508D
+Origin: http://codeforces.com/contest/508/status/D
+Learned: 1) Yeah basically Euler's + hash function... watch out for all typical conditions...
+2) 256 * 256 covers all 'A' and 'a'; 3) Check in degree vs outdegree 4) dfs in unique ways!!!
+5) Use fast scanner!!!
