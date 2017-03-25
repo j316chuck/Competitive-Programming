@@ -139,3 +139,13 @@ Origin: http://codeforces.com/contest/508/status/D
 Learned: 1) Yeah basically Euler's + hash function... watch out for all typical conditions...
 2) 256 * 256 covers all 'A' and 'a'; 3) Check in degree vs outdegree 4) dfs in unique ways!!!
 5) Use fast scanner!!!
+
+Problem: Codeforces 510C
+Origin: http://codeforces.com/problemset/problem/510/C
+Learned: 1) cycle algorithm 2) visited algorithm 3) you can do bfs too just check the size of the graph!!!
+4) Edge case!
+
+Problem: Codeforces 427C
+Origin: http://codeforces.com/contest/427/problem/C
+Learned: 1) reviewed kosaraju 2) programming is fun 3) love first 4) fast and furious
+5) you can do the addition sometimes in the dfs or in the while stack!!!
