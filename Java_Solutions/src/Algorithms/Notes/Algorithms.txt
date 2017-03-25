@@ -80,7 +80,7 @@ https://www.hackerearth.com/practice/algorithms/graphs/articulation-points-and-b
 SCC (Tarjan) (directed)
 Conditions: Directed graph. should be cyclic, (not bidirectional)
 Run Time: O(n+m) running time
-Indications: Find strongly connected components, connected subgraphs, how many graphs can go from one to the other
+Indications: Find strongly connected components, connected subgraphs, how many graphs can go from one to the other, think friends problem...
 Other Notes: comes out in topological sorting, used to find all subcycles in a graph. Tarjan's when you condense graph it becomes
 an acyclic directed graph. acyclic graphs have at least 1 node with in degree = 0; When you can travel from x to any other y
 

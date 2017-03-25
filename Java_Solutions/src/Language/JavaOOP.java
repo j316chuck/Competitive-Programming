@@ -4,6 +4,43 @@ public class JavaOOP{
     //I DONT HAVE TO DO THIS BECAUSE PROJECT 2
     /* Notes */
 
+   static class parent {
+        int var1 = 2;
+        public parent() {
+
+        }
+        /*public parent (int v) {
+            var1 = v;
+        }*/
+        @Override
+        public String toString() {
+            return ((Integer) var1).toString();
+        }
+    }
+
+    static class child extends parent{
+        int var1 = 1;
+        /*public child(int v) {
+            var1 = v;
+        }*/
+        @Override
+        public String toString() {
+            return ((Integer) var1).toString();
+        }
+    }
+
+    public static void main(String[] args) {
+
+        child c = new child();
+        System.out.println(c);
+        parent p = c;
+        System.out.println(p);
+        System.out.println(p.var1);
+        //okay so parent.var1 is a different variable than child.var1... thus they can have two different values
+        //thus c.var1 = 1; parent.var1 = 2;
+
+
+    }
     /*Constructor Rules
     1.classes = constructor called
     2.always this or super called (unless explicitly stated)
