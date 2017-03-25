@@ -126,3 +126,14 @@ Learned: 1. Ad Hoc 2. Use stack 3. Confusing ad hoc with weird optimizations (Re
 Problem: Bovine Genomics *
 Origin: http://usaco.org/index.php?page=viewproblem2&cpid=741
 Learned: Hashing with sets. Simplify to O(NM) solution. Use hashing roll over technique! i++, j++ simplification!
+
+Problem: CF510C
+Origin: CF510
+1. Didn't implement but at peace!!!! #trust in God
+2. #happier than sadder Amen Amen Amen!!!
+3. Spend 1 and a half hours thinking about the 3 problems
+4. Spend 1 and a half hours looking up solutions -> 3 hours and 30 minutes 
+5. Code up the solutions 1 hour and 30 minutes -> 5 hours!
+6. CF510C trick is in 1 for loop to iterate because a < b and b < c
+7. Noticed edge case of a.length() > b.length()
+8. Dfs visited and used for topological sorting and checking cycle...

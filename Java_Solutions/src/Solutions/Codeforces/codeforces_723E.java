@@ -1,7 +1,23 @@
+package Solutions.Codeforces;
+
 import java.util.*;
 import java.io.*;
 
-public class Main {
+/*
+1. All even degree nodes are part of the answer
+2. All odd degree nodes cannot be part of the answer
+3. There must be an even number of odd degree nodes...
+4. We can join the odd degree nodes together and form separate euler cycles
+5. Trick is we can also join the odd degree nodes to an arbritrary empty node 0 and then euler's tour there!!! (cute trick)
+6. Use hashsets to represent used edges. or you can just use an marker fake, or you can just mutate the edges!!!
+#all roads lead to Rome
+Practice Openings!!!
+Focus on Middle game especially looking at people's solutions
+Rehone Endgames!!!
+Stress free and fast??? Amen??
+ */
+
+public class codeforces_723E {
 
     static int graph[][];
     static boolean visited[];

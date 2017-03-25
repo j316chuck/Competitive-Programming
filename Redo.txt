@@ -10,6 +10,9 @@ POJ DP last 3
 Scanline technique/Graph:
 February 2016: http://usaco.org/index.php?page=viewproblem2&cpid=623
 
+Hashing: 
+USACO Gold April 2017
+
 Ad Hoc
 April 2013 http://usaco.org/index.php?page=viewproblem2&cpid=283
 POJ 1944 (Problem 12 Week 4)
@@ -23,6 +26,12 @@ Feburary 2016: http://usaco.org/index.php?page=viewproblem2&cpid=719
 
 Tarjan:
 POJ 2186 (Problem 11 Week 4)
+
+DFS: Check Cycle + Topological Sort
+http://codeforces.com/contest/510/problem/C
+
+Union Find:
+http://www.usaco.org/index.php?page=viewproblem2&cpid=228
 
 LOL CHUCK YOU NEED TO DO GIT PULL to merge...
 git mergeconflict 
