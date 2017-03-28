@@ -13,8 +13,8 @@ can have tree like 10 -> 6, 12, 6 -> 1, 1 -> 4
 (note how this 4 goes to 1 not 6)
 
 BTrees and Red Black Trees
-1. Know that a 2-3 tree is also called a B-Tree of order 3
-and that a 2-3-4 tree is a B-Tree of order 4.
+1. Know that a 2-3 tree is also called a Solutions.Codeforces.B-Tree of order 3
+and that a 2-3-4 tree is a Solutions.Codeforces.B-Tree of order 4.
 Know that an M-node is a node with M children, e.g. a
 4-node is a node containing 3 items and thus with 4 children.
 2.Tree height is between logM N and log2 N.
@@ -30,9 +30,9 @@ two consecutive red links wrong rotate right flip
 right red child swap and rotate left, rotate right, flip
 8. EJ = J stays, E goes down with left link
 
-A. swap colors = send up
-B. ES = left right,
-C. rotation = two reds in a row...
+Solutions.Codeforces.A. swap colors = send up
+Solutions.Codeforces.B. ES = left right,
+Solutions.Codeforces.C. rotation = two reds in a row...
 
 Binary Min-Heap Tree complete and obeys min-heap property
 //complete: missing items only at bottom level that are to the far left ...

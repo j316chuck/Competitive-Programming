@@ -2,7 +2,7 @@ package Language;
 import java.util.*;
 
 
-public class JavaHashSet { //most similar to C++ set
+public class JavaHashSet { //most similar to Solutions.Codeforces.C++ set
     public static void main(String[] args) {
         //http://www4.ncsu.edu/~kaltofen/courses/Languages/JavaExamples/jgl3.1.0/doc/api/com.objectspace.jgl.examples.HashSetExamples.html
         HashSet set = new HashSet();

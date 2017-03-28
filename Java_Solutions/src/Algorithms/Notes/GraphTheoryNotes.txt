@@ -13,3 +13,6 @@ Graphs:
 7. Use euler's path, tarjan, articulation points sparingly
 8. Max flow sparingly
 9. What are the edge cases/conditions I am missing???
+
+1. check cycle = cycle[u] = true cycle[u] = false
+2. calculate diameter of undirected graph tree = dfs once then dfs again the farthest vertex... = length of tree

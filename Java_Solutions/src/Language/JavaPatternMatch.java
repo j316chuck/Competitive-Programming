@@ -55,7 +55,7 @@ public class JavaPatternMatch {
         /*
         [abc] - any either one of them and only once
         [^abc] - none of them
-        [a-zA-Z] a thorugh z, or A through Z, inclusive
+        [a-zA-Z] a thorugh z, or Solutions.Codeforces.A through Z, inclusive
         [a-d[m-p]] union a-d or m-p]
         [a-z&&[def]] any one of them (d, e, f)
         [a-z&&[^bc]] any a-z except b and c
@@ -68,9 +68,9 @@ public class JavaPatternMatch {
         \d - a digit: [0-9]
         \D - a nonDigit:
         \s -> a white space character: [\t \n \xoB\f\r]
-        \S -> A non-white space character [^\s]
-        \w -> A word Character [a-zA-Z_0-9]
-        \W -> A non-word character: [^\w]
+        \S -> Solutions.Codeforces.A non-white space character [^\s]
+        \w -> Solutions.Codeforces.A word Character [a-zA-Z_0-9]
+        \W -> Solutions.Codeforces.A non-word character: [^\w]
         must be \\s in string character
          */
 
