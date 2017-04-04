@@ -16,10 +16,10 @@ http://poj.org/problem?id=1164
 
 Problem: Knights
 Origin: (From POJ 2488) (Stanford Lessons  Week 6 Basic Graphs #4
-Learned: DFS, Floodfill, Java, Java Debugging Tool A+, (1 hour DFS :D), Compile Error Logs can see on POJ
+Learned: DFS, Floodfill, Java, Java Debugging Tool Solutions.Codeforces.A+, (1 hour DFS :D), Compile Error Logs can see on POJ
 Make sure to put all ArrayList<String> for good practice, don't forget base and initialization cases (work more carefully)
 Also, can simplify code by creating a path of x and y instead of using arraylist, also can simplify toString function by doing
-int a - 1 + 'A'; Use 2 arrays to keep track of path.
+int a - 1 + 'Solutions.Codeforces.A'; Use 2 arrays to keep track of path.
 http://poj.org/problem?id=2488
 
 Problem: Lasers (From Nick Wu)
@@ -137,15 +137,15 @@ and then print out the euler's tour of that graph (make it directed by starting 
 Problem: Codeforces 508D
 Origin: http://codeforces.com/contest/508/status/D
 Learned: 1) Yeah basically Euler's + hash function... watch out for all typical conditions...
-2) 256 * 256 covers all 'A' and 'a'; 3) Check in degree vs outdegree 4) dfs in unique ways!!!
+2) 256 * 256 covers all 'Solutions.Codeforces.A' and 'a'; 3) Check in degree vs outdegree 4) dfs in unique ways!!!
 5) Use fast scanner!!!
 
 Problem: Codeforces 510C *
-Origin: http://codeforces.com/problemset/problem/510/C
+Origin: http://codeforces.com/problemset/problem/510/Solutions.Codeforces.C
 Learned: 1) cycle algorithm 2) visited algorithm 3) you can do bfs too just check the size of the graph!!!
 4) Edge case!
 
 Problem: Codeforces 427C
-Origin: http://codeforces.com/contest/427/problem/C
+Origin: http://codeforces.com/contest/427/problem/Solutions.Codeforces.C
 Learned: 1) reviewed kosaraju 2) programming is fun 3) love first 4) fast and furious
 5) you can do the addition sometimes in the dfs or in the while stack!!! getting the dfs faster!!!
