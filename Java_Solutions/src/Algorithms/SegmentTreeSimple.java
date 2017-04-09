@@ -85,7 +85,7 @@ public class SegmentTreeSimple {
             if (cmd.equals("u")) {
                 update(0, N - 1, 1, y, x - 1); //remember it array is 0 indexed but segtree is not
             } else {
-                System.out.println(query(0, N - 1, x - 1, y - 1, 1));
+                out.println(query(0, N - 1, x - 1, y - 1, 1));
             }
         }
     }

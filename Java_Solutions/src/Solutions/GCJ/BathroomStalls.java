@@ -1,12 +1,20 @@
+package Solutions.GCJ;
+/*
+Problem: BathroomStalls
+Origin: Google Code Jam Qualification Round 2017
+Learned: Use priority queue for small cases, can use tree optimization/greedy
+traversal to solve problem.
+ */
+
 import java.util.*;
 import java.io.*;
 
-public class Main {
+public class BathroomStalls {
     public static void main(String[] args) throws IOException {
-        //BufferedReader in = new BufferedReader(new FileReader("input.in"));
-        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-        PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
-        //PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("output.out")));
+        BufferedReader in = new BufferedReader(new FileReader("input.in"));
+        //BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        //PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
+        PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("output.out")));
         StringTokenizer st = new StringTokenizer(in.readLine());
         int t = Integer.parseInt(st.nextToken());
         for (int testcase = 1; testcase <= t; testcase++) {
@@ -18,7 +26,7 @@ public class Main {
             int counter = 0;
             while (k != 1) {
                 long h = (long) (Math.log(k) / Math.log(2));
-                h = (long) Math.pow(2, h);
+                h = (long) 1 << h;
                 k -= h/2;
                 if (k >= h) {
                     k -= h/2;
@@ -39,5 +47,6 @@ public class Main {
         System.exit(0);
     }
 }
+
 
 

@@ -44,6 +44,7 @@ public class JavaStrings {
         Double d2 = 0.0;
         System.out.println(d1.compareTo(d2));
         System.out.println(d1);
+        s = "hello"; //java strings are immutable
 
         //regex vs strings
         //find() = part of string... matches() = whole string..

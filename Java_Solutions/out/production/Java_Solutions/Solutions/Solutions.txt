@@ -149,3 +149,16 @@ Problem: Codeforces 427C
 Origin: http://codeforces.com/contest/427/problem/Solutions.Codeforces.C
 Learned: 1) reviewed kosaraju 2) programming is fun 3) love first 4) fast and furious
 5) you can do the addition sometimes in the dfs or in the while stack!!! getting the dfs faster!!!
+
+Problem: AscendingNumbers
+Origin: GCJ Qualification Round 2017
+Learned: Trick with ascending numbers. 1 greedy observation
+
+Problem: BathroomStalls
+Origin: GCJ Qualification Round 2017
+Learned: Use priority queue for small cases, can use tree optimization/greedy traversal to solve problem.
+10^18 begs for binarysearch/tree solution. Tree traversal important. 
+
+Problem: Pancakes
+Origin: GCJ Qualification Round 2017
+Learned: Greedy algorithm. Especially with things like flip pancake, open door, turn on light etc.

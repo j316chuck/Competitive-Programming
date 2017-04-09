@@ -59,8 +59,8 @@ public class RangeMinimumQuery {
     public static void main(String[] args) throws IOException {
         BufferedReader in = new BufferedReader(new FileReader("input.in"));
         //BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-        PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
-        //PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("output.out")));
+        //PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
+        PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("output.out")));
         StringTokenizer st = new StringTokenizer(in.readLine());
         int N = Integer.parseInt(st.nextToken());
         int Q = Integer.parseInt(st.nextToken());
@@ -85,7 +85,7 @@ public class RangeMinimumQuery {
             if (cmd.equals("u")) {
                 update(0, N - 1, 1, y, x - 1); //remember it array is 0 indexed but segtree is not
             } else {
-                System.out.println(query(0, N - 1, x - 1, y - 1, 1));
+                out.println(query(0, N - 1, x - 1, y - 1, 1));
             }
         }
     }
