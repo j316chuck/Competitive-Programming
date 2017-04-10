@@ -21,14 +21,15 @@ public class SegmentTreeSimple {
     static int A[];
     static int segTree[];
 
-    public static int build(int start, int end, int node) {
+    public static void build(int start, int end, int node) {
         if (start == end) {
             segTree[node] = A[start];
-            return segTree[node];
+            return;
         }
         int mid = (start + end) / 2;
-        segTree[node] = build(start, mid, 2 * node) + build(mid + 1, end, 2 * node + 1);
-        return segTree[node];
+        build(start, mid, 2 * node);
+        build(mid + 1, end, 2 * node + 1);
+        segTree[node] = segTree[node * 2] + segTree[node * 2 + 1];
     }
 
     public static void update(int start, int end, int node, int val, int id) {
@@ -47,15 +48,17 @@ public class SegmentTreeSimple {
     }
 
     public static int query(int start, int end, int l, int r, int node) {
-        if (l <= start && end <= r) {
-            return segTree[node];
-        }
         if (r < start || end < l) {
             return 0;
         }
+        if (l <= start && end <= r) {
+            return segTree[node];
+        }
+
         int mid = (start + end)/2;
         return query(start, mid, l, r, 2 * node) + query(mid + 1, end, l, r, 2 * node + 1);
     }
+
     public static void main(String[] args) throws IOException {
         BufferedReader in = new BufferedReader(new FileReader("input.in"));
         //BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
@@ -67,16 +70,16 @@ public class SegmentTreeSimple {
         A = new int[N];
         st = new StringTokenizer(in.readLine());
         int h = (int) Math.ceil(Math.log(N)/Math.log(2));
-        //int x = 2 * (int) Math.pow(2, h) should be  2 * (int) Math.pow(2,h) - 1;
+        //int x = 2 * (int) Math.pow(2, h) should be  2 * (int) Math.pow(2,h) - 1; // can just do 2 * n
         segTree = new int[2 * (int) Math.pow(2, h)];
         for (int i = 0; i < N; i++) {
             A[i] = Integer.parseInt(st.nextToken());
         }
         build(0, N-1, 1);
-        /*update(0, N-1, 1, 100, 1);
+        //update(0, N-1, 1, 100, 1);
         for (int i = 0; i < segTree.length; i++) {
             System.out.println(segTree[i]);
-        }*/
+        }
         for (int i = 0; i < Q; i++) {
             st = new StringTokenizer(in.readLine());
             String cmd = st.nextToken();

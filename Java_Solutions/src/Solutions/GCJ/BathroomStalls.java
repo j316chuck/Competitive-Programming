@@ -26,7 +26,7 @@ public class BathroomStalls {
             int counter = 0;
             while (k != 1) {
                 long h = (long) (Math.log(k) / Math.log(2));
-                h = (long) 1 << h;
+                h = 1 << h; //1 bit shift h = Math.pow(2, h)
                 k -= h/2;
                 if (k >= h) {
                     k -= h/2;

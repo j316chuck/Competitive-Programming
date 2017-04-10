@@ -1,7 +1,8 @@
+package Solutions.Codeforces;
 import java.util.*;
 import java.io.*;
 
-public class Main {
+public class codeforces_207A {
     // three conditions in this segment tree
     // parent tree should be 1 indexed 1, N instead of 0, N-1...
     // node, start, end, l, r, val

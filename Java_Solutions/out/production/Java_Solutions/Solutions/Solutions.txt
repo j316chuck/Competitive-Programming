@@ -145,10 +145,16 @@ Origin: http://codeforces.com/problemset/problem/510/Solutions.Codeforces.C
 Learned: 1) cycle algorithm 2) visited algorithm 3) you can do bfs too just check the size of the graph!!!
 4) Edge case!
 
+
 Problem: Codeforces 427C
 Origin: http://codeforces.com/contest/427/problem/Solutions.Codeforces.C
 Learned: 1) reviewed kosaraju 2) programming is fun 3) love first 4) fast and furious
 5) you can do the addition sometimes in the dfs or in the while stack!!! getting the dfs faster!!!
+
+Problem: Codeforces 406C
+Origin: http://codeforces.com/contest/787/problem/C
+Reorder: 1) dfs from known point 2) memoization/dp 3) memoization with termination in for loop
+4) degree of graph 5) in these types of problems determine: how to win, how to lose, etc.
 
 Problem: AscendingNumbers
 Origin: GCJ Qualification Round 2017
@@ -162,3 +168,7 @@ Learned: Use priority queue for small cases, can use tree optimization/greedy tr
 Problem: Pancakes
 Origin: GCJ Qualification Round 2017
 Learned: Greedy algorithm. Especially with things like flip pancake, open door, turn on light etc.
+
+Problem: KnightsBattle
+Origin: Codeforces 207A
+Learned: Segment Tree practice, interval updating, pretty simple idea.  1 - N indexed. binary search good.
