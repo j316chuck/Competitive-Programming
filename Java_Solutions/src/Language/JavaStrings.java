@@ -45,13 +45,12 @@ public class JavaStrings {
         System.out.println(d1.compareTo(d2));
         System.out.println(d1);
         s = "hello"; //java strings are immutable
-
         //regex vs strings
         //find() = part of string... matches() = whole string..
         //indexOf vs find() and start() and end();
         //both can use split("");
         //matches... find()... group()..split();
-
+        //.replace();
 
     }
 }

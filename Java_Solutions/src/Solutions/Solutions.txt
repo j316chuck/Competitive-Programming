@@ -76,7 +76,7 @@ Learned: 1. Euler's path conditions for directed and undirected graphs are diffe
 5. List<Integer>[] g = new List[n+1]; syntax... syntax for ((Long) Math.min(u, v) << 32) + Math.max(u,v); << if you want u, v to be covered.
 6. u, v = coding conventions, names like stack, queue, curEdges is good.
 
-Problem: Reduction Paths (POJ 3177 Problem 6 Stanford Week 4 Graph Lessons)
+Problem: Reduction Paths (POJ 3177 Problem 6 Stanford Week 4 Graph Lessons) *
 Origin: http://poj.org/problem?id=3177
 Learned: Biconnected components solution... or you can do tarjan solution...
 1. you can do 5000 x 5000
@@ -92,14 +92,14 @@ Learned: Implement Q with arrays... The order in which you choose to add is impo
 You can simplify add not count all the possibilities that don't help you arrive at your result...
 memory limit... you don't have to add all of them because you only need to get to one x, y
 
-Problem: POJ 3275 Ranking the Cows (Problem 8 Week 4)
+Problem: POJ 3275 Ranking the Cows (Problem 8 Week 4) *
 Origin: http://poj.org/problem?id=3275
 Learned: https://github.com/lemonwu/icpc/tree/master/poj/problem%20from%20stanford/Basic%20Graph%20Algorithms
 1. Simple dfs to solve the problem lol 2. In games with choosing least ordering think what is the maximum number of total combinations possible
 3. key observation that all unvisited points must be considered so dfs or bfs to visit all points already compared and subtract from maximum
 4. Lemma that this is correct answer?
 
-Problem: POJ 2337 (Problem 10 Week 4)
+Problem: POJ 2337 (Problem 10 Week 4) *
 Origin: http://poj.org/problem?id=2337
 Learned: I actually got the right implementation in theory lol
 1. Ask yourself in graph questions, what are the edges and nodes... dp = what are the states
@@ -115,7 +115,7 @@ Learned: I actually solved it!!! (With dfs instead of supposed BFS)
 2. can also do with BFS
 3. Ask yourself what are the nodes, edges -> algorithm -> what are the edge cases ... -> how can I memoize??? -> implement.
 
-Problem: POJ (Problem 11 Week 4)
+Problem: POJ (Problem 11 Week 4) *
 Origin: https://github.com/nanwan03/poj/blob/master/2186%20Popular%20Cows.java
 Learned: 1. union find does not solve everything 2. SCC -> turn into its own Acyclic Directed Graph 3. The tree with dfn[u] = 0;
 
@@ -146,7 +146,7 @@ Learned: 1) cycle algorithm 2) visited algorithm 3) you can do bfs too just chec
 4) Edge case!
 
 
-Problem: Codeforces 427C
+Problem: Codeforces 427C *
 Origin: http://codeforces.com/contest/427/problem/Solutions.Codeforces.C
 Learned: 1) reviewed kosaraju 2) programming is fun 3) love first 4) fast and furious
 5) you can do the addition sometimes in the dfs or in the while stack!!! getting the dfs faster!!!
@@ -169,6 +169,20 @@ Problem: Pancakes
 Origin: GCJ Qualification Round 2017
 Learned: Greedy algorithm. Especially with things like flip pancake, open door, turn on light etc.
 
-Problem: KnightsBattle
-Origin: Codeforces 207A
+Problem: codeforces 207A
+Origin: http://codeforces.com/contest/207/status/A
 Learned: Segment Tree practice, interval updating, pretty simple idea.  1 - N indexed. binary search good.
+
+Problem: codeforces 339D
+Origin: http://codeforces.com/contest/339/status/D
+Learned: Segment Tree Practice, Interval Update, node idea to switch between xor, 0-N-1 indexed
+
+Problem: codeforces 459D * (good bit + segment tree problem)
+Origin: http://codeforces.com/contest/459/problem/D
+Learned: sum can be represented as BIT, segment tree is basically BIT, use sum effeciently! hashmap to store common values,
+map -> sum all the values up using BIT.
+
+Problem: codeforces 61E * (counting + bit)
+Origin: http://codeforces.com/contest/61/problem/E
+Learned: i < j < k. break into j vs i and j vs k bit tree. Use cool math and segments to find answer...
+can also solve using segment tree

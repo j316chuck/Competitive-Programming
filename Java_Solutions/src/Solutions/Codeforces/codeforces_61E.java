@@ -1,7 +1,9 @@
+package Solutions.Codeforces;
+
 import java.util.*;
 import java.io.*;
 
-public class Main {
+public class codeforces_61E {
     static int n;
     static Pair A[], B[];//0 - n-1 indexed
     static int bit[];
