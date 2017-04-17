@@ -1,7 +1,9 @@
+package Algorithms;
+
 import java.util.*;
 import java.io.*;
 
-public class Main {
+public class TriePractice {
     static class Node{
         boolean leaf;
         Node[] children = new Node[26];

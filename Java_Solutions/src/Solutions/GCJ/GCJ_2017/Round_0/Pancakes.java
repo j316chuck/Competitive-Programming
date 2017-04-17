@@ -1,4 +1,4 @@
-package Solutions.GCJ;
+package Solutions.GCJ.GCJ_2017.Round_0;
 
 /**
  * Created by chuck on 4/8/2017.

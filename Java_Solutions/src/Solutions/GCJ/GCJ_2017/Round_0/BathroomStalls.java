@@ -1,4 +1,4 @@
-package Solutions.GCJ;
+package Solutions.GCJ.GCJ_2017.Round_0;
 /*
 Problem: BathroomStalls
 Origin: Google Code Jam Qualification Round 2017
