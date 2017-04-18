@@ -186,3 +186,17 @@ Problem: codeforces 61E * (counting + bit)
 Origin: http://codeforces.com/contest/61/problem/E
 Learned: i < j < k. break into j vs i and j vs k bit tree. Use cool math and segments to find answer...
 can also solve using segment tree
+
+Problem: codeforces 409C
+Origin: http://codeforces.com/contest/801/status/C
+Learned: Binary search on answer!!! That is a pretty good one. Can also sort it and iteratively calculate
+Name of variables is important... be clear... 100000 = binary search or sort
+
+Problem: codeforces 409D
+Learned: 1. Computational geometry cross product distance between point and line
+2. In these types of problems - distance d means circle of radius d. 3. Find how to use the distance between point
+and line etc... Math it out...
+
+Problem: codeforces 380C
+Learned: 1. segment tree... what do the nodes represent (what to store) 2. implementation needs to be faster
+3. can also use dp 4. 2 questions basically what do nodes represent, how to join them...

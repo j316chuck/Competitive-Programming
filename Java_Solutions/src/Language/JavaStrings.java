@@ -51,6 +51,8 @@ public class JavaStrings {
         //both can use split("");
         //matches... find()... group()..split();
         //.replace();
-
+        s = "Hello ^ ! Special Characters .... - ' will be removed";
+        String s1 = s.replaceAll("[^A-Za-z]", "").toLowerCase();
+        System.out.println(s1);
     }
 }
