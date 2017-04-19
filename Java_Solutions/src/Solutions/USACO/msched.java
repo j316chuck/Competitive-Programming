@@ -50,7 +50,7 @@ public class msched {
         Arrays.fill(cost, -1);
         int result = 0;
         for (int i = 1; i <= n; i++) {
-            if(cost[i] == -1){
+            if (cost[i] == -1) {
                 result = Math.max(result, dfs(i));
             }
         }

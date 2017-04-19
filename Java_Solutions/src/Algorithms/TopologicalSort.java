@@ -6,7 +6,6 @@ import java.io.*;
 //Note O(E + V) runtime with just adjacency list
 //has to be directed acyclic graph
 public class TopologicalSort {
-
     static boolean AdjacencyMatrix(int w[][], ArrayList<Integer> order){
         int n = w.length;
         int parent[] = new int[n];

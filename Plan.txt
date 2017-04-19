@@ -30,3 +30,12 @@ Schedule:
 POJ until june please finish 
 
 
+Must Do:
+1. C++ classes, C++ STL, lambdas, pointers, input/output.
+2. Java/C++ debugger CLION vs IntelliJ
+3. Learn operation cost, memory cost, total runtime cost etc.
+
+Learn a lot of algorithms
+
+Wants:
+1. Unix/Debugger

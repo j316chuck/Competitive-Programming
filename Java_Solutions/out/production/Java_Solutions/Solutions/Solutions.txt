@@ -5,6 +5,10 @@ Graph: may have 4 coordinates surrounding, map<int, map<int, int> >, graph...
 Fractions: Represent as val, mod in class
 Circle: Turn into line... May need to rotate the graph...
 Graph: each vertex can be DP on. reverse the graph? for shortest path of bidirectional directions
+Tree: N-1 vertices = tree = special properties...
+For graph problems: what type of graph is it
+For segment tree problems: what do the nodes represent
+For dp problems: what do the states represent
 
 Problem: Castle
 Origin: Week 6 Basic Graphs (Stanford) (Also from USACO Training Gate)
@@ -115,7 +119,7 @@ Learned: I actually solved it!!! (With dfs instead of supposed BFS)
 2. can also do with BFS
 3. Ask yourself what are the nodes, edges -> algorithm -> what are the edge cases ... -> how can I memoize??? -> implement.
 
-Problem: POJ (Problem 11 Week 4) *
+Problem: POJ 2186 (Problem 11 Week 4) *
 Origin: https://github.com/nanwan03/poj/blob/master/2186%20Popular%20Cows.java
 Learned: 1. union find does not solve everything 2. SCC -> turn into its own Acyclic Directed Graph 3. The tree with dfn[u] = 0;
 
@@ -196,3 +200,29 @@ Problem: codeforces 409D
 Learned: 1. Computational geometry cross product distance between point and line
 2. In these types of problems - distance d means circle of radius d. 3. Find how to use the distance between point
 and line etc... Math it out...
+
+Problem: codeforces 380C
+Learned: 1. segment tree... what do the nodes represent (what to store) 2. implementation needs to be faster
+3. can also use dp 4. 2 questions basically what do nodes represent, how to join them...
+
+____________________________________________________________________________________________________________________
+
+Review 1 4.18.17
+
+____________________________________________________________________________________________________________________
+
+Problem: codeforces 408C *
+Origin: http://codeforces.com/contest/796/problem/C
+Learned: 1. Work Smarter : Actually think about the question don't just brute force implement it....
+2. Before every graph problem write down the graph and special characteristics about it 3. This is a tree problem
+4. Tree = 1 path from one to the next... 5. thus, the maximum values are +2 +1 or +0 maxn, 6. check the 1's or 2's
+7. iterate through tree to solve...
+
+Problem: codeforces 408D
+Origin: http://codeforces.com/contest/796/problem/D
+Learned: 1. tree so there are no duplicate paths 2. you can do a simple bfs and solve this problem 3. insert all police
+stations into the q. 4. pop out and visit. If visited point, this edge can be deleted. 5. sets delete to keep clearer.
+
+Problem: codeforces 408E
+Origin: http://codeforces.com/contest/796/problem/E
+Learned:
