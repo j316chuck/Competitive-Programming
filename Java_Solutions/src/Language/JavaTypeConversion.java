@@ -2,13 +2,22 @@ package Language;
 
 public class JavaTypeConversion {
     public static void main(String[] args) {
-        //toString easy
+        //integer to string (int) -- toString easy
         int integer = 6;
         String s = Integer.toString(integer);
+        System.out.println(s);
+
+        //integer to string (abc) -- ascii value
+        //Character.toString();
         int a = 3;
-        char character = (char) (a + 48);
+        char character = (char) (a + '0' + 48);
         char c = 'c';
+        s = Character.toString(character);
+        System.out.println(s);
+        int b = 13;
+        c = (char) (b + 48 + '0');
         s = Character.toString(c);
+        System.out.println(s);
 
         //parseInt String to Int...
         String str = "0";

@@ -44,13 +44,15 @@ public class JavaStrings {
         Double d2 = 0.0;
         System.out.println(d1.compareTo(d2));
         System.out.println(d1);
-
+        s = "hello"; //java strings are immutable
         //regex vs strings
         //find() = part of string... matches() = whole string..
         //indexOf vs find() and start() and end();
         //both can use split("");
         //matches... find()... group()..split();
-
-
+        //.replace();
+        s = "Hello ^ ! Special Characters .... - ' will be removed";
+        String s1 = s.replaceAll("[^A-Za-z]", "").toLowerCase();
+        System.out.println(s1);
     }
 }

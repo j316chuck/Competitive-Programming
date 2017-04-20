@@ -11,7 +11,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/chelper3.0beta13.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/chelper3.0beta13.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

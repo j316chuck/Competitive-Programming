@@ -28,7 +28,7 @@ public class JavaTreeSet {
     public static void main(String[] args) {
 
         //TreeSet -> BinarySearch too with contains
-        //hashset does not have subset, treeset more similar to C++ set
+        //hashset does not have subset, treeset more similar to Solutions.Codeforces.C++ set
         //http://www4.ncsu.edu/~kaltofen/courses/Languages/JavaExamples/jgl3.1.0/doc/api/com.objectspace.jgl.examples.HashSetExamples.html
         TreeSet<Animal> zoo = new TreeSet<Animal>(); //animal has to be comparable or comparator
         for(int i = 0; i < 10; i++) {

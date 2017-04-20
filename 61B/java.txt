@@ -1,4 +1,4 @@
-Buffered Reader:
+﻿Buffered Reader:
 1. .read() and .readLine();
 
 String Tokenizer:
@@ -123,7 +123,7 @@ Nested class:
 
 Interfaces:
 1. Cannot have static methods
-2. Cannot be instantiated.
+2. Cannot be instantiated. (Can do Interface a = new Subclass())
 3. Can provide either abstract or concrete methods.
 4. Use no keyword for abstract methods.
 5. Use default keyword for concrete methods.
@@ -132,6 +132,7 @@ Interfaces:
 8. Can have variables with this interface
 
 Abstract Classes:
+0. Static method -> cannot have for abstract methods but can have for non abstract classes
 1. Cannot be instantiated.
 2. Can provide either abstract or concrete methods.
 3. Use abstract keyword for abstract methods.

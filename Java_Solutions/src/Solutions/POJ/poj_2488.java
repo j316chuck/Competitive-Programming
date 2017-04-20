@@ -20,7 +20,7 @@ public class poj_2488 {
         for(int i = 1; i <= n; i++){
             st = new StringTokenizer(in.readLine());
             columns = Integer.parseInt(st.nextToken()); //4 - 1 2 3 4
-            rows = Integer.parseInt(st.nextToken()); //3 - A B C
+            rows = Integer.parseInt(st.nextToken()); //3 - Solutions.Codeforces.A Solutions.Codeforces.B Solutions.Codeforces.C
             boolean visited[][] = new boolean[rows+1][columns+1];  //1 - rows indexed
 
             List<String> result = dfs(1, 1, rows * columns, visited);

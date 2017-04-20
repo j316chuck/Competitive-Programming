@@ -5,6 +5,10 @@ Graph: may have 4 coordinates surrounding, map<int, map<int, int> >, graph...
 Fractions: Represent as val, mod in class
 Circle: Turn into line... May need to rotate the graph...
 Graph: each vertex can be DP on. reverse the graph? for shortest path of bidirectional directions
+Tree: N-1 vertices = tree = special properties...
+For graph problems: what type of graph is it
+For segment tree problems: what do the nodes represent
+For dp problems: what do the states represent
 
 Problem: Castle
 Origin: Week 6 Basic Graphs (Stanford) (Also from USACO Training Gate)
@@ -16,10 +20,10 @@ http://poj.org/problem?id=1164
 
 Problem: Knights
 Origin: (From POJ 2488) (Stanford Lessons  Week 6 Basic Graphs #4
-Learned: DFS, Floodfill, Java, Java Debugging Tool A+, (1 hour DFS :D), Compile Error Logs can see on POJ
+Learned: DFS, Floodfill, Java, Java Debugging Tool Solutions.Codeforces.A+, (1 hour DFS :D), Compile Error Logs can see on POJ
 Make sure to put all ArrayList<String> for good practice, don't forget base and initialization cases (work more carefully)
 Also, can simplify code by creating a path of x and y instead of using arraylist, also can simplify toString function by doing
-int a - 1 + 'A'; Use 2 arrays to keep track of path.
+int a - 1 + 'Solutions.Codeforces.A'; Use 2 arrays to keep track of path.
 http://poj.org/problem?id=2488
 
 Problem: Lasers (From Nick Wu)
@@ -76,7 +80,7 @@ Learned: 1. Euler's path conditions for directed and undirected graphs are diffe
 5. List<Integer>[] g = new List[n+1]; syntax... syntax for ((Long) Math.min(u, v) << 32) + Math.max(u,v); << if you want u, v to be covered.
 6. u, v = coding conventions, names like stack, queue, curEdges is good.
 
-Problem: Reduction Paths (POJ 3177 Problem 6 Stanford Week 4 Graph Lessons)
+Problem: Reduction Paths (POJ 3177 Problem 6 Stanford Week 4 Graph Lessons) *
 Origin: http://poj.org/problem?id=3177
 Learned: Biconnected components solution... or you can do tarjan solution...
 1. you can do 5000 x 5000
@@ -92,14 +96,14 @@ Learned: Implement Q with arrays... The order in which you choose to add is impo
 You can simplify add not count all the possibilities that don't help you arrive at your result...
 memory limit... you don't have to add all of them because you only need to get to one x, y
 
-Problem: POJ 3275 Ranking the Cows (Problem 8 Week 4)
+Problem: POJ 3275 Ranking the Cows (Problem 8 Week 4) *
 Origin: http://poj.org/problem?id=3275
 Learned: https://github.com/lemonwu/icpc/tree/master/poj/problem%20from%20stanford/Basic%20Graph%20Algorithms
 1. Simple dfs to solve the problem lol 2. In games with choosing least ordering think what is the maximum number of total combinations possible
 3. key observation that all unvisited points must be considered so dfs or bfs to visit all points already compared and subtract from maximum
 4. Lemma that this is correct answer?
 
-Problem: POJ 2337 (Problem 10 Week 4)
+Problem: POJ 2337 (Problem 10 Week 4) *
 Origin: http://poj.org/problem?id=2337
 Learned: I actually got the right implementation in theory lol
 1. Ask yourself in graph questions, what are the edges and nodes... dp = what are the states
@@ -115,7 +119,7 @@ Learned: I actually solved it!!! (With dfs instead of supposed BFS)
 2. can also do with BFS
 3. Ask yourself what are the nodes, edges -> algorithm -> what are the edge cases ... -> how can I memoize??? -> implement.
 
-Problem: POJ (Problem 11 Week 4)
+Problem: POJ 2186 (Problem 11 Week 4) *
 Origin: https://github.com/nanwan03/poj/blob/master/2186%20Popular%20Cows.java
 Learned: 1. union find does not solve everything 2. SCC -> turn into its own Acyclic Directed Graph 3. The tree with dfn[u] = 0;
 
@@ -137,15 +141,88 @@ and then print out the euler's tour of that graph (make it directed by starting 
 Problem: Codeforces 508D
 Origin: http://codeforces.com/contest/508/status/D
 Learned: 1) Yeah basically Euler's + hash function... watch out for all typical conditions...
-2) 256 * 256 covers all 'A' and 'a'; 3) Check in degree vs outdegree 4) dfs in unique ways!!!
+2) 256 * 256 covers all 'Solutions.Codeforces.A' and 'a'; 3) Check in degree vs outdegree 4) dfs in unique ways!!!
 5) Use fast scanner!!!
 
-Problem: Codeforces 510C
-Origin: http://codeforces.com/problemset/problem/510/C
+Problem: Codeforces 510C *
+Origin: http://codeforces.com/problemset/problem/510/Solutions.Codeforces.C
 Learned: 1) cycle algorithm 2) visited algorithm 3) you can do bfs too just check the size of the graph!!!
 4) Edge case!
 
-Problem: Codeforces 427C
-Origin: http://codeforces.com/contest/427/problem/C
+
+Problem: Codeforces 427C *
+Origin: http://codeforces.com/contest/427/problem/Solutions.Codeforces.C
 Learned: 1) reviewed kosaraju 2) programming is fun 3) love first 4) fast and furious
-5) you can do the addition sometimes in the dfs or in the while stack!!!
+5) you can do the addition sometimes in the dfs or in the while stack!!! getting the dfs faster!!!
+
+Problem: Codeforces 406C
+Origin: http://codeforces.com/contest/787/problem/C
+Reorder: 1) dfs from known point 2) memoization/dp 3) memoization with termination in for loop
+4) degree of graph 5) in these types of problems determine: how to win, how to lose, etc.
+
+Problem: AscendingNumbers
+Origin: GCJ Qualification Round 2017
+Learned: Trick with ascending numbers. 1 greedy observation
+
+Problem: BathroomStalls
+Origin: GCJ Qualification Round 2017
+Learned: Use priority queue for small cases, can use tree optimization/greedy traversal to solve problem.
+10^18 begs for binarysearch/tree solution. Tree traversal important. 
+
+Problem: Pancakes
+Origin: GCJ Qualification Round 2017
+Learned: Greedy algorithm. Especially with things like flip pancake, open door, turn on light etc.
+
+Problem: codeforces 207A
+Origin: http://codeforces.com/contest/207/status/A
+Learned: Segment Tree practice, interval updating, pretty simple idea.  1 - N indexed. binary search good.
+
+Problem: codeforces 339D
+Origin: http://codeforces.com/contest/339/status/D
+Learned: Segment Tree Practice, Interval Update, node idea to switch between xor, 0-N-1 indexed
+
+Problem: codeforces 459D * (good bit + segment tree problem)
+Origin: http://codeforces.com/contest/459/problem/D
+Learned: sum can be represented as BIT, segment tree is basically BIT, use sum effeciently! hashmap to store common values,
+map -> sum all the values up using BIT.
+
+Problem: codeforces 61E * (counting + bit)
+Origin: http://codeforces.com/contest/61/problem/E
+Learned: i < j < k. break into j vs i and j vs k bit tree. Use cool math and segments to find answer...
+can also solve using segment tree
+
+Problem: codeforces 409C
+Origin: http://codeforces.com/contest/801/status/C
+Learned: Binary search on answer!!! That is a pretty good one. Can also sort it and iteratively calculate
+Name of variables is important... be clear... 100000 = binary search or sort
+
+Problem: codeforces 409D
+Learned: 1. Computational geometry cross product distance between point and line
+2. In these types of problems - distance d means circle of radius d. 3. Find how to use the distance between point
+and line etc... Math it out...
+
+Problem: codeforces 380C
+Learned: 1. segment tree... what do the nodes represent (what to store) 2. implementation needs to be faster
+3. can also use dp 4. 2 questions basically what do nodes represent, how to join them...
+
+____________________________________________________________________________________________________________________
+
+Review 1 4.18.17
+
+____________________________________________________________________________________________________________________
+
+Problem: codeforces 408C *
+Origin: http://codeforces.com/contest/796/problem/C
+Learned: 1. Work Smarter : Actually think about the question don't just brute force implement it....
+2. Before every graph problem write down the graph and special characteristics about it 3. This is a tree problem
+4. Tree = 1 path from one to the next... 5. thus, the maximum values are +2 +1 or +0 maxn, 6. check the 1's or 2's
+7. iterate through tree to solve...
+
+Problem: codeforces 408D
+Origin: http://codeforces.com/contest/796/problem/D
+Learned: 1. tree so there are no duplicate paths 2. you can do a simple bfs and solve this problem 3. insert all police
+stations into the q. 4. pop out and visit. If visited point, this edge can be deleted. 5. sets delete to keep clearer.
+
+Problem: codeforces 408E
+Origin: http://codeforces.com/contest/796/problem/E
+Learned:

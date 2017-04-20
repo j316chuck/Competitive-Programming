@@ -21,9 +21,6 @@ BIT
 April 2012: http://usaco.org/index.php?page=viewproblem2&cpid=136
 Feburary 2016: http://usaco.org/index.php?page=viewproblem2&cpid=719
 
-Tarjan:
-POJ 2186 (Problem 11 Week 4)
-
 LOL CHUCK YOU NEED TO DO GIT PULL to merge...
 git mergeconflict 
 wqa for mergeconflict

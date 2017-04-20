@@ -53,9 +53,9 @@ public class JavaIterators {
 
         /* ListIterators */
         ArrayList al = new ArrayList();
-        al.add("A");
-        al.add("B");
-        al.add("C");
+        al.add("Solutions.Codeforces.A");
+        al.add("Solutions.Codeforces.B");
+        al.add("Solutions.Codeforces.C");
         al.add("D");
 
         ListIterator iter = al.listIterator(); //List iterator interface
