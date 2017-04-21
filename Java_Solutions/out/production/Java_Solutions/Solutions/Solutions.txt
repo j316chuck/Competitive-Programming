@@ -211,18 +211,34 @@ Review 1 4.18.17
 
 ____________________________________________________________________________________________________________________
 
-Problem: codeforces 408C *
+Problem: codeforces 408C * (Tree)
 Origin: http://codeforces.com/contest/796/problem/C
 Learned: 1. Work Smarter : Actually think about the question don't just brute force implement it....
 2. Before every graph problem write down the graph and special characteristics about it 3. This is a tree problem
 4. Tree = 1 path from one to the next... 5. thus, the maximum values are +2 +1 or +0 maxn, 6. check the 1's or 2's
 7. iterate through tree to solve...
 
-Problem: codeforces 408D
+Problem: codeforces 408D * (BFS)
 Origin: http://codeforces.com/contest/796/problem/D
 Learned: 1. tree so there are no duplicate paths 2. you can do a simple bfs and solve this problem 3. insert all police
 stations into the q. 4. pop out and visit. If visited point, this edge can be deleted. 5. sets delete to keep clearer.
 
-Problem: codeforces 408E
+Problem: codeforces 408E (DP)
 Origin: http://codeforces.com/contest/796/problem/E
 Learned:
+
+Probelm: codeforces 514C * (Hashing)
+Origin: http://codeforces.com/problemset/problem/514/c
+Learned: Most problems that involve matching string or subtring or finding common patterns for strings can
+be done with polynomial hashing or rolling hashes. 1. hash = 0 indexed create run hash function 2. watch out for indexes
+3. Modular values 4. write helper functions, substring, power, hashing. 5. Can also use trie and then dfs
+
+Problem: GCJ Round 1A A(Implementation)
+Origin: GCJ
+Learned: greedy implementation and fill 2d rectange. Simplify by iterating row by row with memcpy/system.arraycopy
+when implementing "tricky" greedy problems... break down into subtasks and solve
+
+Problem: GCJ Round 1A B
+Origin: GCJ
+Learned: Greedy solution, fractions with mod. Hashmap mapping implentation!
+
