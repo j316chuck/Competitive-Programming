@@ -242,3 +242,11 @@ Problem: GCJ Round 1A B
 Origin: GCJ
 Learned: Greedy solution, fractions with mod. Hashmap mapping implentation!
 
+Problem: GCJ Round 1B B * (Implementation Problem)
+Origin: GCJ
+Learned: Implementation edge cases... be faster and cleaner
+
+Problem: GCJ Round 1B C * (Shortest path)
+Origin: GCJ
+Learned: Floyds algorithm whne n = 100 or 500 even. Big sign, distance = shortest path to all points
+input between several coordinates. Big sign! rate = run floyds again wow.

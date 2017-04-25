@@ -5,31 +5,50 @@ You can't do the future well if you don't do the present excellent
 
 Improvement:
 1. Work Consistently 7:30: 7:35
-2. Work Hard! Stay focused whole time
-3. Work Smart!
+2. Work Hard! Stay focused whole time (1 hour and 30 minutes)
+3. Work Smart! (Less time implementing and debugging, more time thinking about better solution and looking at good code at least 10 min on editorial and 2 solutiosn)
+4. Take breaks every 1 hour and 30 minutes enforce.
+5. Time breaks and tasks!
 Check the right contest...
 Don't have to be perfect...
 Review Contest
 
 To Practice:
-4/17/17
-Tries +4;
+
 
 4/24/17
 Streams (convert?)
-Scanner (convert?)
+DP +8 game theory!
+DP +6 bitmasks
+DP +5 general DP problems
+DP +5 4 state DP problems...
+
+4/31/17
 Segment Tree +5
 BIT +5
+Lazy Propagation + 5
 
 Experiments:
-Contests!!! 7:30
+Timer, track breaks and problem time
 
 Rating Tracker:
 
 Goals: ~1700 Rating level = 3 problems right - Gold 700 4/17/17
-       ~2000 before mexico =  4 problems right - Platinum 1 problem 333 7/26/17
-       ~2200 before camp = 5 problems right - Platinum 2 problems 9/30/17
+       ~2000 before mexico =  4 problems right - Platinum 1 problem 333 7/26/17 CF D
+       ~2200 before camp = 5 problems right - Platinum 2 problems 9/30/17 CF E
        ~2200 end of year
+
+
+C++ Langauge Cleaning:
+1)Make plan + Berkeley Programming Contest
+2)System setup + debugging + code constructs/STL + runtime costs
+3)Language regover + Classes inheritance
+4)Pointers + STL
+5)STL + lambdas
+6)finish up + double index out of bounds etc... array max sizes etc.
+
+ToDo:
+Build own library C++
 
 Contests:
 4/17/17: CF 409 Div II: A B C 2 hours
@@ -42,3 +61,8 @@ Comments: 1. Do implementation problems until you can breeze by them 2. Be fast 
 Comments: 1. Implementation = get CLEAN rough idea 2. Start coding be careful for edge cases 3. Consistency good!
 4. Actually read and understand the editorial 5. Code it up! 6. Implementation right idea but can make code cleaner
 7. Work consistently, work hard, WORK SMART -> improve code cleaner! 8. Read and understand tutorial.
+4/21/17: CF 410 DIV II: A B C 1.5 hours
+Comments: Real contest pull through + 150 = 1548! 1. Work hard! Focus on the question and read it
+2. Read the question work smart 3. Work smart: 5 min observation 5 min algorithm 5 min observation 5 min algorithm
+4. Good math observations!!! O(n) runtime 5. For sorting problems - 100000. construct algorithm = O(n) runtime look for
+or O(n) processing time! tricky subdivision problem!!!!
