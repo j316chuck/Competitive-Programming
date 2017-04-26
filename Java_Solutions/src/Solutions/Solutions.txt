@@ -256,3 +256,8 @@ Problem: GCJ Round 1B C * (Shortest path)
 Origin: GCJ
 Learned: Floyds algorithm when n = 100 or 500 even. Big sign, distance = shortest path to all points
 input between several coordinates. Big sign! rate = run floyds again wow.
+
+Problem: Codeforces 260D (DP + Game theory + trie)
+Origin: codeforces 260D
+Learned: 1. DP game theory weird keep track of win and lose states 2. If can win and lose = win 3. If cannot win
+then = lose 4. If cannot lose but can win = k mod 2 = 1 = win... 3. base case of trie = !win lose = true  4. win = ! win[i] i = children...

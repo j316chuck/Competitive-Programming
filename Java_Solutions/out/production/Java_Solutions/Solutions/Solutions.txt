@@ -242,11 +242,22 @@ Problem: GCJ Round 1A B
 Origin: GCJ
 Learned: Greedy solution, fractions with mod. Hashmap mapping implentation!
 
-Problem: GCJ Round 1B B * (Implementation Problem)
+Problem: GCJ Round 1B B * (Implementation Problem) (*Redo and recode)
 Origin: GCJ
-Learned: Implementation edge cases... be faster and cleaner
+Learned: Implementation edge cases... be faster and cleaner. 1. Use small cases to solve large cases in implementation
+problems... break down tasks into smaller cases. 2. Small case edge case = one color > floor N/2 3. Else use cool partitioning
+of 1 3 5 7 2 4 6 8 to make sure all RYB are distributed evenly 3. Then for big case realize that G -> Y P -> Y etc.
+4. Another Observation: RGR = R!!!! RGRGRGR = R!!! 5. This means RGRBRGR = RBR = RGRGRBR so we can chain all the RGRGR together!
+6. Also watch out for the edge case in the example given to you that YZYZYZ also works so have to check if they are the only couple
+7. If not, reduce the problem down into -> simplest form base case where each G + 1 <= R and thus treat RGRGRRG as R and solve for small case.
+8. Very beautiful solutions!!!
 
 Problem: GCJ Round 1B C * (Shortest path)
 Origin: GCJ
-Learned: Floyds algorithm whne n = 100 or 500 even. Big sign, distance = shortest path to all points
+Learned: Floyds algorithm when n = 100 or 500 even. Big sign, distance = shortest path to all points
 input between several coordinates. Big sign! rate = run floyds again wow.
+
+Problem: Codeforces 260D (DP + Game theory + trie)
+Origin: codeforces 260D
+Learned: 1. DP game theory weird keep track of win and lose states 2. If can win and lose = win 3. If cannot win
+then = lose 4. If cannot lose but can win = k mod 2 = 1 = win... 3. base case of trie = !win lose = true  4. win = ! win[i] i = children...
