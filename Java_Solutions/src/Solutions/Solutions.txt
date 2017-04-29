@@ -261,3 +261,43 @@ Problem: Codeforces 260D (DP + Game theory + trie)
 Origin: codeforces 260D
 Learned: 1. DP game theory weird keep track of win and lose states 2. If can win and lose = win 3. If cannot win
 then = lose 4. If cannot lose but can win = k mod 2 = 1 = win... 3. base case of trie = !win lose = true  4. win = ! win[i] i = children...
+
+Problem: POJ 3480 (Game theory)
+Origin: http://poj.org/problem?id=3480
+Learned: 1. Know basic algorithms + add your own twist to it/rules 2. Les misere rules flipped the game so that last drawer losers
+3. Obvious base cases if all ones then parity determines winner/loser 4. Extension of base case if all ones except 1 X then John always wins
+because of the fact that he can turn x into 1 or 0 making the parity shift to his favor 5. Other than that this is a basic nim game
+where xor of all numbers = 0 then John loses. This is because aside from these two base cases John or his opponent can always force them into
+position 1 or position 2 by the rules of nim. 5. Rule of nim = even number of 1's
+
+Problem: POJ 2505 (Game theory)
+Origin: Poj 2505
+Learned: 1. Base case 2-9 = stan 10-18 = ollie 2. Recurrence from there 3. 19-162 must be stan 163-324 = ollie... enough to find base cases...
+Max and min multiplication theorem think about it.
+
+Problem: POJ 1678 (Minimax) *
+Origin: POJ 1678
+Learned: 1. Classical minimax algorithm 2. Dfs + DP 3. Simplification that you can only go in the positive direction in array so no
+need to binary search!!!! Make that observation 4. Sort array 5. Base case is when you have no more moves left return value
+6. Need to define what the state is and what it means (look at problem for the states most likely it is the max or min value)
+define more states if necessary, this stage it is not necessary 7. Recurrence relation is that you are always finding the max value...
+
+Problem: POJ 1704 (Nim) *
+Origin: http://poj.org/problem?id=1704
+Learned: 1. Use difference as nim problem 2. This is because we can win like this since
+taking from odd difference is equivalent to taking from original nim problem 3. Or taking from even nim
+is equivalent to adding to nim!
+
+Problem: POJ 2960 (Grundy Numbers) * (for mex implementation)
+Origin: http://poj.org/problem?id=2960
+Learned: 1. Classical grundy numbers 2. Grundy numbers - nim = what moves can you not go position 2 or position 3 etc.
+3. Key words = multiple games/groups but sets to limit the number of moves 4. Create table first!!!
+O(N) dp dfs 5. Map each heap to group :D O(1) 6. XOR nim O(1) 7. 10^8 is fine if basic dp, addition, or fill
+
+Problem: POJ 2232 (Constructive Algorithm)
+Origin: POJ 2232
+Learned: 1. I actually solved it looooool 2. These problems = make observations and code keep code simple 3. With less variables
+you can just name them sometimes and iterate through with if else statements to solve for all the cases < 5 4. With more variables = use maps + variables
+5. Create class variables sort by counter etc. check if counter == 0 6. Observation if one then all can win 7. Observation if two then the winner can win
+8. Observation if three then all can win because each chain is treated as one point and then there must be a FCS which means any body can win
+among that FCS we can make any point win then we choose. Thus, we can win for all recursively
