@@ -293,3 +293,17 @@ Origin: http://poj.org/problem?id=2960
 Learned: 1. Classical grundy numbers 2. Grundy numbers - nim = what moves can you not go position 2 or position 3 etc.
 3. Key words = multiple games/groups but sets to limit the number of moves 4. Create table first!!!
 O(N) dp dfs 5. Map each heap to group :D O(1) 6. XOR nim O(1) 7. 10^8 is fine if basic dp, addition, or fill
+
+Problem: POJ 2232 (Constructive Algorithm)
+Origin: POJ 2232
+Learned: 1. I actually solved it looooool 2. These problems = make observations and code keep code simple 3. With less variables
+you can just name them sometimes and iterate through with if else statements to solve for all the cases < 5 4. With more variables = use maps + variables
+5. Create class variables sort by counter etc. check if counter == 0 6. Observation if one then all can win 7. Observation if two then the winner can win
+8. Observation if three then all can win because each chain is treated as one point and then there must be a FCS which means any body can win
+among that FCS we can make any point win then we choose. Thus, we can win for all recursively
+
+Problem: POJ 2348
+Origin: POJ 2348
+Learned: 1. Tricky GCD problem 2. Problems most of these = constructive recursive algorithms which you solve make key observations
+3. When error = check for edge cases that you missed 4. gcd multiple base case = win for whoever gets there 5. if 2 * greater than
+you can go to the less than or 1 * multiple and win 6. Else it must be a 1 x multiple so you subtract the value!!! 7. AND REPEAT!

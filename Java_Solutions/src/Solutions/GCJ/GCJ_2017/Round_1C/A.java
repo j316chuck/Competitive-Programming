@@ -1,7 +1,11 @@
+package Solutions.GCJ.GCJ_2017.Round_1C;
 import java.util.*;
 import java.io.*;
 
-public class GCJMain {
+import java.util.*;
+import java.io.*;
+
+public class A {
 
     static BufferedReader in;
     static PrintWriter out;
@@ -9,8 +13,8 @@ public class GCJMain {
     public static void main(String[] args) throws IOException {
         in = new BufferedReader(new FileReader("input.in"));
         //in = new BufferedReader(new InputStreamReader(System.in));
-        out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
-        //out = new PrintWriter(new BufferedWriter(new FileWriter("output.out")));
+        //out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
+        out = new PrintWriter(new BufferedWriter(new FileWriter("output.out")));
         StringTokenizer st = new StringTokenizer(in.readLine());
         int testcases = Integer.parseInt(st.nextToken());
         for (int t = 1; t <= testcases; t++) {

@@ -301,3 +301,9 @@ you can just name them sometimes and iterate through with if else statements to 
 5. Create class variables sort by counter etc. check if counter == 0 6. Observation if one then all can win 7. Observation if two then the winner can win
 8. Observation if three then all can win because each chain is treated as one point and then there must be a FCS which means any body can win
 among that FCS we can make any point win then we choose. Thus, we can win for all recursively
+
+Problem: POJ 2348
+Origin: POJ 2348
+Learned: 1. Tricky GCD problem 2. Problems most of these = constructive recursive algorithms which you solve make key observations
+3. When error = check for edge cases that you missed 4. gcd multiple base case = win for whoever gets there 5. if 2 * greater than
+you can go to the less than or 1 * multiple and win 6. Else it must be a 1 x multiple so you subtract the value!!! 7. AND REPEAT!
