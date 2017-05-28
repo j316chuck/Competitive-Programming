@@ -10,21 +10,6 @@ typedef long long LL;
 #define Rd(r) freopen(r, "r", stdin)
 #define Wt(w) freopen(w, "w", stdout)
 #define deb(x) cerr << "DEBUG: "<< #x << " = " << x << endl;
-
-using namespace std;
-
-
-int n;
-
-int main() {
-
-    //time_t start=clock();
-    ios_base::sync_with_stdio(0);
-
-    //cerr << "Program has run "<< (double) (clock()-start) / CLOCKS_PER_SEC << " s " << endl;
-    return 0;
-}
-
 template < typename F, typename S >
 ostream& operator << ( ostream& os, const pair< F, S > & p ) {
     return os << "(" << p.first << ", " << p.second << ")";
@@ -62,3 +47,21 @@ ostream &operator << ( ostream & os, const map< F, S > &v ) {
     }
     return os << "]";
 }
+
+using namespace std;
+
+
+
+int n;
+
+int main() {
+
+    //time_t start=clock();
+    ios_base::sync_with_stdio(0);
+
+    deb(v);
+    //cerr << "Program has run "<< (double) (clock()-start) / CLOCKS_PER_SEC << " s " << endl;
+    return 0;
+}
+
+

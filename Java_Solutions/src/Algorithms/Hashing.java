@@ -59,6 +59,4 @@ public class Hashing {
         String re =  newsub2 + s.substring(2);
         return re;
     }
-
-
 }

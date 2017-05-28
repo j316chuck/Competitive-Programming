@@ -1,9 +1,0 @@
-1. Packages are namespaces
-2. Packages represent entire website name
-3. Syntax: org.junit.Assert.assertEquals(5,5)
-must use entire canonical name (unless from another class in smae package)
-4. put package at top package ug.joshh.animal;
-5. import org.junit.Assert;
-or import static members;
-import static org.junit.Assert.assertEquals;
-6. Wildcard import * is bad because causes compile error if two static members with same name

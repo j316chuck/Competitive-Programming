@@ -1,18 +1,17 @@
 DP O(N^3) -> O(N^2) 
 Circular Barn February 2016
 November 2013 BBREEDS 
+APRIL 2016
 APRIL 2015 last problem 
 (warm up with fall 2014 palindrome)
 CodeForces 342
 CF 245D
-POJ DP last 3
 
 Scanline technique/Graph:
 February 2016: http://usaco.org/index.php?page=viewproblem2&cpid=623
 
 Ad Hoc
 April 2013 http://usaco.org/index.php?page=viewproblem2&cpid=283
-POJ 1944 (Problem 12 Week 4)
 
 BFS
 http://usaco.org/current/data/sol_unlock_silver.html
@@ -20,6 +19,7 @@ http://usaco.org/current/data/sol_unlock_silver.html
 BIT
 April 2012: http://usaco.org/index.php?page=viewproblem2&cpid=136
 Feburary 2016: http://usaco.org/index.php?page=viewproblem2&cpid=719
+January 2016: BIT
 
 LOL CHUCK YOU NEED TO DO GIT PULL to merge...
 git mergeconflict 
@@ -27,3 +27,7 @@ wqa for mergeconflict
 then git commit
 then git add
 then git push if there is a merge conflict...
+
+Hashing:
+1) USACO Censor, April 2016
+
