@@ -1,0 +1,16 @@
+Memory Notes:
+Type	Size
+bool , char , unsigned char , signed char , __int8	1 byte
+__int16 , short , unsigned short , wchar_t , __wchar_t	2 bytes
+float , __int32 , int , unsigned int , long , unsigned long	4 bytes
+double , __int64 , long double , long long	8 bytes
+
+
+Runtime < 100 million iterations
+
+Operations:
+
+
+Memory:
+256MB!
+Usually array of size 

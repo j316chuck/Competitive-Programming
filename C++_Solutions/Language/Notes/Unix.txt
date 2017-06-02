@@ -1,0 +1,9 @@
+which ./program name -- file location
+echo ____ -- print out __
+cat ____ -- print out __
+$PATH = path variable
+g++ -std=c++11 program.cpp -o output -- compiles program.cpp
+./output -- runs/executes the program.cpp
+gcc -- c programs
+./ -- current directory
+../ -- previosu directory

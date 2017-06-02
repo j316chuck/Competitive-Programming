@@ -1,0 +1,23 @@
+1. git pull 
+
+
+1. git merge
+2. manually choose (sometimes)
+3. git commit git add
+4. git push
+
+5. git checkout/reset
+
+
+
+1. git pull 
+
+If behind git pull/merge
+1. git merge
+2. manually choose (sometimes)
+3. git commit git add
+4. git push
+
+5. git checkout/reset
+
+1. if project doesnt work create new project... from existing source

@@ -1,0 +1,15 @@
+Tokens:
+Keywords	Words with special meaning to the compiler	int, double, for, auto
+Identiﬁers	Names of things that are not built into the language	cout, std, x, myFunction
+Literals	Basic constant values whose value is speciﬁed directly in the source code	"Hello, world!",24.3, 0, ’c’
+Operators	Mathematical or logical oper­ations	+, -, &&, %, <<
+Punctuation/Separators	Punctuation deﬁning the structure of a program	{ } ( ) , ;
+Whitespace	Spaces of various sorts; ig­nored by the compiler	Spaces, tabs, newlines, com­ments
+
+
+Memory Notes:
+Type	Size
+bool , char , unsigned char , signed char , __int8	1 byte
+__int16 , short , unsigned short , wchar_t , __wchar_t	2 bytes
+float , __int32 , int , unsigned int , long , unsigned long	4 bytes
+double , __int64 , long double , long long	8 bytes
