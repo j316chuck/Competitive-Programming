@@ -1,3 +1,27 @@
+Tmw:
+Pointers + iterators 30 minutes
+== / operator overloading 30 
+everything else 1 hour 30
+everything else 1 hour + summary
+1 hour classes go over in depth 
+OOP:
+template 
+classes
+structs
+inheritance
+encapsulation etc.
+2 hours classes
+3 hours project
+1 hour GDB
+1 hour unix + GDB
+
+
+Saturday:
+STL!!! Stanford and maybe Effective STL or vice versa
+
+Future Plans:
+GDB/GCC (this week + next week) 30 :D + articles
+Unix commands (this week + next week) 30 :D + articles
 input:
 1) printf and scanf
 2) Stringstream, istringstream, sstringstream ostringstream. (two weeks) (30 min)
@@ -5,36 +29,8 @@ input:
 3) cin and cout with ios blah blah blah (three weeks)
 4) fin and fout ifstream and ofstream... (four weeks)
 5) decide which one to use... by 7/3 (add '\n' for endl)
-
-
-Pointers + Iterators 7:40
-
-Memory Storage 8:00
-
-
-== / operator overloading 30 hour
-everything else 1 hour 30
-everything else 1 hour + summary
-1 hour classes go over in depth 
-2 hours classes
-3 hours project
-1 hour GDB
-1 hour unix + GDB
-
-OOP:
-template 
-classes
-structs
-inheritance
-encapsulation etc.
-
-
-STL!!! Stanford and maybe Effective STL or vice versa
-
-
-GDB/GCC (this week + next week) 30 :D + articles
-Unix commands (this week + next week) 30 :D + articles
-
-Future Plans:
 C++ Accelerated slow and steady + Website/HTML
-Range + Boost
+
+Next: Math!!! Please + 2 ACM
+Future Topics:
+Memory management, boost, range (functional programming), classes

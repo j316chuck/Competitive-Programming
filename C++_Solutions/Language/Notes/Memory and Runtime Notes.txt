@@ -7,6 +7,22 @@ double , __int64 , long double , long long	8 bytes
 
 
 Runtime < 100 million iterations
+MAX value of N                       Time complexity
+   10^8                              O(N) Border case
+   10^7				     O(N) Might be accepted
+   10^6                              O(N) Perfect
+   10^5                              O(N * logN)
+   10^3                              O(N ^ 2)
+   10^2                              O(N ^ 3)
+   10^9                              O(logN) or Sqrt(N)
+usually for loop okay. Don't do too much math or TLE
+
+1 million sized array = 4MB of Space
+1 million long long = 8MB
+256 MB = 44 million max or around 
+30 million array size maximum;
+Usually vectors of size 1 million or 10 million are okay
+and so are 2d vectors within this bound. 
 
 Operations:
 
