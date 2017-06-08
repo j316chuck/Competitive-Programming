@@ -1,0 +1,129 @@
+To Do: geometry (not convex hull) do some math 2 hours. Then finally do your convex hull problems :D
+Weekly read: Language/Programming, Memory allocation/space, debug, read problem/problem classification, implementation, how to train 2 months left, how to think.
+Algorithms: Binarysearch, Union find, Hashing, Sets, BIT + SEGMENT TREE (2D segment? master)
+2D segment, MATH basic, Math Computational Geometry, DP 4D, Graph theory all
+
+C++
+
+Vector:
+int sp = Lower_bound(A.begin(), A.end(), make_pair(B,0))-A.begin(); //lowest position of a sorted vector with value B (in pair)
+min(make_pair(A,B), make_pair(B, C)) returns min of pair...
+vector.erase(j); j-- (make sure to decrease counter of j) use erase sparingly.
+vector.erase(v.begin() + j) j is position
+lower_bound(v.begin(), v.end(), val)
+lower_bound is value greater than or equal to....
+You can use vector as set.
+R.resize(R.size()-T.size()) -> decreases vector by size T.size();
+A.begin() is iterator...
+R.erase(unique(R.begin(), R.end()), R.end())
+
+return vector function:
+vector<ll> D(ll st, const vector<vector<ll>>){
+	vector<ll> D(E.size(), -1);
+}
+
+changes the values of G permanently in main
+vector<ll> D(& vector< vector<int> > G){
+  
+}
+
+int D(int arr[][n]){
+  
+}
+or 
+int D(int *arr){
+  
+}
+
+General Mapping:
+arr[256][500]
+arr['M'][1] = ..
+
+//NESW etc.
+map<char, int> dx, dy;
+dx['E'] = 1; dx['W'] = -1;
+dy['N'] = 1; dy['S'] = -1;
+
+dx.insert(make_pair(i, j));
+if(dx.find(x) == dx.end()){
+	dx.insert(vector<int> ());
+}dx.push_back();
+
+map<int, int> good;
+
+Sets:
+multiset<vector<int> > st;
+for (int i = 0; i < S.size(); i += 2) {
+    for (int ln = 1; i + ln <= S.size(); ln += 2) {
+      st.insert(vector<int>(S.begin() + i, S.begin() + i + ln));
+    }
+ }
+if (st.count(vector<int>(S.begin() + i, S.begin() + i + ln)) == 1) {
+        break;
+}
+multiset.erase(*S.begin()); //erases all values of S.begin()
+multiset.erase(S.begin()); only erases 1
+
+Maps:
+map<int, vector<int> XtoY;
+vector<int> temp;
+if(XtoY.find(x) == XtoY.end()){
+	XtoY.insert(make_pair(x, temp));
+}//make_pair = insert in map;
+XtoY[x].push_back(y);
+
+
+Stringstream:
+string(1, S[i]) = convert character to string
+
+Sorting: 
+vector<int> PI for(int i = 1; i <= n; i++) PI.push_back(i);
+sort(PI.begin(), PI.end(), [&](int x, int y) {
+    return Q[x] < Q[y];
+ }); :( ONLY FOR C++ 11
+
+bool cmp(int a, int b){
+    return Q[a] < Q[b];
+}
+
+sort(PI.begin(), PI.end(), cmp);
+
+int arr[5] = {4, 1, 3, 6, 2};
+string arr1[5]={"a1","b1","c1","d1","e1"};
+
+int indices[5]={0,1,2,3,4};
+sort(indice, indices+5, cmp);
+
+then string arr1[indice[i]] = 1 b1;
+
+bool operator<(Type other) const
+    {
+        return weight > other.weight;
+    }
+class pp{
+public:
+    int a, b, c;
+    bool operator < (const pp &p) const{
+        return (p.a + p.b + p.c) > (a + b + c);
+    }
+};
+
+BFS and Dijstrka pseduocode:
+
+ queue<ll> Q;
+  D[st] = 0;
+  Q.push(st);
+  while(!Q.empty()) {
+    ll x = Q.front(); 
+    Q.pop();
+    for(ll y : E[x]) {
+      if(D[y] == -1) {
+        D[y] = D[x]+1;
+        Q.push(y);
+      }
+    }
+  }
+  return D;
+
+Prim and Dijstrka pseudocode:
+

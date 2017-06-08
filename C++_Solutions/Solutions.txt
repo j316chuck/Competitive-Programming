@@ -1,0 +1,19 @@
+General Tips:
+1) Seize the day, You CAN DO IT! State Champion, A+ CS61B, USACO Platinum
+2) Remember your falls - USAMO, HS
+3) Do harder Problems - 1 C problem maximum, 2 D's for concept, 3 E's FOCUS ON E PROBLEMS
+4) Read the question carefully 3 minutes practice
+5) Write solution without paper -> good notes/scratch
+(I feel like your scratch work sucks more intution)
+(Scratch for examples + pseudocode + jotting down ideas only)
+6) You must take breaks every 2 - 3 hours. 
+7) Code carefully -> minimize debugging. 
+8) Editorial + Read 2 other people's solution carefully with the intent to learn something new!
+
+Solutions (of Good/Hard Problems):
+
+Problem: CF812D
+Origin: http://codeforces.com/contest/812/problem/D
+Learned: 1) Solve harder problems 2) read, show work, and think to do more in problems
+3) take breaks 4) read other people's solution with intent to learn 5) rooted tree simplification
+6) recognize that only last person linked matters 7) euler's size dfs. 

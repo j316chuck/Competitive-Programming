@@ -10,7 +10,8 @@ LANG: C++
 #define deb(x) cerr << "DEBUG: "<< #x << " = " << x << endl;
 
 const int INF = 0x3f3f3f3f;
-const double Pi= acos(-1.0);
+const double PI = acos(-1.0);
+const double EPS = 1e-9;
 typedef long long LL;
 using namespace std;
 
@@ -52,11 +53,16 @@ ostream &operator << ( ostream & os, const map< F, S > &v ) {
     return os << "]";
 }
 
-
+template <class T> void deb_array(T *arr, int length) {
+    for (int i = 0; i < length; i++) {
+        cout << arr[i] << ' ';
+    } cout << '\n';
+}
 
 int main() {
 
     //time_t start=clock();
+    Rd(""); //make sure to put it in the correct folder
     ios_base::sync_with_stdio(0);
 
     //cerr << "Program has run "<< (double) (clock()-start) / CLOCKS_PER_SEC << " s " << endl;

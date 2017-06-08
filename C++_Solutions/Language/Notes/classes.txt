@@ -1,0 +1,3 @@
+static = data or functions -> class variable because only one common value (like #of open nodes);
+const = not modifiable, read only variables
+vector<Foo> can mutate and it does not change the foo variable.

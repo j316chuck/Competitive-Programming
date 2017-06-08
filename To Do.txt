@@ -1,157 +1,25 @@
-To Do: Pointers, lambdas + extra, input, STL, classes
-Weekly read: Language/Programming, Memory allocation/space, debug, read problem/problem classification, implementation, how to train 2 months left, how to think.
-Algorithms: Binarysearch, Union find, Hashing, Sets, BIT + SEGMENT TREE (2D segment? master)
-2D segment, MATH basic, Math Computational Geometry, DP 4D, Graph theory all
+Future Plans:
+C++ Accelerated slow and steady + Website/HTML
 
-C++
+Next: Math!!! (number theory review + n c K go over) (computational geometry ahhh)
+Future Topics:
+New and delete, Memory management, boost, range (functional programming), next_permutation, 
+OOP friends
 
-Array size has to be less than 10 million.
-Vector less than 1 million.
-Vector of vector less than 50000
+To Do: Math algorithms Done!!! Steady review + reading articles :D 
+1) Math problems CF + POJ (10:30) POJ DONE TMW
+2) GEO ALGORITHMS: 
+Remember: You only need to know the algorithm 50% to solve problems!!!!
+The other half = practice intution!!! Less time studying more time solving problems
+3) Hacker earth (solve)
+2) Lewin (understand)
+4) Stanford... (final review)
+1) Topcoder... = tommorow ... read + intro (3 articles max)
+convex hull + line sweep + computational geometry basics
 
-Coding style: Mark Gordon
-vector = A(N)...
-int N, T, M;
-Distance = D
-DP = D
-used = used
-NOPATH = 1000000
-result. res...
+THIS IS IT!!!!
 
-Long Long:
-ll ans = ll(1000)*1000*1000*1000;
-ll ans = 1ll * 300000000;
-
-
-Input:
-scanf("%1d", &mapa[i][j]); reads in only 1 digit
-cin>>s[i]; reads in only one string;
-may need to do S+=s;
-Assignment: long long& ref = memo[fi][bi];
-return ref;
-
-Array:
-rotate(A, A + 1, A + N);
-
-Vector:
-int sp = Lower_bound(A.begin(), A.end(), make_pair(B,0))-A.begin(); //lowest position of a sorted vector with value B (in pair)
-min(make_pair(A,B), make_pair(B, C)) returns min of pair...
-vector.erase(j); j-- (make sure to decrease counter of j) use erase sparingly.
-vector.erase(v.begin() + j) j is position
-lower_bound(v.begin(), v.end(), val)
-lower_bound is value greater than or equal to....
-You can use vector as set.
-R.resize(R.size()-T.size()) -> decreases vector by size T.size();
-A.begin() is iterator...
-R.erase(unique(R.begin(), R.end()), R.end())
-
-return vector function:
-vector<ll> D(ll st, const vector<vector<ll>>){
-	vector<ll> D(E.size(), -1);
-}
-
-changes the values of G permanently in main
-vector<ll> D(& vector< vector<int> > G){
-  
-}
-
-int D(int arr[][n]){
-  
-}
-or 
-int D(int *arr){
-  
-}
-
-General Mapping:
-arr[256][500]
-arr['M'][1] = ..
-
-//NESW etc.
-map<char, int> dx, dy;
-dx['E'] = 1; dx['W'] = -1;
-dy['N'] = 1; dy['S'] = -1;
-
-dx.insert(make_pair(i, j));
-if(dx.find(x) == dx.end()){
-	dx.insert(vector<int> ());
-}dx.push_back();
-
-map<int, int> good;
-
-Sets:
-multiset<vector<int> > st;
-for (int i = 0; i < S.size(); i += 2) {
-    for (int ln = 1; i + ln <= S.size(); ln += 2) {
-      st.insert(vector<int>(S.begin() + i, S.begin() + i + ln));
-    }
- }
-if (st.count(vector<int>(S.begin() + i, S.begin() + i + ln)) == 1) {
-        break;
-}
-multiset.erase(*S.begin()); //erases all values of S.begin()
-multiset.erase(S.begin()); only erases 1
-
-Maps:
-map<int, vector<int> XtoY;
-vector<int> temp;
-if(XtoY.find(x) == XtoY.end()){
-	XtoY.insert(make_pair(x, temp));
-}//make_pair = insert in map;
-XtoY[x].push_back(y);
-
-
-Stringstream:
-string(1, S[i]) = convert character to string
-
-Sorting: 
-vector<int> PI for(int i = 1; i <= n; i++) PI.push_back(i);
-sort(PI.begin(), PI.end(), [&](int x, int y) {
-    return Q[x] < Q[y];
- }); :( ONLY FOR C++ 11
-
-bool cmp(int a, int b){
-    return Q[a] < Q[b];
-}
-
-sort(PI.begin(), PI.end(), cmp);
-
-int arr[5] = {4, 1, 3, 6, 2};
-string arr1[5]={"a1","b1","c1","d1","e1"};
-
-int indices[5]={0,1,2,3,4};
-sort(indice, indices+5, cmp);
-
-then string arr1[indice[i]] = 1 b1;
-
-bool operator<(Type other) const
-    {
-        return weight > other.weight;
-    }
-class pp{
-public:
-    int a, b, c;
-    bool operator < (const pp &p) const{
-        return (p.a + p.b + p.c) > (a + b + c);
-    }
-};
-
-BFS and Dijstrka pseduocode:
-
- queue<ll> Q;
-  D[st] = 0;
-  Q.push(st);
-  while(!Q.empty()) {
-    ll x = Q.front(); 
-    Q.pop();
-    for(ll y : E[x]) {
-      if(D[y] == -1) {
-        D[y] = D[x]+1;
-        Q.push(y);
-      }
-    }
-  }
-  return D;
-
-Prim and Dijstrka pseudocode:
-
+Motto: Instead of worrying about how much you have to do
+Just do it!!!
+Remember its about direction not perfection 75% understanding is good enough... 
+Your contests + problems will cover it!

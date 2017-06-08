@@ -1,0 +1,103 @@
+﻿***** sine and cosine are in radians...
+log is in base 10
+
+Number theory/Fermat's
+a^(p-1) - 1 = 1 mod p (if a and p are coprime) (Fermat's little theorem)
+a^p = p mod p;
+gcd(x, n) = 1; Then x and n have multiplicative inverses!
+x * x^-1 = 1 mod n; -> ax + bn = 1;
+
+CRT:
+Given a, b, m, n with gcd(m, n) = 1
+Find x with x ≡ a (mod m) and x ≡ b (mod n)
+◮ Solution:
+Let n-1 be the inverse of n modulo m
+Let m-1 be the inverse of m modulo n
+Set x = ann−1 + bmm−1
+(check this yourself)
+◮ Extension: solving for more simultaneous equations
+
+Extended to more than one equation:
+http://gauss.math.luc.edu/greicius/Math201/Fall2012/Lectures/ChineseRemainderThm.article.pdf
+
+Combinatorics:
+N choose K = can use brute force multiplication (watch out for overflow)
+2) can use pascal's triangle = O(n^2) solution
+
+(x+y)^n;
+symmetry in counting!!!
+PIE!!!!
+
+Fibonacci sequence fast way:
+F0 = 0 F1 = 1; Fn = Fn-1 + Fn-2
+Fn = 1/sqrt(5) (o^n - !o^n) o = (1 + sqrt(5))/2 !o = (1 - sqrt(5))/2
+
+Any recurrence relation:
+[Fn+1] = [1  1][Fn  ] = [1 s 1] ^ n [F1]
+[Fn  ] = [1  0][Fn-1] = [1 0]     [F0]
+
+//normally just use recurrence relation is enough to solve
+//but if need faster can use matrix exponentiation to solve for faster cases.
+
+Geometry Light:
+vectors: (x, y)
+counterclockwise rotation by angle o:
+[cos o -sin o]
+[sin o  cos o]
+
+2 lines intersect: ax + by = c; dx + ey = f;
+[a b][x] = [c]
+[d e][y] = [f]
+
+solution = (determinant) (ae - bd)^-1 [e  -b]
+                                      [-d  a]
+Edge case ae = bd then no solution if c != f else infinite solutions...
+
+
+Incircle:
+http://www.mathalino.com/reviewer/derivation-of-formulas/derivation-of-formula-for-radius-of-incircle
+Angle bisector theorem:
+https://en.wikipedia.org/wiki/Angle_bisector_theorem
+Heron's:
+https://www.mathsisfun.com/geometry/herons-formula.html
+Can do cool extension trick to find the incenter. of sides and calculate intersection of angle bisectors
+
+Circumcircle:
+http://www.mathopenref.com/trianglecircumcircle.html
+3 points determine a circle. Given a triangle A, B, C, we can easily find P
+mid point -> negative slope = line. Find two lines = solve.
+
+Law of sines:
+http://artofproblemsolving.com/wiki/index.php?title=Law_of_Sines
+Law of cosines:
+https://www.mathsisfun.com/algebra/trig-cosine-law.html
+
+Power of a point:
+http://mathgardenblog.blogspot.com/2013/07/power-of-a-point.html
+
+3 points A, B, C:
+2S = | B - A x C - A|
+(x1, y1) x (x2, y2) = x1y2 - y1x2;
+
+
+Area of Triangle or of polygon:
+vertices P1, P2, ... , Pn of polygon P
+P is convex or concave = can find the area by breaking it down into little triangles
+http://web.stanford.edu/class/cs97si/02-mathematics.pdf #29 # 30
+
+Cool Theorems:
+Often we have to deal with polygons whose vertices have integer coordinates. Such polygons are called lattice polygons.
+B = number of lattice points on the boundary of the polygon
+I = number of lattice points in the interior of the polygon
+Pick's theorem: B/2 + I - 1; = area of this polygon
+
+Euler's Formula:
+V + F = E + 2, where
+
+V = number of vertices
+E = number of edges
+F = number of faces
+
+Fractions: Simplify by representing as pair, numerator denominator
+Mixed Number: dividor, modulo
+Complex number: simplify by representing it as real and unreal parts

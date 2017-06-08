@@ -1,0 +1,12 @@
+Iterator Type
+Description
+Output
+Forward moving, may store but not retrieve values, provided by ostream and inserter.  An output iterator I can only have a value V stored indirect on it, after which it must be incremented before the next store, as in (*I ++ = V), (*I = V, ++ I), or (*I = V, I ++).
+Input
+Forward moving, may retrieve but not store values, provided by istream.  An input iterator I can represent a singular value that indicates end of sequence. If an input iterator does not compare equal to its end-of-sequence value, it can have a value V accessed indirect on it any number of times, as in (V = *I). To progress to the next value or end of sequence, you increment it (post or pre-increment), as in ++ I, I ++, or by pointer, (V = *I ++). Once you increment any copy of an input iterator, none of the other copies can safely be compared, dereferenced, or incremented thereafter.
+Forward
+Forward moving, may store and retrieve values.  A forward iterator I can take the place of an output iterator for writing or an input iterator for reading. You can, however, read (through V = *I) what you just wrote (through *I = V) through a forward iterator. You can also make multiple copies of a forward iterator, each of which can be dereferenced and incremented independently.
+Bidirectional
+Forward and backward moving, may store and retrieve values, provided by list, set, multiset, map, and multimap.  A bidirectional iterator X can take the place of a forward iterator. You can, however, also decrement (pre or post-decrement) a bidirectional iterator, as in -- I, I --, or a pointer,  (V = *I --).
+Random-access
+Elements accessed in any order, may store and retrieve values, provided by vector, deque, string, and array.  A random-access iterator I can take the place of a bidirectional iterator. You can also perform much the same integer arithmetic on a random-access iterator that you can on an object pointer. For N, an integer object, you can write x[N], x + N, x - N, and N + X.

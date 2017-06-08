@@ -13,3 +13,14 @@ bool , char , unsigned char , signed char , __int8	1 byte
 __int16 , short , unsigned short , wchar_t , __wchar_t	2 bytes
 float , __int32 , int , unsigned int , long , unsigned long	4 bytes
 double , __int64 , long double , long long	8 bytes
+
+== overrided for strings, ints, vectors etc. = check normally by what you expect. 
+
+Casting:
+(short to int, int to float, double to int...)
+short a = 2000;
+int b; b = (int) a;
+b = int (a) //functional notation must do 
+
+inline functions
+A WORD OF WARNING: Inline functions are very good for saving time, but if you use them too often or with large functions you will have a tremendously large program. Sometimes large programs are actually less efficient, and therefore they will run more slowly than before. Inline functions are best for small functions that are called often. 

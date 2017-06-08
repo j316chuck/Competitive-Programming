@@ -52,12 +52,46 @@ ostream &operator << ( ostream & os, const map< F, S > &v ) {
     return os << "]";
 }
 
+/*
+Advance iterator (function template )
+distance
+Return distance between iterators (function template)
+begin
+Iterator to beginning (function template )
+end
+Iterator to end (function template )
+prev
+Get iterator to previous element (function template)
+next
+Get iterator to next element (function template)
+*/
 
+//random access iterators
+//http://en.cppreference.com/w/cpp/concept/RandomAccessIterator
+//allows [] and a+n
+//vectors
+//allows iterator/pointer + k;
+// < and > etc.
+
+//bidirectional iterators
+//sets can only do so by doing advance etc. maps too
+//still can iterate through map etc.
 
 int main() {
 
     //time_t start=clock();
     ios_base::sync_with_stdio(0);
+    //(*i).first == i -> first;
+    //syntax
+    //std::class_name<template_parameters>::iterator name
+    vector<int>::iterator itr;
+    vector<int> vec; vec.push_back(1); vec.push_back(2);
+    for (itr = vec.begin(); itr != vec.end(); itr++) {
+        cout << (*itr) << ' ';
+    } cout << endl;
+    for (auto itr : vec) {
+        cout << (itr) << ' ';
+    }
 
     //cerr << "Program has run "<< (double) (clock()-start) / CLOCKS_PER_SEC << " s " << endl;
     return 0;

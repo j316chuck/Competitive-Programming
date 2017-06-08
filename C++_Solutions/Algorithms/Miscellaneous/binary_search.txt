@@ -1,0 +1,9 @@
+Pseudocode: lo = always work, hi = never work (n + 1); //contains 0
+while (lo < hi - 1) {
+    mid = (lo + hi) / 2;
+    if (P(arr, n, mid, S, total)) {
+        lo = mid;
+    } else {
+        hi = mid;
+    }
+}

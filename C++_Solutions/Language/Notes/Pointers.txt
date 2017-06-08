@@ -1,0 +1,86 @@
+1. Arrays are passed as a pointer to the first element
+2. Vectors and Maps and all STL are passed by value by deep copying (O(n)!!!)
+(avoid by using pass by const reference);
+3. Advantages of passing by value:
+Arguments passed by value can be variables (e.g. x), literals (e.g. 6), expressions (e.g. x+1), structs & classes, and enumerators.
+Arguments are never changed by the function being called, which prevents side effects.
+Disadvantages of passing by value:
+Copying structs and classes can incur a significant performance penalty, especially if the function is called many times.
+
+When to use pass by value: (deep copy usually so they are two separate variables)
+When passing fundamental data type and enumerators.
+When not to use pass by value:
+
+When passing arrays, structs, or classes.
+In most cases, pass by value is the best way to pass arguments of fundamental types to functions -- it is flexible and safe.
+
+4. When to use pass by reference: (One sentence: syntax use same as pass by value except this variable now is the exact same as teh variable which you passed in)
+
+When passing structs or classes (use const if read-only).
+When you need the function to modify an argument.
+When not to use pass by reference:
+
+When passing fundamental types (use pass by value).
+Syntax is just add an & and treat the whole thing as the same.
+//*** const keyword to prevent mutation :D 
+//drawback is it can be confusing like foo(vector) could mean pass by value or pass by reference (most would assume its pass by value);
+
+5. Pass by address. (pointer)  //rarely used for classes and STL :D or fundamental data types. //most similar to java (Example/One Liner: Java with weird *syntax when reassigning or just syntax when not )
+Advantages of passing by address:
+
+It allows a function to change the value of the argument, which is sometimes useful. Otherwise, const can be used to guarantee the function won’t change the argument.
+Because a copy of the argument is not made, it is fast, even when used with large structs or classes.
+We can return multiple values from a function.
+Disadvantages of passing by address:
+
+Because literals and expressions do not have addresses, pointer arguments must be normal variables.
+All values must be checked to see whether they are null. Trying to dereference a null value will result in a crash. It is easy to forget to do this.
+Because dereferencing a pointer is slower than accessing a value directly, accessing arguments passed by address is slower than accessing arguments passed by value.
+
+When to use pass by address:
+
+When passing pointer values.
+When passing built-in arrays (if you’re okay with the fact that they’ll decay into a pointer).
+When not to use pass by address:
+
+When passing structs or classes (use pass by reference).
+When passing fundamental types (use pass by value).
+*** constant = key. 
+
+Difference between pointer and reference:
+Reference cannot be null and cannot be reassigned
+Pointer can be null and can increase/decrease/reassign (have to check for null cases)
+
+
+*************************
+
+So, to summarize:
+
+1. Pass by value when the function does not want to modify the parameter and the
+value is easy to copy (ints, doubles, char, bool, etc... simple types. std::string,
+std::vector, and all other STL containers are NOT simple types.)
+
+2. Pass by const pointer when the value is expensive to copy AND the function does
+not want to modify the value pointed to AND NULL is a valid, expected value that
+the function handles.
+
+3. Pass by non-const pointer when the value is expensive to copy AND the function
+wants to modify the value pointed to AND NULL is a vlaid, expected value that the
+function handles.
+
+4. Pass by const reference when the value is expensive to copy AND the function does
+not want to modify the value referred to AND NULL would not be a valid value if 
+a pointer was used instead.
+
+5. Pass by non-cont reference when the value is expensive to copy AND the function wants
+to modify the value referred to AND NULL would not be a valid value if a pointer was used 
+instead.
+
+6. When writing template functions, there isn't a clear-cut answer because there are a few
+tradeoffs to consider that are beyond the scope of this discussion, but suffice it to say that
+most template functions take their parameters by value or (const) reference, however
+because iterator syntax is similar to that of pointers (asterisk to "dereference"), any
+template function that expects iterators as arguments will also by default accept pointers
+as well (and not check for NULL since the NULL iterator concept has a different syntax).
+
+*************************
