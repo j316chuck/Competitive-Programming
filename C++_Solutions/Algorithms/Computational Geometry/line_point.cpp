@@ -63,7 +63,7 @@ class Point {
 public:
     double x, y; //may include angle...
     int idx;
-    Point(double x, double y) {
+    Point(double x = 0, double y = 0) {
         this -> x = x;
         this -> y = y;
     }
@@ -86,7 +86,7 @@ public:
     }
 };
 
-class Line {
+class Line { //may have some bugs bc POJ_2242 no pass...
 public:
     // ax + by = c;
     double a, b, c;
@@ -142,15 +142,10 @@ public:
 
     //Finds point closest to p lying on this line;
     Point* closest_point(const Point &p) {
-        Point p_c(INF, INF);
         if (abs(b) <= EPS) {
-            p_c.x = c / a;
-            p_c.y = p.y;
-            return &p_c;
+            return new Point(c / a, p.y);
         } else if (abs(a) <= EPS) {
-            p_c.x = p.x;
-            p_c.y  = c / b;
-            return &p_c;
+            return new Point(p.x, c / b);
         }
         Line perp(p, b / a);
         return intersection_point(perp);
@@ -159,6 +154,18 @@ public:
     //distance between point and line
     double point_distance(const Point &p) {
         return abs(a * p.x + b * p.y - c) / sqrt(a * a + b * b);
+    }
+
+    //perpendicular bisector between two points on this line
+    Line* perpendicular_bisector (const Point &p1, const Point &p2) {
+        Point mid((p1.x + p2.x) / 2, (p1.y + p2.y) / 2);
+        if (abs(a) <= EPS) {
+            return new Line(mid , 0);
+        } else if (abs(b) <= EPS) {
+            return new Line(mid, INT_MAX);
+        } else {
+            return new Line(mid, b/a);
+        }
     }
 };
 
@@ -201,6 +208,11 @@ int main() {
     cout << Line(Point(0, 1.25), -0.5).point_distance(Point(-3, 2)) << ' ' << 3.0 / (2 * sqrt(5)) << endl;
     cout << *Line(Point(3, 4), INF + 10).closest_point(Point(5, 10)) << endl; //okay may be a little janky
     cout << *Line(Point(1, 1), 1).closest_point(Point(-3, 3)) << endl;
+    //cout << (Line(Point(1, 1), INF + 1))<<endl;
+    cout << *(Line(Point(1, 1), INF  + 1).perpendicular_bisector(Point(3, 1), Point(1, 1))) << endl;
+    cout << *Line(Point(1, 1), 0).perpendicular_bisector(Point(5, 1), Point(3, 1)) << endl;
+    cout << *Line(Point(1, 1), 1).perpendicular_bisector(Point(2, 2), Point(4, 4)) << endl;
+
     //cerr << "Program has run "<< (double) (clock()-start) / CLOCKS_PER_SEC << " s " << endl;
     return 0;
 }

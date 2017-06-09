@@ -100,11 +100,16 @@ int main() {
     /*map<int, pair<int, int> > moves = {{8, {0, 1}}, {6, {1, 0}}, {2, {0, -1}}, {4, {-1, 0}},
                                         {9, {1, 1}}, {3, {1, -1}}, {1, {-1, -1}}, {7, {-1, 1}}};*/
 
-    map<int, pair<int, int> > moves; moves.insert(make_pair(8, make_pair(0, 1)));
+    /*map<int, pair<int, int> > moves; moves.insert(make_pair(8, make_pair(0, 1)));
     moves.insert(make_pair(6, make_pair(1, 0))); moves.insert(make_pair(2, make_pair(0, -1)));
     moves.insert(make_pair(4, make_pair(-1, 0))); moves.insert(make_pair(9, make_pair(1, 1)));
     moves.insert(make_pair(3, make_pair(1, -1))); moves.insert(make_pair(1, make_pair(-1, -1)));
-    moves.insert(make_pair(7, make_pair(-1, 1)));
+    moves.insert(make_pair(7, make_pair(-1, 1))); */
+    pair<int, int> moves[10] = {{INF, INF}, {-1, -1}, {0, -1}, {1, -1}, {-1, 0},
+                                {INF, INF}, {1, 0}, {-1, 1}, {0, 1}, {1, 1}};
+
+    const int dx[]={0,-1,0,1,-1,0,1,-1,0,1};
+    const int dy[]={0,-1,-1,-1,0,0,0,1,1,1};
     /*for (map<int, pair<int, int> >::iterator it = moves.begin(); it != moves.end(); it++) {
         cout << it->first << ' ' << (*it).second.first << ' ' << (it->second).second << endl;
     }
@@ -112,21 +117,20 @@ int main() {
         printf("%d %d %d\n", it.first, it.second.first, it.second.second);
     }*/
     int t, x, y, newx, newy;
+    char s[1000005];
     cin >> t;
     for (int tt = 1; tt <= t; tt++) {
-        string s;
         cin >> s;
         x = 0, y = 0;
-        if (s.length() <= 3) {
+        if (strlen(s) < 3) {
             cout << 0 << endl;
             continue;
         }
-        double result = 0;
-        for (int i = 0; i < s.length() - 1; i++) {
-            map<int, pair<int, int> >::iterator it = moves.find(s[i] - '0');
-            newx = x + (it -> second).first;
-            newy = y + (it -> second).second;
-            result += x * newy - y * newx;
+        long long result = 0;
+        for (int i = 0; s[i]; i++) {
+            newx = x + dx[s[i] - '0'];
+            newy = y + dy[s[i] - '0'];
+            result += newx * y - newy * x;
             x = newx;
             y = newy;
             //points.push_back(Point((double) x, (double) y));
@@ -135,8 +139,9 @@ int main() {
         /*for (int i = 0; i < points.size() - 1; i++) {
             result += points[i + 1].x * points[i].y - points[i + 1].y * points[i].x;
         }*/
-        cout.precision(1);
-        cout << abs(result) / 2.0 << endl;
+        if (result < 0) result = -result;
+        if (result % 2 == 1) cout << result / 2 << ".5\n";
+        else cout << result / 2 << '\n';
     }
     //cerr << "Program has run "<< (double) (clock()-start) / CLOCKS_PER_SEC << " s " << endl;
     return 0;

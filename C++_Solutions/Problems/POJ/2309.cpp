@@ -1,6 +1,6 @@
 /*
 ID: j316chuck
-PROG:
+PROG: 2309
 LANG: C++
 */
 
@@ -81,11 +81,24 @@ template <class T> void deb_array(T *arr, int length) {
 int main() {
 
     //time_t start=clock();
-    Rd(""); //make sure to put it in the correct folder
+    //Rd("2309.in"); //make sure to put it in the correct folder
     ios_base::sync_with_stdio(0);
+    int t, n, bitshift;
+    scanf("%d", &t);
+    for (int tt = 0; tt < t; tt++) {
+        scanf("%d", &n);
+        bitshift = 0;
+        while ((n % (1 << bitshift)) == 0) {
+            bitshift++;
+        }
+        bitshift--;
+        printf("%d %d\n", n - ((1 << bitshift) - 1), n + (1 << bitshift) - 1);
+    }
+
     //cerr << "Program has run "<< (double) (clock()-start) / CLOCKS_PER_SEC << " s " << endl;
     return 0;
 }
+
 
 
 

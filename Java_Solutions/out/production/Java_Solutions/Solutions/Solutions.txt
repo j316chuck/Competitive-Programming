@@ -30,7 +30,7 @@ Problem: Lasers (From Nick Wu)
 Origin: USACO Gold 2016
 Learned: @Override hashcode @Override equals HashMap, ArrayList, etc.
 BFS: identify problem by same transition states, create the graph, bfs.
-DFS: identify problme by small input size, create graph and iteration method, dfs/floodfill
+DFS: identify problem by small input size, create graph and iteration method, dfs/floodfill
 HashMap uses .equals and .hashcode to find equal elements (must implement)
 must rewrite .equals and .hashcode
 If you are sure your algorithm is correct then it is often a small bug that is preventing your program from working

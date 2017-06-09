@@ -101,3 +101,8 @@ F = number of faces
 Fractions: Simplify by representing as pair, numerator denominator
 Mixed Number: dividor, modulo
 Complex number: simplify by representing it as real and unreal parts
+
+
+Catalan Numbers:
+http://www.geeksforgeeks.org/program-nth-catalan-number/
+Can solve... count number of parentheses pair matches, binary search trees with n keys, and full binary trees

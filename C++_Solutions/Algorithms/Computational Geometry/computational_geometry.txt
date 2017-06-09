@@ -1,2 +1,6 @@
 Distance to point and line:
 https://en.wikipedia.org/wiki/Distance_from_a_point_to_a_line
+
+//note in contest you should probably not use these templates just light versions because yeah there might be bugs...
+
+

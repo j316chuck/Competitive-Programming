@@ -28,3 +28,5 @@ Lower_bound(A.begin(), A.end(), make_pair(B,0))-A.begin();
 16) can copy map to vector... copy(from_begin, from_end, to_begin);
 17) Also remember that 'operator <' should always return false for equal objects. It's very important – for the reason why, see the next section.
 18) don't use vector<bool> use vector<int> visited
+19) (i & - i) = lowest power of two that divides it... For example, 6 & -6 = 2 8 & -8 = 8 7 & -7 = 1;
+20) scanf("%I64u, &d) unsigned long long d; replace with %I64d if not unsigned.

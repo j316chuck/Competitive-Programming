@@ -4,7 +4,7 @@ C++ Accelerated slow and steady + Website/HTML
 Next: Math!!! (number theory review + n c K go over) (computational geometry ahhh)
 Future Topics:
 New and delete, Memory management, boost, range (functional programming), next_permutation, 
-OOP friends
+OOP friends... Practice with BigInteger
 
 To Do: Math algorithms Done!!! Steady review + reading articles :D 
 1) Math problems CF + POJ (10:30) POJ DONE TMW
@@ -23,3 +23,6 @@ Motto: Instead of worrying about how much you have to do
 Just do it!!!
 Remember its about direction not perfection 75% understanding is good enough... 
 Your contests + problems will cover it!
+
+
+TMW: Work out examples after reading the question!

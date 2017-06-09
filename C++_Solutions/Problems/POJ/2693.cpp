@@ -1,6 +1,6 @@
 /*
 ID: j316chuck
-PROG: 2242
+PROG:
 LANG: C++
 */
 
@@ -82,7 +82,7 @@ class Point {
 public:
     double x, y; //may include angle...
     int idx;
-    Point(double x, double y) {
+    Point(double x = 0, double y = 0) {
         this -> x = x;
         this -> y = y;
     }
@@ -105,7 +105,7 @@ public:
     }
 };
 
-class Line {
+class Line { //may have some bugs bc POJ_2242 no pass...
 public:
     // ax + by = c;
     double a, b, c;
@@ -161,15 +161,10 @@ public:
 
     //Finds point closest to p lying on this line;
     Point* closest_point(const Point &p) {
-        Point p_c(INF, INF);
         if (abs(b) <= EPS) {
-            p_c.x = c / a;
-            p_c.y = p.y;
-            return &p_c;
+            return new Point(c / a, p.y);
         } else if (abs(a) <= EPS) {
-            p_c.x = p.x;
-            p_c.y  = c / b;
-            return &p_c;
+            return new Point(p.x, c / b);
         }
         Line perp(p, b / a);
         return intersection_point(perp);
@@ -179,42 +174,110 @@ public:
     double point_distance(const Point &p) {
         return abs(a * p.x + b * p.y - c) / sqrt(a * a + b * b);
     }
+
+    //perpendicular bisector between two points on this line
+    Line* perpendicular_bisector (const Point &p1, const Point &p2) {
+        Point mid((p1.x + p2.x) / 2, (p1.y + p2.y) / 2);
+        if (abs(a) <= EPS) {
+            return new Line(mid , 0);
+        } else if (abs(b) <= EPS) {
+            return new Line(mid, INT_MAX);
+        } else {
+            return new Line(mid, b/a);
+        }
+    }
 };
 
 double dist(const Point &p1, const Point &p2) {
     return sqrt((p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y));
 }
 
+ostream &operator << (ostream & os, const Point &p) {
+    os << "Point: (" << p.x << ", " << p.y;
+    return os << ")";
+}
+
+ostream &operator << (ostream & os, const Line &l) {
+    os << "Line: " << l.a << "x + " << l.b << "y = " << l.c;
+    return os << "";
+}
+
+class Circle { //passed POJ_2242
+public:
+    double r, x, y;
+    Circle(double xx = 0, double yy = 0, double rr = 0) : x(xx), y(yy), r(rr) {}
+    Circle(Point &p1, Point &p2, Point &p3) {
+        double x12 = p2.x - p1.x;
+        double y12 = p2.y - p1.y;
+        double x13 = p3.x - p1.x;
+        double y13 = p3.y - p1.y;
+        double z2 = x12 * (p1.x + p2.x) + y12 * (p1.y + p2.y);
+        double z3 = x13 * (p1.x + p3.x) + y13 * (p1.y + p3.y);
+        double d = 2.0 * (x12 * (p3.y - p2.y) - y12 * (p3.x - p2.x));
+        x = (y13 * z2 - y12 * z3) / d;
+        y = (x12 * z3 - x13 * z2) / d;
+        r = sqrt((p1.x - x) * (p1.x - x) + (p1.y - y) * (p1.y - y));
+    }
+    bool contains(const Point &p) const {
+        return sqrt((p.x - x) * (p.x - x) + (p.y - y) * (p.y - y)) <= r;
+    }
+};
+
+int points_in_circle(const Circle &c, const vector<Point> &points) {
+    int total = 0;
+    for (int i = 0; i < points.size(); i++) {
+        if (c.contains(points[i])) total++;
+    }
+    return total;
+}
+
+ostream &operator << (ostream & os, const Circle &c) {
+    os << "Circle: " << "Center: (" << c.x <<"," << c.y << "), radius = " << c.r << '\n';
+    return os << "";
+}
+
 int main() {
 
     //time_t start=clock();
+    //Rd("2693.in"); //make sure to put it in the correct folder
     ios_base::sync_with_stdio(0);
-    Rd("2242.in");
-    double x1, y1, x2, y2, x3, y3;
-    while (scanf("%lf %lf %lf %lf %lf %lf", &x1, &y1, &x2, &y2, &x3, &y3) != EOF) {
-        Point a(x1, y1);
-        Point b(x2, y2);
-        Point c(x3, y3);
-        Line l1(Point((a.x + b.x) / 2.0, (a.y + b.y) / 2.0), -(a.x - b.x) / (a.y - b.y));
-        Line l2(Point((b.x + c.x) / 2.0, (b.y + c.y) / 2.0), -(b.x - c.x) / (b.y - c.y));
-        Point *intersect = l1.intersection_point(l2);
-        printf("%.2f\n", dist(*intersect, a) * 2.0 * PI);
+    Point p;
+    vector<Point> points;
+    while (~scanf("%lf %lf", &p.x, &p.y)) {
+        points.push_back(p);
     }
-
-    //Tests:
-    //cout << l1 << endl;
-    //cout << l2 << endl;
-    /*Line x(Point(3, 4), Point(4, 5));
-    cout << x << endl;
-    cout << x.parallel(Line(Point(3, 4), 1.0))<< endl;
-    Point *p = (x.intersection_point(Line(Point(3, 8), 2.0))); //
-    if (p == nullptr) cout << "NULL" << endl;
-    else cout << *p << endl;
-    Point *p1 = (Line(Point(0, 4), 3)).intersection_point(Line(Point(0, 0), 1)); //
-    cout << *p1 << endl; */
-    //cout << a << '\n' << b << '\n' << c << '\n';
+    //deb(points);
+    int result = 0;
+    for (int i = 0; i < points.size(); i++) {
+        for (int j = 0; j < points.size(); j++) {
+            if (i == j)
+                continue;
+            Point mid_point((points[i].x + points[j].x) / 2, (points[i].y + points[j].y) / 2);
+            double d = dist(points[i], mid_point);
+            if (d - 2.5 > EPS)
+                continue;
+            Line line(points[i], points[j]);
+            Line* perp_bisector = line.perpendicular_bisector(points[i], points[j]);
+            double m = -(perp_bisector -> a / perp_bisector -> b);
+            double k = sqrt((2.5 * 2.5 - d * d) / (m + 1));
+            Circle c1(mid_point.x + k, mid_point.y + m * k, 2.5);
+            Circle c2(mid_point.x - k, mid_point.y - m * k, 2.5);
+            if (m > INF || m < -INF) {
+                c1.x = mid_point.x;
+                c1.y = mid_point.y - sqrt(2.5 * 2.5 - d * d);
+                c2.x = mid_point.x;
+                c2.y = mid_point.y + sqrt(2.5 * 2.5 - d * d);
+            }
+            //cout << c1 << ' ' << points[i] << points[j] << endl;
+            result = max(result, points_in_circle(c1, points));
+            result = max(result, points_in_circle(c2, points));
+        }
+    }
+    printf("%I64d\n", result);
     //cerr << "Program has run "<< (double) (clock()-start) / CLOCKS_PER_SEC << " s " << endl;
     return 0;
 }
+
+
 
 

@@ -77,15 +77,29 @@ template <class T> void deb_array(T *arr, int length) {
         cout << arr[i] << ' ';
     } cout << '\n';
 }
+unsigned long long dp[110];
 
 int main() {
 
     //time_t start=clock();
-    Rd(""); //make sure to put it in the correct folder
+    //Rd("2084.in"); //make sure to put it in the correct folder
     ios_base::sync_with_stdio(0);
+    dp[0] = 1, dp[1] = 1;
+    for (int i = 2; i <= 100; i++) {
+        for (int j = 0; j < i; j++) {
+            dp[i] += (dp[i - j - 1] * dp[j]);
+        }
+    }
+    int x;
+    while (1) {
+        scanf("%d", &x);
+        if (x == -1) break;
+        printf("%I64u\n", dp[x]);
+    }
     //cerr << "Program has run "<< (double) (clock()-start) / CLOCKS_PER_SEC << " s " << endl;
     return 0;
 }
+
 
 
 

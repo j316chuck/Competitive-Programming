@@ -9,11 +9,42 @@ General Tips:
 6) You must take breaks every 2 - 3 hours. 
 7) Code carefully -> minimize debugging. 
 8) Editorial + Read 2 other people's solution carefully with the intent to learn something new!
+9) Not about perfection but direction... 9/10 test cases = good on first try 
 
-Solutions (of Good/Hard Problems):
+Solutions of Good + Hard Problems: * = redo, ! = hard, x = 50% understand
 
-Problem: CF812D
+Problem: CF812D x
 Origin: http://codeforces.com/contest/812/problem/D
 Learned: 1) Solve harder problems 2) read, show work, and think to do more in problems
 3) take breaks 4) read other people's solution with intent to learn 5) rooted tree simplification
 6) recognize that only last person linked matters 7) euler's size dfs. 
+
+Problem: POJ 1654
+Origin: http://poj.org/problem?id=1654
+Learned: 1) MLE makes sense because CHUCK ... you cannot have 20 million x 2 doubles...
+2) Algorithm correct = cool triangle formula to split polygons into triangle and use cross product to solve
+3) Store only the points you need. 4) POJ sucks 5) 15 minutes debugging maximum 6) It's okay I give up lol
+
+Problem: POJ 2242
+Origin: poj.org/problem?id=2242
+Learned: 1) Formulas for circle yay. 2) Computational geometry -- angle bisector.
+
+Problem: POJ 2084
+Origin: http://blog.csdn.net/jasison/article/details/8753814
+Learned: 1) Java Big Integer practice 2) Catalan numbers recurrence relation cool!
+3) Nice Big Integer C++ implementation... 
+
+Problem: POJ 2693
+Origin: http://www.cnblogs.com/william-cheung/p/3641553.html
+Learned: 1) Got all the edge cases surprisingly. 2) 2 UNIQUE circles. 3) Find perpendicular bisector ... and then solve
+4) account for edge case with the distance being = to 2.5 5) bisector to line count... :D 6) May be easier if you keep point and line short and sweet;
+
+
+Problem: POJ 2085
+Origin: http://poj.org/problem?id=2085
+Learned: 1) Implementation Problems / Ad hoc = solve first with examples 2) define clear algorithms and implementations + examples
+3) code fast + code with examples... 4) win!!! 5) If you are stuck -> list sample cases at least 5 then -> try to find a pattern! 
+6) One line cute solution of just finding the minimum n + k and reverting order...
+
+
+
