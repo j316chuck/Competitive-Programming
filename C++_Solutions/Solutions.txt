@@ -11,40 +11,64 @@ General Tips:
 8) Editorial + Read 2 other people's solution carefully with the intent to learn something new!
 9) Not about perfection but direction... 9/10 test cases = good on first try 
 
+
+Tackling hard problem:
+1) Solve the 1-dimensional version of the problem first.
+2) find base cases
+3) do small case examples
+4) Make observations... 
+
 Solutions of Good + Hard Problems: * = redo, ! = hard, x = 50% understand
 
-Problem: CF812D x
+Problem: CF812D x (nchtr euler's formula + tin??)
 Origin: http://codeforces.com/contest/812/problem/D
 Learned: 1) Solve harder problems 2) read, show work, and think to do more in problems
 3) take breaks 4) read other people's solution with intent to learn 5) rooted tree simplification
 6) recognize that only last person linked matters 7) euler's size dfs. 
 
-Problem: POJ 1654
+Problem: POJ 1654 (Triangle formula idea easy, implementation a little tricky)
 Origin: http://poj.org/problem?id=1654
 Learned: 1) MLE makes sense because CHUCK ... you cannot have 20 million x 2 doubles...
 2) Algorithm correct = cool triangle formula to split polygons into triangle and use cross product to solve
 3) Store only the points you need. 4) POJ sucks 5) 15 minutes debugging maximum 6) It's okay I give up lol
 
-Problem: POJ 2242
+Problem: POJ 2242 (circle formula 3 points easy)
 Origin: poj.org/problem?id=2242
 Learned: 1) Formulas for circle yay. 2) Computational geometry -- angle bisector.
 
-Problem: POJ 2084
+Problem: POJ 2084 (big integer practice recursion easy)
 Origin: http://blog.csdn.net/jasison/article/details/8753814
 Learned: 1) Java Big Integer practice 2) Catalan numbers recurrence relation cool!
 3) Nice Big Integer C++ implementation... 
 
-Problem: POJ 2693
+Problem: POJ 2693 (hard implementation easy geometric idea)
 Origin: http://www.cnblogs.com/william-cheung/p/3641553.html
 Learned: 1) Got all the edge cases surprisingly. 2) 2 UNIQUE circles. 3) Find perpendicular bisector ... and then solve
 4) account for edge case with the distance being = to 2.5 5) bisector to line count... :D 6) May be easier if you keep point and line short and sweet;
 
 
-Problem: POJ 2085
+Problem: POJ 2085! (2 realizations about minimum permutation)
 Origin: http://poj.org/problem?id=2085
 Learned: 1) Implementation Problems / Ad hoc = solve first with examples 2) define clear algorithms and implementations + examples
 3) code fast + code with examples... 4) win!!! 5) If you are stuck -> list sample cases at least 5 then -> try to find a pattern! 
 6) One line cute solution of just finding the minimum n + k and reverting order...
 
+Problem: POJ 2356! (tricky bijection realization)
+Origin: http://poj.org/problem?id=2356
+Learned: 1) Smart solution!!! uses bijection. 2) Do examples -> realize that sum can always take up 1, 2, 3, ... n -1, 0 mod n; 
+3) If it repeats the sum then that means that the solution exists between the previous value of the sum and this value. Else they will continue to be unique until you get too n
+4) Good read + examples (work on examples -> observation) 4) Think how can I find a cleaner solution.
 
 
+Problem: POJ 1426 (got it first try!) (bfs)
+Origin: http://poj.org/problem?id=1426
+Learned: 1) BFS can even simplify to just use long long with math approximations...
+2) BFS = use map to keep integers make key observation that all 10 = x 10 + 1 and x 10 = iterate through and solve!!!
+
+
+Problem: POJ 1148 (IOI 2002) (alternating signs)
+Origin: http://poj.org/problem?id=1148 
+Solution: http://www.ioinformatics.org/locations/ioi02/contest/day1/utopia/utopia-handout.pdf
+Learned: 1) 10000 = should involve sorting 2) 2D break down into 1D problem 3) Realize that 
+you cannot brute force it so you must find a smart solution... 4) Pattern of alternating signs and how you can always maintain + or - 
+5)  Really smart way of alternating signs to keep + and - so that you can find xc and solve. :D 6) coding = dx dy simplification, then use functions to solve repeated parts, x and y etc. 

@@ -81,10 +81,41 @@ template <class T> void deb_array(T *arr, int length) {
 int main() {
 
     //time_t start=clock();
-    Rd(""); //make sure to put it in the correct folder
+    //Rd("2356.in"); //make sure to put it in the correct folder
+    ios_base::sync_with_stdio(0);
+    int n, x;
+    scanf("%d", &n);
+    vector<int> sums(n, 0);
+    vector<int> nums;
+    nums.push_back(0);
+    for (int i = 1; i <= n; i++) {
+        scanf("%d", &x);
+        nums.push_back(x);
+        sums[i] = (x + sums[i - 1]) % n;
+    }
+    map<int, int> indexes;
+    int start, end;
+    for (int i = 1; i <= n; i++) {
+        if (sums[i] == 0) {
+            start = 1; end = i;
+            break;
+        }
+        if (indexes[sums[i]]) {
+            end = i;
+            start = indexes[sums[i]] + 1;
+            break;
+        }
+        indexes[sums[i]] = i;
+    }
+    printf("%d\n", end - start + 1);
+    for (int i = start; i <= end; i++) {
+        printf("%d\n", nums[i]);
+    }
     //cerr << "Program has run "<< (double) (clock()-start) / CLOCKS_PER_SEC << " s " << endl;
     return 0;
 }
+
+
 
 
 

@@ -1,6 +1,51 @@
+ToDo: rewrite point and line better using https://www.topcoder.com/community/data-science/data-science-tutorials/geometry-concepts-line-intersection-and-its-applications/
+
 Distance to point and line:
 https://en.wikipedia.org/wiki/Distance_from_a_point_to_a_line
 
 //note in contest you should probably not use these templates just light versions because yeah there might be bugs...
 
+
+https://www.topcoder.com/community/data-science/data-science-tutorials/geometry-concepts-basic-concepts/
+
+1) vectors = magnitude and direction AB = (Bx1 - Ax1, By1 - Ay1)
+2) Dot Product = x1 * x2 + y1 * y2.
+3) AB * AC = 0 means two perpendicular lines AB * AC = |A| * |B| = two parallel lines
+4) AB * AC = AB * AC = |A||B| cos 0
+* = dot product ^ = cross product
+5) can find 0
+6) Cross product = A X B = matrix equation x1 * y2 - x2 * y1;
+7) A x B = |A||B| sin (theta) 
+8) but ? is negative or positive based on the right-hand rule. 
+In 2-D geometry this means that if A is less 
+than 180 degrees clockwise from B, the value is positive.
+9) A x B = area of triangle * 2
+10) Line-Point distance (AB x AC)/|AB| 
+11) Line-Segment may be AB x AC / |AB| but also may be A or B
+B if AB * BC > 0 and C if BA * AC > 0
+12) Polygon area = break it up into smaller triangles and solve
+
+
+Psuedocode Here: https://www.topcoder.com/community/data-science/data-science-tutorials/geometry-concepts-basic-concepts/
+
+
+Computational Geometry: (reimplement line - point and line sweep and graham scan)
+1) Line - Line intersection: Can use Ax + By = C; Solve matrix equation to find the solution 
+2) Segment - Segment intersection: same but make sure that the result is on the segment min(x1,x2) = x = max(x1,x2)
+3) Finding a circle from three points = - Bx + Ay = D plug in midpoint to find D and then solve. for the intersection of the two lines
+4) Reflection: Same idea Ax + By = C -> -Bx + Ay = D. Then, we find the line with the point X. Then X' = Y - (X - Y)
+5) Rotation: x' = x Cos(?) - y Sin(?) and y' = x Sin(?) + y Cos(?) counterclockwise by 0 degreees
+6) Convex hull is a set of points of the smallest convex polygon that contains every one of the points
+Imagine: rubber band and stretched around the points. 
+Jarvis: 0(n^2) algorithm = 1. Find the most left point 2. Until you reach this point again, at each iteration go through all n point and find the point
+that is the most counterclockwise. Set that point as the next point. 
+Implementation: http://www.geeksforgeeks.org/convex-hull-set-1-jarviss-algorithm-or-wrapping/
+Explanation of Orientation: http://www.geeksforgeeks.org/orientation-3-ordered-points/
+4. With OnEdge = as many points as possible = trickier implementation here
+https://www.topcoder.com/community/data-science/data-science-tutorials/geometry-concepts-line-intersection-and-its-applications/
+
+Graham Scan: 0(nlogn)
+
+Problems: https://www.topcoder.com/community/data-science/data-science-tutorials/geometry-concepts-using-geometry-in-topcoder-problems/
+1. PointInPolygon: Boundary case if distance to segment = 0; Else, interior point = ray = infinite = odd number of intersections
 

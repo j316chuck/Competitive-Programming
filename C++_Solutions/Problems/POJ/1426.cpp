@@ -1,6 +1,6 @@
 /*
 ID: j316chuck
-PROG:
+PROG: 1426
 LANG: C++
 */
 
@@ -81,10 +81,44 @@ template <class T> void deb_array(T *arr, int length) {
 int main() {
 
     //time_t start=clock();
-    Rd(""); //make sure to put it in the correct folder
+    //Rd("1426.in"); //make sure to put it in the correct folder
+    int x, top, t1, t2;
+    map<int, string> results;
+    map<int, string> modulos;
+    queue<int> q;
+    while (scanf("%d", &x) && x != 0) {
+        if (results[x] != "") {
+            printf("%s\n", results[x].c_str());
+            continue;
+        }
+        modulos.clear();
+        modulos[1] = "1";
+        q = queue<int>();
+        q.push(1);
+        while (!q.empty()) {
+            int top = q.front();
+            q.pop();
+            if (top == 0) {
+                break;
+            }
+            t1 = (top * 10) % x;
+            t2 = (top * 10 + 1) % x;
+            if (modulos[t1] == "") {
+                modulos[t1] = modulos[top] + "0";
+                q.push(t1);
+            }
+            if (modulos[t2] == "") {
+                modulos[t2] = modulos[top] + "1";
+                q.push(t2);
+            }
+        }
+        results[x] = modulos[0];
+        printf("%s\n", results[x].c_str());
+    }
     //cerr << "Program has run "<< (double) (clock()-start) / CLOCKS_PER_SEC << " s " << endl;
     return 0;
 }
+
 
 
 

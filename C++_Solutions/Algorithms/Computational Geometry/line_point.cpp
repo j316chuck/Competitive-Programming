@@ -73,9 +73,9 @@ public:
         this -> idx = idx;
     }
 
-    bool operator == (const Point &p1) {
+    /*bool operator == (const Point &p1) {
         return abs(p1.x - x) < EPS && abs(p1.y - y) < EPS;
-    }
+    }*/
     // Declare operator < taking precision into account
     bool operator < (const Point& p) const {
         if(x < p.x - EPS) return true;
