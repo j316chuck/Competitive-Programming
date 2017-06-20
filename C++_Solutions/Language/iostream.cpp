@@ -67,11 +67,13 @@ int main() {
     //<< = insertion operator
     //<< endl; = flushes but '\n' does not
     //>> extraction operator
-    while (cin >> x) {
+    /*while (cin >> x) {
         cout << fixed << showpoint; //fixed //showpoint //setprecision(2)
         cout << setprecision(2);
         cout << x;
-    }
+    }*/
+    //cin >> x >> ":" >> x;
+    //cout << x << endl;
     return 0;
 }
 

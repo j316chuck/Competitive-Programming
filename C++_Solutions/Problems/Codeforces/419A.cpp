@@ -60,14 +60,46 @@ template <class T> void deb_array(T *arr, int length) {
     } cout << '\n';
 }
 
+bool Palindrome(int *s) {
+    return s[0] == s[3] && s[1] == s[2];
+}
+
 int main() {
 
     //time_t start=clock();
-    Rd(""); //make sure to put it in the correct folder
+    //Rd("419A.in"); //make sure to put it in the correct folder
     ios_base::sync_with_stdio(0);
+    int s[4];
+    string str;
+    cin >> str;
+    str.erase(2, 1);
+    for (int i = 0; i < 4; ++i) s[i] = str[i] - '0';
+    int counter = 0;
+    while (!Palindrome(s)) {
+        ++counter;
+        s[3]++;
+        if (s[3] >= 10) {
+            s[3] = 0;
+            s[2]++;
+        }
+        if (s[2] >= 6) {
+            s[2] = 0;
+            s[1]++;
+        }
+        if (s[1] >= 10) {
+            s[1] = 0;
+            s[0]++;
+        }
+        if (s[0] >= 2 && s[1] >= 4) {
+            s[0] = 0;
+            s[1] = 0;
+        }
 
+    }
+    cout << counter << endl;
     //cerr << "Program has run "<< (double) (clock()-start) / CLOCKS_PER_SEC << " s " << endl;
     return 0;
 }
+
 
 

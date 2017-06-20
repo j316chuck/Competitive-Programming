@@ -1,0 +1,18 @@
+1. Line representation ax + by + c = 0;
+2. May contain bugs*** (that's the fun part) #perfectly imperfect
+3. Line from two points and line from slope
+4. Project line to point (distance easy to find after that)
+5. Line Line intersection (using determinant / linear algebra)
+6. Same Line, Parallel Line (using dot products)
+7. Perpendicular Bisector 
+
+
+Correct: Line representation, perpendicular bisector, 
+	paralle line, line line intersection, project line to point
+Possible bugs:
+	Line from two points (Copied Lewin 99% sure right)
+	Line from slope (Copied Lewin 99% sure right)
+	Same Line (My formula I think it's right)
+	CCW (My formula I think it's right)
+
+

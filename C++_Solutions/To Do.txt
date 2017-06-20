@@ -1,23 +1,22 @@
-Future Plans:
-C++ Accelerated slow and steady + Website/HTML
+Schedule:
+New way: (focus on problem solving and learning less on debugging and coding which wastes time) Pros: more learning, Cons: Less in depth problem, less coding experience 
+(especially POJ = no coding... just understanding solution, code practice POJ too :D = 10 min debug and then retry tomorrow)
+Solved: Redo problems = more in depth, more coding experience by contests and specific coding times...
+6 hours solve: no coding ... (think about problem) 7 problems... (one by one to get the hang of it) 45 45 45 45 ... 
+1 hour coding... (3 of the hardest coding problems/hard problems) (tricky 50% + hard coding 50%);
+1 hour review (doing a problem from yesterday that you marked as redo) + 15 minutes review...
+2 hours contest :D 
+30 min editorial (no coding) 
+30 min = do more problems... 
 
-Next: Math!!! (number theory review + n c K go over) (computational geometry ahhh)
+Algorithms to learn Eventually: 
+Binary Search, Set problems USACO, LCA (2 days), Hashing (2 days), Union find (1 day), Matrix rref (2 days) (not perfect but direction)
+
+Languages:
+C++ Accelerated slow and steady + Website/HTML
 Future Topics:
 New and delete, Memory management, boost, range (functional programming), next_permutation, 
 OOP friends... Practice with BigInteger
-
-To Do: Math algorithms Done!!! Steady review + reading articles :D 
-1) Math problems CF + POJ (10:30) POJ DONE TMW
-2) GEO ALGORITHMS: 
-Remember: You only need to know the algorithm 50% to solve problems!!!!
-The other half = practice intution!!! Less time studying more time solving problems
-3) Hacker earth (solve)
-2) Lewin (understand)
-4) Stanford... (final review)
-1) Topcoder... = tommorow ... read + intro (3 articles max)
-convex hull + line sweep + computational geometry basics
-
-THIS IS IT!!!!
 
 Motto: Instead of worrying about how much you have to do
 Just do it!!!
@@ -25,4 +24,34 @@ Remember its about direction not perfection 75% understanding is good enough...
 Your contests + problems will cover it!
 
 
-TMW: Work out examples after reading the question!
+Rule: NO more planning, only focus on today. 
+Can't just keep on wasting time... so distracted (every 5 min) 
+75% enough to learn more at A-star (Last plan)
+
+Schedule: 
+Today last day of algorithms
+Tmw: Finish POJ
+Friday: Basic Computational Geo
+Saturday Sunday Computational Geo
+Monday Computational Geo + USACO 
+Tuesday Number theory
+Wednesday Combinatorics
+Thursday Construction
+Friday Done:  Catch Up
+Saturday: Segment Tree 1 hour review 2 hours learn lazy 2 hours learn 2d Then problems...
+Sunday: Problems
+Monday Tuesday: Done + Lazy
+Wednesday: Lazy
+Thursday: 2D 
+
+
+Problems: 
+2) Computational Geometry
+2) Union Rectangle
+2) Segment Intersection
+3) Graham Scan (Andrew's + Graham Scan) (quick hull and jarvis = read)
+6) Stanford
+
+
+
+

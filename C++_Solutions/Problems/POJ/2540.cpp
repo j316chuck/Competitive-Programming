@@ -1,14 +1,32 @@
 /*
 ID: j316chuck
-PROG: line point beta
+PROG: 2540
 LANG: C++
 */
 
-#include <bits/stdc++.h>
+#include <iostream>
+#include <cstdio>
+#include <algorithm>
+#include <cstring>
+#include <string>
+#include <cctype>
+#include <stack>
+#include <queue>
+#include <list>
+#include <vector>
+#include <map>
+#include <sstream>
+#include <cmath>
+#include <bitset>
+#include <utility>
+#include <set>
+#include <numeric>
+#include <ctime>
+#include <climits>
+#include <cstdlib>
 #define Rd(r) freopen(r, "r", stdin)
 #define Wt(w) freopen(w, "w", stdout)
 #define deb(x) cerr << "DEBUG: "<< #x << " = " << x << endl;
-#define endl '\n'
 
 const int INF = 0x3f3f3f3f;
 const double PI = acos(-1.0);
@@ -110,8 +128,7 @@ struct Line {
         }
     }
 
-    //point-slope formula
-    //y = mx + b
+    //point-slope formula, y = mx + b
     Line(const PT &p, double m) {
         if (m > INF) {
             a = 1;
@@ -125,17 +142,15 @@ struct Line {
     }
 };
 
+bool equivalent(const double p1, const double p2) {
+    return fabs(p1 - p2) < EPS;
+}
+
 ostream &operator << (ostream & os, const Line &l) {
     os << "Line: " << l.a << "x + " << l.b << "y + " << l.c << " = 0";
     return os << "";
 }
 
-//equivalent function
-bool equivalent(const int p1, const int p2) {
-    return abs(p1 - p2) < EPS;
-}
-
-//perpendicular bisector between two points
 Line bisector(PT p1, PT p2) {
      Line line;
      if (equivalent(p1.x, p2.x)) {
@@ -152,17 +167,15 @@ Line bisector(PT p1, PT p2) {
      return line;
 }
 
-//returns whether the two lines are parallel or not
-//checks if the determinant is equal to 0
-bool ParallelLine(const Line &l1, const Line &l2) {
-    return (l1.a * l2.b - l2.a * l1.b == 0);
-}
-
-//lines must be parallel and a1 * c2 = a2 * c1 && b1 * c2 = b2 * c1
-bool SameLine(const Line &l1, const Line &l2) {
-    if (!ParallelLine(l1, l2)) return false;
-    return (l1.a * l2.c - l2.a * l1.c == 0)
-        && (l1.b * l2.c - l2.b * l1.c == 0);
+//direction between Point and Line
+//CCW = 1 if line makes left or counterclockwise turn: a(p.x) + b(p.y) + c <= 0
+//CCW = 0 if point is on line or a(p.x) + b(p.y) + c = 0;
+//CCW = -1 if line makes right or clockwise turn: a(p.x) + b(p.y) + c >= 0;
+int CCW(Line &l, const PT &p) {
+    int dir = l.a * p.x + l.b * p.y + l.c;
+    if (dir < 0) return 1;
+    else if (equivalent(dir,  0)) return 0;
+    else return -1;
 }
 
 PT LineLineIntersection(const Line &l1, const Line &l2) {
@@ -177,36 +190,103 @@ PT LineLineIntersection(const Line &l1, const Line &l2) {
     }
 }
 
-//direction between Point and Line
-//CCW = 1 if line makes left or counterclockwise turn: a(p.x) + b(p.y) + c <= 0
-//CCW = 0 if point is on line or a(p.x) + b(p.y) + c = 0;
-//CCW = -1 if line makes right or clockwise turn: a(p.x) + b(p.y) + c >= 0;
-int CCW(Line &l, const PT &p) {
-    int dir = l.a * p.x + l.b * p.y + l.c;
-    if (dir < 0) return 1;
-    else if (equivalent(dir,  0)) return 0;
+// tells if the direction between ab -> bc is straight, turns left (counter clockwise), or turns right (clockwise).
+// 1 if left counterclockwise turn, 0 if collinear, -1 if right clockwise turn;
+int CCW(PT a, PT b, PT c) {
+    double cr = cross(b - a, c - a);
+    if (fabs(cr) < EPS) return 0;
+    else if (cr > 0) return 1;
     else return -1;
 }
 
-int main() {
-    Line l1(2, 3, 5);
-    Line l2(4, 6, 10);
-    Line l3(4, 6, 8);
-    Line l4(4, 7, 9);
-    Line l5(0, 3, 6);
-    Line l6(0, 6, 12);
-    cout << Line({3, 4}, {5, 6}) << endl;
-    cout << Line({0, 10}, {0, 11}) << endl;
-    cout << Line({3, 3}, {6, 3}) << endl;
-    cout << Line({3, 4}, (LL) 10000000000) << ' ' << Line({3, 4}, 0) <<endl;
-    cout << ParallelLine(l1, l2) << endl;
-    cout << SameLine(l1, l2) << endl;
-    cout << ParallelLine(l1, l4) << endl;
-    cout << "SAME LINE: " << SameLine(l1, l3) << endl;
-    cout << SameLine(l5, l6) << endl;
-    cout << LineLineIntersection(l1, l4) << endl;
-    cout << LineLineIntersection(Line(PT(3, 4), 2), Line(PT(3, 4), (LL) 10000000000)) << endl;
-    cout << LineLineIntersection(Line(PT(3, 4), 2), Line(PT(4, 4), 2)) << endl;
-    cout << LineLineIntersection(l1, Line(3, 9, 12)) << endl;
-    cout << CCW(l1, {-100, -100}) << ' ' << CCW(l1, {0, 0}) << endl;
+void ConvexHull(vector<PT> &pts) {
+    sort(pts.begin(), pts.end());
+    pts.erase(unique(pts.begin(), pts.end()), pts.end());
+    vector<PT> dn, up;
+    for (int i = 0; i < pts.size(); ++i) {
+        while (dn.size() >= 2 && CCW(dn[dn.size() - 2], dn[dn.size() - 1], pts[i]) <= 0) {
+            dn.pop_back();
+        } while (up.size() >= 2 && CCW(up[up.size() - 2], up[up.size() - 1], pts[i]) >= 0) {
+            up.pop_back();
+        }
+        up.push_back(pts[i]);
+        dn.push_back(pts[i]);
+    }
+    pts = dn;
+    for (int i = up.size() - 2; i >= 1; --i) {
+        pts.push_back(up[i]);
+    }
 }
+
+// computes area of a polygon, assuming that the coordinates are listed in a clockwise or
+// counterclockwise fashion.
+double ComputeSignedArea(const vector<PT> &p) {
+    if (p.size() <= 2) return 0;
+    double area = 0;
+    for(int i = 1; i < p.size() - 1; i++) {
+        area += cross(p[i] - p[0], p[i + 1] - p[0]);
+    }
+    return area / 2.0;
+}
+
+double IntersectingHalfPlanes(const vector<Line> &lns) {
+    PT p;
+    vector<PT> pts;
+    for (int i = 0; i < lns.size(); ++i) {
+        for (int j = i + 1; j < lns.size(); ++j) {
+            p = LineLineIntersection(lns[i], lns[j]);
+            bool flag = true;
+            for (int k = 0; k < lns.size(); ++k) {
+                if (lns[k].a * p.x + lns[k].b * p.y + lns[k].c > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag) pts.push_back(p);
+        }
+    }
+    ConvexHull(pts);
+    return fabs(ComputeSignedArea(pts));
+}
+
+
+int main() {
+
+    //time_t start=clock();
+    Rd("2540.in"); //make sure to put it in the correct folder
+    char str[100];
+    PT prev(0.0, 0.0), next, ccw;
+    double area = -1;
+    vector<Line> lns;
+    lns.push_back(Line(1, 0, -10));
+    lns.push_back(Line(0, 1, -10));
+    lns.push_back(Line(-1, 0, 0));
+    lns.push_back(Line(0, -1, 0));
+
+    while (~scanf("%lf %lf %s", &next.x, &next.y, str)) {
+        if (strcmp(str, "Same") == 0 || abs(area) < EPS) {
+            area = 0.00;
+            printf("0.00\n");
+            continue;
+        }
+        Line bisect = bisector(prev, next);
+        ccw = next;
+        if (strcmp(str, "Colder")) {
+            ccw = prev;
+        }
+        //right turn meaning ax + by + c >= 0 thus you need to reverse sign of line
+        if (CCW(bisect, ccw) < 0) {
+            bisect.a = -bisect.a, bisect.b = -bisect.b, bisect.c = -bisect.c;
+        }
+        lns.push_back(bisect);
+        area = IntersectingHalfPlanes(lns);
+        printf("%.2f\n", area);
+        prev = next;
+    }
+    //cerr << "Program has run "<< (double) (clock()-start) / CLOCKS_PER_SEC << " s " << endl;
+    return 0;
+}
+
+
+
+

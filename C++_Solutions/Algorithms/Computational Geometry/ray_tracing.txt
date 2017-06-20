@@ -1,0 +1,18 @@
+http://www.geeksforgeeks.org/how-to-check-if-a-given-point-lies-inside-a-polygon/
+1) :D this is cool
+2) Tell if point is in a polygon (most points with polygon may involve convex hull)
+
+***
+Prerequisite: Points must be given in a certain order of input or else you have to put it into
+order by using convex hull. (convex hull is counterclockwise order in your implementation)
+3) If convex polygon really easy. Just do if pt[i]
+4) If you don't know which orientation your polygon is you can do this implementation of poj 1548:
+http://www.cnblogs.com/Howe-Young/p/4396498.html
+5) just see if the orientation/degree ever changes sign from the point. If it does then it's on outside.
+
+6) If concave polygon or convex polygon then you can use raytracing for O(n) or unique raytracing method for O(logn)
+7) Ray trace element from pt p to p, INF
+8) see how many times it intersects with each edge. (if line on same line as a vertex == +2 so not edge case)
+9) check if point lies on the edge, (orientation == 0) if so and OnEdge then return true, else return false.
+(edge case that point lies on edge)
+10) can make O(logn) implementation

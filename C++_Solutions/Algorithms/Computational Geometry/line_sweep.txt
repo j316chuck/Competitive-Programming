@@ -1,0 +1,7 @@
+1) Sweep from x coordinate (new compare function), do so with for loop or in special situations a priority queue if there is dynamic (in loop) insertion of events
+2) Definition of events is key for line sweep
+3) Maintain a set (balanaced binary search tree) to evaluate each new added x coordinate
+Usually set is ordered by y coordinate.
+
+Solve problems from O(N^2) -> O(NlogN) usually
+

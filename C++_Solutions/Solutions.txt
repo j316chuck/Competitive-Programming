@@ -18,7 +18,7 @@ Tackling hard problem:
 3) do small case examples
 4) Make observations... 
 
-Solutions of Good + Hard Problems: * = redo, ! = hard, x = 50% understand
+Solutions of Good + Hard Problems: * = redo, ! = hard/tricky, x = 50% understand, o = did not implement
 
 Problem: CF812D x (nchtr euler's formula + tin??)
 Origin: http://codeforces.com/contest/812/problem/D
@@ -71,4 +71,115 @@ Origin: http://poj.org/problem?id=1148
 Solution: http://www.ioinformatics.org/locations/ioi02/contest/day1/utopia/utopia-handout.pdf
 Learned: 1) 10000 = should involve sorting 2) 2D break down into 1D problem 3) Realize that 
 you cannot brute force it so you must find a smart solution... 4) Pattern of alternating signs and how you can always maintain + or - 
-5)  Really smart way of alternating signs to keep + and - so that you can find xc and solve. :D 6) coding = dx dy simplification, then use functions to solve repeated parts, x and y etc. 
+5)  Really smart way of alternating signs to keep + and - so that you can find xc and solve. :D 6) coding = dx dy simplification, then use functions to solve repeated parts, x and y etc.
+
+Problem: POJ 1905 (binary search + math practice)
+Origin: http://poj.org/problem?id=1905
+Learned: 1) Perfectly imperfect, focus on rest, focus on work, treat it like contest, focus on learning
+2) Do math quick... you can do the math faster. 3) Your binarysearch on answer is correct. For doubles it is really simple just keep on dividing
+4) asin0 r0 = part of circle 5) d = ... d < 0 wrong!!! just do x < y EPS matters in computational geometry. 6) to make more precise do < EPS 3 digits more specific than what they ask 
+
+Problem: POJ 2653 (queue + line segment practice)
+Origin: http://poj.org/problem?id=2318
+Learned: 1) Cool observation that there are only 1000 max results 2) Simplify's problem and use two vectors to insert and delete 
+3) segment intersection borrow from stanford, or can also do two line intersection and check if the point lies on BOTH segments!!! :D
+4) can also use a queue!!!
+
+Problem: POJ 2318 (cross product + binary search)
+Origin: http://poj.org/problem?id=2074
+Learned: 1) In Box if cross product < 0 or clockwise if you go around the points in a polygon in a clockwise fashion for all the pairs of subsequent points O(mn) solution
+2) can also use binary search to solve it faster in O(m log n) hi = n + 1 = always smaller, lo = 0 always bigger. 
+3) Many ways to do test if a points is to the left or right of a line. best way = CCW or not. Or you can also do project point to line and compare x coordinates...
+4) %lf coding be careful. Use binarysearch technique to debug...
+
+
+Problem: POJ 1696 (cross product practice)
+Origin: http://poj.org/problem?id=1696
+Learned: 1) Use slow_hull idea to solve 2) q == -1, mindex, optimizations, keep on turning left. p, i, q. 
+3) can also implement another way by having a sorting function and sorting every time by point. 
+
+Problem: POJ 2074 (line segment intersection + sweep line / sorting)
+Origin: http://poj.org/problem?id=2074
+Learned: 1) Please read the problem 2) Please do the examples 3) Then try to solve the problem, else you are trying to solve an impossible problem... 
+4) Practice not solving and feeling comfortable 5) right to left, left to right to make coordinates 6) then sort 7) then use max min loop to solve
+
+Problem: POJ 2540 * (Intersecting half planes Implementation half way)
+Origin: http://poj.org/problem?id=2540
+Learned: 1) Implementation half way but good enough for now 2) Half Line intersectin problem
+3) May be some bugs in my line_point_beta implementation... but good enough for now... 4) Got the general idea
+that first we need to calculate perpendicular bisector of prev and next point. Then add this point to the lines.
+5) Use CCW to determine if point is to the left or right of point, if so then switch the lines directions
+6) Finally solve the intersection half points problem by doing O(n^3) to get points, then convex hull, then compute signed area.
+
+Problem: POJ 1228 * (convex hull + collinear somehow messed up implementation whelp)
+Origin: http://poj.org/problem?id=1228
+Learned: 1) Treat it like a contest 45 min timer wow I did it so fast. Starting tmw. 
+2) 11 sleep 3) I actually got the implementation details... use convex hull to mark the current polygon
+4) Each line segment must have three points in it!!! :D 5) Slow way = first way = have old points and check if there are three points per pt = O(N^2)
+5) fast way in O(N) = since your convex hull does not remove redundant you can check if three points are collinear in O(N) 
+
+Problem: POJ 1408 (line line intersection + implementation) 
+Origin: http://poj.org/problem?id=1408
+Learned: 1) Treat it like a contest 2) Trust in your functions 3) Solved it in 1 hour and 30 min
+4) Could have simplified implementation and just done double for loop. 5) Pretty easy problem with just
+line line intersection and area calculation! :D 
+
+Problem: POJ 1584 ! (point in polygon, convex, project point to line + implementation)
+Origin: http://poj.org/problem?id=1584
+Learned: 1) Missed edge case of point being outside of peg. 2) Got the other two conditions that polygon has to be convex and 
+point projected onto polygon has to be > than radius 3) Good consistent 2 hour, hard work, + no implementation = learning!!! 
+4) Point projection easy, convex easy orientation, pt in convex polygon easy orientation, pt in nonconvex polygon a little harder = use stanford solution
+5) *** note you are not given ordering of polygon (counterclockwise or clockwise)...  (tmp sign) 
+
+Codeforces Round 419 Learned:
+1) 11 - 6 AM consistent  
+2) Work hard 2 hour sessions like contest
+3) Work smart... people don't spend as much time but they do better because they don't train dumb
+4) Problem = contest daily + learning not coding + 2 hour coding session 
+5) Coding tips: read question twice, think (no writing), when solving right before you code you must spend 3 min checking if you missed any edge cases or can simplify code.
+then, when you get WA reread question seeing if you missed anything (carefully), then -> go and resolve/recheck algorithm
+
+
+Problem: Codeforces 419A
+Origin: http://codeforces.com/contest/816/problem/A
+Learned: 1) scanf("%d:%d") to read in input 2) increment counter until you get a valid palindrome 3) should solve in < 10 min
+
+Problem: Codeforces 419B
+Origin: http://codeforces.com/contest/816/problem/B
+Learned: Got right idea, used set implementation which obfuscated the material. Could have
+done a very simple implementation of using a[i]++, and c[i] = c[i-1] + (p[i]>=k);
+
+Problem: Codeforces 419C
+Origin: http://codeforces.com/blog/entry/52742
+Learned: 1) Right implementation idea, use greedy to decrease until 0 then iterate and solve
+2) Please be careful about implementation though... make sure to check edge case cause it's minimum # of row, column
+(faster please)
+
+Problem: Codeforces 419D *!o
+Origin: http://codeforces.com/contest/815/problem/B
+Learned: 1) Brute force method... print out all the values of n = 1, 2, 3,.. with the values 0, 0, 0, 1, 0, 0, 0
+This can produce an easy brute force solution based on n mod 4. (last case 10 min brute force 10 min solve 10 min code) 
+2) Cool method: 1) realize how easy addition easy -> contribution per item is (n-1) C (k-1). 2) Simplify task to all even 
+such that it becomes + - + - + - with even number of tasks. Can just brute force this. 3) Even tasks can be solved by dividing it into
+groups a1, a3, a5 etc... and a2, a4, a6... and it simplifies to the easy addition case.  4) wrote invfactorial method and factorial mod method
+
+
+Problem: POJ 3525 !x
+Learned: 1) HalfPoint intersection, can represent in counteclockwise manner as 2 points.
+2) binary search while (r - l > eps) or for (; i < 100; i++) (me gusta second option)
+3) HalfPlane intersection O(nlogn)  = clear pass = implement later or (O(n^3)) can also pass
+4) Check if the halfplane intersection of the newly created polygon is 0 or not.
+5) to create line you do double dx = (a.y - b.y)*p/len;
+	double dy = (b.x - a.x) * p /len; x" = x + dx, y" = y + dy;  6) halfplane = two point representation...
+	(use simple cases to deduce sign and this is because of perpendicular lines)
+6) When implementing... be very careful... when debugging = first re read if you are wrong, then go step by step
+and see where you went wrong... ugh copy and pasted wrong
+
+Problem: POJ 3246 o! (convex hull + area)
+Learned: 1) Don't need to implement 2) idk why but a seemingly
+O(N^2) problem can pass this case when you just make the convex hull and try deleting all points
+3) Other solution includes for all points inside ABC find the convex hull ... excluding C = and then solve
+(that exclude case work) O(pN) too I think. really hard implementation
+4) Implementation = memcpy (src, dest, sizeof(src)) can do N * sizeof(int) or N * sizef(Point)
+
+

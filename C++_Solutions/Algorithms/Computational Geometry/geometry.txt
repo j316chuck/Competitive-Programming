@@ -1,0 +1,34 @@
+geometry.cpp file contains:
+
+PT structure sorted by y
+dot product
+cross product
+distance squared product
+rotate counterclockwise, clockwise, and in general rotation
+projecting a point to a line (distance from point to line is simple from this)
+projecting point to segment
+distance from point to segment
+distance from point to plane
+check if two lines are parallel (given inputs of lines from a-b and c-d) //check = bool
+check if two lines are collinear (given inputs of lines from a-b and c-d)
+check if line segments intersect (given inputs of lines from a-b and c-d)
+compute line intersection of lines a-b and c-d
+compute circle center given three points (radius is easy, just do a - center distance)
+checks if point is in a non-convex polygon in O(n)
+checks if point is on the boundary of a convex polygon in O(n)
+circle line intersection
+circle circle intersection
+signed and unsigned area of a polygon
+compute centroid of a polygon
+test is a polygon is simple or not (no intersecting sides)
+reflection of point across a line
+CCW left or right turn between three points
+three points collinear
+
+
+Halfplane intersection in halfplane two good.
+Line representation by two points and has angle k
+Can cmp line's based off of half plane representation and has
+halfplane representation...
+***** Edited
+Changed area formula...based off of topcoder article.

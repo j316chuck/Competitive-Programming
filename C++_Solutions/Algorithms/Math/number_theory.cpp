@@ -82,6 +82,7 @@ int floor_mod (int mod, int x) {
     return ((x % mod) + mod) % mod;
 }
 
+//returns inverse
 int extended_gcd (int a, int b, int &x, int &y) { //x = ax y = by, ax + by = d;
     if (b == 0) {
         x = 1; y = 0;

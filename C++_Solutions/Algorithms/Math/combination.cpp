@@ -78,7 +78,7 @@ template <class T> void deb_array(T *arr, int length) {
     } cout << '\n';
 }
 
-long long comb(int n, int k) {
+long long SlowComb(int n, int k) { //N C K in O(K) time
     if (k > n) return -1; //throw error here maybe
     k = min(k, n - k);
     long long res = 1;
@@ -89,21 +89,42 @@ long long comb(int n, int k) {
     return res;
 }
 
-long long comb(int n, int k, long long mod) { //O(n * k complexity) can calculate up to 1000 C 500
-    long long C[n + 1][k + 1]; // can be int to save memory space
+long long CombDP(int n, int k, long long mod) { //O(n * k complexity) can calculate up to 1000 C 500
+    long long c[n + 1][k + 1]; // can be int to save memory space
     for (int i = 0; i <= n; i++) {
         for (int j = 0; j <= min(i, k); j++) {
-            if (j == 0 || j == i) { C[i][j] = 1;}
-            else C[i][j] = (C[i-1][j-1] + C[i-1][j]) % mod;
+            if (j == 0 || j == i) { c[i][j] = 1;}
+            else c[i][j] = (c[i-1][j-1] + c[i-1][j]) % mod;
         }
     }
-    return C[n][k];
+    return c[n][k];
+}
+
+const int N(10);
+const int MOD(17);
+long long fac[N + 1], invfac[N + 1], inv[N + 1];
+long long Factorial() { //O(N) time where N is the largest factorial and inverse factorial you need
+    fac[0] = invfac[0] = 1;
+    for (int i = 1; i <= N; ++i) {
+        inv[i] = i == 1 ? 1 : inv[i - MOD % i] * ((MOD + i - 1) / i) % MOD; //calculate inv[i]
+        invfac[i] = invfac[i - 1] * inv[i] % MOD;
+        fac[i] = fac[i-1] * i % MOD;
+    }
+}
+
+long long CombFact(int n, int k) { //O(N) + k  where N is the largest factorial you need and k is number of queries to comb
+    //cout << fac[n] << ' ' << invfac[k] << ' ' << invfac[n - k] << endl;
+    return (((fac[n] * invfac[k] + MOD) % MOD) * invfac[n - k] + MOD) % MOD;
 }
 
 int main() {
 
     //works up to 50 C 25!!!
-    for (int i = 0; i <= 50; i++) {
-        cout << comb(50, i, 1000000000) << endl;
+    for (int i = 0; i <= 10; i++) {
+        cout << CombDP(10, i, 17) << endl;
+    }
+    Factorial();
+    for (int i = 0; i <= 10; i++) {
+        cout << CombFact(10, i) << endl;
     }
 }

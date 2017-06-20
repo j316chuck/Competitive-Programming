@@ -30,3 +30,10 @@ Lower_bound(A.begin(), A.end(), make_pair(B,0))-A.begin();
 18) don't use vector<bool> use vector<int> visited
 19) (i & - i) = lowest power of two that divides it... For example, 6 & -6 = 2 8 & -8 = 8 7 & -7 = 1;
 20) scanf("%I64u, &d) unsigned long long d; replace with %I64d if not unsigned.
+21) scanf("%lf", &double) PLEASE. printf("%.2f", double);
+22) char array in c = strcmp function to compare can treat like "same" also scanf whole string with just %s, str not %s, &str
+Style:
+functions and class = upper camel case, spaces for everything
+add comments if you think you will be confused, keep functions short and write them, 
+use const and references, less coding and debugging as possible, 
+variable names are always lower case.

@@ -1,0 +1,17 @@
+1) Slow Hull = O(N^2) for each point go through and 
+2) Graham Scan = O(N log N) but slow coding
+Find lowest point to the most left. Sort all other point by polar angle in comparison to this point. Use + y + x trick to make the sorting fast. Then make the closed path. Then, process the closed path and delete the points that make the graph concave. Use a stack and while loop to do so. 
+3) Andrew's algorithm: 
+sort points by x coordinate.
+Use line sweep technique to process through the points. 
+create upper and lower hull by pushing in points one by one. (lower in reverse order) and making sure
+each point is counter clockwise, else use while loop to delete until the three points current points are counter clockwise. 
+(delete last two points of upper and lower hull when done because both are in each other's loop)
+To remove redundant, go through the result vector. and then make sure the area of any three points in a sequence are not 0. else delete the two points. 
+
+https://github.com/jaehyunp/stanfordacm/blob/master/code/ConvexHull.cc
+http://www.spoj.com/problems/BSHEEP/
+
+Properties of convex hull: Smallest possible length, convex angle, and half intersecting planes (ax + by <= c) surround the convex hull. 
+
+SPOJ problem: smallest # of sheeps = remove redundants, first sheep = bottommost, then leftmost = how to sort. then anticlockwise order = down first then upper. 

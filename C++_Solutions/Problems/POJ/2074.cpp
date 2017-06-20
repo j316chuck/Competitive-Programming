@@ -27,7 +27,6 @@ LANG: C++
 #define Rd(r) freopen(r, "r", stdin)
 #define Wt(w) freopen(w, "w", stdout)
 #define deb(x) cerr << "DEBUG: "<< #x << " = " << x << endl;
-#define endl '\n'
 
 const int INF = 0x3f3f3f3f;
 const double PI = acos(-1.0);
@@ -79,13 +78,60 @@ template <class T> void deb_array(T *arr, int length) {
     } cout << '\n';
 }
 
+struct PT {
+    double x, y;
+    int idx;
+    PT() {}
+    PT(double x, double y) : x(x), y(y) {}
+    PT(const PT &p) : x(p.x), y(p.y) {}
+    PT operator + (const PT &p) const { return PT(x + p.x, y + p.y); }
+    PT operator - (const PT &p) const { return PT(x - p.x, y - p.y); }
+    PT operator * (double c) const { return PT(x * c, y * c); }
+    PT operator / (double c) const { return PT(x / c, y / c); }
+
+    //sorts from low to high in y;
+    bool operator < (const PT &p) const {
+        if (p.y > y) return true;
+        else if (p.y < y) return false;
+        return p.x > x;
+    }
+
+    bool operator == (const PT &p) const {
+         return make_pair(p.x, p.y) == make_pair(x, y);
+    }
+};
+
+ostream &operator << (ostream &os, const PT &p) {
+    os << "(" << p.x << "," << p.y << ")";
+}
+
+double dot(PT p, PT q)     { return p.x * q.x + p.y * q.y; }
+double dist2(PT p, PT q)   { return dot(p - q, p - q); }
+double dist(PT p, PT q)    { return sqrt(dist2(p, q)); }
+double cross(PT p, PT q)   { return p.x * q.y - p.y * q.x; }
+
+// tells if the direction between ab -> bc is straight, turns left (counter clockwise), or turns right (clockwise).
+// 1 if left counterclockwise turn, 0 if collinear, -1 if right clockwise turn;
+int CCW(PT a, PT b, PT c) {
+    double cr = (b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x);
+    if (fabs(cr) < EPS) return 0;
+    else if (cr > 0) return 1;
+    else return -1;
+}
+
+bool ThreePointsCollinear(PT a, PT b, PT c) {
+    return CCW(a, b, c) == 0;
+}
+
+
 int main() {
 
     //time_t start=clock();
-    Rd(""); //make sure to put it in the correct folder
+    Rd("2074.in"); //make sure to put it in the correct folder
     //cerr << "Program has run "<< (double) (clock()-start) / CLOCKS_PER_SEC << " s " << endl;
     return 0;
 }
+
 
 
 
