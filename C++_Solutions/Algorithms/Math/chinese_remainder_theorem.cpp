@@ -73,6 +73,7 @@ int gcd_iterative (int a, int b) {
     return a;
 }
 
+//gcd in O(log n)
 int gcd (int a, int b) {
     if (b == 0) return a;
     return gcd(b, a % b);
@@ -82,7 +83,8 @@ int floor_mod (int mod, int x) {
     return ((x % mod) + mod) % mod;
 }
 
-int extended_gcd (int a, int b, int &x, int &y) { //x = ax y = by, ax + by = d;
+//Extended GCD, ax + by = d. ax = d mod b,  ax = d mod y
+int extended_gcd (int a, int b, int &x, int &y) {
     if (b == 0) {
         x = 1; y = 0;
         return a;
@@ -91,11 +93,11 @@ int extended_gcd (int a, int b, int &x, int &y) { //x = ax y = by, ax + by = d;
     int d = extended_gcd(b, a % b, x1, y1);
     y = (x1 - (a / b) * y1);
     x = y1;
-    //cout << a << ' ' << b << ' ' << x << ' ' << y << ' ' << d << endl;
     return d;
 }
 
-int chinese_remainder_theorem(vector<int> &remainders, vector<int> &modulos) { O(n log a-b)
+//O(n log a-b) where n is number of remainders
+int chinese_remainder_theorem(vector<int> &remainders, vector<int> &modulos) {
     int M = 1;
     for (int i = 0; i < modulos.size(); i++) {
         M *= modulos[i];
@@ -106,13 +108,13 @@ int chinese_remainder_theorem(vector<int> &remainders, vector<int> &modulos) { O
         int x, y;
         extended_gcd(Mk, modulos[i], x, y);
         result += x * Mk * remainders[i];
-        //cout << Mk << ' ' << remainders[i] << ' ' << x << endl;
         result = floor_mod(M, result);
     }
     return result;
 }
 
-vector<int> inverse_array(int n, int m) { //black magic
+//black magic that calculates the inverse modulo of an array of integers mod m for up to n digits;
+vector<int> inverse_array(int n, int m) {
 	vector<int> modInverse(n + 1, 0);
 	modInverse[1] = 1;
 	for(int i = 2; i <= n; i++) {
@@ -122,11 +124,11 @@ vector<int> inverse_array(int n, int m) { //black magic
 }
 
 int main() {
+    //tests
     //cout << gcd (12, 4) << ' ' << gcd(18, 7) << endl;
     //int x, y;
     //cout << extended_gcd(56, 32, x, y); //it doesn't work if you chain it together like << x << ' ' << y << endl;
     //cout << ' ' << x << ' ' << y << endl;
-
     //modulos must all be pairwise relatively prime;
     vector<int> modulos = {7, 8};
     vector<int> remainders = {6, 4};
@@ -134,5 +136,4 @@ int main() {
     vector<int> m = {5, 7, 9, 11};
     vector<int> r = {1, 2, 3, 4};
     printf("%d\n", chinese_remainder_theorem(r, m));
-
 }

@@ -4,6 +4,8 @@ PROG: 2242
 LANG: C++
 */
 
+
+
 #include <iostream>
 #include <cstdio>
 #include <algorithm>
@@ -78,22 +80,34 @@ template <class T> void deb_array(T *arr, int length) {
     } cout << '\n';
 }
 
-long long SlowComb(int n, int k) { //N C K in O(K) time
-    if (k > n) return -1; //throw error here maybe
+vector<int> InverseArray(int n, int m) {
+    vector<int> modInverse(n + 1,0);
+    modInverse[1] = 1;
+    for(int i = 2; i <= n; i++) {
+        modInverse[i] = (-(m/i) * modInverse[m % i]) % m + m;
+    }
+    return modInverse;
+}
+
+//calculates n choose k in O(k) time
+long long SlowComb(int n, int k) {
+    if (k > n) return -1;
     k = min(k, n - k);
     long long res = 1;
-    for (int i = 1; i <= k; i++) { //iterative division works somehow
+    //iterative division works somehow
+    for (int i = 1; i <= k; i++) {
         res *= n--;
         res /= i;
     }
     return res;
 }
 
-long long CombDP(int n, int k, long long mod) { //O(n * k complexity) can calculate up to 1000 C 500
-    long long c[n + 1][k + 1]; // can be int to save memory space
+//O(n*k) complexity, calculates up to 1000 C 500 in Combinations
+long long CombDP(int n, int k, long long mod) {
+    long long c[n+1][k+1]; // can be int to save memory space
     for (int i = 0; i <= n; i++) {
         for (int j = 0; j <= min(i, k); j++) {
-            if (j == 0 || j == i) { c[i][j] = 1;}
+            if (j == 0 || j == i) c[i][j] = 1;
             else c[i][j] = (c[i-1][j-1] + c[i-1][j]) % mod;
         }
     }
@@ -102,8 +116,8 @@ long long CombDP(int n, int k, long long mod) { //O(n * k complexity) can calcul
 
 const int N(10);
 const int MOD(17);
-long long fac[N + 1], invfac[N + 1], inv[N + 1];
-long long Factorial() { //O(N) time where N is the largest factorial and inverse factorial you need
+long long fac[N+1], invfac[N+1], inv[N+1];
+void Factorial() { //O(N) time where N is the largest factorial and inverse factorial you need
     fac[0] = invfac[0] = 1;
     for (int i = 1; i <= N; ++i) {
         inv[i] = i == 1 ? 1 : inv[i - MOD % i] * ((MOD + i - 1) / i) % MOD; //calculate inv[i]
@@ -112,9 +126,9 @@ long long Factorial() { //O(N) time where N is the largest factorial and inverse
     }
 }
 
-long long CombFact(int n, int k) { //O(N) + k  where N is the largest factorial you need and k is number of queries to comb
-    //cout << fac[n] << ' ' << invfac[k] << ' ' << invfac[n - k] << endl;
-    return (((fac[n] * invfac[k] + MOD) % MOD) * invfac[n - k] + MOD) % MOD;
+//O(n + k) where n is the largest factorial you need and k is number of queries to CombFact
+long long CombFact(int n, int k) {
+    return (((fac[n] * invfac[k] + MOD) % MOD) * invfac[n-k] + MOD) % MOD;
 }
 
 int main() {

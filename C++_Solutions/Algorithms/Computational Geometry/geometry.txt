@@ -24,7 +24,8 @@ test is a polygon is simple or not (no intersecting sides)
 reflection of point across a line
 CCW left or right turn between three points
 three points collinear
-
+CF 358E = Calculate maximum area of triangle among n points in O(n^2)
+Calculate point in convex polygon in O(log n)
 
 Halfplane intersection in halfplane two good.
 Line representation by two points and has angle k
@@ -32,3 +33,6 @@ Can cmp line's based off of half plane representation and has
 halfplane representation...
 ***** Edited
 Changed area formula...based off of topcoder article.
+
+Problems: Circle 681E
+Convex Polygon/Convex Hull: USACO, CF166B

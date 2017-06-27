@@ -103,7 +103,9 @@ bool ThreePointsCollinear(PT a, PT b, PT c) {
 }
 
 //returns the convex hull of the points in the vector points;
-//points starts from the lowest point to the most left and circles in a counterclockwise order (lower + upper)
+//points starts from the lowest point to the most left and circles in a counterclockwise order (lower + upper) when you sort by y to x
+//if you sort by x to y then it goes from most left, then lowest, and circles in a counterclockwise order
+//to change CCW to CW orientation you have to change the way dn and up are pushed into the result vector or pts
 //if remove_redundant is defined the points that are collinear are removed
 #define REMOVE_REDUNDANT
 
@@ -114,6 +116,7 @@ void ConvexHull(vector<PT> &pts) {
     pts.erase(unique(pts.begin(), pts.end()), pts.end());
     vector<PT> dn, up;
     for (int i = 0; i < pts.size(); ++i) {
+        //changed <= and >= for removing points on same line
         while (dn.size() >= 2 && CCW(dn[dn.size() - 2], dn[dn.size() - 1], pts[i]) <= 0) {
             dn.pop_back();
         }

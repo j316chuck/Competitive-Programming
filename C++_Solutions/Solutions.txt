@@ -182,4 +182,200 @@ O(N^2) problem can pass this case when you just make the convex hull and try del
 (that exclude case work) O(pN) too I think. really hard implementation
 4) Implementation = memcpy (src, dest, sizeof(src)) can do N * sizeof(int) or N * sizef(Point)
 
+CF Round 418
+Learned: 1) More work on DP 2) Speed 40 min B ugh 3) D problems are so hard 4) more contests
+5) Solutions are short (except for D)
 
+Problem: Codeforces 418B
+Learned: Got the right concept = try to recover permutation, where they differ by two spots.
+Then after that just brute force the possibilities and see if it matches a and b.
+
+Problem: Codeforces 418C (DP) *!
+Learned: 1) My DP is very lol confined to just interval length DP, and 3d DP rip. 2) This 
+problem has an easier DP which has the prefix max formula that each query = (r - l + 1 - t <= m)
+2) Keep DP of ans[ch][moves] (this should be first thought) because it's intuitive. 
+3) To get DP O(N^2 * 26) solution = iterate through every character. intuitive. 4) Your DP of interval somehow works
+as your recurrence of transition states is correct... (just requires a lot of consideration of base case etc. which should be faster)
+5) Simpler DP = use prefix max, replace_ct. DP from starting point and len. 6) Another simpler solution uses sliding window (from USACO hashing)
+and keeps left and right min max. http://codeforces.com/contest/814/submission/27640540
+
+Problem: Codeforces 418D (Geo + DP + Greedy) *
+Learned: 1) This problem was actually really easy... could've solved :( 2) Go with the attitude that you can solve level D 
+3) Simple observation that you just split two groups by biggest and second biggest (kind of like chess tactic) = then the answer just alternates
+4) Greedy -> solve. 5) Observation of rooted trees and how one node is in another. 6) Also has cool DP solution that I don't fully understand yet. 
+
+Problem: Sweep-Line Line Intersection (Sweep line)
+Learned: 1) sort always make_pair() 2) O(nlogn) 3) Event = simplify use event wisely, segment(x1, x2), segment (x2, x1)
+
+Problem: Union of Rectangle (Sweep line)
+Learned: 1) long long vs double be careful 2) O(N^2) 3) Use boolean array to keep in set
+4) sort by y and x... 5) tricky implementation but sweep first by x, then by y; inset... 6) data structure important
+index to link elements together
+
+
+Problem: PowerSupply (Topcoder sweep line) o
+Origin: https://community.topcoder.com/stat?c=problem_statement&pm=5969
+Learned: 1) small constraint = recalculate sweep line at each input no need for set
+2) sweep from bottom to top! left to right, diagonal wise. 3) sort and then sweep. 4)
+x and y = can maintain set and add points d and -d away or can also just calculate it with a for loop
+5) diagonal = c[i] = x[i] + y[i]. c[i] = x[i]-y[i]; = distance away from sweep line. (geometric property why)
+
+
+Problem: ConvexPolygons (Topcoder sweep line, Intersection of two rectangles) o
+Origin: https://community.topcoder.com/stat?c=problem_statement&pm=4559&rd=7225
+Solution: http://www.topcoder.com/tc?module=Static&d1=match_editorials&d2=srm250
+Learned: 1) Solution 1: a) computational geometry = you can find intersection of all points in O(N^2)
+b) find all the points in b and on a, find all the points in a and on b. 3) This is all the points in the intersection
+4) find convex hull of all the points. (convex hull does not need sorted points remember!!!) 5) calculate area!!! 
+Can do in 10 min! 
+Solution 2: Use sweep line = O(N^2) calculate the intersection of the lines b. Sweep by x coordinate
+and go one by one. Calculate intersection and sweep
+
+Problem: WILD (Sweep Line + Segment Tree) ox! (I will implement later map!!!??? or segment tree)
+http://www.spoj.com/problems/WILD/
+Learned: 1) Combinatorics calculate inverse easier = envision union of 3D rectangles 
+2) union of rectangles = line sweep by z 3) Can do m^2 - sum for every m = m iterations + n log m to update sum
+4) Intuition - calculate opposite easier, then see 2d solution with sweep line -> 3D solution idea! 5) implementing 
+with segment tree looks fun. Update interval ranges. 6) Implementing with map hard/tricky but cool. A) Add m+1, 0 as bounds
+B) Then use maps lower bound function to evaluate ranges. C) Use map.erase to delete old ranges that no longer apply!!!
+:D
+
+Problem: CF 612D
+Learned: Easy problem 1) Code slowly so you don't have to debug a) what you typed b) right before submission
+2) Use pair<int, int> to represent simple events from now on. 3) Sweep line!
+
+Problem: ACM Timus 1469 (Line intersection bentley ottoman) o? (If not satisfied with line sweep implement with set)
+Learned: 1) Makes a lot of sense after you understand algorithm, add cur to set, left endpoint = upper lower delete from pq, upper cur connect into pq, lower cur connect into pq
+3) Right endpoint = connect upper lower. delete cur from set;
+4) intersection event = delete e from pq, swap positions in set, so E1 > E2. In pq, delete intersections... :D
+5) Hard to code/data structure and no solutions = no code.
+https://github.com/vadimkantorov/acm/blob/master/acm.timus.ru_33735/1469.cpp
+6) Good use of data structures 7) Segment = Left, Right, Index :D bool operator to sort 
+8) below and above helper function with sets = ++loc and  loc != window.begin() ? --loc : window.end();
+9) Used iterator and line sweep + helper functions + hackerearth iteration to find intersection!!! 
+10) insert vs erase! easy! pair<iter, bool> inserted returned when you use insert function! 
+
+Problem: CodeChef Bishop (Hard implementation + line sweep problem) x
+Learned: 1) Break this problem down into sub parts 2) Obs 1: solve first white square + dark square
+3) Obs 2: First gen segments (x and then y) that are possible, then calculate intersection 4) To make life easier rotate the square by 45
+and then you get a simpler rook problem which is intersection of segments
+Coding: 1) not 100% sure how to transform diagonal to vertical 2) create b[r] and o[r]. 3) write overarching functions
+to calculate each part, gen_segments, intersect... 4) Use swap trick to create vertical and horizontal segments with same lines;
+5) to generate segments, you only need to sort b and then you can just see if other chess pieces lie in same column. 
+6) If not it = boundary but if it is then its equal to the b[j].y; 7) intersection = use events to do line sweep. can use BIT
+
+Problem: CF 166B (TLE :( CF Convex Hull) * (Classical idea of binary search + log n implementation of finding if a point is in a convex polygon)
+Learned: 1) Right idea Convex Hull of all points should contain only A 2) Implementation tricky
+does not involve erasing points because convex and nondegenerate = no erase, does not involve checking 
+edge cases where points repeat because it doesn't 3) Does involve keeping points on same line so what you do is 
+> 0 not <= 0 for deletion!!! So I was right... Passed 31 test cases like that! :D 4) Wrong because TLE = simplify data structures
+and make bool cmp better 6) Also change PT and idx implementation 7) Another way to do it is to use binary search on whether or not each point in B is in A.
+7) Cool implementation of binary search on whether or not points is in polygon in O(logn) in 166B4.cpp 
+8) 1 code slowly and carefully 9) pretty good at CCW 10) log n approach binary search cool lo = 2, hi = n; lo = always good etc. 11) PTs always TLE because your CCW functions
+takes forever to run and making 10000 * 20 points is costly ... 12) Use simple functions if you can ... pair<int, int> #define x first #define y second if you can 13) Final trap...
+long long needed to multiply integers. 13) For classes easiest way to add an idx or angle is to just let it be there and don't change any functions :D
+
+Problem: CF 64D (Convex Hull Dynamic version + Map + CCW) *ox!
+Learned: 1) Work: Flow!!! Had fun debugging + writing code :D = chuck just work like this 2 hour spurts = solve as many problems as possible (just learn)
+2) Convex Hull idea -> sort everything by centroid angle (or by first coordinate if you can). 3) That is how you create your set structure of angles which
+you add/delete from... (similar to binary search approach where you cut everything by half-planes) 4) then use set upper bound to find upper bound and decrease iterator to find lower bound
+5) use this to create inside function 6) insert function = check if inside (if so then return) else continue erasing upper and lower halfs until you get convex hull (CCW on point easy with example)
+Nuances/Language learned:  1) pred, succ, or inc, dec helper functions!!! 2) just use set<Point>::iterator don't use auto when passing in functions 3) Your struct
+will have problems when you insert into a set and you have the copy function Point (&point p) and you have a new variable like k. (Be very careful!!!) 4) Point In Segment function!!!
+5) atan2(y/x) pleaseeee 6) centroid function
+
+Problem: USACO Platinum Cow Curling  
+Learned: 1) Wow this problem is exactly the same as CF 166B 2) Just do convex hull + o(logn) to see if point is in convex hull 3) Line sweep approach maybe? 
+4) Three Points Collinear/Points on Line is important 5) edge case of all lines ahh 6) Got one!!! 7) practice implementing by yourself so you get better at debugging but contest = copy
+8) problem was bool operator const 9) convex hull must remove duplicates >= 10) PointInPolygon must check collinear case 11) helper functions to solve!!! GJ!!! Got it!
+12) Can also do line sweep approach by denoting the tl, tr, bl, br and solving it by iterating through the trapezoids in O(N+M)
+
+Problem: SPOJ SPoints
+Learned: 1) Exactly same idea as previous problem 2) Check if two groups of points can be separated by line 3) Half plane intersection!!!
+4) My idea: Check collinear check if contains or itersects polygon. O(NlogN) 4) Simpler idea: contains = if a point is contained/on a line = there's no way!
+Already wrote code for that in USACO Platinum Cow Curling (Checks if point is on or inside = no) 5) Check if intersect... for points
+if size >= 2 check if intersect of two line segments ... O(N^2) for loop.
+
+Problem: USACO December 2017 Lots of Triangles !xo (CCW geometry)
+Learned: 1) Original 40 min = so close got that you only need to simplify by a factor of O(N) to O(N^3) 2) Got that you can precompute half planes. 3) Missed that half planes
+should stop at end of line segments = would've got it so close 4) 2 tricks -- 1 because the edge case of point on dividing line is hard to deal with you just 
+do all points betweenbelow +=2 except points on directly below line = +1 5) Next trick is everything to the left = + if line segment goes right = - 6) Final trick = check for between below 
+i, j which solves for last edge case. 6) n C 3 = for (i, n) for (j, i) for (k, j)
+
+Problem: USACO November 2013 (Silver) Crowded Cows (Sweep line)
+Learned: 1) Got the right idea sweep line 2) Remember sweep line is sort for loop
+then WHILE loop of iterating left and right sweeps or for loop involving lower bound 
+3) Could not find nasty bug so had to rewrite everything 4) Mark Gordon good coding = 1 for loop
+with two while statements keeping left and right = erase and find smart use of sets. 5) Code slowly and carefully
+6) think of perfect solution before coding 7) be careful with set size... 0% chance of wasting 2 hours
+
+Problem: CF 199C (Geometry)
+Learned: 1) Geometry problems input output easy just solve for geometric solution 2) Trick that h % r * 2LL !!! :D dn't make long long mistake
+
+Problem: CF 340B (Largest area of a quadrilateral)
+Learned: 1) 300 -> O(N^3) 2) Simplify by O(N^4) -> O(N^2) * O(N) or O(N^3) * O(1) 3) Clean solution... O(N^2) 
+use the idea of cross product min or max to get the minimum area and maximum area of bottom sides and subtract them to get maximum area involving line segment :D
+
+Problem: CF 203D (Point projection in 3D)
+Learned: 1) fmod = mod for doubles 2) vectors = don't change even if reflect 3) vector d = r * t solve everything
+
+Problem: CF 600D (Circle Circle Area Intersection)
+Learned: 1) Just cause you have a formula does not mean you have to use it #good to better
+2) For this you don't even need to know the intersection points. 3) You can just use the law of cosines
+to find the angle, multiply angle by two and solve for area...
+3) Not the problem with the cross product, but problem with area of circle... not r theta = arc length but rather r^2 * theta / 2;
+4) simpler solution with law of cosines 5) Code slowly but make sure you are right!!! :D Got it! Circle Circle Intersection!!! (Way too long though :()
+6) Be careful of floating point error = long double may have to be used ... idk about precision...
+
+
+Problem: CF 277B (Constructivist convex polygon given points)
+Learned: 1) Chuck for n = 3 and m = 5, 6 impossible other than that all possible (I kinda got that too) 2) Constructivist = prove some cases are possible or impossible
+3) How to construct solution... form inner polygon and outside polygon (using roots of unity idea). Or you can do another cool idea of using a convex function x^2 + 10^7 and concave function 
+-x^2 - 10^7 :D  
+
+Problem: CF 30C (DP + Geometry)
+Learned: 1) Simple DP Solution expected values just add because they are independent 
+2) Not a dfs memoization ugh 3) Just a simple DP like you sort by time and add up max for t1, then max for t2, then max for t3 etc... does that make sense?
+tk = if (ti to tk possible) then f[i] + a[i].p
+
+Problem: CF 33D (Vika and Segments Line Sweep)
+Learned: 1) Basically a line sweep problem with intersections 2) To solve for intersections you can use a segment tree
+3) Or you can use a map<int, vector<int> > to simplify all the forms of point intersections. 4) After that you can then apply your line sweep algorithm
+using events to really simplify and solve the segments and line sweep problem. (Probably will take you 10 min to pseudocode 30 min to write code and 20 min to debug)
+
+Problem: CF 33D (Circle and Graph Theory) !X 
+Learned: 1) My solution I think it works -> let each point be linked to the smallest circle it is in. Create a circle of Infinite radius to make sure every point has a circle *** trick
+2) Then it becomes a graph theory LCA problem which is easy 3) Preprocess how many circles are above a certain circle and if a circle is in the same circle etc. 4) Solve!!! 5) Also there is a bitset solution that I don't really understand 
+4) When you learn LCA http://codeforces.com/contest/33/status/D/page/12?order=BY_CONSUMED_TIME_ASC implement this solution!!
+5) bitset solution for every circle. Then, for every circle that is bigger and contains this point set this circle on this points bitset to true.
+6) ^ = inclusion and exclusion principle, xor bitset and or yields the correct solution. 
+
+CF Contest 420 
+Learned: 1) Coding pretty fast 2) Then stopped/couldn't think for some reason 3) Goals: I suck I need to work harder, smarter, and more consistently #get four on the next test
+PTL this contest didn't count. Seriously though, I need to find my mojo back :D and start getting stuff done!!! #work HARD!!! #grinddd
+
+Problem: CF 420C (Stack)
+Learned: 1) Sad that I couldn't solve this easy stack question 2) I was 100% right in my intuition just sort it and keep on pushing into stack... only problem was TLE 3) Shouldn't
+have made it more complicated. 4) Simple solution instead of sorting just clear the entire vector ... ugh (okay got it!) 5) Level C problems = Silver/beginner Gold = PLEASE PLEASE PLEASE
+do not obfuscate it just very clean solution with vector clearing instead of sorting 
+
+Problem: CF 681E !x (Circle intersection)
+Origin: http://codeforces.com/contest/681/status/E
+Learned: 5 conditions (got all of them but idk how to implement) 1. circle contains center -> output 1 2) Circle has 0 or 1 intersection -> continue
+3) circle is inside circle = asin(r/d), 4) circle has two intersections = law of cosines 5) be careful atan2 is -pi to pi and asin is -pi/2 to pi/2  
+6) atan2 of y-y0/x-x0 to determine initial angle, 7) angle +- the resulting angle. 8) interesting idea of adding left and right angles 9) sort and then loop to solve. tricky implementation
+l < i.first l = i.first if (l >= i.second) continue; l = i.second; ans += i.second - l; or you can do +1, -1, keep on adding count. 
+7) when coding be hella careful of EPS and long long 
+
+Problem: CF 50C (Convex Hull)
+Origin: http://codeforces.com/problemset/problem/50/C
+Learned: 1) Convex Hull + up left direction change 2) Actual solution is simpler convex hull + max(x, y) changes + 4 (I get this because you can form a circle with 360 degrees which can contain the convex hull 
+3) weird solution of max(x + y, x-y, y-x, and -y - x) idk why this works + 4...
+
+Problem: CF 358E (Largest area of triangle in a set of N points)
+https://stackoverflow.com/questions/1621364/how-to-find-largest-triangle-in-convex-hull-aside-from-brute-force-search/1621913#1621913
+1) Cool geometric idea/proof by contradiction that the area of the largest triangle. If you find that and you treat this triangle as the mid points (hint 4S)
+then you get a triangle of area 4S that has all the points. The proof is that if any point is outside this big triangle, then you have a triangle that is bigger than area S
+2) Thus, you can find this triangle and do x[a] + x[b] - x[c] etc. for midpoint. cool idea that using midpoints of little triangle you can find big triangle
+3) Final cool idea, how to find biggest area of triangle of N points. You can actually do it O(NlogN) may involve idea of convex hull :D 
+stackoverflow idea can do it in O(N) but too hard to code. Better implementation is http://codeforces.com/contest/682/status/E

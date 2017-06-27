@@ -1,5 +1,5 @@
 // C++ routines for computational geometry.
-// all of these were implemented/copied from and off of https://github.com/jaehyunp/stanfordacm/blob/master/code/Geometry.cc
+// all of these were implemented/copied from https://github.com/jaehyunp/stanfordacm/blob/master/code/Geometry.cc
 
 #include <iostream>
 #include <vector>
@@ -38,6 +38,13 @@ ostream &operator << (ostream &os, const PT &p) {
     os << "(" << p.x << "," << p.y << ")";
 }
 
+
+struct Segment {
+    PT s, e;
+    int type;
+    Segment(PT s, PT e, int type) : s(s), e(e), type(type) {};
+};
+
 double dot(PT p, PT q)     { return p.x * q.x + p.y * q.y; }
 double dist2(PT p, PT q)   { return dot(p - q, p - q); }
 double dist(PT p, PT q)    { return sqrt(dist2(p, q)); }
@@ -45,6 +52,7 @@ double cross(PT p, PT q)   { return p.x * q.y - p.y * q.x; }
 
 // tells if the direction between ab -> bc is straight, turns left (counter clockwise), or turns right (clockwise).
 // 1 if left counterclockwise turn, 0 if collinear, -1 if right clockwise turn;
+//double cr = (b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x);
 int CCW(PT a, PT b, PT c) {
     double cr = cross(b - a, c - a);
     if (fabs(cr) < EPS) return 0;
@@ -70,6 +78,12 @@ inline bool LowXSort(const PT &p1, const PT &p2) {
     if (p2.x > p1.x) return true;
     else if (p2.x < p1.x) return false;
     return p2.y > p1.y;
+}
+
+PT RotateCCW90(PT p)   { return PT(-p.y, p.x); }
+PT RotateCW90(PT p)    { return PT(p.y, -p.x); }
+PT RotateCCW(PT p, double t) { //t should be in radians
+    return PT(p.x*cos(t)-p.y*sin(t), p.x*sin(t)+p.y*cos(t));
 }
 
 // project c onto line through a and b
@@ -143,10 +157,11 @@ bool SegmentsIntersect(PT a, PT b, PT c, PT d) {
   return true;
 }
 
-PT RotateCCW90(PT p)   { return PT(-p.y, p.x); }
-PT RotateCW90(PT p)    { return PT(p.y, -p.x); }
-PT RotateCCW(PT p, double t) { //t should be in radians
-    return PT(p.x*cos(t)-p.y*sin(t), p.x*sin(t)+p.y*cos(t));
+//point c is on line a b meaning CCW(a, b, c) == 0
+//and dot product of b-a * c-a >=0 && b-a * c-a < b-a * b-a;
+//can also be b-a * c-a <= b-a * b-a if c == a or b == a means that c is on b-a
+bool PointInSegment(const PT &a, const PT &b,const PT &c) {
+    return ThreePointsCollinear(a, b, c) && dot((b-a), (c-a)) >= 0 && dot((b-a), (c-a)) <= dot((b-a), (b-a));
 }
 
 // computes area of a polygon, assuming that the coordinates are listed in a clockwise or
@@ -269,6 +284,30 @@ PT ReflectionPointLine(const PT &a, const PT &b, const PT &x) {
     return y - (x - y);
 }
 
+//tells if a point is in a convex polygon in O(log n) time
+//input is a clockwise orientation of n integers in polygon pts
+//points are indexed 0 - pts.size() - 1;
+//solves codeforces 166B5. Look at curling.cpp in USACO Platinum for below option
+//Point On Polygon is considered not inside the polygon change >= to > for last if to consider those points
+bool PointInConvexPolygon(vector<PT> &pts, PT &p) {
+    if (CCW(pts[pts.size()-1], pts[0], p) >= 0 || CCW(pts[0], pts[1], p) >= 0) {
+        return false;
+    }
+    //goal: lo becomes the point right below
+    int lo = 1, hi = pts.size()-1, mid;
+    while (lo < hi - 1) {
+        mid = (lo + hi) >> 1;
+        if (CCW(pts[0], pts[mid], p) <= 0) lo = mid;
+        else hi = mid;
+    }
+    //cout << pts[lo] << ' ' << pts[hi] << ' '<< CCW(pts[lo], pts[hi], p) << p << endl;
+    if (CCW(pts[lo], pts[hi], p) >= 0) {
+        return false;
+    }
+    return true;
+}
+
+
 int main() {
 
     cout << CCW({0, 0}, {4, 4}, {1, 2}) << endl;
@@ -284,6 +323,7 @@ int main() {
     for (auto it = s.begin(); it != s.end(); ++it) {
         cout << *it << endl;
     }
+    cout << PointInSegment({1, 1}, {3, 3}, {4, 4}) << endl;
 
     // expected: (5,-2)
     cerr << RotateCW90(PT(2,5)) << endl;

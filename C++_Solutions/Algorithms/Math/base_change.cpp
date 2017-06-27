@@ -57,7 +57,7 @@ template <class T> void deb_array(T *arr, int length) {
     } cout << '\n';
 }
 
-//O(log n)
+//O(log n) transformation from base b to base 10
 int base_to_decimal(int n, int b) {
     int result = 0;
     int multiplier = 1;
@@ -71,7 +71,7 @@ int base_to_decimal(int n, int b) {
 
 //use this idea if it requires harder implementation
 //String chars="0123456789ABCDEFGHIJ";
-
+//decimal to base transformation in O(log n)
 int decimal_to_base(int n, int b) {
     int result = 0;
     int multiplier = 1;

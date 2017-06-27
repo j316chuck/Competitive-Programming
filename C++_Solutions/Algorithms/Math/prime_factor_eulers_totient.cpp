@@ -58,8 +58,8 @@ template <class T> void deb_array(T *arr, int length) {
     } cout << '\n';
 }
 
-void prime_factor(int n, vector<int> &v) { //prime factors in O(sqrt(n));
-    //when n is composite
+//calculates prime factors in O(n ^ 1/2);
+void prime_factor(int n, vector<int> &v) {
     while (n % 2 == 0) {
         n /= 2;
         v.push_back(2);
@@ -77,7 +77,8 @@ void prime_factor(int n, vector<int> &v) { //prime factors in O(sqrt(n));
     }
 }
 
-int phi(int n) { //O(sqrt(n)) solution
+//calculates phi in O(n ^ 1/2)
+int phi(int n) {
     double result = n;
     if (n % 2 == 0) {
          while (n % 2 == 0) {
