@@ -145,27 +145,27 @@ int solve(vector<PT> &a, vector<PT> &b) {
     return total;
 }
 
-ifstream fin("curling.in");
-ofstream fout("curling.out");
+//ifstream fin("curling.in");
+//ofstream fout("curling.out");
 
 int main() {
 
     //time_t start=clock();
     //Rd("curling.in");
     //Wt("curling.out");
-    //ios_base::sync_with_stdio(0);
+    ios_base::sync_with_stdio(0);
     int n;
-    fin >> n;
+    cin >> n;
     vector<PT> a(n), b(n);
     for (int i = 0; i < n; i++) {
-        fin >> a[i].x >> a[i].y;
+        cin >> a[i].x >> a[i].y;
     }
     for (int i = 0; i < n; i++) {
-        fin >> b[i].x >> b[i].y;
+        cin >> b[i].x >> b[i].y;
     }
     int a1 = solve(a, b);
     int a2 = solve(b, a);
-    fout << a1 << ' ' << a2 << endl;
+    cout << a1 << ' ' << a2 << endl;
     //cerr << "Program has run "<< (double) (clock()-start) / CLOCKS_PER_SEC << " s " << endl;
     return 0;
 }

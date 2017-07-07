@@ -45,12 +45,12 @@ int mem(int i, int a){
 	}if(DP[i][a] >= 0){
 		return DP[i][a];
 	}if(S[i] == '('){
-		return DP[i][a] = (mem(i+1, a+1) + mem(i+1, a)) % 2012; 
+		return DP[i][a] = (mem(i+1, a+1) + mem(i+1, a)) % 2012;
 	}
-	
+
 	int b = A[i] - a;
 	int ans = 0;
-	if(a > 0) 
+	if(a > 0)
 		ans += mem(i+1, a-1);
 	if(b > 0)
 		ans += mem(i+1, a);

@@ -128,7 +128,7 @@ void Factorial() { //O(N) time where N is the largest factorial and inverse fact
 
 //O(n + k) where n is the largest factorial you need and k is number of queries to CombFact
 long long CombFact(int n, int k) {
-    return (((fac[n] * invfac[k] + MOD) % MOD) * invfac[n-k] + MOD) % MOD;
+    return (fac[n] * invfac[k] % MOD) * invfac[n-k] % MOD;
 }
 
 int main() {

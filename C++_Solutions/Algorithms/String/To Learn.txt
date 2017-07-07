@@ -1,0 +1,8 @@
+Z-algorithm
+KMP - algorithm
+aho-korasic
+manachan algorithm
+
+
+Suffix array
+suffix trees

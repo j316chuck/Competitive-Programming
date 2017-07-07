@@ -379,3 +379,246 @@ then you get a triangle of area 4S that has all the points. The proof is that if
 2) Thus, you can find this triangle and do x[a] + x[b] - x[c] etc. for midpoint. cool idea that using midpoints of little triangle you can find big triangle
 3) Final cool idea, how to find biggest area of triangle of N points. You can actually do it O(NlogN) may involve idea of convex hull :D 
 stackoverflow idea can do it in O(N) but too hard to code. Better implementation is http://codeforces.com/contest/682/status/E
+5) similar idea for maximum diameter in a polygon find maximum etc. withbinary search 
+
+Problem: CF 305D
+Origin: http://codeforces.com/problemset/problem/305/D
+Learned: 1) I have a fibonacci solution that is wrong 2) Uses weird idea of max, min and 2^cnt ? 3) Passed :D skipped
+
+Problem: CF 403D
+Origin: http://codeforces.com/problemset/problem/403/D
+Learned: 1) tricky DP problem. 2) Use idea that the number has to be less than 50
+3) alternate DP, DP first on the c1 + c2 .. ck = j. The answer to that is dp[i][j][k] i = number of ci j = value k = max x
+for (int i = 0; i < 50; i++) #of elements for (int j = i* i +1/2; j <= 1000; j++) value it can be equal to for (int k = i; k <= 1000; k++)
+f[i][j][k] = f[i][j][k-1];  if (j >= k) f[i][j][k] += f[i-1][j-k][k-1];
+4) calculate combination! 5) For each len, we can extend it by n-k C k :D 6) Multiply it by factorial :D 
+
+Problem: CF 711E !xo (Combinatorics + Number theory + Legendre's theorem)
+Origin: http://codeforces.com/problemset/problem/711/E
+Learned: 1) Wow this problem was super hard (but got it no coding though) 2) Use complementary counting to get gcd of A = 2^n - 1 2^n - 2 ... 2 ^n - (k-1) and B = (2^n (k-1)) 
+3) We need to find the gcd of these two numbers, which is a power of 2!!! 4) We can use Legendre's theorem to find which number divides 2^n-1 ... 2^n - (k-1) 
+because if it divides A, it divides 1 * 2 * 3 * ... k-1 (expand by binomial coefficients to prove) 5) Legendre's theorem says that Ep(n!) = (n - sum of digits of n in base p) / (p - 1 )
+https://artofproblemsolving.com/wiki/index.php?title=Legendre%27s_Formula. Ep(n!) for p = 2 is n - #of bytes in n / 1 = n - builtinpopcount 
+6) After that, we can easily find the denominator, and numerator's divisor. To find the numerator we can notice that the MOD is really small!!! 7) This means we can iterate through MOD
+and see if it's equal to zero, if so then num = 0. Else then, we just multiply each value... 8) Interesting remark, instead of calculating 2^n through log exponentiation
+we can use fermat's little theorem and note that a^p-1 = 1 mod p. so we can mod every n by (mod - 1) and then exponentiate which makes it really fast! Also, to calculate inverse mod p.
+We can note that aa-1 = a^p-1 = 1 mod p, thus a^-1 = a^p-2, so using modular exponentiation, we can calculate the mod faster...
+
+Problem: CF 325E (Mu idea + PIE)
+Origin: http://codeforces.com/contest/585/problem/E
+Learned: 1) Find the numebr of subsets with gcd = 1. 2) Use PIE, gcd = 1 = 2^n - gcd = 2 = 1 * 2^cnt(2), + 0 * 2 ^cnt(4) + 1 * 2^(cnt (6)). Idea of mu. 3) Then more mu to solve problem
+
+Problem: CF 325C (Stern Brecot Tree)
+Origin: http://codeforces.com/contest/222/problem/C
+http://www.ams.org/samplings/feature-column/fcarc-stern-brocot
+Learned: 1) Stern brecot tree solution, x , y x + y , 2x + y, 3x + y, etc. 3x + 2y, look at link for more info 
+2) Stern Brecot tree = use two previous left and right to determine direction. Can use interval/bfs to determine result 
+3) Can use cool gcd algorithm in Stern brecot trees to determine the amount of left and right, given an inital stern brecot value
+4) Other cool facts, is p and q must have no common factors, aka perfectly simplified rationals appear only once, Also, the two subsequent values
+have a cross product of 1, This is because there process of addition is similar to vector addition. 
+5) Finally, gcd works in weird way by noting the first turns down. x > y. so it must be a left turn so first guy + 1 or + x the amount of size it's truly greater. 
+6) Then keep on gcding until 1. :D
+
+Problem: CF 222C (Sieve + Factorization)
+Origin: http://codeforces.com/contest/222/problem/C
+Learned: 1) 99% sure I can do sieve questions, sieve maxn = 10 million = huge hint 2) I can factorize all things in O(1) 3) Trick to this problem is you can keep it at 
+n, m and just do the reduction inside the for loop, with res = 1; if (fb[divisor[j]]) fb[divisor[j]]--; factor will never be > 10^7
+ 
+Problem: CF 546D (Sieve + Factors)
+Origin: http://codeforces.com/contest/546/problem/D
+Learned: 1) cin is super slow okay fine I'll use scanf from now on 2) original idea of counting factors is fine but it is a little bit slow it runs in O(nlognlogn) + O(n*10) (number of factors in n)
+you should be able to do it in O(nlognlogn) 0.5 ms difference 3) divisors[i] = divisor[j/i] + 1; 
+
+Problem: Project Euler #64 (Repeating fractions number theory)
+Origin: http://www.mathblog.dk/project-euler-continued-fractions-odd-period/ 
+Learned: 1) Do these types of problems by noticing the recurrence relationship/pattern/finding a pattern 2) square root can approximate by equation S = a^2 + r
+3) Solve then, by using the recurrence relation, getting base, case and finding termination condition  
+4) http://www.mathblog.dk/project-euler-continued-fractions-odd-period/ continued fraction on project euler. Learning
+5) don't need to 100% understand math, just get that there's a recursive formula and it repeats
+
+Problem: UVA 834 (Repeating fractions gcd)
+Origin: https://uva.onlinejudge.org/external/8/834.pdf
+Learned: 1) This solution was soo easy 2) I actually got it you just keep on gcding until you get 1 3) Thought of edge cases but already covered by data set if you implement algorithm correctly
+A[count++] use swap function to make life easier. 
+
+Problem: CF 7C and Light OJ 1077
+Origin: http://codeforces.com/contest/7/status/C
+Learned: 1) Diophantine equations can be transferred directly to line and coordinate problems, remember more complicated ones like Pell's equation
+2) Simpler diophantine equations can be easily solved by using modular arithmetic. If gcd = 1 then they have infinite solutions, if gcd != 1 then you have to make sure c divides the gcd. or c % gcd == 0
+3) Lattice problem = if straight line then dx or dy + 1, if point then 1, else it's the dy/(dy/gcd) + 1. (has something to do with gcd)
+4) For the non-lattice problem, it has to do with finding Ax + By + C = 0; 5) You can do that by doing extended gcd do find gcd.  the ax + by = d;
+5) since it's ax + by + c make sure to negate c to get the equation ax = -c mod b; the result is c/gcd * x and c / gcd * y;
+
+Problem: Light OJ 1054 (Factorization, divisor sum, Base exponentiation)
+Origin: http://www.lightoj.com/volume_showproblem.php?problem=1054
+Learned: 1) reminded of cool counting principle that sum of factors is (1 + n + n^2 .. n^k) ( 1 + j + j^2 ... ) etc. for all factors
+2) this allows the simple algorithm of first factorizing (can make factorizing faster by first calculating sieve and then only using primes; 
+3) next you can stoer the factors in pairs, of factor and number, then multiply count/number of factor by m (for the squaring) and use base exponentiation
+to calculate n^km + 1 % mod. 4) Final trick is you don't need extended gcd to calculate the result... what you can do is just 
+do p-1, ^ mod - 2 % mod, to find the inverse!!! Remember this!!! :D good job
+
+Problem: NFACTOR SPOJ (Factorization, sieve easy!)
+Origin: http://www.spoj.com/problems/NFACTOR/
+Learned: 15 minutes per problem, I knew how to do this one! 1) sieve to get the number of primes this number is divisible by
+2) create array and use dp like approach to store each previous result and add each result to each other
+3) if this number has a certain x divisors add it! 4) Preprocess results and cout << dp[n][a] - dp[n][b-1]!
+
+Problem: Light OJ 1007 (Phi)
+http://www.lightoj.com/volume_showproblem.php?problem=1007
+Learned: Use idea of calculating phi, then do phi * phi, then use dp approach and sum all the phi, then preprocess and find answer!
+
+Problem: Light OJ 1067 (Combinations)
+http://www.lightoj.com/volume_usersubmissions.php
+Learned: 1) My combination algorithm is correct 2) use lld for lightoj 3) Inverse is multiplicative
+n C k = n! / k! (n-k)! which means you can do n! * modpod(k! * n-k!, mod-2), I understand why mod - 2 = inverse but now I get why you can multiply both = powerful
+
+Problem: Light OJ 1028 (Sieve + Base)
+http://www.lightoj.com/volume_showproblem.php?problem=1028
+Learned: 1) Key word 10^12 = can use sieve to calculate 10^6 and get the 80000 primes, then for every number iterate and divide even though 10^12. if (x > 1) at the end then that means it is prime. = sum * 2;
+2) base of number ends in 0 if the number divides that number perfectly so find all divisors of n. Thus, we have to calculate all the primes before hand and then iterate through!!! also, you have to do sum - 1 becuse base 1 does not exist!
+
+Problem: CF 687B (Sieve + Cool Number theory lcm)
+Origin: http://codeforces.com/blog/entry/45770
+Learned: 1) basic idea is that to find n, you need to see if lcm is divisible by k. 2) How to prove this, well CRT can prove it but you can also prove it by stating that
+the answer is no if you have two numbers x1, and x2 such that they have all the same modulo c1 c2 ... cn but they have different values modulo k. this means that x1 - x2 = 0 mod c1, c2, c3 .. cn 
+but x1 - x2 != 0 mod k. x1 - x2 divides c1, c2, ... ck which means x1 - x2 divides the lcm (c1, c2, ... ck) but x1 - x2 does not divide k. However, if k divides lcm(c1, c2, ... cn) then 
+x1 - x2 must divide k. sample is 2 * lcm... etc. 3) to implement this, we just do sieve and find the prime factor of each value. Since lcm is way to big. prime factorize each value and find the max prime factor. 
+4) Then calculate if the numbers you are given have all the prime factors. 
+
+Problem: CF 616E !xo (Hard idea of how to sum up modulo equations together)
+Origin: http://codeforces.com/contest/616/status/E
+Learned: 1) Modulo = n mod 1 + n mod 2 .. n mod m = summation of n - lower_bound(n/i) * i  = nm - summation lower_bound(n/i) * i;
+2) You can split this into two halves, i <= sqrt(n) and i >= sqrt(n). for i <= sqrt(n) you can just run a for loop adn calculate the sum. 
+for i >= sqrt(n). that means lower_bound(n/i) < sqrt(n). Then, you use idea that the interval of n/i lasts = i * (n/i - n/i+1) starting from i = 1 to sqrt(n)
+
+Problem: CF 632D ! (Cool idea of brute force and harmonic sum)
+Origin: http://codeforces.com/contest/632/status/D
+Learned: 0) m is small so you can brute force 1) Idea that for all divisors like 2, 3, 4, etc. if they are a divisor of the lcm then the lcm has all of the values of 4 2) Thus, first cnt the number of values of each number 
+3) Use backwards for loop (to avoid overcounting) m >= 1 to add all the divisors... 4) Does not go over TLE because m (1 + 1/2 + 1/3 + 1/4 + 1/5 ... 1/m)  < m(1 + 1/2 + 1/2 + 1/4 + 1/4 + 1/4 + 1/4 +... ) = m(1 + 1 + 1 + ... 1) < 30 m = 30 million
+4) After that we just find the cnt[i] from 1-m with the maximum number of divisors... 5) to get which divisor we print out we just do if lcm % in[i] == 0 then print out i + 1
+
+Problem: CF 27E ! (Brute force DP/dfs)
+Origin: http://codeforces.com/contest/27/status/E
+Learned: 1) Maximum is 10 number of primes. 2) You can use dfs to find the answer or dp 3) basically for every number you can find dp recurrence or you can do dfs on layer like which one u use, how much u use and when to terminate! :D 
+
+Problem: CF 134B (Stern Brecot)
+Origin: http://codeforces.com/contest/134/status/B
+Learned: 1) Brute force all the possibilites. 2) Use gcd or stern brecot to find the answer...
+
+Problem: CF 207A
+Origin: http://codeforces.com/contest/356/problem/A
+Learned: 1) Many segment tree problems can be solved with an efficient usage of set. 2) You can use set with erase and lower_bound function = very powerful.
+3) For this problem you can also use a disjoint data structure which stores the value of next and current 4) Finally you can use segment tree update boolean counter 5) getnext();
+
+Problem: CF 380C
+Origin: http://codeforces.com/contest/380/problem/C
+Learned: 1) Classic Segment tree problem 2) Tricky part is how to merge, other than that pretty straight forward
+
+Problem: CF 61E *!x (Implement)
+Origin: http://codeforces.com/contest/61/problem/E
+Learned: 1) Basically for each ask in middle it asks for how many greater and how many less *** classical problem 
+2) what you can do is sort and then for each element insert it into BIT tree. (at end). first you check sum(id(x))
+which checks for how many elements on the left that are less than this, then, left greater =  id - leftless 
+right less = i - sum(x). right greater = n - id + 1 - rightless. 
+Use this then to calculate the multiplication. Other solutions really compact and weird implementation
+
+Problem: CF 459E 
+Origin: http://codeforces.com/contest/459/problem/D
+Learned: 1) Similar idea of counting left and right equal and unequal element, 2) uses idea of a map. 
+
+Problem: USACO Silver 2012 Running !x
+Origin: http://usaco.org/current/data/sol_running.html
+Learned: 1) creative thinking = good 2) Plan read problem light, then hard, then creative then hard then creative then hard 3) Have fun!!! I had a lot of fun solving this problem :D 4) Just live :D
+5) creative -> hard :D hard = check if you missed any edge cases/ideas 6) Had completely right idea of building up results one by one and adding the total :D 7) Using bit tree to remove the prefix problems :D
+8) Got the idea of BIT where you first sort and then add by mods. 9) tricky idea of implementing long long caused several bugs. 10) Then missed the whole idea of how the numbers are real and not mod C but mod C * s[n-1];
+11) This makes me use the sliding window to sort everything accordingly!!! which was cool 12) GOT IT!!! :D
+
+Problem: CF 474F !x
+Origin: http://codeforces.com/contest/474/problem/F
+Learned: 1) 10 problem rule, do 10 problems... don't need to do every problem 
+2) Got segment trees!!! 3) Segment trees are really simple in idea actually lol keep two - three functions build, query, update 
+(change combine and return functions to acomodate and store different objects) 4) Cool idea of gcd(a, gcd(b, c)) = gcd(gcd(a, b), c)
+5) Because gcd is commutative we must find the least number and check if its the gcd of all the elements we are searching for. if they are equal then ret -= cnt of least element
+6) add combine function to add results 7) coding = good code fast and then check once to make it compile and get right answer = submit!! while the test is running check again... :D for corner cases... 8) fix bugs 9) coding tip use ? 
+10) idea completely right, weird idea where you can do gcd[i] = gcd(gcd[2*i], gcd[2*i+1]), and find the gcd of all the elements somehow... 
+
+Problem: USACO Gold 2017 CircleCross
+Origin: http://usaco.org/index.php?page=viewproblem2&cpid=719
+Learned: 1) Wow I can do silver problems in 5 minutes now okay more like 15 but still 2) Yeah let's get good enough to be able to see a problem and solve it
+3) BIT tree easy mp.count, n counter :D
+
+Problem: Codeforces 292E (lazy/Segment)
+Origin: http://codeforces.com/contest/292/problem/E
+Learned: 1) Can solve with segment tree 2) use creative mode = super fast 3) switch range and query updates 4) use the idea of time in to update the query
+5) other people can store the query and then they update it! :D smart!!! 6) getfa(solution) too somehow
+6) a+i, really simple implementation use ? in seg tree to simplify, remember 1, 0, n-1, are yyour st and en and everything else may change, l, r = query range etc. blah blah
+
+Problem: Codeforces 501D (Bit)
+Origin: http://codeforces.com/contest/501/problem/D
+Learned: 1) simple math concept/combinatorics of permutation 2) k * n-1! etc. 3) calculate using bit trees of what digit you are 4) calculate the mod according to their values
+5) then reconstruct the values with a set. 6)https://en.wikipedia.org/wiki/Factorial_number_system
+
+Problem: Codeforces 220E !xo (set, two pointers)
+Origin: http://codeforces.com/contest/220/problem/E
+Learned: 1) Hard problem going from just doing simple sum on ranges to actually using 2 ideas 2) Key idea
+no more than k inversions 3) whenever it says no more than k on an array you should think of using two pointers
+4) Two pointers = keep up to k and then add or delete points using segment tree 5) cool idea that adding inversions is O(n)
+6) can turn it into o(nlogn) by adding inversions in logn with segment tree 7) add l - r + 1;
+
+Problem: Codeforces 338E !xo (pseudocode, sorting, segment tree)
+Origin: http://codeforces.com/contest/338/problem/E
+Learned: 1) Hard problem 2) nice realization about sorting that you can find the answer in O(n) if its sorted 
+3) key idea is setting everything to -1, 4) update tree with min idea to see if you ever reach a point where both sides have numbers which meet h
+5) tree root >= 1; 6) sorted array lower bound to find index
+7) find position in O(log n) 
+
+Problem: Astar Placement test Work scheduling
+Origin: N/A
+Learned: 1) Union find is able to solve for ranges like finding the least element/scheduling problems 2) union find with map tricky count the -1 + 1 etc.
+3) Review your algorithms 4) don't code unless you are able to be 100% sure 5) greedy solution :D 6) scheduling, sliding window, binary search...
+
+Problem: Astar Placement Test Running
+Origin: N/A
+Learned: 1) DP really simple for some reason TLE
+
+Problem: Astar Placement BFS
+Origin: N/A 
+Learned: 1) Dijstrka/bfs reimplement! 2) Yeah just dijstrka and keep the first k elements in dijstrka 3) BFS really smart + binary search ... 4) implementation = be careful graph[i][j] etc.
+3) Binary search on answer 1 - 10^6 4) important, union find forward, binary search on answer, and pure algorithms, and lastly sliding window technique
+6) return 0 does not work in outside. 7) be careful graph[u][i] etc, memset(m, -1, sizeof(array[0][0]) * w * h); memset(d, -1, blah); no INF; use for loop easier 
+
+Astar Placement: 1) review Graph theory before contest 2) do problems with less writing but more thinking or drawing examples... (think this is easy) then type out pseudocode. 
+(practice pseudocoding without pseudo) write out pseudocode 4) Don't get stuck on a problem #moveon 5) debugging tips = think of edge cases
+
+Problem: Astar Lights Out (Bitmasks + DP)
+Learned: 1) Assume minimum elements is K, we can always get K by just adding or deleting until the last K elements (key observation/have to prove). Regardless, we have to find the number of min ones to calculate DP
+2) Use minimum # of element as subproblem 3) Use this, minimum # of elements as subproblem, calculate this. we can do it by finding the last k elements...  5) we use DP on state [i][j] all the states of the current bits
+6) Hint is 2^7 so what you can do is keep only the last k bits... 7) Use problem parameters and question to get hints, you need minimum and you need to toggle lights and states = bits. keep min count of ones, why minimum?
+8) with min zero then keep 3d dp of i, j, k...  
+//dp[i][j]
+
+Problem: November Bbreeds USACO Gold 
+Origin: http://www.usaco.org/current/data/sol_bbreeds.html
+Learned: 1) DP basics: state? recurrence? base case. focus on coming up with right state on hard dp problems
+2) solve. 3) finding the right state may be hard. 4) recurrence...
+5) recurrence is always +1, -1 though... 6) recurrence, add one minus one, A, B, i. f(a, b, i) = f(a+1, b, i) + f(a, b+1, i) for '(' open if closed then f(a, b, i) = f(a-1, b, i) + f(a, b-1, i) if a and b are > 0
+6) simplify DP by reducing number of states. 7) memoize if easier top down 8) DP = O[b-a[i]] ... O = #of parentheses between a and b; #of parentehses = so good.  
+
+
+Problem: USACO November 2013 Sight (USACO Plat)Line Sweep
+Origin: http://www.usaco.org/index.php?page=viewproblem2&cpid=347
+Learned: 1) Line sweep but radial sweep with clenches. 2) simplify by not keeping outside points but rather keeping points like the inside circle points
+3) special cases by allowing circle to wrap around twice. = + 2*PI 4) priority queue solution clean = add + queue.size() 5) practice implementing solutions ugh! 6) set solution also should work ...
+4) only problem today WTF do more problems 5) problem solve by not doing the dumb rotating calipers cause you miss a point ugh 6) need to project the points onto the circle and see which points are inside. 
+7) can do it with a set or you can also do it with a priorityqueue by keeping track of two iterations... + 2PI for angle. only need angles... lesser than and greater than >= :D priority queue.push(); only people who end in the point are added.
+8) understand 2 * PI and not being retarded 9) got the 2 * PI circle wrap around to make sure 10) got the set implementation where you just use 
+
+Problem: USACO January 2015 CowRect (USACO Plat) Line sweep
+Origin: http://www.usaco.org/current/data/sol_cowrect_gold.html
+Learned: 1) better solution exists but O(n^2logn) / O(n^3) is fast enough 3) check each pair of points as horizontal vertices
+4) key is that rectangle may contain more elongated points outside 5) sort points 6) sweep left for xleft, right for xright, and middle to see if it's valid... pretty easy implementation
+7) involves line sweep with two pointers/check the points on the same line 7) two pointer idea pretty hard to implement actually ... left and right bad wrong.
+
+Problem: USACO silver Censoring (Practiced hashing wrote hashing template)
+Origin:
+Learned: hashing start with 0 index, indexing issues be careful

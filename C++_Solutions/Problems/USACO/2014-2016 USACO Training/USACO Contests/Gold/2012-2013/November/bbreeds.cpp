@@ -40,7 +40,7 @@ int DP[1010][1010];
 int main(){
 
     Rd("bbreeds.in");
-    Wt("bbreeds.out");
+    //Wt("bbreeds.out");
 
     string S;
     cin>>S;
@@ -61,7 +61,7 @@ int main(){
     	}
     }
     A.push_back(S.size());
-    
+
     if(right!=left){
     	cout<<0<<endl;
     }

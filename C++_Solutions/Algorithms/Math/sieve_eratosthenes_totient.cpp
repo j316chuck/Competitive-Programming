@@ -69,18 +69,38 @@ bool is_prime(int n) {
     return true;
 }
 
-////O(n log n log n) can be up to 10 million
-void sieve(int n, bool prime[], int phi[]) {
-    for (int i = 0; i <= n; i++) prime[i] = true, phi[i] = i;
+//O(n log n) can be up to 10 million
+//made small mistake initially of going from 0 to sqrt(maxn) instead of n
+//n (1/2 + 1/3 + 1/4 + 1/5 ...) is harmonic sum bounded by nlogn
+const int maxn = 1e6 + 5;
+bool prime[maxn];
+int phi[maxn];
+vector<int> primes;
+void sieve() {
+    for (int i = 0; i < maxn; i++) prime[i] = true, phi[i] = i;
     prime[0] = false; prime[1] = false;
-    for (int i = 2; i <= sqrt(n); i++) {
+    for (int i = 2; i < maxn; i++) {
         if (prime[i]) {
             phi[i] = i - 1;
-            for (int k = i + i; k <= n; k += i) {
+            for (int k = i + i; k < maxn; k += i) {
                 phi[k] /= i;
                 phi[k] *= i - 1;
                 prime[k] = false;
             }
+            primes.push_back(i);
+        }
+    }
+}
+
+//formula: sum of all gcd of n from 1 - n is
+//summation of d * phi(n/d) for all d that divides n
+//this is because gcd(a, n) = d if and only if gcd(1, n/a) = 1 = phi(n/a)
+//complexity O(n * (1 + 1/2 + 1/3 + .. 1/n)) = O(n log n)
+int gcdsum[maxn];
+void GCDSum() {
+    for (int gcd = 1; gcd < maxn; gcd++) {
+        for (int n = gcd; n < maxn; n += gcd) {
+            gcdsum[n] += gcd * phi[n/gcd];
         }
     }
 }
@@ -91,13 +111,16 @@ int main() {
     //time_t start=clock();
     ios_base::sync_with_stdio(0);
     //cerr << "Program has run "<< (double) (clock()-start) / CLOCKS_PER_SEC << " s " << endl;
-    bool result[101];
-    int phi[101];
-    sieve(100, result, phi);
+    sieve();
     for (int i = 0; i <= 100; i++) {
-        cout << i << " is prime? " << result[i] << endl;
+        cout << i << " is prime? " << prime[i] << endl;
         cout << i << " phi counter: " << phi[i] << endl;
     }
+    cout << "First 100 primes are: ";
+    for (int i = 0; i < 100; i++) {
+        cout << primes[i] << ' ';
+    }
+    cout << endl;
     return 0;
 }
 

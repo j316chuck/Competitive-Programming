@@ -1,5 +1,5 @@
+DP
 Circular Barn February 2016
-November 2013 BBREEDS 
 APRIL 2015 last problem 
 (warm up with fall 2014 palindrome)
 CodeForces 342
@@ -15,11 +15,6 @@ April 2017, http://usaco.org/index.php?page=viewproblem2&cpid=743
 BFS
 http://usaco.org/current/data/sol_unlock_silver.html
 http://usaco.org/index.php?page=viewproblem2&cpid=551 April 2015
-
-BIT (key word distinct integers)
-April 2012: http://usaco.org/index.php?page=viewproblem2&cpid=136
-Feburary 2016: http://usaco.org/index.php?page=viewproblem2&cpid=719
-January 2016: BIT
 
 SegTree + DP 
 February 2016 Platinum: http://usaco.org/index.php?page=viewproblem2&cpid=721

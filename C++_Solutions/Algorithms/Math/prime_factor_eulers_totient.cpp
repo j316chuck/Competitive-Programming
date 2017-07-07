@@ -98,6 +98,42 @@ int phi(int n) {
     return (int) result;
 }
 
+//calculate prime factor in O(log n)
+//basic idea is calculate sieve and record the first prime
+//then use while loop to keep on recording the least prime of n
+const int maxn = 1e7 + 1;
+bool prime[maxn];
+int divisor[maxn];
+void sieve() {
+    for(int i = 2; i < maxn; i++) {
+        prime[i] = true;
+    }
+    for(int i = 2; i< maxn; i++) {
+        if(prime[i]) {
+            divisor[i] = i;
+            for(int j = 2; i * j < maxn; j++) {
+                prime[i*j] = false;
+                if(divisor[i*j] == 0) {
+                    divisor[i*j] = i;
+                }
+            }
+        }
+    }
+}
+
+//factorizes n in O(1) after calculating the sieve
+int prime_factorize(int n, vector<int> &divisors) {
+    while(n != 1) {
+        divisors.push_back(divisor[n]);
+        n /= divisor[n];
+    }
+    /*for (int j = n; j > 1; j /= divisor[j]) {
+            fn[divisor[j]]++;
+            divisors.push_back(divisor[j]);
+    } */
+}
+
+
 int main() {
 
     //time_t start=clock();
@@ -106,7 +142,10 @@ int main() {
     vector<int> factors;
     prime_factor(315, factors);
     deb(factors);
-
+    sieve();
+    factors.clear();
+    prime_factorize(289, factors);
+    deb(factors);
     for (int i = 1; i <= 10; i++) cout << phi(i) << endl;
     return 0;
 }

@@ -2,6 +2,8 @@
 2) Definition of events is key for line sweep
 3) Maintain a set (balanaced binary search tree) to evaluate each new added x coordinate
 Usually set is ordered by y coordinate.
+4) often involves two pointers
+while () increase blank
 
 Solve problems from O(N^2) -> O(NlogN) usually
 

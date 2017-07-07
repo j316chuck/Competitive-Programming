@@ -1,0 +1,28 @@
+Diophantine Equations: 7C (hint gcd 10^18)
+Legendre's Theorem (how to calculate the x in a^x that divides k!): CF 711E
+Fermat's Little theorem + inverse calculation: CF 711E, UVA 13083
+Stern Brecot Tree/GCD: CF 325C (hint 10^18), CF 134B
+Sieve + Factorization: CF 222C, CF 546D, SPOJ NFACTOR, light OJ 1007 (hint 10^7 or 10^6)
+Repeating Fractions: Project Euler 64, UVA 834 (Literally just find pattern and then while loop)
+Diophantine Equations/Lattice Points: Light OJ 1077, CF 7C
+Divisor Sum: UVA 13083, CF 632D
+Euler's Totient: SPOJ NFACTOR, light OJ 1007
+Combination: CF 1067/Light OJ 1067 n choose k
+Discrete Logarithm: http://www.infoarena.ro/blog/meet-in-the-middle
+LOJ 1325. Did not code but basic problem is find p^k = q (mod n) given n is prime. 
+The basic solution can be solved in O(n)
+A faster solution can solve it in O(sqrt(n)) by using the idea of 4Sum or meet in the middle. 
+LCM, CRT: CF 687B
+Modular arithmetic trick: CF616E
+Brute force: CF 632D, CF 27E
+GCD Sum: Hacker earth
+
+Note *** too find all divisors use a set and can do it in 2^n where n is number of divisors usually. 
+Note *** GCDSUM: Idea gcd(a, n) all numbers from 1 - n = for all d | n sum up d * phi(n/d) 
+This is because all numbers who have gcd = d are = to numbers whose gcd(1, n/d) = 1 = phi(n/d)
+https://www.hackerearth.com/practice/data-structures/advanced-data-structures/fenwick-binary-indexed-trees/tutorial/
+https://gist.github.com/likecs/121be3b4e63489d4b6c6f5d82a21a7f2
+Note *** Sieve: most problems regarding 10^5, 6, 7 involve sieve. Sieve = start from divisor, or uncommon starting point. 
+then loop by divisor. 
+
+Sum of divisor, Count of divisor, sum of gcd, 

@@ -1,0 +1,57 @@
+BIT Notes:
+1) Must be associative f(a, f(b,c)) = f(f(a, b), c)
+2) Operations must have an inverse, addition multiplication etc.
+3) What you BIT on is important
+4) If just considering summing up ranges then this is useful
+
+Segment Tree Notes:
+1) A more flexible but harder to implement BIT
+2) underlying array is indexed 0 - n-1
+3) tree is 1 - 2 * n - 1. But use 4 * n for safety
+4) root is interval 0 - n-1, leaf is intervals 0-0 1-1 etc., internal nodes represent segments A[i:j]
+
+Lazy Segment Tree Rules:
+1) If current segment tree node has any pending update, then first add that pending update to current node.
+2) If the interval represented by current node lies completely in the interval to update, then update the current node and update the lazy[] array for children nodes.
+3) If the interval represented by current node overlaps with the interval to update, then update the nodes as the earlier update function
+4) lazy nodes corresponds to segment tree nodes
+
+
+Other notes:
+1) Offline idea: Store the query results, process the queries in an advantageous order, then build segment tree to answer queries (hint is that query has a relation/ordering with tree)
+2) Segment Tree with vector: Can have 3e5 + 7 vectors. (1 million maximum maybe). 
+https://github.com/Jaskamalkainth/Spoj/blob/master/KqueryOnline.cpp for psuedocode
+Essential idea is: merge(all(v[id*2]), all(v[id*2+1]), back_inserter(v[id]))
+or merge(v[2 * id].begin(), v[2 * id].end(), v[2 * id + 1].begin(), v[2 * id + 1].end(), back_inserter(v[id])); 
+and for query the query in range is return v[id].size() - (upper_bound(v[id].begin(), v[id].end(), k) - v[id].begin());
+3) Segment tree can also contain set, map, etc. etc. 
+4) 2D segment trees
+
+Solved Problems (may or may not contain description)
+1) http://codeforces.com/contest/339/problem/D
+Learned: Just bit, update, can do with just update function, don't even need extra class just need the level to determine if ^ or |
+simpler implementation with just for loop. Since the tree's leaves are already formed you can call update with a while loop. cool idea of using exponentiation and 
+while loop to simplify implementation
+2) http://codeforces.com/contest/380/problem/C
+3) http://codeforces.com/contest/356/problem/A *** fun problem try to do it with segment tree, union find data structure, then sets (I think sets is easiest ideologically)
+4) http://codeforces.com/contest/61/problem/E
+5) http://codeforces.com/contest/459/problem/D
+6) http://codeforces.com/contest/474/problem/F
+7) http://codeforces.com/contest/292/problem/E
+
+
+BIT PATTERNS:
+1) Typically involves finding for all elements, how many elements are x greater, x less, to the left and to the right
+Solving: Involves first sorting, then inserting/erasing from bit tree, update(+-1), and summing up elements in a specific order. 
+
+Classical Segment Tree Patterns:
+
+Lazy Patterns:
+
+2D Segment Patterns
+
+Vector Patterns
+
+Offline Query Patterns
+
+

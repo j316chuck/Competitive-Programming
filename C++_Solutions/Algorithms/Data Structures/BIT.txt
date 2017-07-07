@@ -1,0 +1,6 @@
+Notes
+1) Must be associative f(a, f(b,c)) = f(f(a, b), c)
+2) Operations must have an inverse, addition multiplication etc.
+3) What you BIT on is important
+
+Problems

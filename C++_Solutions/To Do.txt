@@ -1,13 +1,6 @@
 Schedule:
-New way: (focus on problem solving and learning less on debugging and coding which wastes time) Pros: more learning, Cons: Less in depth problem, less coding experience 
-(especially POJ = no coding... just understanding solution, code practice POJ too :D = 10 min debug and then retry tomorrow)
-Solved: Redo problems = more in depth, more coding experience by contests and specific coding times...
-6 hours solve: no coding ... (think about problem) 7 problems... (one by one to get the hang of it) 45 45 45 45 ... 
-1 hour coding... (3 of the hardest coding problems/hard problems) (tricky 50% + hard coding 50%);
-1 hour review (doing a problem from yesterday that you marked as redo) + 15 minutes review...
-2 hours contest :D 
-30 min editorial (no coding) 
-30 min = do more problems... 
+From now on learn the things needed to get 6 problems on contest
+1 DP 2 Graph theory 1 Segment Tree  1 Binary Search DFS 1 Free
 
 Algorithms to learn Eventually: 
 Binary Search, Set problems USACO, LCA (2 days), Hashing (2 days), Union find (1 day), Matrix rref (2 days) (not perfect but direction)
@@ -27,22 +20,6 @@ Your contests + problems will cover it!
 Rule: NO more planning, only focus on today. 
 Can't just keep on wasting time... so distracted (every 5 min) 
 75% enough to learn more at A-star (Last plan)
-
-Schedule: 
-Today last day of algorithms
-Tmw: Finish POJ
-Friday: Basic Computational Geo
-Saturday Sunday Computational Geo
-Monday Computational Geo + USACO 
-Tuesday Number theory
-Wednesday Combinatorics
-Thursday Construction
-Friday Done:  Catch Up
-Saturday: Segment Tree 1 hour review 2 hours learn lazy 2 hours learn 2d Then problems...
-Sunday: Problems
-Monday Tuesday: Done + Lazy
-Wednesday: Lazy
-Thursday: 2D 
 
 
 Problems: 
