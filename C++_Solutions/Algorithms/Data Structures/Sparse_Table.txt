@@ -1,0 +1,13 @@
+Easy implementation based on base 2 powers to calculate
+ranges without updates
+Condition 1) no updates (immutable)
+Condition 2) must be associative
+
+O(nlogn) preprocess O(logn) query
+ 
+1) Read table
+2) Find joining function
+3) Build Table
+4) Answer queries
+
+Can solve, rmq, sum, and gcd, even total # of gcd that are between pairs. 

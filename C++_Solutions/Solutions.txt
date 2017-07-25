@@ -78,6 +78,7 @@ Origin: http://poj.org/problem?id=1905
 Learned: 1) Perfectly imperfect, focus on rest, focus on work, treat it like contest, focus on learning
 2) Do math quick... you can do the math faster. 3) Your binarysearch on answer is correct. For doubles it is really simple just keep on dividing
 4) asin0 r0 = part of circle 5) d = ... d < 0 wrong!!! just do x < y EPS matters in computational geometry. 6) to make more precise do < EPS 3 digits more specific than what they ask 
+6) In contest just do 100 iterations or something like that.
 
 Problem: POJ 2653 (queue + line segment practice)
 Origin: http://poj.org/problem?id=2318
@@ -110,6 +111,7 @@ Learned: 1) Implementation half way but good enough for now 2) Half Line interse
 that first we need to calculate perpendicular bisector of prev and next point. Then add this point to the lines.
 5) Use CCW to determine if point is to the left or right of point, if so then switch the lines directions
 6) Finally solve the intersection half points problem by doing O(n^3) to get points, then convex hull, then compute signed area.
+7) don't do halfplane problems yet... 
 
 Problem: POJ 1228 * (convex hull + collinear somehow messed up implementation whelp)
 Origin: http://poj.org/problem?id=1228
@@ -117,6 +119,7 @@ Learned: 1) Treat it like a contest 45 min timer wow I did it so fast. Starting 
 2) 11 sleep 3) I actually got the implementation details... use convex hull to mark the current polygon
 4) Each line segment must have three points in it!!! :D 5) Slow way = first way = have old points and check if there are three points per pt = O(N^2)
 5) fast way in O(N) = since your convex hull does not remove redundant you can check if three points are collinear in O(N) 
+6) nice rotating calipers technique to simplify three point checking 7) if polygon or shape can loop around cirlce once or twice in a specific manner to simplify the problem :D.
 
 Problem: POJ 1408 (line line intersection + implementation) 
 Origin: http://poj.org/problem?id=1408
@@ -619,6 +622,269 @@ Learned: 1) better solution exists but O(n^2logn) / O(n^3) is fast enough 3) che
 4) key is that rectangle may contain more elongated points outside 5) sort points 6) sweep left for xleft, right for xright, and middle to see if it's valid... pretty easy implementation
 7) involves line sweep with two pointers/check the points on the same line 7) two pointer idea pretty hard to implement actually ... left and right bad wrong.
 
-Problem: USACO silver Censoring (Practiced hashing wrote hashing template)
-Origin:
+Problem: USACO Silver Censoring (Practiced hashing wrote hashing template)
+Origin: http://www.usaco.org/current/data/sol_censor_silver.html
 Learned: hashing start with 0 index, indexing issues be careful
+
+Pro Tip: Just learn algorithms for next three weeks in first half of class
+Then second half = implement + problems + test out algorithm! :D
+
+Problem: Codeforces 501D (BIT Tree)
+Origin: http://codeforces.com/contest/501/problem/D
+Learned: 1) bit tree + math can use for loop 2) index + 1 to avoid errors in ranges 3) use set efficiently to find key
+4) debug error = fine but takes longer 5) use a bit tree to do last part too 6) to carry by one do the n-i+1 mod thing... :D
+
+Problem: Marathon USACO Gold (Segment tree) !
+Origin: http://www.usaco.org/current/data/sol_marathon_gold.html
+Learned: 1) Got usaco segment tree :D 2) pretty good at segment tree tricky implementaiton 3) make sure you use combine well don't write helper functions... 4) delta function!
+5) implement faster!!! but careful, safety = different every time
+
+Problem: Lazy USACO Gold (Segment Tree) (Classical find maximum number of intersections of rectangle) !xo
+Origin: http://usaco.org/index.php?page=viewproblem2&cpid=418
+Learned: 1) sweep line problem + segment tree. Ahhh clasic sweep line with segment tree 2) I get how you must multiply everything by 2 to account for the case where you have to do +1, -1
+3) I get the x-y, x+y to rotate a point by 45 degrees +1, -1, to reduce simplifications 4) confused why its not sqrt2/2 and why scaling does not change answer but whatever. (next time in rotation problems = scale like that)
+5) sort by x-coordinates = sweep line 6) to reduce the number of points, sort by y coordinate :D 7) sweep line with lazy propagation got it classic problem. 7) query = number of points = lazy propagation 8) store end of i, and start of i to keep track of where you are. 
+8) learn iterative segment tree when you get back (don't code it but learn it) 8) iteratively build segment tree with points = keep track of start and end y coordinates in leaf nodes, recursively build up all until 0 = min and max of y coordinates. 3) sweep line by querying each a and b
+9) adding or substracting based on which element, cute lazy idea with fix(); exactly same as query_range, :D with fix.  
+10) key takeaways: rotation, sort by x sweep line, how to solve these problems, and you can query not just by int but also by a[value]
+11) Hard redo do not fully understand don't solve in problem, i get the transformation x -y, x+y, ? sqrt2 factor, understand the +1, -1, x2, get how line sweep, get how line sweep with indexes :D, get how to create a complete binary tree that stores segments, confused about mn and mx, 
+confused on why 540000 confused on why firstB+i just solves everything???, finally understand how its 2*i+1, 2*i+2, and how you have to do ind-1 << 1 += to update, 1 indexed = easier, understand total+= alone[i] :D, yep!
+
+Pain to not finish everything :D, pain to be happy, learned segment tree and how to solve it with sqrt(n) method keep chains, do it again, solve LCA normally, everything else = bit or graph algorithm + dfs, sparse table, rmq later :D, = 2000 cool -> 2300, rmq -> euler's tour, minimum values
+11) rotation :D okay x-y, x+y, sort by x sweep line, solve by using binary tree index learn seg tree iterative better. 1) understand x+y, x-y 2) understand depth argument, depth >= number of nodes, ys.size() - 1 3) confused about min and max but whatever, default values... wrong, 4) then increment!!! :D 
+5) increment endY[i] = startY[i] etc... 6) total[0]. inc(depth[a] etc) 7) ind-1 >> 1; 8) each leaf repersents ys[i] -> ys[i+1]
+
+
+Problem: Gather
+Origin: http://contest.usaco.org/TESTDATA/MAR10.gather.htm
+Learned: 1) simple dfs implementation too long 2) just dfs to keep track of up and down 3) slide and update distance should be simple...
+4) right formula just chuck you suck at implementing dfs ugh redo 5) chuck dfs = child[u] make sure graph[u][i] right when debugging first look at that!
+
+Problem: Cow Caleisthenics (USACO Gold December) DFS + binary search !
+Origin: http://contest.usaco.org/DEC10
+Learned: 1) stack overflow MLE at 10000 be careful, idk implement with a stack??? 2) Be smart about it = recursive call can return, or I can store, store is easier 3)
+binary search = life 10x easier 4) checking is easier than finding 5) greedy solution with checking if a graph is okay 6) dfs stack overflow 7) vector = o(nlognlogn) make sure to check if size is 0
+
+Problem: Above the Median (USACO Gold November) BIT tree + prefix sums !
+Origin: http://www.usaco.org/index.php?page=nov11problems
+Learned: 1) Cute idea of partial sums coming up, 2) if BIT tree ever goes negative then what you do is + MAXN 3) I thought of it once I saw partial sums. 4) Idea of simplifying to +1, -1 
+5) Basically counting the number of inversions such that i < j but P[i] > P[j]. I can count inversions now 5) basically update prefix sums all throughout. 6) 0 index = 0, 7) update it so that it counts all the prefix sums 
+that are less than or equal to the current element. 8) always +1, -1 element.  9) > 0 for bit trees ugh, and also maxn + 5, update is +1, or -1. inclusive
+
+Problem: Camelot (USACO Training Pages) Shortest Path 
+Origin: https://usacosolutions.wordpress.com/2012/10/20/usaco-3-3-camelot-camelot-c/
+Learned: 1) make sure to check the solution before you code ugh 2) Make sure algorithm is correct 3) make sure you account for negative factors or set it to infinite, errors = algorithm, long long double dist printf, initialization etc. 
+4) cool idea of using 4d array to bfs, know bfs pretty well, best[i][j] wrong idea 5) neat idea of how the king only needs to travel +2, -2, because a knight can always travel to it faster...  like it can always bring it closer.  
+
+Problem: Road Block (USACO Gold)
+Origin: http://www.usaco.org/index.php?page=viewproblem2&cpid=398
+Learned: 1) Meaning right, problem right, algorithm right, solution clear (slow and hased out), coding slow (add extra variables at first), debug slow (check initialization, variables, long long double etc), look at answer = algorithm 2) Make it like a contest = just do it
+3) Make sure you know which type of algo to use 4) took too long 5) implement dijstrka using both ways! :D matrix = pretty easy to code, mindex idea make sure to set visited, 5) make sure to make graph = INF. 6) O(n^3) solution not O(mn^2)
+
+Problem: USACO Relocate (Silver) shortest path + next permutation !
+Origin: http://www.usaco.org/current/data/sol_relocate.html
+Learned: 1) pretty good job of coding fast and keeping your calm 2) algorithm correct 3) take a step back and write correct answer
+4) problem is that next_permutation changes digits so you should keep an order[i] which states the order of the current element without changing the original vector
+5) also instead of set you can keep an is_market! 6) if tle with pq, try set erase or you can try another cool thing of putting an if statement to eliminate visited. jk no it's cause your algo sucks and there's a bug
+6) nvm okay this solution is weird 7) implement dijstrka weirdly, if TLE then try implementing dijstrka using maxpq... weird but deleting stuff or using set. 
+
+Problem: Longest Path (DAG Topological Sort)
+Origin: Astar
+Learned: 1) right algorithm 2) make sure idea is good 3) outline good 4) code well make sure you check why this code is write after writing a certain amount of code
+5) if code does not look right do not look @solution = spend 10 minutes debugging by looking at code and checking what's wrong 6) Chuck please code careful (not autopilot) and debug (not autopilot) 8) algorithm right
+9) be focused when coding 10) check errors.... :D in debugging
+
+Problem: Cow Prom (USACO Silver)
+Origin: Astar
+Learned: 1) Weird interpretation of problem 2) wrote code to check how many sink vertexes in forest of scc with size > 1 3) code writing good :D
+
+Problem:  Candy USACO silver (DAG + Topo +  Graph Construction)!
+Origin: Astar
+Learned: 1) Can use DP to solve this problem = knapsack 2) can also formulate this problem as a DAG 3) DAG have a topological ordering
+4) wrote check cycle function!!! :D tests if there is a cycle 5) without a cycle = construct graph and then check longest path 6) hard part = edge case where the graph can go over!
+7) also tricky edge case of how the graph can't go over on day 1
+
+Problem: Euler's Tour Fences
+Origin: https://usacosolutions.wordpress.com/2012/10/19/usaco-3-3-riding-the-fences-fence-c/
+Learned: 1) euler's tour easy use set to check for duplicate 2) problem in code = algorithm not right 3) remember undirected condition only possible if all even or only 2 odd!!!
+3) if 2 odd then u start on minimum of odd 4) becuase this problem allows just find the minimum every time and add it to the stack... use iterators!!! solve problem... 
+8) I understand why you have to reverse the graph omg gg. 9) solve with cur_edge and solve with element. okay! 10) min element because you add it last. 11) ugh made bug in coding of typing begin instead of end()
+
+Problem: TSP (USACO Gold) (DP + Bitmasks)
+Origin: http://lms.starleague.us/mod/quiz/attempt.php?attempt=27769&page=4&scrollpos=0#q4 https://www.hackerearth.com/practice/notes/codemonk-dynamic-programming-ii-1/
+Learned: 1) Do more DP + Bitmask problems :D and DP with more states + DP on trees 2) common mask ~ flip all bits, ! flip all bits, 1 << cur shift bits, ^ xor, mask & 1 << i == 0  bit i  not in mask
+mask |= 1 << i add bit i to set, if directed graph, if undirected graph then mask ^ 1 << i; 3) typical pattern = base case = dp[1<<i][i] = 0; for int mask  = 0; mask < len; mask++ (this is because the previous masks build up the old mask)
+5) for (int i = 0; i < n; i++) on inside!! or two denoting last vs cur... must have bitmask! interesting dp problem.  10) coding pretty good, understand it for cycles. basic idea down. 11) I can solve this problem idea good wrote template 12) bitmasks = udnerstand why the order is correct
+13) bit mask from curent to last othermask = mask ^ 1 << cur  (mask & 1 << last) continue, understand, and use old_mask + curmask; 
+
+Problem: BottleNeck (USACO Gold) (Greedy + UF)
+Origin: http://contest.usaco.org/TESTDATA/JAN11.bottleneck.htm
+Learned: 1) really hard problem it's okay I didn't get it 2) got the standard greedy solution of being able to find the answer in nk, 3) solving the real way involves using union find and some priority queue + union find data structure which like links each parent to its parent or something
+
+Problem: Balloc (USACO Gold) (Greedy + Lazy Propagation)
+Origin: http://lms.starleague.us/mod/quiz/attempt.php?attempt=27993&page=4#
+Learned: 1) Greedy solution of sorting and choosing by end node 2) chuck I thought of sorting but ugh I only sort by beginning be more creative
+3) after sorting it becomes a range update query question :D 4) nice observations!!! :D 5) implement lazy pretty fast!
+
+Problem: Fence Repair (USACO Gold) (Greedy + Huffman Encoding)
+Origin: http://contest.usaco.org/NOV06.htm
+Learned: 1) maps directly to huffman encoding problem 2) cute greedy solution of huffman encoding of using priority queue memorize problem 3) proof of why huffman encoding is optimal is hard
+4) pq 5) learn that choose one x 1 choose 2 = x2;
+
+Problem: Corral (USACO Gold)
+Origin: February 2010 contest
+Learned 1) Use greedy observations that paths with smaller length cannot work, 2) use observation that you can find the next path and then create a component cycle
+3) check all cycles in O(n) 4) use trick that double edges in a circle to iterate twice. 5) kill edges to eliminate repeat 6) after getting cycle just iterate through cycle nad check length. 
+
+Problem: RunAway (USACO Platinum) Tree, Segment Tree, Pointers, Sparse Table  !xo (must redo)
+Origin: http://www.usaco.org/index.php?page=dec12problems
+Learned: 1) took wayyy too long for this problem 2) really good ideas in this #3 hard problem 3) redo this problem again with first pointers if you have time then seg tree
+3) idea is like this create sparse table and go up 2^i. mark the first node that is too far from a vertex, then to count the # use all the childrens number - the counts that its' given
+4) harder ideas include using a pq and merging the pq's of children together and 5) using a segment tree to update intervals after inorder dfs
+6) Trees = always use children to build upon ancestor. 7) DP this way, greedy this way, but most importantly combine this way 8) new ideas of pq Nlogn^2, segment tree + inorder labeling by labeling start and finish
+DFS traversal can find depth etc, segment and bits to update ranges, events to update new events, and finally using sparse table and counting from reverse side!!!
+7) Okay 8/10 but got general idea, probably some index out of bounds sh2t, ugh good enough for now, try new update_range, and pq solution when you redo everything!!! :D
+
+Problem: Slowdown (USACO Platinum) Tree, BIT, Segment Tree !xo
+Origin: http://contest.usaco.org/TESTDATA/FEB10.slowdown.htm
+Learned: 1) use labeling dfs to update tree!!! :D then use range query to update or find tree. 
+3) Or you can use BIT tree in a very cool way. 4) cool idea of updating seen and not seen using bit updates to add the levels of what you ahve seen and haven't
+5) then decrease the seen and not seen. sum!!! 5) really understand idea of labelling and given tin and tout 6) only did bit tree redo with range query updates.
+
+Problem: Lost Cows (USACO Gold) ! precomputation + Bfs
+Origin: February 2011 Platinum
+Learned: 1) made observation that you have to go down 2) did not make observation that you can precomputate the n^2 edges so that you can go down in O(n^m)
+3) after that it's just a really hard bfs implementation which you have to be careful about! 4) watch out what your vertices and edges are. goal is to get two cows to meet
+
+Problem: Lost Few Coins (USACO GOld) !xo 
+Origin: http://contest.usaco.org/TESTDATA/DEC06.fewcoins.htm
+Learned: 1) One skip that I have 2) Really hard problem 3) Some how you can prove that the upper_bound is V^2 with math and modulos 4) I get the O((T+ V^2)NC) solution where you can just
+use the standard dp and set dp[i][k] = min(dp[i-k*v][k-1] + k) for all k = 0-C 5) cute way of using another dp relation to minimize cost!!! Hard lol
+
+Problem: Two Five !xo (USACO Training Pages Section 5)
+Origin: http://www.cnblogs.com/txhwind/archive/2012/08/18/2645339.html
+Learned: 1) Don't spend too much time on it! it's okay if you np for right now. come back to this problem 2) Get how 5^9 passes 3) cute recurrence that I got which is you can only go from one edge to the other when there is a perpendicular corner
+4) Basically can solve this problem if you write a function that computates the value of a certain string like how many of that certain string there is. 4) use dfs to write the equation only tricky part is adding a t[i] to store the current value;
+5) base case is when moves = 25 then you return 1 6) use memoization to store values, set transitions = dfs(a+1, ) etc. dfs(..B+1, ); starting from 0,0,0,0,0
+
+
+Problem: Palindrome Path (USACO Gold Open contest) !xo
+Origin: http://www.usaco.org/current/data/sol_palpath_gold.html
+Learned: 1) DP really cute solution 2) redo this DP problem 3) DP problem = realize that use the length of the palindrome... and then add it. 
+5) f(length a, row i, row j) = f(length a+1, row i-1, row j), f(length a+1, row i, j+1), f(length a+1, row i-1, j+1), f(length a+1, row i, row j);
+6) use next and dp[cur] etc. 7) 500 x 500 x 500 = 125000000 which is actually fast enough for USACO servers so itll be fine! 8) Chuck I don't understand parts of the DP still Like I get the long long and the recurrence relation and how to get new indexes but I don't understand the stupid problem
+8) ? got the transition states and etc. don't understand why you can add the old values that are not related and don't understand why it's dp[0][n-1]?
+9) Understood the transition states like going from cur from dp, dp[0][n-1] because rowa = 0 and rowb = n-1, and finally going from dp[i][j] :D :D and lastly, it counts stuff from other length because all else = 0, beautiful thing about memsetting to 0!!! :D
+
+Problem: Mowing the Lawn (USACO Gold Open contest) !
+Origin: http://contest.usaco.org/TESTDATA/OPEN11.mowlawn.htm
+Learned: 1) in these types of problem prefix sums usually comes up 2) find the dp relation, after dp you can realize that O(n^2) is too big so optimize
+3) simplify dp by rewriting it in another format **** = can eliminate a variable instead!!! weee :D 4) with this recurrence simplification you can solve the problem in O(nlogn)
+5) psums used in simplification 6) also to be fair :D using left to right pointer = you can also do something cool called using pq as two pointer instead of using set. or array
+7) you can use pq, because only top value matters not ordering, 8) first value that you push is important because k can be one so watch out for edge case :D 8) BE HAPPY 9) next 3 problems = all seen before
+10) code it like the real contest = 2 problems tmw morning = do more not less. 
+
+Problem: No Change (USACO PLATINUM) !xo (Bit set, dp, partial sums, binary search)
+Origin: http://www.usaco.org/current/data/sol_nochange.html
+Learned: 1) 16 = bitset 10 - 20 = bitset!!! bitmask dp !!!! 2) most bitmask solution = O(k2^klogn, n, or k again) 3) use partial sums to compute binary search faster
+4) use upper_bound() - 1 to get value >= element! wow not bad!!! :D 4) implement it with bitset mask values ^ = remove from subset & = whether or not in subset. 5) partial sums to do binary search
+6) basically solution is we want to maximize value of left over subset so we want to minimize the value of the bitset :D left over thus, what we do is calculate for each 2^16 subset we can check how far this subset can go.
+any subset that can cover than maximum it's complement can be a value. dp[k] stores the index of the last value that the array can cover. transition states is from any smaller subset that differs from current subset by 1. use binary search on that to calculate max value!
+
+Problem: Telewire (USACO Platinum) !xo (Sweep line, DP, math, two pointer)
+Origin: http://train.usaco.org/TESTDATA/NOV07.telewire.htm
+Learned: 1) Got the DP O(NK^2) 2) tried to use segment tree lol which actually works here 3) Chuck ummm this problem has an easier way to update, which is after you find the dp relation
+you can sweep through each value and find the low[n-1][h] uses clever math manipulation 4) then dp and solve. :D 
+5) key here is isolating the h value so you can sweep line 6) sweep bottom and lower halfs!!! 7) really learn prefix sums well Chuck 8_ <?= :D huge lol 9) partial sums always used
+
+Problem: Triangles (USACO Silver) !
+Origin: http://contest.usaco.org/TESTDATA/FEB11.tri.htm
+Learned: 1) O(n^5) = triangles 2) 3 things determine a triangle, starting point, length, and orientation 3) This makes the problem solvable in O(n^5) use partial sums + keeping old values to solve it in O(n^3)
+6) really cute observation that you can solve it in O(n^2K) because a triangle can be split into four points so you only need length > 2 *k; etc. 6) implementation took too long because I wasn't focused
+7) Good part is got it! 8) bugs in initalization can be negative in ans need -INF, long long watch out 9) iterate down ward and upward with partial sum 10) indexing was good chuck! use base cases and write out left and right :D
+8) dumb mistakes = coding too long 9) understand it better now!!! 10) spend the time you need per problem 1 - 2 hours! :D 11) Chuck I think you should do it in four stages. one do the problem 30 minutes :D read the solution 30 minutes - 45 minutes w/out code reimplement 30 minutes w/code edit 15 minutes same plan do in morning = contest
+10) afternoon = review make mistakes = learn + review in car 11) and then @ night = really deep learn = redo and rewrite the solution w/out looking @it. 12) coding = clean af gj chuck
+12) no half-way doing it = no use.
+
+
+Problem: Route Designing (USACO Gold) !
+Origin: http://www.usaco.org/current/data/sol_route.html
+Learned: 1) Looking at constraints + problem description should tell you which type of problem the problem is and how to solve the problem 2) O(100,000) = probably involves some sorting segment tree of parity or dfs etc. 
+3) key idea is that the recurrence relation is that from x to y you need to travel from an A or B that is greater than x or y so you need to traverse all of them before hadn. However O(N^3) is too much to bear. so... you only need 2R routes!
+4) we can process it in order by sorting. Then, assume we have calculated all the points below it. we can calculate the next point then. By iterating upward, in this manner we can say we've processed the solution bc it's A + B;
+5) Dp relation -> process it by sorting -> find a way that iteratively calculaetes next value, solve small cases first 1 :D 2 etc. = recursion. 11) note never use left and right. 
+
+Problem: Hop (USACO Gold) !x
+Origin: http://contest.usaco.org/TESTDATA/OPEN10.hop.htm
+Learned: 1) 3 hours > 1 hour of review hatred -> studying 2) Learned the idea of connecting the points together 3) found the idea that you can unite them and use partial sums to calculate 4) missed design in my reverse implementation where you did not account for partial sums that are greater 
+5) Hop! :D 6) redo for 1 hour 7) got the general idea :D 8) flowing 9) 1 hour review 10) you have to watch out for n-2, and that you can turn back whenever, and when you push your queue, otherwise dp simple and then has O(NK) solution but partial sums/pq to implement. 8) use partial sums and set v as 0 9) coding without too much thinking
+9) GOT IT WRITE!!!! 10) Fast pseudocode = good 11) watch out for initializations!! and empty cases 12) good idea how the psums is all that matter so you can keep it as 0 after that just try to min the dp and also edge case in O(n) of return_here - the negative v[i-1]. could make code better by pushing in a positive value but whatever;
+
+Problem: Guard Mark (USACO Platinum) ! Bit Mask DP
+Origin: http://www.usaco.org/index.php?page=dec14results
+Learned: 1) Standard Bitmask DP problem, key was there is < 20 so < 20 = n2^n solution. 2) implementation problem = 1 << n - 1 and initialize outside the for loop with maxn 
+3) pretty good @ bit mask DP now. :D 4) basically use the induction hypothesis to prove that the DP is optimal 5) DP is optimal if you use recursion. and then remove a certain number in the subset. continue escapes next for loop 6) built_in_popcount
+
+Problem: Cow Decathlon (USACO Platinum) ! BitMask DP
+Origin: http://www.usaco.org/index.php?page=feb14problems
+Learned: 1) Bitmask DP again, p good @ it, implement total time = 50 minutes. Faster hopefully in future too! 2) Chuck coding very clean without debugging better :D practice/effort = good 3) Chuck key word is 20, 
+4) then the bonus just sort and gredily add it!
+
+Problem: The Baric Bovine (USACO Gold) !xo Classical DP with precomputation
+Origin: http://www.it610.com/article/5361106.htm
+Learned: 1) can solve with memo too 2) Classical DP problem with edge cases 3) precomputate the value of one like if you have two endpoints
+4) then use dp[i][len] = dp[i-k][len-1] + dp[i-k][i]. basically block cutting problem where you remove one block!
+
+Problem: Fencing (USACO Gold 2008) 
+Origin: N/A
+Learned: 1) Use convex hull iteratively with dp, 2) can find O(n^4) solution by setting bottom point and then finding conve hull of n points to the left of it by keeping track of tw ostates
+5) more complicated solutions later 6) okay to just have idea. 
+
+Problem: Visting Cows (USACO Gold)
+Origin: N/A
+Learned: 1) dp on trees use children and grandchildren keep multiple DP's 2) :D learned it before so super easy 3) do contest like this, remember don't forget max() the children!
+
+Problem: Code Breaking
+Origin: N/A
+Learned: 1) I quit 2) this problems impossible lol so nawww 3) It's okay scott wu didn'tget it hahaha 4) somehow DP On trees with digits??
+
+Problem: Btree !xo (USACO Platinum) Tree DP
+Origin: http://www.usaco.org/current/data/sol_btree.html
+Learned: lol
+
+Problem: Buying Feed (USACO Gold 2011) DP With PQ/DQ/Optimization
+Origin: http://contest.usaco.org/TESTDATA/NOV10.feed.htm
+Learned: 1) In flow when you are working #do the work #read the problem, understand it, think of runtime 2) think of choose one don't choose one and transition states 3) solve the DP with base case and prove with induction
+4) optimize the dp with pq/dq. 5) remove a varaible to make equation linear 6) solved pretty fast but code so slow because be careful of what your variables are 7) coding was bad #endgame debug ugh 8) code faster though but more focused
+9) good watching out for initializations and empty 10) good job proving the upper and lower bounds 11) learned also how to do it with a dq with indexing where you just pop the elements that are bigger in front and add the elements that are the least in the back! (two instead of one while loop) optimize runtime!
+
+Problem: Moovie Moving (USACO Platinum 2015 January) DP With Bitset
+Origin: http://www.usaco.org/current/data/sol_movie_gold.html
+Learned: 1) Implementation 50 minutes = pretty fast and good :D 2) but thought about it before, can be faster! 3) Chuck overall good job little coding errors 4) fundamental understanding of what dp represents = good
+5) set notation cool 6) got bitset down later get all the other dp down = good! :D
+
+Problem: Tower of Hay (USACO Open 2009) DP Hard
+Origin: N/A
+Learned: 1) Easy O(N^3) solution not really.... somehow the O(n^3) solution is that only the last layer building from reverse order matters 2) because of that you can process it in O(n^2) by fixing i your last element, then increase from i-1 ... what??? 3) somehow can transform into finding the minimum width
+4) finding minimum width = O(nlogn) binary search solution with some random monotonic proof what??? 4) queue to solve lol fk this problem
+
+Problem: Hopscotch USACO Gold (February 2015) !xo (Bit Tree + DP) Redo definitely
+Origin: http://www.usaco.org/index.php?page=feb15results
+Learned: 1) First figure out DP on this graph = you can transition from any of previous rows, to the current row, column = sum of all of them = O(R^2C^2) 2) use prefix sums to simplify to O(R^2C) = good solution 3) complementary counting = count all of the results in O(RC) using prefix sums but use map to count each individual element = TLE
+3) Use BIT trees to update the elements in order, but be careful on how you traverse the BIT Tree!!! :D Tricky DP + precomputation + BIT
+4) you can also just use partial sums to calculate it faster... 4) great problem from dp -> prefix sums -> bit tree simplification 5) work on opening (recognizing algorithm), using algorithms together, and finally implementing this problem effectively until you are done! :D redo!!!
+
+Problem: Cbarn USACO Gold  (February 2016)
+Origin: http://www.usaco.org/index.php?page=feb16results
+Learned: 1) Make sure your dp is correct before you dp lol, dp should not be based off of previous elements 2) trick of circle
+3) know that you can use DP better and implement faster, keep track of last visited digit (DP/implementation pretty good) 4) harder version = platinum = divide and conquer/monotonic structure
+
+Contest CF 425 
+Learned: 1) I choose to be happy, happiness in contest matters 2) problem - decreasing 3, 2, 1 1450????? Chuck ????
+3) I need to do a contest everyday no matter what 4) Work hard and consistent when you get back 5) Chuck!!!! 6) doing the algorithm helps a lot! (50% opening + middlegame practice)
+6) first mistake - read the question slowly = 3 times (no more reading mistakes) 7) stop thinking about speed, work with speed #no looking on time 8) flow and think about edge cases
+8) consider all edge cases 9) code fast but accurate. 
+
+Problem: CF 425D
+Origin: http://codeforces.com/contest/832/problem/D
+Learned: 

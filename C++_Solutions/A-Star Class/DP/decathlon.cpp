@@ -1,0 +1,53 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+struct pp {
+    int add;
+    int lim;
+    bool operator < (const pp &a) const  {
+        return lim < a.lim;
+    }
+};
+
+const int maxm = 21;
+int n, bonus;
+vector<pp> extra[maxm]; //1 indexed then 0 indexed
+int vals[maxm][maxm]; //0 indexed then 1 indexed
+int dp[1<<maxm];
+
+int main() {
+    freopen("decathlon.in", "r", stdin);
+    scanf("%d %d", &n, &bonus);
+    for (int i = 0; i < bonus; i++) {
+        int k, p, a;
+        scanf("%d %d %d", &k, &p, &a);
+        extra[k].push_back({a, p});
+    }
+    for (int i = 0; i < maxm; i++) {
+        sort(extra[i].begin(), extra[i].end());
+    }
+    for (int i = 0; i < n; i++) {
+        for (int j = 1; j <= n; j++) {
+            scanf("%d", &vals[i][j]);
+        }
+    }
+    dp[0] = 0;
+    for (int b = 1; b <= (1<<n); b++) {
+        for (int i = 0; i < n; i++) {
+            int m = (1 << i);
+            if (b & m) {
+                int event = __builtin_popcount(b);
+                int cur = dp[b^m] + vals[i][event];
+                int counter = 0;
+                while (counter < extra[event].size() && cur >= extra[event][counter].lim) {
+                    cur += extra[event][counter].add;
+                    counter++;
+                }
+                dp[b] = max(dp[b], cur);
+            }
+        }
+    }
+    //printf("%d\n", *max_element(dp, dp+(1<<n)+1));
+    printf("%d\n", dp[(1<<n)-1]);
+    return 0;
+}

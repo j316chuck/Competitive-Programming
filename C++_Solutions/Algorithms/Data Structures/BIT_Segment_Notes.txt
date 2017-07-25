@@ -45,6 +45,8 @@ BIT PATTERNS:
 Solving: Involves first sorting, then inserting/erasing from bit tree, update(+-1), and summing up elements in a specific order. 
 
 Classical Segment Tree Patterns:
+1) query and update = all you change 2) think about what each node stores 3) can do query on ranges with intereseting facts = -1 store
+3) what you store is important 4) how you combine is important everything else is easy.
 
 Lazy Patterns:
 
@@ -53,5 +55,12 @@ Lazy Patterns:
 Vector Patterns
 
 Offline Query Patterns
+
+
+Interval Trees/Range Trees:
+Never use these, but Chuck :D nice to know that you update intervals and check if something is within an interval
+
+Maps/Sets:
+Can use maps and sets to add and delete intervals if u need, lower, upper etc. Use maps and sets or segment trees for intervals. 
 
 

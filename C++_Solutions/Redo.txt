@@ -1,9 +1,16 @@
 DP
+Circular Barn February 2016 Platinum
+
+Already Done by 7/23
 Circular Barn February 2016
 APRIL 2015 last problem 
-(warm up with fall 2014 palindrome)
-CodeForces 342
-CF 245D
+CodeForces 342B
+CF 245H
+
+
+Platinum Problems USACO
+Mowing the Lawn! Classic DP!!!
+Two Five (re-implement last not a super good problem)
 
 Scanline technique/Graph:
 February 2016: http://usaco.org/index.php?page=viewproblem2&cpid=623
@@ -20,16 +27,9 @@ SegTree + DP
 February 2016 Platinum: http://usaco.org/index.php?page=viewproblem2&cpid=721
 
 Hashing:
-1) USACO Censor, April 2016
-2) Modern Art, April 2017 (implement through binarysearch :D) (learn rolling hash but excel in Rabin Karp hash)
+2) Modern Art, April 2017
 
 Sets:
 http://usaco.org/index.php?page=viewproblem2&cpid=599
 
-LOL CHUCK YOU NEED TO DO GIT PULL to merge...
-git mergeconflict 
-wqa for mergeconflict
-then git commit
-then git add
-then git push if there is a merge conflict...
 

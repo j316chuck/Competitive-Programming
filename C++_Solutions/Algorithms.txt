@@ -6,6 +6,7 @@ Other Notes: Construct graph/determine what to dfs (hard), dfs (easy), often mem
 (You can return a value), (You can also choose to relax or not relax the recursion)...
 May keep visited[] array (hard)
 http://www.geeksforgeeks.org/applications-of-depth-first-search/
+http://codeforces.com/blog/entry/6605 cycle detection
 
 Further Problems involving DFS:
 Floodfill:
@@ -69,6 +70,9 @@ Indications: Given a specific ordering!!! Find a linear ordering of vertices...
 Other Notes: Use queue based approach ... or you can use recursive based approach.
 (February 2013 msched)
 
+Longest/Shortest Path in Directed Acyclic Graph:
+Conditions: (DAG) weights can be positive n should be pretty big 10000
+Runtime: O(E+V) Algorithm: calculate topological order, then initialize vertex to positive or negative to infinite, then use DP to calculate the values...
 
 Euler's Tour:
 Conditions: Can be directed or undirected graph... undirected graph = trickier implementation
@@ -109,11 +113,50 @@ https://www.hackerearth.com/practice/algorithms/graphs/articulation-points-and-b
 A graph is said to be Biconnected if: It is connected, i.e. it is possible to reach every vertex from every other vertex, by a simple path.
 Even after removing any vertex the graph remains connected. cycle/back edge
 
-BinarySearch:
+LCA
 Conditions:
 Run Time:
-Indications:
-Other notes:
+Indications: 
+
+Decompositions
+Conditions:
+Run Time:
+Indications: 
+
+
+BinarySearch:
+Conditions: Adds Log (n) to runtime
+Run Time: O(logn)
+Indications: when solving a problem is hard like finding min or max you can check if _ is a min or max is easier use f() function, useful in graph theory seg tree etc.
+Other notes: Yeah look out for it pretty often.
+
+Two Pointers:
+Conditions:
+Run Time:
+Indications: 
+
+Partial Sum/Bijection: 
+Conditions: On array like problems O(100000)
+Run time: O(n)
+Indications: Any time the array is contiguous or you are updating intervals you should consider bijections and partial sums
+Other notes: Useful trick can do a[s]++; a[s]--; and add sum
+
+Edmond Karp/Max Flow:
+Conditions: Small n and m finding the maximum flow between a source and a sink
+Run time: O(nm^2)
+Indications: Source sink end sink
+Other notes: works for undirected graph too just add another edge, keep track of capacity and residuals in an adjacency matrix, pretty easy to code!
+Other notes: It is also a min cut max flow algorithm, min cut = max flow, cost to separate graph into two portions = maximum flow between source and vertex. can choose arbitrary vertex. also bipartite matching between two groups!
+to find the edges you can just bfs until you get to 0 that's the splitted portions. 
+To learn: max-flow/min cut, max bipartite matching,  min cost max flow (second to last), Push relabel (last)
+Ideas: min cut = max flow, break apart the graph into two parts, while (augment path exists) continue, any flow composition can be broken down into separate flow paths. We need a residual graph noting the remainder of cost left. undirected -> directed in flow networks, maximum bipartite matching = formulate into graph problem with 1 and 0
+
+Dinic Algorithm: (Implemented!!!) Pretty hard to implement! Fun stuff
+
+Union Find (To get lowest value)
+Conditions:
+Run Time:
+Indications: 
 
 Hashing:
 Conditions:
@@ -160,3 +203,13 @@ Run Time:
 Indications:
 Other Notes:
 
+DP on Tree:
+Conditions: Tree
+RunTime: O(N^2) or O(N)
+Indications: Tree
+Other Notes: Use children to build up usually, may have to precomputate another factor. 
+
+
+Notes:
+
+Computational Geometry: Mainly just finding pattern, using CCW, binary search, and convex hull, brute forcing with trig patterns line intersections etc.

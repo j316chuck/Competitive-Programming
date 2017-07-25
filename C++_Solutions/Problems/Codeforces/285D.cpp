@@ -56,12 +56,12 @@ ostream &operator << ( ostream & os, const map< F, S > &v ) {
 const int maxn = 2e5+5;
 int bit[maxn];
 
-void update(int x, int val) {
+inline void update(int x, int val) {
     for (; x < maxn; x += x & -x) {
         bit[x] += val;
     }
 }
-int sum(int x) {
+inline int sum(int x) {
     int total = 0;
     for (; x > 0; x -= x & -x) {
         total += bit[x];
@@ -85,7 +85,7 @@ int main() {
         s2.push_back(x - sum(x+1));
         update(x+1, 1);
     }
-    deb(s2);
+    //deb(s2);
     vector<int> ret(n);
     int mod = 1;
     for (int i = n-1; i >= 1; i--) {
@@ -95,7 +95,7 @@ int main() {
     }
     ret[0] += s1[0] + s2[0];
     ret[0] %= n;
-    deb(ret);
+    //deb(ret);
     for (int i = 0; i < n; i++) {
         st.insert(i);
     }

@@ -23,12 +23,10 @@ Can't just keep on wasting time... so distracted (every 5 min)
 
 
 Problems: 
-2) Computational Geometry
-2) Union Rectangle
-2) Segment Intersection
-3) Graham Scan (Andrew's + Graham Scan) (quick hull and jarvis = read)
-6) Stanford
-
+DP-http://codeforces.com/blog/entry/337 (Bitmasks, subsets) Hamiltonian Path
+Graph Theory-Heavy Light Decompositions
+Strings-All algorithms, but first start with suffix arrays
+Computational Geometry-Maximum triangle among n points, line line intersection problem
 
 
 

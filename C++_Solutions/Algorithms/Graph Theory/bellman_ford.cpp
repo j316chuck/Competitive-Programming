@@ -72,8 +72,6 @@ bool bellmanford(int src){
         cout<<dis[i]<<endl;
     }
     return true;
-
-
 }
 
 int main(){
