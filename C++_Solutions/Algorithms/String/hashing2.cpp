@@ -106,11 +106,17 @@ long long hsh(string &s) {
     return total;
 }
 
-//O(1) function that finds the hash of a substring from l and r inclusive
+//O(1) function that finds the hash of a substring from l and r inclusive (0 indexed)
 long long substring_hash(int l, int r) {
     //if (l < 0 || r > s.length()) cout << "Index Out of Bounds" << endl;
     //cout << lhsh[r] << ' ' << lhsh[l] << ' ' << pows[r - l] << ' ' << lhsh[l] * pows[r - l] << endl;
     return (((lhsh[r+1] - lhsh[l] * pows[r - l + 1]) % mod) + mod) % mod;
+}
+
+//look at CF 427D for how to use
+long long rsubstring_hash(int l, int r) {
+    if (l < 0 || r > s.length()) cout << "Index Out of Bounds" << endl;
+    return (((rhsh[r+1] - rhsh[l] * pows[r - l + 1]) % mod) + mod) % mod;
 }
 
 bool valid(int len, string &s) {

@@ -108,7 +108,7 @@ void sieve() {
     for(int i = 2; i < maxn; i++) {
         prime[i] = true;
     }
-    for(int i = 2; i< maxn; i++) {
+    for(int i = 2; i < maxn; i++) {
         if(prime[i]) {
             divisor[i] = i;
             for(int j = 2; i * j < maxn; j++) {

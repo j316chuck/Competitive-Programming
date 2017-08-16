@@ -885,6 +885,12 @@ Learned: 1) I choose to be happy, happiness in contest matters 2) problem - decr
 6) first mistake - read the question slowly = 3 times (no more reading mistakes) 7) stop thinking about speed, work with speed #no looking on time 8) flow and think about edge cases
 8) consider all edge cases 9) code fast but accurate. 
 
-Problem: CF 425D
+Problem: CF 425D (LCA)
 Origin: http://codeforces.com/contest/832/problem/D
-Learned: 
+Learned: 1) coded it pretty fast missed edge case, practice = perfect should get this type of problem next time during contest 2) learned how the problem has an extra edge case where you have to consider 4 cases
+the lca(s, f) == f and lca(t, f) == f 3) lca(s, f) == f and lca(t, f) != f and lca(s, f) != f and lca(s, f) != f 4) in the last case you should consider lca(s, f) == lca(t, f) how to calculate. 5) index out of bounds ughhhhh 17 not 15 for 100,000 because 17 is 128,000 gg
+
+Problem: CF 425B (Implementation)
+Origin: http://codeforces.com/contest/832/problem/B
+Learned: 1) ughhhhhhhhhhhhhhhhhh 2) read the question pleaseeeeeeeeeeeeeeeee 3) this question wassss soooo tricky looooooooooool 4) yeah lot's of edge cases * means you can only read in as many characters as you want = implement. 5) read the questions right omg omg omg
+6) string substring is really slow 7) indexing is p hard but use small cases 8) read the sample case 10) implementation with const string & no substring!!

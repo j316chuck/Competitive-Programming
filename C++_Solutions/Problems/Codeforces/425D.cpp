@@ -15,8 +15,8 @@ void print(int arr[], int n) {
     } cout << endl;
 }
 
-const int maxn = 1e5+5;
-const int maxm = 15;
+const int maxn = 1e5+15;
+const int maxm = 17;
 int P[maxn][maxm];
 vector<int> graph[maxn];
 int depth[maxn];
@@ -84,14 +84,16 @@ int dist(int u, int v) {
 
 int calc(int s, int t, int f) {
     int ans = 0;
-    int u1 = lca(s, f);
-    int u2 = lca(t, f);
-    if (u1 == u2) {
-        ans += depth[lca(s, t)] - depth[u1];
+    int sf = lca(s, f);
+    int tf = lca(t, f);
+    if ((tf == f) != (sf == f)) {
+        return 1;
+    } else if ((tf == f) && (sf == f)) {
+        return depth[lca(s, t)] - depth[f] + 1;
+    } else if (sf == tf){
+        ans += depth[lca(t, s)] - depth[sf];
     }
-    int d1 = depth[f] - depth[u1];
-    int d2 = depth[f] - depth[u2];
-    ans += min(d1, d2);
+    ans += 1 + depth[f] - max(depth[sf], depth[tf]);
     return ans;
 }
 
@@ -116,7 +118,8 @@ int main() {
         ans = max(ans, calc(b, c, a));
         ans = max(ans, calc(c, b, a));
         ans = max(ans, calc(c, a, b));
-        printf("%d\n", ans + 1);
+        printf("%d\n", ans);
     }
+    return 0;
 }
 
