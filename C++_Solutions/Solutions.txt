@@ -1,4 +1,4 @@
-General Tips:
+  General Tips:
 1) Seize the day, You CAN DO IT! State Champion, A+ CS61B, USACO Platinum
 2) Remember your falls - USAMO, HS
 3) Do harder Problems - 1 C problem maximum, 2 D's for concept, 3 E's FOCUS ON E PROBLEMS

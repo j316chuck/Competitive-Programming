@@ -28,5 +28,10 @@ Graph Theory-Heavy Light Decompositions
 Strings-All algorithms, but first start with suffix arrays
 Computational Geometry-Maximum triangle among n points, line line intersection problem
 
+REVIEW:
+Line Sweep: rectangle problem in final exam line sweep
+Line sweep with segment tree: Cow rectangles March 2014 USACO Gold
 
+Pointer Practice Problem:
+http://www.usaco.org/index.php?page=dec12problems (implement with pq implementation)
 
