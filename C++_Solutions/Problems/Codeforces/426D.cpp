@@ -59,6 +59,7 @@ template <class T> void deb_array(T *arr, int length) {
         cout << arr[i] << ' ';
     } cout << '\n';
 }
+
 const int maxn = 35e3 + 5;
 const int maxk = 55;
 int n, k;
@@ -121,7 +122,7 @@ struct RMQ {
 
 
 int main() {
-    Rd("input.in");
+    //Rd("input.in");
     ios_base::sync_with_stdio(0);
     cin >> n >> k;
     for (int i = 0; i < n; i++) {
@@ -140,6 +141,7 @@ int main() {
     cout << dp[n - 1][k] << endl;
     return 0;
 }
+
 
 
 
