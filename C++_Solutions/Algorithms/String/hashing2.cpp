@@ -141,7 +141,7 @@ bool valid(int len, string &s) {
 
 
 int main() {
-    Rd("hashing2.in");
+    //Rd("hashing2.in");
     ios_base::sync_with_stdio(0);
     string str;
     cin >> str;

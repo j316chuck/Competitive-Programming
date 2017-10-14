@@ -42,8 +42,6 @@ BIT bit[maxn * maxn];
 vector<int> columns[maxn * maxn];
 
 int main() {
-    //freopen("hopscotch_seg.in", "r", stdin);
-    //freopen("hopscotch_seg.out", "w", stdout);
     freopen("hopscotch.in", "r", stdin);
     freopen("hopscotch.out", "w", stdout);
     scanf("%d %d %d", &nr, &nc, &nk);
@@ -63,30 +61,11 @@ int main() {
         c.push_back(j);
     }
     total.initialize(c);
-    /*for (int j = 1; j <= nk; j++) {
-        for (int i = 0; i < columns[j].size(); i++) {
-            cout << columns[j][i] << ' ';
-        } cout << endl;
-    }*/
+
     for (int j = 0; j <= nk; j++) {
         bit[j].initialize(columns[j]);
-        /*cout << j << endl;
-        bit[j].initialize(columns[j]);
-        for (int i = 0; i < bit[j].indices.size(); i++) {
-            cout << bit[j].indices[i] << ' ';
-        } cout << endl;
-        cout << endl;*/
     }
-    /*vector<int> v = {0,2, 5,6, 8, 10, 11};
-    bit[1].initialize(v);
-    bit[1].update(6, 10);
-    bit[1].update(2, 1);
-    bit[1].update(0, 13);
-    //bit[1].update(-1, 13);
-    for (int i = 0; i < bit[1].indices.size(); i++) {
-        cout << bit[1].query(i) << ' ';
-    } cout << endl;*/
-
+    
     total.update(0, 1);
     bit[grid[0][0]].update(0, 1);
     for (int i = 1; i < nr - 1; i++) {

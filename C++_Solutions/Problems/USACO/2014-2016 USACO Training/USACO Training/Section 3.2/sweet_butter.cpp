@@ -63,7 +63,7 @@ template <class T> void deb_array(T *arr, int length) {
 struct pp {
     int v, w;
     bool operator < (const pp &a) const {
-        return w < a.w;
+        return w > a.w;
     }
 };
 
@@ -85,7 +85,6 @@ int dijstrka(int st) {
         pq.pop();
         if (visited[u]) continue;
         visited[u] = true;
-        cost += (level[u] * dist[u]);
         for (int i = 0; i < graph[u].size(); i++) {
             int v = graph[u][i].v;
             int w = graph[u][i].w;
@@ -95,16 +94,16 @@ int dijstrka(int st) {
             }
         }
     }
-    /*for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {
         cost += dist[mycow[i]];
-    }*/
+    }
     return cost;
 }
 
 int main() {
-    Rd("input.in");
-   //Rd("butter.in");
-    //Wt("butter.out");
+    //Rd("input.in");
+    Rd("butter.in");
+    Wt("butter.out");
     ios_base::sync_with_stdio(0);
     int cow;
     cin >> n >> p >> c;

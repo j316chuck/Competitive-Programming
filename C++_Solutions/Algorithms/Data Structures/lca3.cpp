@@ -15,8 +15,8 @@ void print(int arr[], int n) {
     } cout << endl;
 }
 
-const int maxn = 1e3+15;
-const int maxm = 17;
+const int maxn = 1e6 + 5;
+const int maxm = 20;
 int P[maxn][maxm];
 vector<int> graph[maxn];
 int depth[maxn];

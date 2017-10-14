@@ -1,5 +1,5 @@
 //pseudocode for finding a cycle in a graph
-http://e-maxx.ru/algo/finding_cycle
+//http://e-maxx.ru/algo/finding_cycle
 int n;
 vector <vector <int>> g;
 vector <char> cl;

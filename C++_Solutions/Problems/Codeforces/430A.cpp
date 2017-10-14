@@ -64,10 +64,10 @@ template <class T> void deb_array(T *arr, int length) {
 int main() {
     //Rd("input.in");
     ios_base::sync_with_stdio(0);
-    int l, r, x, y, k;
+    long long l, r, x, y, k;
     cin >> l >> r >> x >> y >> k;
-    int b = x;
-    for (int a = l; a <= r; a++) {
+    long long b = x;
+    for (long long a = l; a <= r; a++) {
         while (b <= y) {
             if (b * k > a) {
                 break;
