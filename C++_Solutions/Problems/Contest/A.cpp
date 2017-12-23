@@ -62,19 +62,23 @@ template <class T> void deb_array(T *arr, int length) {
 
 
 int main() {
-    //Rd("input.in");
+    Rd("input.in");
+    //Wt("output.out");
     ios_base::sync_with_stdio(0);
-    int n, k, x, sum = 0;
-    cin >> n >> k >> x;
-    vector<int> a(n);
-    for (int i = 0; i < n; i++) {
-        cin >> a[i];
-        sum += a[i];
+    string s1, s2;
+    getline(cin, s1);
+    getline(cin, s2);
+
+    cin >> s1 >> s2;
+    for (int i = 0; i < s1.size(); i++) {
+        if (s1[i] - 'a' >= 0 && s1[i] - 'a' <= 25) {
+            cout << (s2[i] - s1[i] + 26) % 26 << ' ';
+        } else if (s1[i] - 'A' >= 0 && s1[i] - 'A' <= 25) {
+            cout << (s2[i] - s1[i] + 26) % 26 << ' ';
+        } else {
+            cout << " - ";
+        }
     }
-    for (int i = n - 1; i >= n - k; i--) {
-        sum -= (a[i] - x);
-    }
-    cout << sum << endl;
     return 0;
 }
 
@@ -90,8 +94,6 @@ int main() {
 //check if your expected answer is what you want
 //re-read question / extra constraints
 //re-check thought process
-//use cerr when debugging
-// >= test.size() runtime error = array index out of bounds, your array indexes might be too small x2
 
 
 //how to solve problem
@@ -114,6 +116,7 @@ int main() {
 //draw out the example
 //look at the other states, use them as dp or states if the current state does not work
 //dp = O(N^3), recursive, or LCS, or Knapsack dp...
+
 
 
 

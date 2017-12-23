@@ -1,6 +1,6 @@
 /*
 ID: j316chuck
-PROG:
+PROG: Screening Test
 LANG: C++
 */
 
@@ -8,106 +8,15 @@ LANG: C++
 #define Rd(r) freopen(r, "r", stdin)
 #define Wt(w) freopen(w, "w", stdout)
 #define deb(x) cerr << "DEBUG: "<< #x << " = " << x << endl;
-#define endl '\n'
-
-const int INF = 1e9+1;
-const double PI = acos(-1.0);
-const double EPS = 1e-9;
-typedef long long LL;
 using namespace std;
 
-template < typename F, typename S >
-ostream& operator << ( ostream& os, const pair< F, S > & p ) {
-    return os << "(" << p.first << ", " << p.second << ")";
-}
-
-template < typename T >
-ostream &operator << ( ostream & os, const vector< T > &v ) {
-    os << "{";
-    typename vector< T > :: const_iterator it;
-    for( it = v.begin(); it != v.end(); it++ ) {
-        if( it != v.begin() ) os << ", ";
-        os << *it;
-    }
-    return os << "}";
-}
-
-template < typename T >
-ostream &operator << ( ostream & os, const set< T > &v ) {
-    os << "[";
-    typename set< T > :: const_iterator it;
-    for ( it = v.begin(); it != v.end(); it++ ) {
-        if( it != v.begin() ) os << ", ";
-        os << *it;
-    }
-    return os << "]";
-}
-
-template < typename F, typename S >
-ostream &operator << ( ostream & os, const map< F, S > &v ) {
-    os << "[";
-    typename map< F , S >::const_iterator it;
-    for( it = v.begin(); it != v.end(); it++ ) {
-        if( it != v.begin() ) os << ", ";
-        os << it -> first << " = " << it -> second ;
-    }
-    return os << "]";
-}
-
-template <class T> void deb_array(T *arr, int length) {
-    for (int i = 0; i < length; i++) {
-        cout << arr[i] << ' ';
-    } cout << '\n';
-}
-
-
 int main() {
-    //Rd("input.in");
+    Rd("input.in");
     ios_base::sync_with_stdio(0);
-    int n, k;
-    queue< pair<int, int> > q;
-    cin >> n >> k;
-    vector<int> a(n);
-    for (int i = 0; i < n; i++) {
-        a[i] = i + 1;
-    }
-    if (k % 2 == 0 || k >= 2 * n || k < 1) {
-        cout << -1 << endl;
-        return 0;
-    }
-    q.push({0, n});
-    int sum = 1;
-    while (sum != k) {
-        int s = q.front().first;
-        int e = q.front().second;
-        int m = (s + e) / 2;
-        q.pop();
-        if (abs(e - s) == 1) {
-            continue;
-        }
-        sum += 2;
-        vector<int> tmp;
-        for (int i = s; i < m; i++) {
-            tmp.push_back(a[i]);
-        }
-        //deb(tmp);
-        int c = s;
-        for (int i = m; i < e; i++) {
-            a[c] = a[i];
-            c++;
-        }
-        int d = m;
-        for (int i = 0; i < tmp.size(); i++) {
-            a[d] = tmp[i];
-            d++;
-        }
-        q.push({s, m});
-        q.push({m, e});
-    }
-
-    for (int i = 0; i < n; i++) {
-        cout << a[i] << ' ';
-    } cout << endl;
+    int i;
+    stringstream a("-4");
+a >> i;
+cout << i << endl;
     return 0;
 }
 
@@ -123,8 +32,6 @@ int main() {
 //check if your expected answer is what you want
 //re-read question / extra constraints
 //re-check thought process
-//use cerr when debugging
-// >= test.size() runtime error = array index out of bounds, your array indexes might be too small x2
 
 
 //how to solve problem
@@ -147,6 +54,7 @@ int main() {
 //draw out the example
 //look at the other states, use them as dp or states if the current state does not work
 //dp = O(N^3), recursive, or LCS, or Knapsack dp...
+
 
 
 

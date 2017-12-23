@@ -1,0 +1,90 @@
+ITERATION 1
+
+The R-values are: 
+a: 21.6667
+b: 16
+c: 21.3333
+d: 17.3333
+e: 23.6667
+
+Constructing Q-Matrix: 
+None -22.6667 -22 -22 -33.3333 
+-22.6667 None -27.3333 -27.3333 -22.6667 
+-22 -27.3333 None -28.6667 -22 
+-22 -27.3333 -28.6667 None -22 
+-33.3333 -22.6667 -22 -22 None 
+
+The two values we join are: 5 and 1
+
+The edge weights are: e: 7, a: 5
+
+The Joined Map is
+ea
+b
+c
+d
+
+New Matrix is: 
+ea: 0 10 16 12 
+b: 10 0 10 6 
+c: 16 10 0 10 
+d: 12 6 10 0 
+
+
+
+ITERATION 2
+
+The R-values are: 
+ea: 19
+b: 13
+c: 18
+d: 14
+
+Constructing Q-Matrix: 
+None -22 -21 -21 
+-22 None -21 -21 
+-21 -21 None -22 
+-21 -21 -22 None 
+
+The two values we join are: 1 and 2
+
+The edge weights are: ea: 8, b: 2
+
+The Joined Map is
+eab
+c
+d
+
+New Matrix is: 
+eab: 0 8 4 
+c: 8 0 10 
+d: 4 10 0 
+
+
+
+ITERATION 3
+
+The R-values are: 
+eab: 12
+c: 18
+d: 14
+
+Constructing Q-Matrix: 
+None -22 -22 
+-22 None -22 
+-22 -22 None 
+
+The two values we join are: 1 and 2
+
+The edge weights are: eab: 1, c: 7
+
+The Joined Map is
+eabc
+d
+
+New Matrix is: 
+eabc: 0 3 
+d: 3 0 
+
+
+
